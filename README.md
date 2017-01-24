@@ -1,10 +1,10 @@
 # React Content Loader
 
-This project is a collection the loader basead in styles cards on Facebook.
+This project is a collection the loader based on styles cards on Facebook.
 
 ## Usage: 
 
-First install the dependencie
+First install the dependency:
 ```sh
 npm i react-content-loader --save-dev
 ```
@@ -21,11 +21,11 @@ const MyPage = () => (<ContentLoader />);
 
 | Name | Type | Default | Description |
 |---|---|---|---|
-| style | Object |  |  |
-| type | String | `facebook` | Default style for component |
-| speed | Number | `2` | Speed for animaiton |
-| primaryColor | String | `#f3f3f3` | Background the SVG | 
-| secundaryColor | String | `ecebeb` | Color of animation | 
+| style | _Object_ |  |  |
+| type | _String_ | `facebook` | Options: `facebook`, `instagram` |
+| speed | _Number_ | `2` | Animation speed |
+| primaryColor | _String_ | `#f3f3f3` | Background the SVG | 
+| secundaryColor | _String_ | `ecebeb` | Animation color | 
 
 
 ### Todo
