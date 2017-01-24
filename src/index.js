@@ -27,7 +27,7 @@ class ContentLoader extends Component {
             type: props.type || 'facebook',
             speed: props.speed || 2,
             primaryColor: props.primaryColor || '#f3f3f3',
-            secundaryColor: props.secundaryColor || '#ecebeb',
+            secondaryColor: props.secondaryColor || '#ecebeb',
             classNameHash: hashCode()
         }
     }
@@ -57,7 +57,7 @@ ContentLoader.propTypes = {
   type: React.PropTypes.string,
   speed: React.PropTypes.number,
   primaryColor: React.PropTypes.string,
-  secundaryColor: React.PropTypes.string
+  secondaryColor: React.PropTypes.string
 }
 
 export default ContentLoader

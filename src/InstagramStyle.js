@@ -18,7 +18,7 @@ const InstagramStyle = (props ) => {
                     <stop offset="0%" stopColor={props.primaryColor}>
                         <animate attributeName="offset" values="-2; 1" dur={`${props.speed}s`} repeatCount="indefinite" />
                     </stop>
-                    <stop offset="50%" stopColor={props.secundaryColor}>
+                    <stop offset="50%" stopColor={props.secondaryColor}>
                         <animate attributeName="offset" values="-1.5; 1.5" dur={`${props.speed}s`} repeatCount="indefinite" />
                     </stop>
                     <stop offset="100%" stopColor={props.primaryColor}>

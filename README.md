@@ -25,14 +25,13 @@ const MyPage = () => (<ContentLoader />);
 | type | _String_ | `facebook` | Options: `facebook`, `instagram` |
 | speed | _Number_ | `2` | Animation speed |
 | primaryColor | _String_ | `#f3f3f3` | Background the SVG | 
-| secundaryColor | _String_ | `ecebeb` | Animation color | 
+| secondaryColor | _String_ | `#ecebeb` | Animation color | 
 
 
 ### Todo
 - [ ] Code component;
 - [ ] List component;
-- [ ] Test in several browser;
-- [ ] Better documentation;
+- [ ] Test in multiples browser;
 - [ ] A more useful new project;
 
 #### Credits
