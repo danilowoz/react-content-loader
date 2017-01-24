@@ -27,6 +27,12 @@ const MyPage = () => (<ContentLoader />);
 | primaryColor | _String_ | `#f3f3f3` | Background the SVG | 
 | secondaryColor | _String_ | `#ecebeb` | Animation color | 
 
+#### Facebook Style
+![Facebook Style][./src/FacebookStyle.gif]
+
+#### Instagram Style
+![Instagram Style][./src/InstagramStyle.gif]
+
 
 ### Todo
 - [ ] Code component;
