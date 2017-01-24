@@ -1,20 +1,22 @@
 {
-    "name": "react-npm-boilerplate",
-    "version": "1.0.1",
-    "description": "Boilerplate for creating React Npm packages with ES2015",
+    "name": "react-content-loader",
+    "version": "1.0.0",
+    "description": "This project is a collection the loader based on styles cards on Facebook.",
     "repository": {
         "type": "git",
-        "url": "https://github.com/juliancwirko/react-npm-boilerplate.git"
+        "url": "https://github.com/danilowoz/react-content-loader"
     },
-    "author": "Julian Ćwirko",
+    "author": "Danilo Woznica",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/juliancwirko/react-npm-boilerplate/issues"
+        "url": "https://github.com/danilowoz/react-content-loader/issues"
     },
-    "homepage": "https://github.com/juliancwirko/react-npm-boilerplate",
+    "homepage": "https://github.com/danilowoz/react-content-loader",
     "keywords": [
         "react-component",
-        "react"
+        "react",
+        "loader",
+        "content"
     ],
     "options": {
         "mocha": "--require scripts/mocha_runner src/**/__tests__/**/*.js"
