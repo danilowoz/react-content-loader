@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import FacebookStyle from './FacebookStyle';
-import InstagramStyle from './InstagramStyle';
+import FacebookStyle from './FacebookStyle'
+import InstagramStyle from './InstagramStyle'
 
 /**
  * [hashCode - This function is to create an id for SVG]
@@ -9,16 +9,16 @@ import InstagramStyle from './InstagramStyle';
  * If you know a better solution open a PR, please!
  */
 const hashCode = function() {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var text = ""
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
-  for( var i=0; i < 5; i++ )
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  for( var i = 0; i < 5; i++ )
+      text += possible.charAt(Math.floor(Math.random() * possible.length))
 
-  return text;
+  return text
 }
 
-class Placeholder extends Component {
+class ContentLoader extends Component {
     constructor(props) {
         super(props)
         
@@ -33,27 +33,34 @@ class Placeholder extends Component {
     }
 
     render() {
-        let elementPlaceholder = {};
+        let elementContentLoader = {}
 
-        if(this.state.type === 'facebook') {
-            elementPlaceholder = <FacebookStyle {...this.state} />
-        } else if (this.state.type === 'instagram') {
-            elementPlaceholder = <InstagramStyle {...this.state} />
+        switch(this.state.type) {
+            case 'facebook': 
+                elementContentLoader = <FacebookStyle {...this.state} />
+                break
+
+            case 'instagram':
+                elementContentLoader = <InstagramStyle {...this.state} />
+                break
+
+            default:
+                elementContentLoader = <FacebookStyle {...this.state} />
         }
 
-        return elementPlaceholder
+        return elementContentLoader
     }
-};
+}
 
-Placeholder.propTypes = {
+ContentLoader.propTypes = {
   style: React.PropTypes.object,
   type: React.PropTypes.string,
   speed: React.PropTypes.number,
   primaryColor: React.PropTypes.string,
   secundaryColor: React.PropTypes.string
-};
+}
 
-export default Placeholder;
+export default ContentLoader
 
 
 
