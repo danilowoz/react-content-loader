@@ -36,14 +36,11 @@ class ContentLoader extends Component {
         let elementContentLoader = {}
 
         switch(this.state.type) {
-            case 'facebook': 
-                elementContentLoader = <FacebookStyle {...this.state} />
-                break
-
             case 'instagram':
                 elementContentLoader = <InstagramStyle {...this.state} />
                 break
 
+            case 'facebook': 
             default:
                 elementContentLoader = <FacebookStyle {...this.state} />
         }
