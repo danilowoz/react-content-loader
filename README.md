@@ -28,10 +28,10 @@ const MyPage = () => (<ContentLoader />);
 | secondaryColor | _String_ | `#ecebeb` | Animation color | 
 
 #### Facebook Style
-![Facebook Style][./src/FacebookStyle.gif]
+![Facebook Style](./src/FacebookStyle.gif)
 
 #### Instagram Style
-![Instagram Style][./src/InstagramStyle.gif]
+![Instagram Style](./src/InstagramStyle.gif)
 
 
 ### Todo
