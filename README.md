@@ -28,14 +28,16 @@ const MyPage = () => (<ContentLoader />);
 | secondaryColor | _String_ | `#ecebeb` | Animation color | 
 
 #### Facebook Style
-![Facebook Style](https://cloud.githubusercontent.com/assets/4838076/22263233/e22e4764-e25a-11e6-9bdc-d874f7a73a3f.gif)
+![Facebook Style](https://cloud.githubusercontent.com/assets/4838076/22555575/3a90ecee-e94b-11e6-97df-8054e7297bd8.gif)
 
 #### Instagram Style
-![Instagram Style](https://cloud.githubusercontent.com/assets/4838076/22263234/e253be40-e25a-11e6-90dd-e13bfdd6b2eb.gif)
+![Instagram Style](https://cloud.githubusercontent.com/assets/4838076/22555637/749f9e26-e94b-11e6-84ff-83cd415c1eb9.gif)
 
+#### Code Style
+![Code Style](https://cloud.githubusercontent.com/assets/4838076/22555473/effa54c2-e94a-11e6-9128-9b608bcc69d9.gif)
 
 ### Todo
-- [ ] Code component;
+- [-] Code component;
 - [ ] List component;
 - [ ] Test in multiples browser;
 - [ ] A more useful new project;
