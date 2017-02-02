@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import FacebookStyle from './FacebookStyle'
 import InstagramStyle from './InstagramStyle'
+import CodeStyle from './CodeStyle'
 
 /**
  * [hashCode - This function is to create an id for SVG]
@@ -36,6 +37,10 @@ class ContentLoader extends Component {
         let elementContentLoader = {}
 
         switch(this.state.type) {
+            case 'code':
+                elementContentLoader = <CodeStyle {...this.state} />
+                break
+
             case 'instagram':
                 elementContentLoader = <InstagramStyle {...this.state} />
                 break
