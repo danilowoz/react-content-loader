@@ -22,7 +22,7 @@ const MyPage = () => (<ContentLoader />);
 | Name | Type | Default | Description |
 |---|---|---|---|
 | style | _Object_ |  |  |
-| type | _String_ | `facebook` | Options: `facebook`, `instagram` |
+| type | _String_ | `facebook` | Options: `facebook`, `instagram`, `code` |
 | speed | _Number_ | `2` | Animation speed |
 | primaryColor | _String_ | `#f3f3f3` | Background the SVG | 
 | secondaryColor | _String_ | `#ecebeb` | Animation color | 
