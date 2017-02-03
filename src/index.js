@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 
-import FacebookStyle from './FacebookStyle'
-import InstagramStyle from './InstagramStyle'
-import CodeStyle from './CodeStyle'
+import FacebookStyle from './style/FacebookStyle'
+import InstagramStyle from './style/InstagramStyle'
+import CodeStyle from './style/CodeStyle'
+
+import RectCustom from './custom/Rect'
 
 /**
  * [hashCode - This function is to create an id for SVG]
@@ -20,6 +22,7 @@ const hashCode = function() {
 }
 
 class ContentLoader extends Component {
+
     constructor(props) {
         super(props)
         
@@ -36,18 +39,23 @@ class ContentLoader extends Component {
     render() {
         let elementContentLoader = {}
 
-        switch(this.state.type) {
-            case 'code':
-                elementContentLoader = <CodeStyle {...this.state} />
-                break
+        if( this.props.children ) {
+          console.log(this.props.children)
+          elementContentLoader = <FacebookStyle {...this.state} />
+        } else {
+          switch(this.state.type) {
+              case 'code':
+                  elementContentLoader = <CodeStyle {...this.state} />
+                  break
 
-            case 'instagram':
-                elementContentLoader = <InstagramStyle {...this.state} />
-                break
+              case 'instagram':
+                  elementContentLoader = <InstagramStyle {...this.state} />
+                  break
 
-            case 'facebook': 
-            default:
-                elementContentLoader = <FacebookStyle {...this.state} />
+              case 'facebook': 
+              default:
+                  elementContentLoader = <FacebookStyle {...this.state} />
+          }
         }
 
         return elementContentLoader
@@ -63,6 +71,7 @@ ContentLoader.propTypes = {
 }
 
 export default ContentLoader
+export function Rect() { return <RectCustom /> }
 
 
 
