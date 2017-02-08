@@ -1,4 +1,4 @@
-import React, { Component, cloneWithProps } from 'react'
+import React, { Component } from 'react'
 
 import Wrap from './Wrap'
 // Stylized
@@ -36,10 +36,7 @@ class ContentLoader extends Component {
 
     } else {
 
-      switch(this.state.type) {
-        case 'facebook': 
-          return <FacebookStyle {...this.state} />
-          break
+      switch(this.state.type.toLowerCase()) {
 
         case 'instagram':
           return <InstagramStyle {...this.state} />
@@ -47,6 +44,11 @@ class ContentLoader extends Component {
 
         case 'code':
           return <CodeStyle {...this.state} />
+          break
+
+        default:  
+        case 'facebook': 
+          return <FacebookStyle {...this.state} />
           break
       }
 
