@@ -1,17 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component, cloneWithProps } from 'react'
 
-import FacebookStyle from './style/FacebookStyle'
-import InstagramStyle from './style/InstagramStyle'
-import CodeStyle from './style/CodeStyle'
-
-import RectCustom from './custom/Rect'
+import Wrap from './Wrap'
+// Stylized
+import FacebookStyle from './stylized/FacebookStyle'
+import InstagramStyle from './stylized/InstagramStyle'
+import CodeStyle from './stylized/CodeStyle'
+// Custom
+import Rect from './custom/Rect'
+import Circle from './custom/Circle'
 
 /**
  * [hashCode - This function is to create an id for SVG]
  * BUT, I can't believe this is the best approach
  * If you know a better solution open a PR, please!
  */
-const hashCode = function() {
+const hashCode = () => {
   var text = ""
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
@@ -20,6 +23,7 @@ const hashCode = function() {
 
   return text
 }
+
 
 class ContentLoader extends Component {
 
@@ -30,8 +34,9 @@ class ContentLoader extends Component {
             style: props.style,
             type: props.type || 'facebook',
             speed: props.speed || 2,
-            primaryColor: props.primaryColor || '#f3f3f3',
-            secondaryColor: props.secondaryColor || '#ecebeb',
+            height: props.height ||130,
+            primaryColor: props.primaryColor || '#f0f0f0',
+            secondaryColor: props.secondaryColor || '#e0e0e0',
             classNameHash: hashCode()
         }
     }
@@ -39,9 +44,20 @@ class ContentLoader extends Component {
     render() {
         let elementContentLoader = {}
 
+        // custom
         if( this.props.children ) {
-          console.log(this.props.children)
-          elementContentLoader = <FacebookStyle {...this.state} />
+
+          const renderCustom = () => {
+            return(
+              <Wrap {...this.state}>
+                { this.props.children }
+              </Wrap>
+            )
+          }
+
+          elementContentLoader = renderCustom()
+
+        // stylized
         } else {
           switch(this.state.type) {
               case 'code':
@@ -71,7 +87,7 @@ ContentLoader.propTypes = {
 }
 
 export default ContentLoader
-export function Rect() { return <RectCustom /> }
+export { Rect, Circle }
 
 
 

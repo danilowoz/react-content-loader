@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react'
+import Rect from './custom/Rect'
 
-const Wrap = (props ) => {
-    let heigth = props.height || 130
+const Wrap = (props) => {
+
     const gradient = {
         fill: `url(#${props.classNameHash}1)`
     }
+
     return(
-        <svg viewBox={`0 0 400 ${heigth}`} version="1.1" style={props.style} preserveAspectRatio="xMidYMid meet">
-            <rect style={gradient} clipPath={`url(#${props.classNameHash}2`} x="0" y="0" width="400" height={heigth} />
+        <svg viewBox={`0 0 400 ${props.height}`} version="1.1" style={props.style} preserveAspectRatio="xMidYMid meet">
+            <rect style={gradient} clipPath={`url(#${props.classNameHash}2`} x="0" y="0" width="400" height={props.height} />
 
             <defs>
                 <clipPath id={`${props.classNameHash}2`}>
