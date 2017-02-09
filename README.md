@@ -21,7 +21,7 @@ const MyLoader = () => {
 }
 ```
 
-**Our in custom mode:** [example](#custom-style)
+**Or in custom mode:** [example](#custom-style)
 ```js
 // import the component
 import ContentLoader, { Rect, Circle }
