@@ -56,8 +56,8 @@ const MyLoader = () => {
 
 |  | x | y | radius | width | height |
 |---|---|---|---|---|---|
-| **Rect** | × |  × |  × |  × |  × |
-| **Circle** | × |  × |  × | – | – | 
+| **Rect** | _Number_ |  _Number_ |  _Number_ |  _Number_ |  _Number_ |
+| **Circle** | _Number_ |  _Number_ |  _Number_ | – | – | 
 
 
 ## Examples
