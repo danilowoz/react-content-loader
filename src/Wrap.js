@@ -1,21 +1,21 @@
 import React from 'react'
 
+const generateId = () => {
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    let text = ''
+
+    for (let i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length))
+
+    return text
+}
+
 const Wrap = (props) => {
-
-    const generateId = () => {
-      const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-      let text = ""
-
-      for( let i = 0; i < 10; i++ )
-          text += possible.charAt(Math.floor(Math.random() * possible.length))
-
-      return text
-    }
 
     let idClip = generateId()
     let idGradient = generateId()
 
-    return(
+    return (
         <svg viewBox={`0 0 400 ${props.height}`} version="1.1" style={props.style} preserveAspectRatio="xMidYMid meet">
             <rect style={{fill: `url(#${idGradient})`}} clipPath={`url(#${idClip})`} x="0" y="0" width="400" height={props.height} />
 
@@ -41,3 +41,4 @@ const Wrap = (props) => {
 }
 
 export default Wrap
+export { generateId }

@@ -13,10 +13,12 @@
     },
     "homepage": "https://github.com/danilowoz/react-content-loader",
     "keywords": [
-        "react-component",
         "react",
+        "facebook-style",
         "loader",
-        "content"
+        "loading",
+        "content",
+        "svg"
     ],
     "options": {
         "mocha": "--require scripts/mocha_runner src/**/__tests__/**/*.js"
