@@ -1,19 +1,10 @@
 import React from 'react'
-
-const generateId = () => {
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    let text = ''
-
-    for (let i = 0; i < 10; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length))
-
-    return text
-}
+import uuid from 'uuid';
 
 const Wrap = (props) => {
 
-    let idClip = generateId()
-    let idGradient = generateId()
+    let idClip = uuid.v1()
+    let idGradient = uuid.v1()
 
     return (
         <svg viewBox={`0 0 400 ${props.height}`} version="1.1" style={props.style} preserveAspectRatio="xMidYMid meet">
@@ -41,4 +32,3 @@ const Wrap = (props) => {
 }
 
 export default Wrap
-export { generateId }

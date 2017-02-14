@@ -35,6 +35,7 @@ class ContentLoader extends Component {
             )
 
         }
+        
         if (!this.props.children) {
 
             switch (this.state.type.toLowerCase()) {
