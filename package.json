@@ -1,6 +1,6 @@
 {
   "name": "react-content-loader",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "This project is a collection the loader based on styles cards on Facebook, make with SVG and React.",
   "repository": {
     "type": "git",
