@@ -10,7 +10,7 @@ npm i react-content-loader --save-dev
 ```
 
 **Stylized:** [example](#facebook-style)
-```js
+```jsx
 // import the component
 import ContentLoader from 'react-content-loader'
 
@@ -22,7 +22,7 @@ const MyLoader = () => {
 ```
 
 **Or in custom mode:** [example](#custom-style)
-```js
+```jsx
 // import the component
 import ContentLoader, { Rect, Circle } from 'react-content-loader'
 
