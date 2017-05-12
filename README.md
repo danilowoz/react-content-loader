@@ -1,6 +1,6 @@
 # React Content Loader
 
-This project is a collection the loader based on styles cards on Facebook.
+Component in React and SVG with a collection of loaders that simulate the content will be loaded, similar to Facebook cards. 
 
 ## You can use it in two ways: 
 
