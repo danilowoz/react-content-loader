@@ -7,8 +7,8 @@ const Wrap = (props) => {
     let idGradient = uuid.v1()
 
     return (
-        <svg viewBox={`0 0 400 ${props.height}`} version="1.1" style={props.style} preserveAspectRatio="xMidYMid meet">
-            <rect style={{fill: `url(#${idGradient})`}} clipPath={`url(#${idClip})`} x="0" y="0" width="400" height={props.height} />
+        <svg viewBox={`0 0 ${props.width} ${props.height}`} version="1.1" style={props.style} preserveAspectRatio="xMidYMid meet">
+            <rect style={{fill: `url(#${idGradient})`}} clipPath={`url(#${idClip})`} x="0" y="0" width={props.width} height={props.height} />
 
             <defs>
                 <clipPath id={`${idClip}`}>

@@ -47,6 +47,7 @@ const MyLoader = () => {
 | style | _Object_ | `null` | Ex: `{ marginTop: '50px' }` |
 | type | _String_ | `facebook` | Options: `facebook`, `instagram`, `code` |
 | speed | _Number_ | `2` | Animation speed |
+| width | _Number_ | `400` | Width component |
 | height | _Number_ | `130` | Height component |
 | primaryColor | _String_ | `#f3f3f3` | Background the SVG | 
 | secondaryColor | _String_ | `#ecebeb` | Animation color | 

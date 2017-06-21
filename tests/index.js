@@ -95,6 +95,7 @@ describe('<ContentLoader />:', () => {
             wrapper = shallow(<ContentLoader 
                 speed={10} 
                 height={200}
+                width={200}
                 primaryColor='#000'
                 secondaryColor='#fff'
             />)
@@ -106,6 +107,10 @@ describe('<ContentLoader />:', () => {
 
         it('`height` is a number and used', ()=> {
             expect(wrapper.props().height).to.equal(200)
+        })
+
+        it('`width` is a number and used', ()=> {
+            expect(wrapper.props().width).to.equal(200)
         })
 
         it('`primaryColor` is a string and used', ()=> {
