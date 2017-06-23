@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {shallow, mount, render} from 'enzyme'
+import {mount, render} from 'enzyme'
 import chai, {expect} from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 import sinon from 'sinon'

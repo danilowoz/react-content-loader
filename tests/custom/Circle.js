@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {shallow, mount, render} from 'enzyme'
+import {mount, render} from 'enzyme'
 import chai, {expect} from 'chai'
 
 import Circle from '../../src/custom/Circle'
@@ -9,7 +9,7 @@ describe('<Circle />', () => {
     let wrapper 
 
     beforeEach(() => {
-        wrapper = shallow(<Circle />)
+        wrapper = mount(<Circle />)
     })
 
     it('has defaults props', () => {

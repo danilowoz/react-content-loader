@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {shallow, mount, render} from 'enzyme'
+import {mount, render} from 'enzyme'
 import chai, {expect} from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 import sinon from 'sinon'
@@ -22,7 +22,7 @@ describe('<ContentLoader />:', () => {
             let wrapper
 
             beforeEach(() => {
-                wrapper = shallow(<ContentLoader type={'facebook'} />)
+                wrapper = mount(<ContentLoader type={'facebook'} />)
             })
 
             it('should render <FacebookStyle />', () => {
@@ -34,7 +34,7 @@ describe('<ContentLoader />:', () => {
             let wrapper
 
             beforeEach(() => {
-                wrapper = shallow(<ContentLoader type={'instagram'} />)
+                wrapper = mount(<ContentLoader type={'instagram'} />)
             })
 
             it('should render <InstagramStyle />', () => {
@@ -46,7 +46,7 @@ describe('<ContentLoader />:', () => {
             let wrapper
 
             beforeEach(() => {
-                wrapper = shallow(<ContentLoader type={'code'} />)
+                wrapper = mount(<ContentLoader type={'code'} />)
             })
 
             it('should render <CodeStyle />', () => {
@@ -58,7 +58,7 @@ describe('<ContentLoader />:', () => {
             let wrapper
 
             beforeEach(() => {
-                wrapper = shallow(<ContentLoader />)
+                wrapper = mount(<ContentLoader />)
             })
 
             it('should render <FacebookStyle />', () => {
@@ -70,7 +70,7 @@ describe('<ContentLoader />:', () => {
             let wrapper
 
             beforeEach(() => {
-                wrapper = shallow(
+                wrapper = mount(
                     <ContentLoader>
                         <Rect />
                         <Circle />
@@ -92,7 +92,7 @@ describe('<ContentLoader />:', () => {
         let wrapper
 
         beforeEach(() => {
-            wrapper = shallow(<ContentLoader 
+            wrapper = mount(<ContentLoader 
                 speed={10} 
                 height={200}
                 primaryColor='#000'
