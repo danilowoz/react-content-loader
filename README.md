@@ -2,6 +2,8 @@
 
 Component in React and SVG with a collection of loaders that simulate the content will be loaded, similar to Facebook cards. 
 
+And if you are looking for React Native, see [here.](https://github.com/virusvn/react-native-svg-animated-linear-gradient)
+
 ## You can use it in two ways: 
 
 **First install the dependency:**
