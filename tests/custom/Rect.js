@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {shallow, mount, render} from 'enzyme'
+import {mount, render} from 'enzyme'
 import chai, {expect} from 'chai'
 
 import Rect from '../../src/custom/Rect'
@@ -9,7 +9,7 @@ describe('<Rect />', () => {
     let wrapper 
 
     beforeEach(() => {
-        wrapper = shallow(<Rect />)
+        wrapper = mount(<Rect />)
     })
 
     it('has defaults props', () => {
