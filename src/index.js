@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import Wrap from './Wrap'
 // Stylized
@@ -61,12 +62,12 @@ class ContentLoader extends Component {
 }
 
 ContentLoader.propTypes = {
-    style: React.PropTypes.object,
-    type: React.PropTypes.string,
-    speed: React.PropTypes.number,
-    height: React.PropTypes.number,
-    primaryColor: React.PropTypes.string,
-    secondaryColor: React.PropTypes.string
+    style: PropTypes.object,
+    type: PropTypes.string,
+    speed: PropTypes.number,
+    height: PropTypes.number,
+    primaryColor: PropTypes.string,
+    secondaryColor: PropTypes.string
 }
 
 export default ContentLoader
