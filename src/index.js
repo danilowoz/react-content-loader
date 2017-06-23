@@ -19,7 +19,8 @@ class ContentLoader extends Component {
             style: props.style,
             type: props.type || 'facebook',
             speed: props.speed || 2,
-            height: props.height ||130,
+            height: props.height || 130,
+            width: props.width || 400,
             primaryColor: props.primaryColor || '#f0f0f0',
             secondaryColor: props.secondaryColor || '#e0e0e0'
         }
