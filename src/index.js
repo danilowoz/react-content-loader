@@ -17,12 +17,12 @@ class ContentLoader extends Component {
 
         this.state = {
             style: props.style,
-            type: props.type || 'facebook',
-            speed: props.speed || 2,
-            height: props.height || 130,
-            width: props.width || 400,
-            primaryColor: props.primaryColor || '#f0f0f0',
-            secondaryColor: props.secondaryColor || '#e0e0e0'
+            type: props.type,
+            speed: props.speed,
+            width: props.width,
+            height: props.height,
+            primaryColor: props.primaryColor,
+            secondaryColor: props.secondaryColor
         }
     }
 
@@ -66,9 +66,19 @@ ContentLoader.propTypes = {
     style: PropTypes.object,
     type: PropTypes.string,
     speed: PropTypes.number,
+    width: PropTypes.number,
     height: PropTypes.number,
     primaryColor: PropTypes.string,
     secondaryColor: PropTypes.string
+}
+
+ContentLoader.defaultProps = {
+    type: 'facebook',
+    speed: 2,
+    width: 400,
+    height: 130,
+    primaryColor: '#f0f0f0',
+    secondaryColor: '#e0e0e0'
 }
 
 export default ContentLoader
