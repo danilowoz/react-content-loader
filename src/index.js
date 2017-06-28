@@ -6,6 +6,7 @@ import Wrap from './Wrap'
 import FacebookStyle from './stylized/FacebookStyle'
 import InstagramStyle from './stylized/InstagramStyle'
 import CodeStyle from './stylized/CodeStyle'
+import MapStyle from './stylized/MapStyle'
 // Custom
 import Rect from './custom/Rect'
 import Circle from './custom/Circle'
@@ -23,6 +24,14 @@ class ContentLoader extends Component {
             height: props.height,
             primaryColor: props.primaryColor,
             secondaryColor: props.secondaryColor
+        }
+    }
+
+    componentWillMount() {
+        if (this.state.type === 'map') {
+            this.setState({
+                height: 400
+            })
         }
     }
 
@@ -48,6 +57,10 @@ class ContentLoader extends Component {
 
             case 'code':
                 return <CodeStyle {...this.state} />
+                break
+
+            case 'map':
+                return <MapStyle {...this.state} />
                 break
 
             default:  
