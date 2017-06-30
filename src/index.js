@@ -6,6 +6,7 @@ import Wrap from './Wrap'
 import FacebookStyle from './stylized/FacebookStyle'
 import InstagramStyle from './stylized/InstagramStyle'
 import CodeStyle from './stylized/CodeStyle'
+import ListStyle from './stylized/ListStyle'
 // Custom
 import Rect from './custom/Rect'
 import Circle from './custom/Circle'
@@ -48,6 +49,10 @@ class ContentLoader extends Component {
 
             case 'code':
                 return <CodeStyle {...this.state} />
+                break
+
+            case 'list':
+                return <ListStyle {...this.state} />
                 break
 
             default:  
