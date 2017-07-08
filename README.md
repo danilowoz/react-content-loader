@@ -74,13 +74,17 @@ const MyLoader = () => {
 #### Code Style
 ![Code Style](https://cloud.githubusercontent.com/assets/4838076/22555473/effa54c2-e94a-11e6-9128-9b608bcc69d9.gif)
 
+#### List Style
+![List Style](https://user-images.githubusercontent.com/2671660/27986068-7a0040d6-63f9-11e7-8e54-dcb220e42fd7.gif)
+
+
 #### Custom Style
 ![Code Style](https://cloud.githubusercontent.com/assets/4838076/22760218/aa619f32-ee3c-11e6-9cd1-c4af9dd1278e.gif)
 
 ### Todo
 - [x] Code component;
 - [x] Custom elements;
-- [ ] List component;
+- [x] List component;
 - [ ] Test in multiples browser;
 
 #### Credits
