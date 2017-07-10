@@ -47,7 +47,7 @@ const MyLoader = () => {
 | Name | Type | Default | Description |
 |---|---|---|---|
 | style | _Object_ | `null` | Ex: `{ marginTop: '50px' }` |
-| type | _String_ | `facebook` | Options: `facebook`, `instagram`, `code` |
+| type | _String_ | `facebook` | Options: `facebook`, `instagram`, `list`, `code` |
 | speed | _Number_ | `2` | Animation speed |
 | width | _Number_ | `400` | Width component |
 | height | _Number_ | `130` | Height component |
@@ -85,7 +85,7 @@ const MyLoader = () => {
 - [x] Code component;
 - [x] Custom elements;
 - [x] List component;
-- [ ] Test in multiples browser;
+- [ ] React Native
 
 #### Credits
 
