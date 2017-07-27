@@ -30,7 +30,9 @@
     "lintfix": "eslint ./src --fix",
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js"
+    "test-watch": "npm run testonly -- --watch --watch-extensions js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "babel-cli": "^6.6.4",
@@ -55,7 +57,8 @@
     "react-addons-test-utils": "^15.0.0",
     "react-dom": "^15.0.0",
     "sinon": "^1.17.3",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "@storybook/react": "^3.1.9"
   },
   "peerDependencies": {
     "react": "~0.14.8 || ^15.0.0",
