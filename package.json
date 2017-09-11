@@ -8,6 +8,7 @@
   },
   "author": "Danilo Woznica",
   "license": "MIT",
+  "jsnext:main": "index",
   "bugs": {
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
@@ -35,6 +36,7 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@storybook/react": "^3.1.9",
     "babel-cli": "^6.6.4",
     "babel-core": "^6.7.4",
     "babel-eslint": "^6.0.2",
@@ -52,13 +54,13 @@
     "jsdom": "^8.1.0",
     "mocha": "^2.4.5",
     "nodemon": "^1.9.1",
+    "prettier": "^1.6.1",
     "prop-types": "^15.5.10",
     "react": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
     "react-dom": "^15.0.0",
     "sinon": "^1.17.3",
-    "uuid": "^3.0.1",
-    "@storybook/react": "^3.1.9"
+    "uuid": "^3.0.1"
   },
   "peerDependencies": {
     "react": "~0.14.8 || ^15.0.0",

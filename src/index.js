@@ -12,78 +12,65 @@ import Rect from './custom/Rect'
 import Circle from './custom/Circle'
 
 class ContentLoader extends Component {
+	constructor(props) {
+		super(props)
 
-    constructor(props) {
-        super(props)
+		this.state = {
+			style: props.style,
+			type: props.type,
+			speed: props.speed,
+			width: props.width,
+			height: props.height,
+			primaryColor: props.primaryColor,
+			secondaryColor: props.secondaryColor,
+		}
+	}
 
-        this.state = {
-            style: props.style,
-            type: props.type,
-            speed: props.speed,
-            width: props.width,
-            height: props.height,
-            primaryColor: props.primaryColor,
-            secondaryColor: props.secondaryColor
-        }
-    }
+	render() {
+		if (this.props.children) {
+			return <Wrap {...this.state}>{this.props.children}</Wrap>
+		}
 
-    render() {
+		if (!this.props.children) {
+			switch (this.state.type.toLowerCase()) {
+				case 'instagram':
+					return <InstagramStyle {...this.state} />
+					break
 
-        if (this.props.children) {
+				case 'code':
+					return <CodeStyle {...this.state} />
+					break
 
-            return (
-                <Wrap {...this.state}>
-                    { this.props.children }
-                </Wrap>
-            )
+				case 'list':
+					return <ListStyle {...this.state} />
+					break
 
-        }
-        
-        if (!this.props.children) {
-
-            switch (this.state.type.toLowerCase()) {
-
-            case 'instagram':
-                return <InstagramStyle {...this.state} />
-                break
-
-            case 'code':
-                return <CodeStyle {...this.state} />
-                break
-
-            case 'list':
-                return <ListStyle {...this.state} />
-                break
-
-            default:  
-            case 'facebook': 
-                return <FacebookStyle {...this.state} />
-                break
-
-            }
-
-        }
-
-    }
+				default:
+				case 'facebook':
+					return <FacebookStyle {...this.state} />
+					break
+			}
+		}
+	}
 }
 
 ContentLoader.propTypes = {
-    style: PropTypes.object,
-    type: PropTypes.string,
-    speed: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    primaryColor: PropTypes.string,
-    secondaryColor: PropTypes.string
+	style: PropTypes.object,
+	type: PropTypes.string,
+	speed: PropTypes.number,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	primaryColor: PropTypes.string,
+	secondaryColor: PropTypes.string,
 }
 
 ContentLoader.defaultProps = {
-    type: 'facebook',
-    speed: 2,
-    width: 400,
-    height: 130,
-    primaryColor: '#f0f0f0',
-    secondaryColor: '#e0e0e0'
+	type: 'facebook',
+	speed: 2,
+	width: 400,
+	height: 130,
+	primaryColor: '#f0f0f0',
+	secondaryColor: '#e0e0e0',
 }
 
 export default ContentLoader
