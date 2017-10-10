@@ -1,4 +1,6 @@
-# React Content Loader
+<p align="center">
+  <img width="230px" src="https://user-images.githubusercontent.com/4838076/31404417-65822d5e-add2-11e7-90c3-ce8cded1a02e.gif" alt="React Content Loader" title="React Content Loader" />
+</p>
 
 Component in React and SVG with a collection of loaders that simulate the content will be loaded, similar to Facebook cards. 
 
