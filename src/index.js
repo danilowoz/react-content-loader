@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+//@flow
+import * as React from 'react'
 
 import Wrap from './Wrap'
 // Stylized
@@ -11,8 +11,37 @@ import ListStyle from './stylized/ListStyle'
 import Rect from './custom/Rect'
 import Circle from './custom/Circle'
 
-class ContentLoader extends Component {
-  constructor(props) {
+export type Props = {
+  style: {[key: string]: any},
+  type: string,
+  speed: number,
+  width: number,
+  height: number,
+  primaryColor: string,
+  secondaryColor: string,
+}
+
+type State = {
+  style: {[key: string]: any},
+  type: string,
+  speed: number,
+  width: number,
+  height: number,
+  primaryColor: string,
+  secondaryColor: string,
+}
+
+class ContentLoader extends React.Component<Props, State> {
+  static defaultProps = {
+    type: 'facebook',
+    speed: 2,
+    width: 400,
+    height: 130,
+    primaryColor: '#f0f0f0',
+    secondaryColor: '#e0e0e0',
+  }
+
+  constructor(props: Props) {
     super(props)
 
     this.state = {
@@ -35,42 +64,19 @@ class ContentLoader extends Component {
       switch (this.state.type.toLowerCase()) {
         case 'instagram':
           return <InstagramStyle {...this.state} />
-          break
 
         case 'code':
           return <CodeStyle {...this.state} />
-          break
 
         case 'list':
           return <ListStyle {...this.state} />
-          break
 
         default:
         case 'facebook':
           return <FacebookStyle {...this.state} />
-          break
       }
     }
   }
-}
-
-ContentLoader.propTypes = {
-  style: PropTypes.object,
-  type: PropTypes.string,
-  speed: PropTypes.number,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  primaryColor: PropTypes.string,
-  secondaryColor: PropTypes.string,
-}
-
-ContentLoader.defaultProps = {
-  type: 'facebook',
-  speed: 2,
-  width: 400,
-  height: 130,
-  primaryColor: '#f0f0f0',
-  secondaryColor: '#e0e0e0',
 }
 
 export default ContentLoader
