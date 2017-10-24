@@ -1,5 +1,5 @@
 //@flow
-import React from 'react'
+import * as React from 'react'
 
 type Props = {
   x: number,
@@ -9,7 +9,7 @@ type Props = {
   height: number,
 }
 
-const Rect = (props: Props) => {
+const Rect = (props: Props): React.Element<*> => {
   const { x = 0, y = 0, radius = 0, width = 50, height = 50 } = props
   return <rect x={x} y={y} rx={radius} ry={radius} width={width} height={height} />
 }

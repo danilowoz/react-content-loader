@@ -1,6 +1,5 @@
 //@flow
-
-import React, { Component } from 'react'
+import * as React from 'react'
 
 import Wrap from './Wrap'
 // Stylized
@@ -32,7 +31,7 @@ type State = {
   secondaryColor: string,
 }
 
-class ContentLoader extends Component<Props, State> {
+class ContentLoader extends React.Component<Props, State> {
   static defaultProps = {
     type: 'facebook',
     speed: 2,

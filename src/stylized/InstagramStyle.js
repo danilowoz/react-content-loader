@@ -1,9 +1,9 @@
 //@flow
-import React from 'react'
+import * as React from 'react'
 import Wrap from '../Wrap'
 import type { WrapProps } from '../Wrap';
 
-const InstagramStyle = (props: WrapProps) => {
+const InstagramStyle = (props: WrapProps): React.Element<*> => {
   return (
     <Wrap {...props} height={480}>
       <circle cx="30" cy="30" r="30" />

@@ -1,5 +1,5 @@
 //@flow
-import React from 'react'
+import * as React from 'react'
 
 type Props = {
   x: number,
@@ -7,7 +7,7 @@ type Props = {
   radius: number,
 }
 
-const Circle = (props: Props) => {
+const Circle = (props: Props): React.Element<*> => {
   const { x = 0, y = 0, radius = 50 } = props
   return <circle cx={x} cy={y} r={radius} />
 }
