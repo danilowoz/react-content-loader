@@ -7,6 +7,7 @@ import FacebookStyle from './stylized/FacebookStyle'
 import InstagramStyle from './stylized/InstagramStyle'
 import CodeStyle from './stylized/CodeStyle'
 import ListStyle from './stylized/ListStyle'
+import BulletListStyle from './stylized/BulletListStyle'
 // Custom
 import Rect from './custom/Rect'
 import Circle from './custom/Circle'
@@ -70,6 +71,9 @@ class ContentLoader extends React.Component<Props, State> {
 
         case 'list':
           return <ListStyle {...this.state} />
+
+        case 'bullet-list':
+          return <BulletListStyle {...this.state} />
 
         default:
         case 'facebook':
