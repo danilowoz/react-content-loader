@@ -5,7 +5,7 @@ import uuid from 'uuid'
 import type { Props as ContentLoaderProps } from './index';
 
 export type WrapProps = {
-  children: any
+  children?: any
 } & ContentLoaderProps
 
 const Wrap = (props: WrapProps) => {

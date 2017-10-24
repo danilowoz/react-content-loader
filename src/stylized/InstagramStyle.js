@@ -1,9 +1,11 @@
+//@flow
 import React from 'react'
 import Wrap from '../Wrap'
+import type { WrapProps } from '../Wrap';
 
-const InstagramStyle = props => {
+const InstagramStyle = (props: WrapProps) => {
   return (
-    <Wrap {...props} height="480">
+    <Wrap {...props} height={480}>
       <circle cx="30" cy="30" r="30" />
 
       <rect x="75" y="13" rx="4" ry="4" width="100" height="13" />

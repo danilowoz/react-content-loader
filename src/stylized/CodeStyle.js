@@ -1,9 +1,9 @@
 //@flow
 import React from 'react'
 import Wrap from '../Wrap'
-import type { Props } from '../index';
+import type { WrapProps } from '../Wrap';
 
-const CodeStyle = (props: Props) => {
+const CodeStyle = (props: WrapProps) => {
     return (
     <Wrap {...props}>
       <rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
