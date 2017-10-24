@@ -1,7 +1,6 @@
 //@flow
 
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 
 import Wrap from './Wrap'
 // Stylized
@@ -13,7 +12,7 @@ import ListStyle from './stylized/ListStyle'
 import Rect from './custom/Rect'
 import Circle from './custom/Circle'
 
-type Props = {
+export type Props = {
   style: {[key: string]: any},
   type: string,
   speed: number,
