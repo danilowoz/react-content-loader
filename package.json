@@ -1,7 +1,8 @@
 {
   "name": "react-content-loader",
-  "version": "1.4.1",
-  "description": "This project is a collection the loader based on styles cards on Facebook, make with SVG and React.",
+  "version": "1.4.2",
+  "description":
+    "This project is a collection the loader based on styles cards on Facebook, make with SVG and React.",
   "repository": {
     "type": "git",
     "url": "https://github.com/danilowoz/react-content-loader"
@@ -13,20 +14,15 @@
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
   "homepage": "https://github.com/danilowoz/react-content-loader",
-  "keywords": [
-    "react",
-    "facebook-style",
-    "loader",
-    "loading",
-    "content",
-    "svg"
-  ],
+  "keywords": ["react", "facebook-style", "loader", "loading", "content", "svg"],
   "options": {
     "mocha": "--require scripts/mocha_runner ./tests/**/*.js ./tests/*.js"
   },
   "scripts": {
-    "watch": "babel --plugins transform-es2015-modules-umd src --watch --ignore tests --out-dir ./dist",
-    "prepublish": "babel --plugins transform-es2015-modules-umd src --ignore tests --out-dir ./dist",
+    "watch":
+      "babel --plugins transform-es2015-modules-umd src --watch --ignore tests --out-dir ./dist",
+    "prepublish":
+      "babel --plugins transform-es2015-modules-umd src --ignore tests --out-dir ./dist",
     "lint": "eslint 'src/**/*.js'",
     "prettier": "prettier --write 'src/**/*.{js,jsx,json,css}'",
     "testonly": "mocha $npm_package_options_mocha",
