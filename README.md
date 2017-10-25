@@ -50,7 +50,7 @@ const MyLoader = () => {
 | Name | Type | Default | Description |
 |---|---|---|---|
 | style | _Object_ | `null` | Ex: `{ marginTop: '50px' }` |
-| type | _String_ | `facebook` | Options: `facebook`, `instagram`, `list`, `code` |
+| type | _String_ | `facebook` | Options: `facebook`, `instagram`, `list`, `bullet-list`, `code` |
 | speed | _Number_ | `2` | Animation speed |
 | width | _Number_ | `400` | Width component |
 | height | _Number_ | `130` | Height component |
@@ -80,15 +80,11 @@ const MyLoader = () => {
 #### List Style
 ![List Style](https://user-images.githubusercontent.com/2671660/27986068-7a0040d6-63f9-11e7-8e54-dcb220e42fd7.gif)
 
+#### Bullet list Style
+![Bullet list Style](https://user-images.githubusercontent.com/4838076/31998372-59817bac-b96e-11e7-8ef8-07f61670ee18.gif)
 
 #### Custom Style
 ![Code Style](https://cloud.githubusercontent.com/assets/4838076/22760218/aa619f32-ee3c-11e6-9cd1-c4af9dd1278e.gif)
-
-### Todo
-- [x] Code component;
-- [x] Custom elements;
-- [x] List component;
-- [ ] React Native
 
 #### Credits
 
