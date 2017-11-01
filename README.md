@@ -4,7 +4,7 @@
 
 React component that uses SVG to create a collection of loaders whitch simulates the structure of the content that will be loaded, similar to Facebook cards loaders. 
 
-If you are looking for [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient) or [Vue.js](https://github.com/LucasLeandro1204/vue-content-loading)
+If you are looking for [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient) [Preact](https://github.com/bonitasoft/preact-content-loader) or [Vue.js](https://github.com/LucasLeandro1204/vue-content-loading)
 
 ## Installation
 
