@@ -2,7 +2,7 @@
   <img width="230px" src="https://user-images.githubusercontent.com/4838076/31404417-65822d5e-add2-11e7-90c3-ce8cded1a02e.gif" alt="React Content Loader" title="React Content Loader" />
 </p>
 
-React component that uses SVG to create a collection of loaders whitch simulates the structure of the content that will be loaded, similar to Facebook cards loaders. 
+React component that uses SVG to create a collection of loaders which simulates the structure of the content that will be loaded, similar to Facebook cards loaders. 
 
 If you are looking for [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient), [Preact](https://github.com/bonitasoft/preact-content-loader) or [Vue.js](https://github.com/LucasLeandro1204/vue-content-loading)
 
