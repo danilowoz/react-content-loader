@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react'
 import Wrap from '../Wrap'
-import type { WrapProps } from '../Wrap';
+import type { WrapProps } from '../Wrap'
 
 const FacebookStyle = (props: WrapProps): React.Element<*> => {
   return (

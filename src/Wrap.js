@@ -2,10 +2,10 @@
 import * as React from 'react'
 import uuid from 'uuid'
 
-import type { Props as ContentLoaderProps } from './index';
+import type { Props as ContentLoaderProps } from './index'
 
 export type WrapProps = {
-  children?: React.ChildrenArray<*>
+  children?: React.ChildrenArray<*>,
 } & ContentLoaderProps
 
 const Wrap = (props: WrapProps): React.Element<*> => {
@@ -31,9 +31,9 @@ const Wrap = (props: WrapProps): React.Element<*> => {
       />
 
       <defs>
-        <clipPath id={`${idClip}`}>{props.children}</clipPath>
+        <clipPath id={idClip}>{props.children}</clipPath>
 
-        <linearGradient id={`${idGradient}`}>
+        <linearGradient id={idGradient}>
           <stop offset="0%" stopColor={props.primaryColor}>
             <animate
               attributeName="offset"
