@@ -13,7 +13,7 @@ import Rect from './custom/Rect'
 import Circle from './custom/Circle'
 
 export type Props = {
-  style: {[key: string]: any},
+  style: { [key: string]: any },
   type: string,
   speed: number,
   width: number,
@@ -23,7 +23,7 @@ export type Props = {
 }
 
 type State = {
-  style: {[key: string]: any},
+  style: { [key: string]: any },
   type: string,
   speed: number,
   width: number,
