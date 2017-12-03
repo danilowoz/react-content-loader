@@ -1,6 +1,6 @@
 {
   "name": "react-content-loader",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description":
     "This project is a collection the loader based on styles cards on Facebook, make with SVG and React.",
   "repository": {
@@ -46,6 +46,7 @@
     "chai": "^4.1.2",
     "chai-enzyme": "^1.0.0-beta.0",
     "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.12.0",
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-babel": "^4.1.2",
@@ -64,11 +65,10 @@
     "uuid": "^3.0.1"
   },
   "peerDependencies": {
-    "react": "~0.14.8 || ^15.0.0",
-    "react-dom": "~0.14.8 || ^15.0.0"
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
   },
   "dependencies": {
-    "babel-runtime": "^6.6.1",
-    "enzyme-adapter-react-16": "^1.1.0"
+    "babel-runtime": "^6.6.1"
   }
 }

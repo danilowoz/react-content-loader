@@ -15,4 +15,5 @@ npm-debug.log
 stories
 tests
 scripts
+src
 yarn.lock
