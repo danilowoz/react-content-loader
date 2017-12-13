@@ -22,15 +22,12 @@
     "watch":
       "babel --plugins transform-es2015-modules-umd src --watch --ignore tests --out-dir ./dist",
     "build": "babel --plugins transform-es2015-modules-umd src --ignore tests --out-dir ./dist",
-    "lint": "eslint 'src/**/*.js'",
     "prettier": "prettier --write 'src/**/*.{js,jsx,json,css}'",
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly && npm run flow",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "storybook": "start-storybook -p 6006",
-    "flow": "flow",
-    "precommit": "npm run test",
-    "prepush": "npm run test"
+    "flow": "flow"
   },
   "devDependencies": {
     "@storybook/react": "^3.1.9",
