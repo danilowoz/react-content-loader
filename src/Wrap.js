@@ -19,7 +19,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
       height={props.height}
       version="1.1"
       style={props.style}
-      preserveAspectRatio="xMidYMid meet"
+      preserveAspectRatio={props.preserveAspectRatio}
     >
       <rect
         style={{ fill: `url(#${idGradient})` }}
