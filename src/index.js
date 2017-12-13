@@ -20,6 +20,7 @@ export type Props = {
   height: number,
   primaryColor: string,
   secondaryColor: string,
+  preserveAspectRatio:string,
 }
 
 type State = {
@@ -30,6 +31,7 @@ type State = {
   height: number,
   primaryColor: string,
   secondaryColor: string,
+  preserveAspectRatio: string,
 }
 
 class ContentLoader extends React.Component<Props, State> {
@@ -40,6 +42,7 @@ class ContentLoader extends React.Component<Props, State> {
     height: 130,
     primaryColor: '#f0f0f0',
     secondaryColor: '#e0e0e0',
+    preserveAspectRatio: 'xMidYMid meet',
   }
 
   constructor(props: Props) {
@@ -53,6 +56,7 @@ class ContentLoader extends React.Component<Props, State> {
       height: props.height,
       primaryColor: props.primaryColor,
       secondaryColor: props.secondaryColor,
+      preserveAspectRatio: props.preserveAspectRatio,
     }
   }
 

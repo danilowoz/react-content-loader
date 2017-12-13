@@ -61,6 +61,7 @@ const MyLoader = () => {
 | height | _Number_ | `130` | Height component |
 | primaryColor | _String_ | `#f3f3f3` | Background the SVG | 
 | secondaryColor | _String_ | `#ecebeb` | Animation color | 
+| preserveAspectRatio | _String_ | `xMidYMid meet` | Aspect ratio option of SVG| 
 
 
 **Custom element options:**
