@@ -15,11 +15,10 @@ const Wrap = (props: WrapProps): React.Element<*> => {
   return (
     <svg
       viewBox={`0 0 ${props.width} ${props.height}`}
-      width={props.width}
-      height={props.height}
       version="1.1"
       style={props.style}
       preserveAspectRatio={props.preserveAspectRatio}
+      className={props.className}
     >
       <rect
         style={{ fill: `url(#${idGradient})` }}
