@@ -5,7 +5,7 @@
 React component that uses SVG to create a collection of loaders which simulates the structure of the
 content that will be loaded, similar to Facebook cards loaders. **Use the
 [online tool](https://github.com/danilowoz/create-react-content-loader) to create your own custom
-loader**
+loader.**
 
 If you are looking for
 [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient),
@@ -41,6 +41,9 @@ const MyLoader = () => {
 
 **Or in custom mode:** [example](#custom-style)
 
+Use the [create-react-content-loader](https://github.com/danilowoz/create-react-content-loader) for
+your custom loaders
+
 ```jsx
 // import the component
 import ContentLoader, { Rect, Circle } from 'react-content-loader'
@@ -63,11 +66,12 @@ const MyLoader = () => {
 | style               | _Object_ |     `null`      | Ex: `{ marginTop: '50px' }`                                     |
 | type                | _String_ |   `facebook`    | Options: `facebook`, `instagram`, `list`, `bullet-list`, `code` |
 | speed               | _Number_ |       `2`       | Animation speed                                                 |
-| width               | _Number_ |      `400`      | Width component                                                 |
-| height              | _Number_ |      `130`      | Height component                                                |
+| width               | _Number_ |      `400`      | **viewBox** width of SVG                                        |
+| height              | _Number_ |      `130`      | **viewBox** height of SVG                                       |
 | primaryColor        | _String_ |    `#f3f3f3`    | Background the SVG                                              |
 | secondaryColor      | _String_ |    `#ecebeb`    | Animation color                                                 |
 | preserveAspectRatio | _String_ | `xMidYMid meet` | Aspect ratio option of SVG                                      |
+| className           | _String_ |       ''        | Classname in the <svg />                                        |
 
 **Custom element options:**
 
@@ -76,8 +80,8 @@ const MyLoader = () => {
 | **Rect**   | _Number_ | _Number_ | _Number_ | _Number_ | _Number_ |
 | **Circle** | _Number_ | _Number_ | _Number_ |    –     |    –     |
 
-**Use the [create-react-content-loader](https://github.com/danilowoz/create-react-content-loader)
-for your custom loader**
+Use the [create-react-content-loader](https://github.com/danilowoz/create-react-content-loader) for
+your custom loaders
 
 ## Examples
 

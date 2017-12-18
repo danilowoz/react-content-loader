@@ -75,6 +75,9 @@ describe('<ContentLoader />:', () => {
         width={200}
         primaryColor="#000"
         secondaryColor="#fff"
+        preserveAspectRatio="xMaxYMax"
+        className="random-className"
+        style={{ marginBottom: '10px' }}
       />
     )
 
@@ -96,6 +99,14 @@ describe('<ContentLoader />:', () => {
 
     it('`secondaryColor` is a string and used', () => {
       expect(wrapper.props().secondaryColor).to.string('#fff')
+    })
+
+    it('`preserveAspectRatio` is a string and used', () => {
+      expect(wrapper.props().preserveAspectRatio).to.string('xMaxYMax')
+    })
+
+    it('`style` is a object and used', () => {
+      expect(wrapper.props().style).to.deep.equal({ marginBottom: '10px' })
     })
   })
 })
