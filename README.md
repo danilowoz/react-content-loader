@@ -17,7 +17,7 @@ If you are looking for
 **Using npm:**
 
 ```sh
-npm i react-content-loader --save-dev
+npm i react-content-loader
 ```
 
 **Using Yarn:**
