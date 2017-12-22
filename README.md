@@ -87,7 +87,7 @@ your custom loaders
 
 #### Facebook Style
 
-![Facebook Style](https://cloud.githubusercontent.com/assets/4838076/22555575/3a90ecee-e94b-11e6-97df-8054e7297bd8.gif)
+![Facebook Style](https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif)
 
 #### Instagram Style
 
