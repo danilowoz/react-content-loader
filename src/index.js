@@ -24,19 +24,7 @@ export type Props = {
   className: string,
 }
 
-type State = {
-  style: { [key: string]: any },
-  type: string,
-  speed: number,
-  width: number,
-  height: number,
-  primaryColor: string,
-  secondaryColor: string,
-  preserveAspectRatio: string,
-  className: string,
-}
-
-class ContentLoader extends React.Component<Props, State> {
+class ContentLoader extends React.Component<Props> {
   static defaultProps = {
     type: 'facebook',
     speed: 2,
@@ -48,44 +36,28 @@ class ContentLoader extends React.Component<Props, State> {
     className: '',
   }
 
-  constructor(props: Props) {
-    super(props)
-
-    this.state = {
-      style: props.style,
-      type: props.type,
-      speed: props.speed,
-      width: props.width,
-      height: props.height,
-      primaryColor: props.primaryColor,
-      secondaryColor: props.secondaryColor,
-      preserveAspectRatio: props.preserveAspectRatio,
-      className: props.className,
-    }
-  }
-
   render() {
     if (this.props.children) {
-      return <Wrap {...this.state}>{this.props.children}</Wrap>
+      return <Wrap {...this.props}>{this.props.children}</Wrap>
     }
 
     if (!this.props.children) {
-      switch (this.state.type.toLowerCase()) {
+      switch (this.props.type.toLowerCase()) {
         case 'instagram':
-          return <InstagramStyle {...this.state} />
+          return <InstagramStyle {...this.props} />
 
         case 'code':
-          return <CodeStyle {...this.state} />
+          return <CodeStyle {...this.props} />
 
         case 'list':
-          return <ListStyle {...this.state} />
+          return <ListStyle {...this.props} />
 
         case 'bullet-list':
-          return <BulletListStyle {...this.state} />
+          return <BulletListStyle {...this.props} />
 
         default:
         case 'facebook':
-          return <FacebookStyle {...this.state} />
+          return <FacebookStyle {...this.props} />
       }
     }
   }
