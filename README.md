@@ -46,7 +46,8 @@ your custom loaders
 
 ```jsx
 // import the component
-import ContentLoader, { Rect, Circle } from 'react-content-loader'
+import ContentLoader from 'react-content-loader'
+import  { Rect, Circle } from 'create-react-content-loader'
 
 const MyLoader = () => {
   return (
