@@ -24,44 +24,40 @@ export type Props = {
   className: string,
 }
 
-class ContentLoader extends React.Component<Props> {
-  static defaultProps = {
-    type: 'facebook',
-    speed: 2,
-    width: 400,
-    height: 130,
-    primaryColor: '#f0f0f0',
-    secondaryColor: '#e0e0e0',
-    preserveAspectRatio: 'xMidYMid meet',
-    className: '',
+const ContentLoader = (props: Props) => {
+  if (props.children) {
+    return <Wrap {...props}>{props.children}</Wrap>
   }
 
-  render() {
-    if (this.props.children) {
-      return <Wrap {...this.props}>{this.props.children}</Wrap>
-    }
+  switch (props.type.toLowerCase()) {
+    case 'instagram':
+      return <InstagramStyle {...props} />
 
-    if (!this.props.children) {
-      switch (this.props.type.toLowerCase()) {
-        case 'instagram':
-          return <InstagramStyle {...this.props} />
+    case 'code':
+      return <CodeStyle {...props} />
 
-        case 'code':
-          return <CodeStyle {...this.props} />
+    case 'list':
+      return <ListStyle {...props} />
 
-        case 'list':
-          return <ListStyle {...this.props} />
+    case 'bullet-list':
+      return <BulletListStyle {...props} />
 
-        case 'bullet-list':
-          return <BulletListStyle {...this.props} />
-
-        default:
-        case 'facebook':
-          return <FacebookStyle {...this.props} />
-      }
-    }
+    default:
+    case 'facebook':
+      return <FacebookStyle {...props} />
   }
 }
+
+ContentLoader.defaultProps = {
+  type: 'facebook',
+  speed: 2,
+  width: 400,
+  height: 130,
+  primaryColor: '#f0f0f0',
+  secondaryColor: '#e0e0e0',
+  preserveAspectRatio: 'xMidYMid meet',
+  className: '',
+};
 
 export default ContentLoader
 export { Rect, Circle }
