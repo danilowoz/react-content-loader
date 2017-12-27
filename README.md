@@ -23,7 +23,7 @@ npm i react-content-loader --save
 **Using Yarn:**
 
 ```sh
-yarn add react-content-loader --save
+yarn add react-content-loader
 ```
 
 ## You can use it in two ways:
