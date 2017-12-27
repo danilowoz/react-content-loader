@@ -24,72 +24,40 @@ export type Props = {
   className: string,
 }
 
-type State = {
-  style: { [key: string]: any },
-  type: string,
-  speed: number,
-  width: number,
-  height: number,
-  primaryColor: string,
-  secondaryColor: string,
-  preserveAspectRatio: string,
-  className: string,
-}
-
-class ContentLoader extends React.Component<Props, State> {
-  static defaultProps = {
-    type: 'facebook',
-    speed: 2,
-    width: 400,
-    height: 130,
-    primaryColor: '#f0f0f0',
-    secondaryColor: '#e0e0e0',
-    preserveAspectRatio: 'xMidYMid meet',
-    className: '',
+const ContentLoader = (props: Props) => {
+  if (props.children) {
+    return <Wrap {...props}>{props.children}</Wrap>
   }
 
-  constructor(props: Props) {
-    super(props)
+  switch (props.type.toLowerCase()) {
+    case 'instagram':
+      return <InstagramStyle {...props} />
 
-    this.state = {
-      style: props.style,
-      type: props.type,
-      speed: props.speed,
-      width: props.width,
-      height: props.height,
-      primaryColor: props.primaryColor,
-      secondaryColor: props.secondaryColor,
-      preserveAspectRatio: props.preserveAspectRatio,
-      className: props.className,
-    }
-  }
+    case 'code':
+      return <CodeStyle {...props} />
 
-  render() {
-    if (this.props.children) {
-      return <Wrap {...this.state}>{this.props.children}</Wrap>
-    }
+    case 'list':
+      return <ListStyle {...props} />
 
-    if (!this.props.children) {
-      switch (this.state.type.toLowerCase()) {
-        case 'instagram':
-          return <InstagramStyle {...this.state} />
+    case 'bullet-list':
+      return <BulletListStyle {...props} />
 
-        case 'code':
-          return <CodeStyle {...this.state} />
-
-        case 'list':
-          return <ListStyle {...this.state} />
-
-        case 'bullet-list':
-          return <BulletListStyle {...this.state} />
-
-        default:
-        case 'facebook':
-          return <FacebookStyle {...this.state} />
-      }
-    }
+    default:
+    case 'facebook':
+      return <FacebookStyle {...props} />
   }
 }
+
+ContentLoader.defaultProps = {
+  type: 'facebook',
+  speed: 2,
+  width: 400,
+  height: 130,
+  primaryColor: '#f0f0f0',
+  secondaryColor: '#e0e0e0',
+  preserveAspectRatio: 'xMidYMid meet',
+  className: '',
+};
 
 export default ContentLoader
 export { Rect, Circle }
