@@ -51,6 +51,22 @@ describe('<ContentLoader />:', () => {
 
   })
 
+  describe('when type is custom', () => {
+
+      const wrapper = mount(
+          <ContentLoader>
+            <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+            <rect x="82" y="44" rx="3" ry="3" width="250" height="10" />
+            <circle cx="35" cy="35" r="35" />
+          </ContentLoader>
+      )
+
+      it('should render custom element', () => {
+          expect(wrapper.find('rect')).to.have.length(3)
+          expect(wrapper.find('circle')).to.have.length(1)
+      })
+  })
+
   describe('Props are propagated', () => {
     const wrapper = mount(
       <ContentLoader
