@@ -15,9 +15,6 @@ import FacebookStyle from '../src/stylized/FacebookStyle'
 import InstagramStyle from '../src/stylized/InstagramStyle'
 import CodeStyle from '../src/stylized/CodeStyle'
 
-import Rect from '../src/custom/Rect'
-import Circle from '../src/custom/Circle'
-
 describe('<ContentLoader />:', () => {
   describe('Type props are used', () => {
     describe('when type is facebook', () => {
@@ -52,18 +49,21 @@ describe('<ContentLoader />:', () => {
       })
     })
 
-    describe('when type is custom', () => {
-      const wrapper = mount(
-        <ContentLoader>
-          <Rect />
-          <Circle />
-        </ContentLoader>
-      )
+  })
 
-      it('should render custom element', () => {
-        expect(wrapper).to.have.descendants(Rect)
-        expect(wrapper).to.have.descendants(Circle)
-      })
+  describe('when type is custom', () => {
+
+    const wrapper = mount(
+      <ContentLoader>
+        <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+        <rect x="82" y="44" rx="3" ry="3" width="250" height="10" />
+        <circle cx="35" cy="35" r="35" />
+      </ContentLoader>
+    )
+
+    it('should render custom element', () => {
+      expect(wrapper.find('rect')).to.have.length(3)
+      expect(wrapper.find('circle')).to.have.length(1)
     })
   })
 

@@ -8,9 +8,6 @@ import InstagramStyle from './stylized/InstagramStyle'
 import CodeStyle from './stylized/CodeStyle'
 import ListStyle from './stylized/ListStyle'
 import BulletListStyle from './stylized/BulletListStyle'
-// Custom
-import Rect from './custom/Rect'
-import Circle from './custom/Circle'
 
 export type Props = {
   style: { [key: string]: any },
@@ -60,4 +57,3 @@ ContentLoader.defaultProps = {
 };
 
 export default ContentLoader
-export { Rect, Circle }
