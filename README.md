@@ -1,89 +1,71 @@
 <p align="center">
-  <img width="230px" src="https://user-images.githubusercontent.com/4838076/31404417-65822d5e-add2-11e7-90c3-ce8cded1a02e.gif" alt="React Content Loader" title="React Content Loader" />
+  <img width="350
+  " alt="react-content-loader" src="https://user-images.githubusercontent.com/4838076/34419335-5669c3f8-ebea-11e7-9668-c47b7846970b.png">
+</p>
+<p align="center">
+  <img width="400" alt="Example's react-content-loader" src="https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif" />
 </p>
 
 React component that uses SVG to create a collection of loaders which simulates the structure of the
-content that will be loaded, similar to Facebook cards loaders. **Use the
-[online tool](https://github.com/danilowoz/create-react-content-loader) to create your own custom
-loader.**
+content that will be loaded, similar to Facebook cards loaders.
 
-If you are looking for
-[React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient),
-[Preact](https://github.com/bonitasoft/preact-content-loader) or
-[Vue.js](https://github.com/LucasLeandro1204/vue-content-loading)
+## Features
 
-## Installation
+* **Complety customizable:** you can change the colors, speed and sizes;
+* **Create your own loading:** use the
+  [create-react-content-loader](https://danilowoz.github.io/create-react-content-loader/) to create
+  your customs loadings easily;
+* **You can use right now:** there are a lot of presets to use the loader, see the
+  [options](#options);
+* **Perfomance:** react-content-loader uses pure SVG to work, so it's works without any javascript,
+  canvas, etc;
 
-**Using npm:**
+## Usage
 
-```sh
-npm i react-content-loader --save
-```
+### Installation
 
-**Using Yarn:**
+Yarn: `$ yarn add react-content-loader`
 
-```sh
-yarn add react-content-loader
-```
+Npm: `$ npm i react-content-loader --save`
 
-## You can use it in two ways:
-
-**Stylized:** [example](#facebook-style)
+**You can use it in two ways ([See the options)](#options):**
 
 ```jsx
 // import the component
 import ContentLoader from 'react-content-loader'
 
-const MyLoader = () => {
-  return <ContentLoader type="facebook" />
-}
+const MyLoader = () => <ContentLoader type="facebook" />
 ```
 
-**Or in custom mode:** [example](#custom-style)
-
-Use the [create-react-content-loader](https://github.com/danilowoz/create-react-content-loader) for
-your custom loaders
+**Or in custom mode, using the
+[online tool](https://danilowoz.github.io/create-react-content-loader/)**
 
 ```jsx
-// import the component
-import ContentLoader from 'react-content-loader'
-
-const MyLoader = () => {
-  return (
-    <ContentLoader height={140} speed={1} primaryColor={'#333'} secondaryColor={'#999'}>
-      <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
-      <rect x="82" y="44" rx="3" ry="3" width="250" height="10" />
-      <circle cx="35" cy="35" r="35" />
-    </ContentLoader>
-  )
-}
+const MyLoader = () => (
+  <ContentLoader>
+    {/* Pure SVG */}
+    <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+    <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+    <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
+  </ContentLoader>
+)
 ```
 
 ## Options
 
-| Name                | Type     |     Default     | Description                                                     |
-| ------------------- | -------- | :-------------: | --------------------------------------------------------------- |
-| style               | _Object_ |     `null`      | Ex: `{ marginTop: '50px' }`                                     |
-| type                | _String_ |   `facebook`    | Options: `facebook`, `instagram`, `list`, `bullet-list`, `code` |
-| speed               | _Number_ |       `2`       | Animation speed                                                 |
-| width               | _Number_ |      `400`      | **viewBox** width of SVG                                        |
-| height              | _Number_ |      `130`      | **viewBox** height of SVG                                       |
-| primaryColor        | _String_ |    `#f3f3f3`    | Background the SVG                                              |
-| secondaryColor      | _String_ |    `#ecebeb`    | Animation color                                                 |
+| Name                | Type     | Default         | Description                                                     |
+| ------------------- | -------- | --------------- | --------------------------------------------------------------- |
+| type                | _String_ | `facebook`      | Options: `facebook`, `instagram`, `list`, `bullet-list`, `code` |
+| speed               | _Number_ | `2`             | Animation speed                                                 |
+| width               | _Number_ | `400`           | **viewBox** width of SVG                                        |
+| height              | _Number_ | `130`           | **viewBox** height of SVG                                       |
+| style               | _Object_ | `null`          | Ex: `{ marginTop: '50px' }`                                     |
+| primaryColor        | _String_ | `#f3f3f3`       | Background the SVG                                              |
+| secondaryColor      | _String_ | `#ecebeb`       | Animation color                                                 |
 | preserveAspectRatio | _String_ | `xMidYMid meet` | Aspect ratio option of SVG                                      |
-| className           | _String_ |       ''        | Classname in the <svg />                                        |
+| className           | _String_ | ''              | Classname in the <svg />                                        |
 
-**Custom element options:**
-
-|            | x        | y        | radius   |  width   |  height  |
-| ---------- | -------- | -------- | -------- | :------: | :------: |
-| **Rect**   | _Number_ | _Number_ | _Number_ | _Number_ | _Number_ |
-| **Circle** | _Number_ | _Number_ | _Number_ |    –     |    –     |
-
-Use the [create-react-content-loader](https://github.com/danilowoz/create-react-content-loader) for
-your custom loaders
-
-## Examples
+### Examples
 
 #### Facebook Style
 
@@ -109,10 +91,27 @@ your custom loaders
 
 ![Code Style](https://cloud.githubusercontent.com/assets/4838076/22760218/aa619f32-ee3c-11e6-9cd1-c4af9dd1278e.gif)
 
-#### Credits
+## Alternatives
 
-[Boilerplate for creating React Npm packages with ES2015](https://github.com/juliancwirko/react-npm-boilerplate)
+* [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
+* [Preact](https://github.com/bonitasoft/preact-content-loader);
+* [Vue.js](https://github.com/LucasLeandro1204/vue-content-loading);
+* [Angular](https://github.com/Gbuomprisco/ngx-content-loading).
 
-#### License
+## Development
 
-MIT
+Fork the repo then clone it
+
+`$ git clone git@github.com:YourUsername/react-content-loader.git && cd react-content-loader`
+
+Install the dependencies
+
+`$ yarn`
+
+Run the storybook to see your changes
+
+`$ yarn storybook`
+
+## License
+
+[MIT](https://github.com/danilowoz/react-content-loader/blob/master/LICENSE)
