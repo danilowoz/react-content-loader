@@ -54,6 +54,6 @@ ContentLoader.defaultProps = {
   secondaryColor: '#e0e0e0',
   preserveAspectRatio: 'xMidYMid meet',
   className: '',
-};
+}
 
 export default ContentLoader
