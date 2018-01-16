@@ -1,6 +1,5 @@
 //@flow
 import * as React from 'react'
-import uuid from 'uuid'
 
 import type { Props as ContentLoaderProps } from './index'
 
@@ -8,9 +7,14 @@ export type WrapProps = {
   children?: React.ChildrenArray<*>,
 } & ContentLoaderProps
 
+const randomId = () =>
+  Math.random()
+    .toString(36)
+    .substr(2, 9)
+
 const Wrap = (props: WrapProps): React.Element<*> => {
-  let idClip = uuid.v1()
-  let idGradient = uuid.v1()
+  let idClip = randomId()
+  let idGradient = randomId()
 
   return (
     <svg
