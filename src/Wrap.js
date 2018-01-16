@@ -9,8 +9,8 @@ export type WrapProps = {
 } & ContentLoaderProps
 
 const Wrap = (props: WrapProps): React.Element<*> => {
-  let idClip = uid()
-  let idGradient = uid()
+  const idClip = uid()
+  const idGradient = uid()
 
   return (
     <svg
