@@ -33,6 +33,7 @@
   "scripts": {
     "watch": "npm run build -- --watch",
     "build": "rollup -c",
+    "deploy": "rm -fr ./dist && npm run build && npm publish",
     "lint": "eslint 'src/**/*.js'",
     "prettier": "prettier --write 'src/**/*.{js,jsx,json,css}'",
     "testonly": "cross-env NODE_ENV=test mocha $npm_package_options_mocha",
