@@ -1,10 +1,10 @@
 //@flow
 import * as React from 'react'
-import Wrap from '../Wrap'
+import Wrap, { defaultProps } from '../Wrap'
 import type { WrapProps } from '../Wrap'
 
 const FacebookStyle = (props: WrapProps): React.Element<*> => (
-  <Wrap {...props}>
+  <Wrap {...defaultProps} {...props} >
     <rect x="70" y="15" rx="4" ry="4" width="117" height="6.4" />
     <rect x="70" y="35" rx="3" ry="3" width="85" height="6.4" />
     <rect x="0" y="80" rx="3" ry="3" width="350" height="6.4" />

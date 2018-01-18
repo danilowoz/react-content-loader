@@ -8,6 +8,15 @@ export type WrapProps = {
   children?: React.ChildrenArray<*>,
 } & ContentLoaderProps
 
+export const defaultProps = {
+  speed: 2,
+  width: 400,
+  height: 130,
+  primaryColor: '#f0f0f0',
+  secondaryColor: '#e0e0e0',
+  preserveAspectRatio: 'xMidYMid meet',
+}
+
 const Wrap = (props: WrapProps): React.Element<*> => {
   const idClip = uid()
   const idGradient = uid()

@@ -1,10 +1,10 @@
 //@flow
 import * as React from 'react'
-import Wrap from '../Wrap'
+import Wrap, { defaultProps } from '../Wrap'
 import type { WrapProps } from '../Wrap'
 
 const CodeStyle = (props: WrapProps): React.Element<*> => (
-  <Wrap {...props}>
+  <Wrap {...defaultProps} {...props} >
     <rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
     <rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
     <rect x="190" y="0" rx="3" ry="3" width="10" height="10" />
