@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import ContentLoader from '../src/index'
+import ContentLoader, { Facebook, Instagram, Code, List, BulletList } from '../src/index'
 
 let defaultStyle = {
   width: 400,
@@ -25,27 +25,27 @@ const MyLoader = () => {
 storiesOf('ContentLoader', module)
   .add('facebook style', () => (
     <Container>
-      <ContentLoader />
+      <Facebook />
     </Container>
   ))
   .add('instagram style', () => (
     <Container>
-      <ContentLoader type="instagram" />
+      <Instagram />
     </Container>
   ))
   .add('code style', () => (
     <Container>
-      <ContentLoader type="code" />
+      <Code />
     </Container>
   ))
   .add('list style', () => (
     <Container>
-      <ContentLoader type="list" />
+      <List />
     </Container>
   ))
   .add('bullet list style', () => (
     <Container>
-      <ContentLoader type="bullet-list" />
+      <BulletList />
     </Container>
   ))
   .add('custom style', () => (

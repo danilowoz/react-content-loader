@@ -32,9 +32,10 @@ Npm: `$ npm i react-content-loader --save`
 
 ```jsx
 // import the component
-import ContentLoader from 'react-content-loader'
+import ContentLoader, { Facebook } from 'react-content-loader'
 
-const MyLoader = () => <ContentLoader type="facebook" />
+const MyLoader = () => <ContentLoader />
+const MyFacebookLoader = () => <Facebook />
 ```
 
 **Or in custom mode, using the
@@ -55,7 +56,6 @@ const MyLoader = () => (
 
 | Name                | Type     | Default         | Description                                                     |
 | ------------------- | -------- | --------------- | --------------------------------------------------------------- |
-| type                | _String_ | `facebook`      | Options: `facebook`, `instagram`, `list`, `bullet-list`, `code` |
 | speed               | _Number_ | `2`             | Animation speed                                                 |
 | width               | _Number_ | `400`           | **viewBox** width of SVG                                        |
 | height              | _Number_ | `130`           | **viewBox** height of SVG                                       |

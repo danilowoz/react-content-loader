@@ -1,13 +1,13 @@
 //@flow
 import * as React from 'react'
 
-import Wrap from './Wrap'
+import Wrap, { defaultProps } from './Wrap'
 // Stylized
-import FacebookStyle from './stylized/FacebookStyle'
-import InstagramStyle from './stylized/InstagramStyle'
-import CodeStyle from './stylized/CodeStyle'
-import ListStyle from './stylized/ListStyle'
-import BulletListStyle from './stylized/BulletListStyle'
+export { default as Facebook } from './stylized/FacebookStyle'
+export { default as Instagram } from './stylized/InstagramStyle'
+export { default as Code } from './stylized/CodeStyle'
+export { default as List } from './stylized/ListStyle'
+export { default as BulletList } from './stylized/BulletListStyle'
 
 export type Props = {
   style: { [key: string]: any },
@@ -22,38 +22,11 @@ export type Props = {
 }
 
 const ContentLoader = (props: Props) => {
-  if (props.children) {
-    return <Wrap {...props}>{props.children}</Wrap>
-  }
-
-  switch (props.type.toLowerCase()) {
-    case 'instagram':
-      return <InstagramStyle {...props} />
-
-    case 'code':
-      return <CodeStyle {...props} />
-
-    case 'list':
-      return <ListStyle {...props} />
-
-    case 'bullet-list':
-      return <BulletListStyle {...props} />
-
-    default:
-    case 'facebook':
-      return <FacebookStyle {...props} />
-  }
+  const mergedProps = { ...defaultProps, ...props }
+  const children = props.children
+    ? props.children
+    : <rect x="0" y="0" rx="5" ry="5" width={mergedProps.width} height={mergedProps.height} />
+  return <Wrap {...mergedProps}>{children}</Wrap>
 }
-
-ContentLoader.defaultProps = {
-  type: 'facebook',
-  speed: 2,
-  width: 400,
-  height: 130,
-  primaryColor: '#f0f0f0',
-  secondaryColor: '#e0e0e0',
-  preserveAspectRatio: 'xMidYMid meet',
-  className: '',
-};
 
 export default ContentLoader

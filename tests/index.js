@@ -11,46 +11,8 @@ Enzyme.configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
 
 import ContentLoader from '../src/index'
-import FacebookStyle from '../src/stylized/FacebookStyle'
-import InstagramStyle from '../src/stylized/InstagramStyle'
-import CodeStyle from '../src/stylized/CodeStyle'
 
 describe('<ContentLoader />:', () => {
-  describe('Type props are used', () => {
-    describe('when type is facebook', () => {
-      const wrapper = mount(<ContentLoader type={'facebook'} />)
-
-      it('should render <FacebookStyle />', () => {
-        expect(wrapper).to.have.descendants(FacebookStyle)
-      })
-    })
-
-    describe('when type is instagram', () => {
-      const wrapper = mount(<ContentLoader type={'instagram'} />)
-
-      it('should render <InstagramStyle />', () => {
-        expect(wrapper).to.have.descendants(InstagramStyle)
-      })
-    })
-
-    describe('when type is code', () => {
-      const wrapper = mount(<ContentLoader type={'code'} />)
-
-      it('should render <CodeStyle />', () => {
-        expect(wrapper).to.have.descendants(CodeStyle)
-      })
-    })
-
-    describe('when type is undefined', () => {
-      const wrapper = mount(<ContentLoader />)
-
-      it('should render <FacebookStyle />', () => {
-        expect(wrapper).to.have.descendants(FacebookStyle)
-      })
-    })
-
-  })
-
   describe('when type is custom', () => {
 
     const wrapper = mount(
