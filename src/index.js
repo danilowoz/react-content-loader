@@ -23,9 +23,12 @@ export type Props = {
 
 const ContentLoader = (props: Props) => {
   const mergedProps = { ...defaultProps, ...props }
-  const children = props.children
-    ? props.children
-    : <rect x="0" y="0" rx="5" ry="5" width={mergedProps.width} height={mergedProps.height} />
+  const children = props.children ? (
+    props.children
+  ) : (
+    <rect x="0" y="0" rx="5" ry="5" width={mergedProps.width} height={mergedProps.height} />
+  )
+
   return <Wrap {...mergedProps}>{children}</Wrap>
 }
 
