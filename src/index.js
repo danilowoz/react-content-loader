@@ -21,7 +21,7 @@ export type Props = {
   className: string,
 }
 
-export const defaultProps = {
+const defaultProps = {
   speed: 2,
   width: 400,
   height: 130,
