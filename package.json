@@ -1,7 +1,8 @@
 {
   "name": "react-content-loader",
   "version": "2.0.2",
-  "description": "React component that uses SVG to create a collection of loaders which simulates the structure of the content that will be loaded, similar to Facebook cards loaders.",
+  "description":
+    "React component that uses SVG to create a collection of loaders which simulates the structure of the content that will be loaded, similar to Facebook cards loaders.",
   "repository": {
     "type": "git",
     "url": "https://github.com/danilowoz/react-content-loader"
@@ -15,17 +16,8 @@
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
   "homepage": "https://github.com/danilowoz/react-content-loader",
-  "keywords": [
-    "react",
-    "facebook-style",
-    "loader",
-    "loading",
-    "content",
-    "svg"
-  ],
-  "files": [
-    "dist"
-  ],
+  "keywords": ["react", "facebook-style", "loader", "loading", "content", "svg"],
+  "files": ["dist"],
   "sideEffects": false,
   "options": {
     "mocha": "--require scripts/mocha_runner ./tests/**/*.js ./tests/*.js"
@@ -42,13 +34,16 @@
     "storybook": "start-storybook -p 6006",
     "flow": "flow",
     "precommit": "npm run test",
-    "prepush": "npm run test"
+    "prepush": "npm run test",
+    "coverage":
+      "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --compilers js:babel-register tests/**/*.js"
   },
   "devDependencies": {
     "@storybook/react": "^3.1.9",
     "babel-core": "^6.7.4",
     "babel-eslint": "^8.0.2",
     "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-transform-es2015-modules-umd": "^6.6.5",
     "babel-polyfill": "^6.7.4",
     "babel-preset-env": "^1.6.1",
@@ -70,6 +65,7 @@
     "jsdom": "^11.1.0",
     "mocha": "^4.0.1",
     "nodemon": "^1.9.1",
+    "nyc": "^11.4.1",
     "prettier": "^1.6.1",
     "react": "^16.1.1",
     "react-addons-test-utils": "^15.0.0",
@@ -83,5 +79,7 @@
   "peerDependencies": {
     "react": "^15.0.0-0 || ^16.0.0-0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "istanbul": "^0.4.5"
+  }
 }
