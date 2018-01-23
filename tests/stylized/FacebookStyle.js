@@ -1,3 +1,4 @@
+import 'jsdom-global/register'
 import React from 'react'
 
 import Enzyme, { mount } from 'enzyme'
@@ -13,28 +14,17 @@ chai.use(chaiEnzyme())
 import FacebookStyle from '../../src/stylized/FacebookStyle'
 
 describe('<FacebookStyle />', () => {
-  it('has a `svg`', () => {
-    const wrapper = mount(<FacebookStyle />)
-    expect(wrapper.find('svg')).to.have.length(1)
+  const wrapper = mount(<FacebookStyle speed={20} />)
+
+  it('has five `rect`', () => {
+    expect(wrapper.find('clipPath rect')).to.have.length(5)
   })
 
-  it('has a `rect` with `clipPath`', () => {
-    const wrapper = mount(<FacebookStyle />)
-    expect(wrapper.find('rect[clipPath]')).to.have.length(1)
+  it('has one `circle`', () => {
+    expect(wrapper.find('clipPath circle')).to.have.length(1)
   })
 
-  it('has a `linearGradient`', () => {
-    const wrapper = mount(<FacebookStyle />)
-    expect(wrapper.find('linearGradient')).to.have.length(1)
-  })
-
-  it('has three `stop`', () => {
-    const wrapper = mount(<FacebookStyle />)
-    expect(wrapper.find('stop')).to.have.length(3)
-  })
-
-  it('has `stop` inside the `linearGradient`', () => {
-    const wrapper = mount(<FacebookStyle />)
-    expect(wrapper.find('linearGradient').find('stop')).to.have.length(3)
+  it('prop is propagated', () => {
+    expect(wrapper.props().speed).to.equal(20)
   })
 })

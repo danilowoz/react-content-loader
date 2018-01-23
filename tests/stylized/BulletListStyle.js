@@ -1,3 +1,4 @@
+import 'jsdom-global/register'
 import React from 'react'
 
 import Enzyme, { mount } from 'enzyme'
@@ -13,33 +14,13 @@ chai.use(chaiEnzyme())
 import BulletListStyle from '../../src/stylized/BulletListStyle'
 
 describe('<BulletListStyle />:', () => {
-  it('has a `svg`', () => {
-    const wrapper = mount(<BulletListStyle />)
-    expect(wrapper.find('svg')).to.have.length(1)
-  })
-
-  it('has a `rect` with `clip-path`', () => {
-    const wrapper = mount(<BulletListStyle />)
-    expect(wrapper.find('rect[clipPath]')).to.have.length(1)
-  })
-
-  it('has a `linearGradient`', () => {
-    const wrapper = mount(<BulletListStyle />)
-    expect(wrapper.find('linearGradient')).to.have.length(1)
-  })
-
-  it('has three `stop`', () => {
-    const wrapper = mount(<BulletListStyle />)
-    expect(wrapper.find('stop')).to.have.length(3)
-  })
-
-  it('has `stop` inside the `linearGradient`', () => {
-    const wrapper = mount(<BulletListStyle />)
-    expect(wrapper.find('linearGradient').find('stop')).to.have.length(3)
-  })
+  const wrapper = mount(<BulletListStyle speed={20} />)
 
   it('has four `circle`s followed by a `rect`', () => {
-    const wrapper = mount(<BulletListStyle />)
-    expect(wrapper.find('circle + rect')).to.have.length(4)
+    expect(wrapper.find('clipPath circle + rect')).to.have.length(4)
+  })
+
+  it('prop is propagated', () => {
+    expect(wrapper.props().speed).to.equal(20)
   })
 })

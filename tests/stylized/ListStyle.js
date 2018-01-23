@@ -1,3 +1,4 @@
+import 'jsdom-global/register'
 import React from 'react'
 
 import Enzyme, { mount } from 'enzyme'
@@ -15,28 +16,13 @@ chai.use(chaiEnzyme())
 import ListStyle from '../../src/stylized/ListStyle'
 
 describe('<ListStyle />', () => {
-  it('has a `svg`', () => {
-    const wrapper = mount(<ListStyle />)
-    expect(wrapper.find('svg')).to.have.length(1)
+  const wrapper = mount(<ListStyle speed={20} />)
+
+  it('has six `rect`', () => {
+    expect(wrapper.find('clipPath rect')).to.have.length(6)
   })
 
-  it('has a `rect` with `clipPath`', () => {
-    const wrapper = mount(<ListStyle />)
-    expect(wrapper.find('rect[clipPath]')).to.have.length(1)
-  })
-
-  it('has a `linearGradient`', () => {
-    const wrapper = mount(<ListStyle />)
-    expect(wrapper.find('linearGradient')).to.have.length(1)
-  })
-
-  it('has three `stop`', () => {
-    const wrapper = mount(<ListStyle />)
-    expect(wrapper.find('stop')).to.have.length(3)
-  })
-
-  it('has `stop` inside the `linearGradient`', () => {
-    const wrapper = mount(<ListStyle />)
-    expect(wrapper.find('linearGradient').find('stop')).to.have.length(3)
+  it('prop is propagated', () => {
+    expect(wrapper.props().speed).to.equal(20)
   })
 })
