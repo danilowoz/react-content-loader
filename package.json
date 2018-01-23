@@ -1,6 +1,6 @@
 {
   "name": "react-content-loader",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "React component that uses SVG to create a collection of loaders which simulates the structure of the content that will be loaded, similar to Facebook cards loaders.",
   "repository": {
     "type": "git",
