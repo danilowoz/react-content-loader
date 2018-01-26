@@ -63,3 +63,8 @@ storiesOf('ContentLoader', module)
       <ContentLoader width={400} height={150} />
     </Container>
   ))
+  .add('propkey', () => (
+    <Container>
+      <ContentLoader propkey="unique-key" width={400} height={150} />
+    </Container>
+  ))
