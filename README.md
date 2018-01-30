@@ -54,16 +54,17 @@ const MyLoader = () => (
 
 ## Options
 
-| Name                | Type     | Default         | Description                 |
-| ------------------- | -------- | --------------- | --------------------------- |
-| speed               | _Number_ | `2`             | Animation speed             |
-| width               | _Number_ | `400`           | **viewBox** width of SVG    |
-| height              | _Number_ | `130`           | **viewBox** height of SVG   |
-| style               | _Object_ | `null`          | Ex: `{ marginTop: '50px' }` |
-| primaryColor        | _String_ | `#f3f3f3`       | Background the SVG          |
-| secondaryColor      | _String_ | `#ecebeb`       | Animation color             |
-| preserveAspectRatio | _String_ | `xMidYMid meet` | Aspect ratio option of SVG  |
-| className           | _String_ | ''              | Classname in the <svg />    |
+| Name                | Type     | Default          | Description                                                  |
+| ------------------- | -------- | ---------------- | ------------------------------------------------------------ |
+| speed               | _Number_ | `2`              | Animation speed                                              |
+| width               | _Number_ | `400`            | **viewBox** width of SVG                                     |
+| height              | _Number_ | `130`            | **viewBox** height of SVG                                    |
+| style               | _Object_ | `null`           | Ex: `{ marginTop: '50px' }`                                  |
+| primaryColor        | _String_ | `#f3f3f3`        | Background the SVG                                           |
+| secondaryColor      | _String_ | `#ecebeb`        | Animation color                                              |
+| preserveAspectRatio | _String_ | `xMidYMid meet`  | Aspect ratio option of SVG                                   |
+| className           | _String_ | ''               | Classname in the <svg />                                     |
+| uniquekey           | _String_ | random unique id | **Use the same key value, it'll solve some problems to SSR** |
 
 ### Examples
 

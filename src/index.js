@@ -19,6 +19,7 @@ export type Props = {
   secondaryColor: string,
   preserveAspectRatio: string,
   className: string,
+  uniquekey: string,
 }
 
 const defaultProps = {
