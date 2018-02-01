@@ -1,4 +1,4 @@
-import 'jsdom-global/register';
+import 'jsdom-global/register'
 import React from 'react'
 
 import Enzyme, { mount } from 'enzyme'
@@ -15,7 +15,6 @@ import ContentLoader from '../src/index'
 
 describe('<ContentLoader />:', () => {
   describe('when type is custom', () => {
-
     const wrapper = mount(
       <ContentLoader>
         <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
@@ -36,6 +35,7 @@ describe('<ContentLoader />:', () => {
         speed={10}
         height={200}
         width={200}
+        animate={true}
         primaryColor="#000"
         secondaryColor="#fff"
         preserveAspectRatio="xMaxYMax"
@@ -54,6 +54,10 @@ describe('<ContentLoader />:', () => {
 
     it('`width` is a number and used', () => {
       expect(wrapper.props().width).to.equal(200)
+    })
+
+    it('`animate` is a boolean and used', () => {
+      expect(wrapper.props().animate).to.equal(true)
     })
 
     it('`primaryColor` is a string and used', () => {
