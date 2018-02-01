@@ -11,6 +11,7 @@ export type WrapProps = {
 const Wrap = (props: WrapProps): React.Element<*> => {
   const idClip = `${props.uniquekey}-idClip` || uid()
   const idGradient = `${props.uniquekey}-idGradient` || uid()
+  const speedAnimation = props.animate ? `${props.speed}s` : `0`
 
   return (
     <svg
@@ -37,7 +38,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             <animate
               attributeName="offset"
               values="-2; 1"
-              dur={`${props.speed}s`}
+              dur={speedAnimation}
               repeatCount="indefinite"
             />
           </stop>
@@ -45,7 +46,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             <animate
               attributeName="offset"
               values="-1.5; 1.5"
-              dur={`${props.speed}s`}
+              dur={speedAnimation}
               repeatCount="indefinite"
             />
           </stop>
@@ -53,7 +54,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             <animate
               attributeName="offset"
               values="-1; 2"
-              dur={`${props.speed}s`}
+              dur={speedAnimation}
               repeatCount="indefinite"
             />
           </stop>
