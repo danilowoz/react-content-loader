@@ -71,5 +71,12 @@ describe('<ContentLoader />:', () => {
     it('`style` is a object and used', () => {
       expect(wrapper.props().style).to.deep.equal({ marginBottom: '10px' })
     })
+
+    it('`uniquekey` does not generate undefined `id` values for svg', () => {
+      const idClip = wrapper.find('clipPath').prop('id')
+      const idGradient = wrapper.find('linearGradient').prop('id')
+      expect(idClip).to.not.contain(undefined)
+      expect(idGradient).to.not.contain(undefined)
+    })
   })
 })
