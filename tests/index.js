@@ -41,6 +41,7 @@ describe('<ContentLoader />:', () => {
         preserveAspectRatio="xMaxYMax"
         className="random-className"
         style={{ marginBottom: '10px' }}
+        animation={false}
       />
     )
 
@@ -70,6 +71,10 @@ describe('<ContentLoader />:', () => {
 
     it('`style` is a object and used', () => {
       expect(wrapper.props().style).to.deep.equal({ marginBottom: '10px' })
+    })
+
+    it('`animation` is set to false', () => {
+      expect(wrapper.props().animation).to.be.false
     })
   })
 })
