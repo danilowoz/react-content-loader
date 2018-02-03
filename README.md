@@ -141,7 +141,7 @@ const MyLoader = () => (
 
 ![Code Style](https://cloud.githubusercontent.com/assets/4838076/22760218/aa619f32-ee3c-11e6-9cd1-c4af9dd1278e.gif)
 
-## Similares
+## Similar
 
 * [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
 * [Preact](https://github.com/bonitasoft/preact-content-loader);
