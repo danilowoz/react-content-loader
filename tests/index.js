@@ -1,4 +1,4 @@
-import 'jsdom-global/register';
+import 'jsdom-global/register'
 import React from 'react'
 
 import Enzyme, { mount } from 'enzyme'
@@ -15,7 +15,6 @@ import ContentLoader from '../src/index'
 
 describe('<ContentLoader />:', () => {
   describe('when type is custom', () => {
-
     const wrapper = mount(
       <ContentLoader>
         <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
@@ -77,6 +76,19 @@ describe('<ContentLoader />:', () => {
       const idGradient = wrapper.find('linearGradient').prop('id')
       expect(idClip).to.not.contain(undefined)
       expect(idGradient).to.not.contain(undefined)
+    })
+
+    it('render two components with diferents ids', () => {
+      const otherComp = mount(<ContentLoader />)
+
+      const idClip = wrapper.find('clipPath').prop('id')
+      const idGradient = wrapper.find('linearGradient').prop('id')
+
+      const idClipOtherCom = otherComp.find('clipPath').prop('id')
+      const idGradientOtherCom = otherComp.find('linearGradient').prop('id')
+
+      expect(idClip).to.not.equal(idClipOtherCom)
+      expect(idGradient).to.not.equal(idGradientOtherCom)
     })
   })
 })

@@ -1,7 +1,6 @@
 //@flow
 import * as React from 'react'
 import Wrap from './Wrap'
-import uid from './uid'
 
 // Stylized
 export { default as Facebook } from './stylized/FacebookStyle'
@@ -30,7 +29,6 @@ const defaultProps = {
   primaryColor: '#f0f0f0',
   secondaryColor: '#e0e0e0',
   preserveAspectRatio: 'xMidYMid meet',
-  uniquekey: uid(),
 }
 
 const InitialComponent = props => (
