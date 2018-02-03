@@ -1,6 +1,7 @@
 //@flow
 import * as React from 'react'
 
+import uid from './uid'
 import type { Props as ContentLoaderProps } from './index'
 
 export type WrapProps = {
@@ -8,8 +9,8 @@ export type WrapProps = {
 } & ContentLoaderProps
 
 const Wrap = (props: WrapProps): React.Element<*> => {
-  const idClip = `${props.uniquekey}-idClip`
-  const idGradient = `${props.uniquekey}-idGradient`
+  const idClip = props.uniquekey ? `${props.uniquekey}-idClip` : uid()
+  const idGradient = props.uniquekey ? `${props.uniquekey}-idGradient` : uid()
 
   return (
     <svg
