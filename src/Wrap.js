@@ -11,7 +11,7 @@ export type WrapProps = {
 const Wrap = (props: WrapProps): React.Element<*> => {
   const idClip = `${props.uniquekey}-idClip` || uid()
   const idGradient = `${props.uniquekey}-idGradient` || uid()
-  const showAnimation = props.animation === 'true'
+  const showAnimation = props.animation ? true : false
 
   return (
     <svg
