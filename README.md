@@ -9,6 +9,11 @@
 React component that uses SVG to create a collection of loaders which simulates the structure of the
 content that will be loaded, similar to Facebook cards loaders.
 
+[![Size](https://img.shields.io/badge/minifed%20+%20gzipped-1.1kb-brightgreen.svg)]()
+[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)]()
+[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()
+[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
+
 ## Features
 
 * **Complety customizable:** you can change the colors, speed and sizes;
@@ -141,7 +146,7 @@ const MyLoader = () => (
 
 ![Code Style](https://cloud.githubusercontent.com/assets/4838076/22760218/aa619f32-ee3c-11e6-9cd1-c4af9dd1278e.gif)
 
-## Similar
+## Similares
 
 * [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
 * [Preact](https://github.com/bonitasoft/preact-content-loader);
