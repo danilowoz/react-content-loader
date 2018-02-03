@@ -11,6 +11,7 @@ export type WrapProps = {
 const Wrap = (props: WrapProps): React.Element<*> => {
   const idClip = `${props.uniquekey}-idClip` || uid()
   const idGradient = `${props.uniquekey}-idGradient` || uid()
+  const showAnimation = props.animation ? true : false
 
   return (
     <svg
@@ -34,28 +35,28 @@ const Wrap = (props: WrapProps): React.Element<*> => {
 
         <linearGradient id={idGradient}>
           <stop offset="0%" stopColor={props.primaryColor}>
-            <animate
+            { showAnimation && <animate
               attributeName="offset"
               values="-2; 1"
               dur={`${props.speed}s`}
               repeatCount="indefinite"
-            />
+            />}
           </stop>
           <stop offset="50%" stopColor={props.secondaryColor}>
-            <animate
+            { showAnimation && <animate
               attributeName="offset"
               values="-1.5; 1.5"
               dur={`${props.speed}s`}
               repeatCount="indefinite"
-            />
+            />}
           </stop>
           <stop offset="100%" stopColor={props.primaryColor}>
-            <animate
+            { showAnimation && <animate
               attributeName="offset"
               values="-1; 2"
               dur={`${props.speed}s`}
               repeatCount="indefinite"
-            />
+            />}
           </stop>
         </linearGradient>
       </defs>
