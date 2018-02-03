@@ -9,7 +9,7 @@
 React component that uses SVG to create a collection of loaders which simulates the structure of the
 content that will be loaded, similar to Facebook cards loaders.
 
-[![Size](https://img.shields.io/badge/minifed%20+%20gzipped-1.1kb-brightgreen.svg)]()
+[![Size](https://img.shields.io/badge/gzip%20size-1.1kb-brightgreen.svg)]()
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)]()
 [![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
