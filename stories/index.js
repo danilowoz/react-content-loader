@@ -63,3 +63,8 @@ storiesOf('ContentLoader', module)
       <ContentLoader width={400} height={150} />
     </Container>
   ))
+  .add('without animation', () => (
+    <Container>
+      <Facebook animation={false} />
+    </Container>
+  ))
