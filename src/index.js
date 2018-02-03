@@ -19,6 +19,7 @@ export type Props = {
   secondaryColor: string,
   preserveAspectRatio: string,
   className: string,
+  animation: string,
 }
 
 const defaultProps = {
@@ -28,6 +29,7 @@ const defaultProps = {
   primaryColor: '#f0f0f0',
   secondaryColor: '#e0e0e0',
   preserveAspectRatio: 'xMidYMid meet',
+  animation: 'true',
 }
 
 const InitialComponent = props => (
