@@ -35,7 +35,7 @@ describe('<ContentLoader />:', () => {
         speed={10}
         height={200}
         width={200}
-        animate={true}
+        animate={false}
         primaryColor="#000"
         secondaryColor="#fff"
         preserveAspectRatio="xMaxYMax"
@@ -57,7 +57,7 @@ describe('<ContentLoader />:', () => {
     })
 
     it('`animate` is a boolean and used', () => {
-      expect(wrapper.props().animate).to.equal(true)
+      expect(wrapper.props().animate).to.be.false
     })
 
     it('`primaryColor` is a string and used', () => {
