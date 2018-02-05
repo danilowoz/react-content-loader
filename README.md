@@ -57,7 +57,7 @@ const MyLoader = () => (
 | Name                | Type      | Default          | Description                                                  |
 | ------------------- | --------- | ---------------- | ------------------------------------------------------------ |
 | speed               | _Number_  | `2`              | Animation speed                                              |
-| animate             | _Boolean_ | `true`           | `true` as default, `false` to render with no animation       |
+| animate             | _Boolean_ | `true`           | `false` to render with no animation                          |
 | width               | _Number_  | `400`            | **viewBox** width of SVG                                     |
 | height              | _Number_  | `130`            | **viewBox** height of SVG                                    |
 | style               | _Object_  | `null`           | Ex: `{ marginTop: '50px' }`                                  |
