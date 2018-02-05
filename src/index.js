@@ -12,6 +12,7 @@ export { default as BulletList } from './stylized/BulletListStyle'
 export type Props = {
   style: { [key: string]: any },
   type: string,
+  animate: boolean,
   speed: number,
   width: number,
   height: number,
@@ -22,7 +23,8 @@ export type Props = {
   uniquekey: string,
 }
 
-const defaultProps = {
+export const defaultProps = {
+  animate: true,
   speed: 2,
   width: 400,
   height: 130,

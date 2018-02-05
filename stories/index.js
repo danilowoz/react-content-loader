@@ -68,3 +68,8 @@ storiesOf('ContentLoader', module)
       <ContentLoader uniquekey="unique-key" />
     </Container>
   ))
+  .add('no animation', () => (
+    <Container>
+      <Facebook animate={false} />
+    </Container>
+  ))

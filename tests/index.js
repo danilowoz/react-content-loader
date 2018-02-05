@@ -35,6 +35,7 @@ describe('<ContentLoader />:', () => {
         speed={10}
         height={200}
         width={200}
+        animate={false}
         primaryColor="#000"
         secondaryColor="#fff"
         preserveAspectRatio="xMaxYMax"
@@ -53,6 +54,10 @@ describe('<ContentLoader />:', () => {
 
     it('`width` is a number and used', () => {
       expect(wrapper.props().width).to.equal(200)
+    })
+
+    it('`animate` is a boolean and used', () => {
+      expect(wrapper.props().animate).to.be.false
     })
 
     it('`primaryColor` is a string and used', () => {
@@ -89,6 +94,16 @@ describe('<ContentLoader />:', () => {
 
       expect(idClip).to.not.equal(idClipOtherCom)
       expect(idGradient).to.not.equal(idGradientOtherCom)
+    })
+
+    describe('inside <Wrap />', () => {
+      it('exists', () => {
+        expect(wrapper.find('Wrap')).to.have.length(1)
+      })
+
+      it('has no `animate` element', () => {
+        expect(wrapper.find('animate')).to.be.empty
+      })
     })
   })
 })

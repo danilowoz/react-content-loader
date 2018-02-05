@@ -34,28 +34,34 @@ const Wrap = (props: WrapProps): React.Element<*> => {
 
         <linearGradient id={idGradient}>
           <stop offset="0%" stopColor={props.primaryColor}>
-            <animate
-              attributeName="offset"
-              values="-2; 1"
-              dur={`${props.speed}s`}
-              repeatCount="indefinite"
-            />
+            {props.animate ? (
+              <animate
+                attributeName="offset"
+                values="-2; 1"
+                dur={`${props.speed}s`}
+                repeatCount="indefinite"
+              />
+            ) : null}
           </stop>
           <stop offset="50%" stopColor={props.secondaryColor}>
-            <animate
-              attributeName="offset"
-              values="-1.5; 1.5"
-              dur={`${props.speed}s`}
-              repeatCount="indefinite"
-            />
+            {props.animate ? (
+              <animate
+                attributeName="offset"
+                values="-1.5; 1.5"
+                dur={`${props.speed}s`}
+                repeatCount="indefinite"
+              />
+            ) : null}
           </stop>
           <stop offset="100%" stopColor={props.primaryColor}>
-            <animate
-              attributeName="offset"
-              values="-1; 2"
-              dur={`${props.speed}s`}
-              repeatCount="indefinite"
-            />
+            {props.animate ? (
+              <animate
+                attributeName="offset"
+                values="-1; 2"
+                dur={`${props.speed}s`}
+                repeatCount="indefinite"
+              />
+            ) : null}
           </stop>
         </linearGradient>
       </defs>
