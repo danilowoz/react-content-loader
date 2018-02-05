@@ -13,9 +13,10 @@ chai.use(chaiEnzyme())
 
 import ContentLoader from '../src/index'
 import Wrap, { generateId } from '../src/Wrap'
+import defaultProps from '../src/index'
 
 describe('<Wrap /> Check id`s to render the SVG', () => {
-  const wrapper = mount(<Wrap animate={true} />)
+  const wrapper = mount(<Wrap {...defaultProps} />)
 
   it('is mask with the same `idClip`', () => {
     const idClip = wrapper.find('clipPath').prop('id')
@@ -45,10 +46,6 @@ describe('<Wrap /> Check id`s to render the SVG', () => {
 
   it('has `stop` inside the `linearGradient`', () => {
     expect(wrapper.find('linearGradient').find('stop')).to.have.length(3)
-  })
-
-  it('has there `animate`', () => {
-    expect(wrapper.find('animate')).to.have.length(3)
   })
 
   it('has one `animate` inside each `stop`', () => {
