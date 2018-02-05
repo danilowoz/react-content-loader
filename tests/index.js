@@ -76,16 +76,6 @@ describe('<ContentLoader />:', () => {
       expect(wrapper.props().style).to.deep.equal({ marginBottom: '10px' })
     })
 
-    describe('inside <Wrap />', () => {
-      it('exists', () => {
-        expect(wrapper.find('Wrap')).to.have.length(1)
-      })
-
-      it('has no `animate` element', () => {
-        expect(wrapper.find('animate')).to.be.empty
-      })
-    })
-    
     it('`uniquekey` does not generate undefined `id` values for svg', () => {
       const idClip = wrapper.find('clipPath').prop('id')
       const idGradient = wrapper.find('linearGradient').prop('id')
@@ -104,6 +94,16 @@ describe('<ContentLoader />:', () => {
 
       expect(idClip).to.not.equal(idClipOtherCom)
       expect(idGradient).to.not.equal(idGradientOtherCom)
+    })
+
+    describe('inside <Wrap />', () => {
+      it('exists', () => {
+        expect(wrapper.find('Wrap')).to.have.length(1)
+      })
+
+      it('has no `animate` element', () => {
+        expect(wrapper.find('animate')).to.be.empty
+      })
     })
   })
 })
