@@ -75,5 +75,15 @@ describe('<ContentLoader />:', () => {
     it('`style` is a object and used', () => {
       expect(wrapper.props().style).to.deep.equal({ marginBottom: '10px' })
     })
+
+    describe('inside <Wrap />', () => {
+      it('exists', () => {
+        expect(wrapper.find('Wrap')).to.have.length(1)
+      })
+
+      it('has no `animate` element', () => {
+        expect(wrapper.find('animate')).to.be.empty
+      })
+    })
   })
 })

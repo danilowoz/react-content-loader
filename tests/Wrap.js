@@ -56,11 +56,3 @@ describe('<Wrap /> Check id`s to render the SVG', () => {
     expect(stopElem.map(elem => elem.find('animate'))).to.have.length(3)
   })
 })
-
-describe('<Wrap /> Check the case when animate={false}', () => {
-  const wrapper = mount(<Wrap animate={false} />)
-
-  it('has there no `animate`', () => {
-    expect(wrapper.find('animate')).to.be.empty
-  })
-})
