@@ -23,7 +23,7 @@ export type Props = {
   uniquekey: string,
 }
 
-const defaultProps = {
+export const defaultProps = {
   animate: true,
   speed: 2,
   width: 400,
