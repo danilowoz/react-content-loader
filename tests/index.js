@@ -85,5 +85,25 @@ describe('<ContentLoader />:', () => {
         expect(wrapper.find('animate')).to.be.empty
       })
     })
+    
+    it('`uniquekey` does not generate undefined `id` values for svg', () => {
+      const idClip = wrapper.find('clipPath').prop('id')
+      const idGradient = wrapper.find('linearGradient').prop('id')
+      expect(idClip).to.not.contain(undefined)
+      expect(idGradient).to.not.contain(undefined)
+    })
+
+    it('render two components with diferents ids', () => {
+      const otherComp = mount(<ContentLoader />)
+
+      const idClip = wrapper.find('clipPath').prop('id')
+      const idGradient = wrapper.find('linearGradient').prop('id')
+
+      const idClipOtherCom = otherComp.find('clipPath').prop('id')
+      const idGradientOtherCom = otherComp.find('linearGradient').prop('id')
+
+      expect(idClip).to.not.equal(idClipOtherCom)
+      expect(idGradient).to.not.equal(idGradientOtherCom)
+    })
   })
 })
