@@ -37,10 +37,8 @@ Npm: `$ npm i react-content-loader --save`
 
 ```jsx
 // import the component
+// and you can use them directly, such as <Facebook />, <ContentLoader />
 import ContentLoader, { Facebook } from 'react-content-loader'
-
-const MyLoader = () => <ContentLoader />
-const MyFacebookLoader = () => <Facebook />
 ```
 
 **Or in custom mode, using the
@@ -80,7 +78,7 @@ const MyLoader = () => (
 // import the component
 import { Facebook } from 'react-content-loader'
 
-const MyFacebookLoader = () => <Facebook />
+// Use it like a Component in your render function.
 ```
 
 ![Facebook Style](https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif)
@@ -91,7 +89,7 @@ const MyFacebookLoader = () => <Facebook />
 // import the component
 import { Instagram } from 'react-content-loader'
 
-const MyInstagramLoader = () => <Instagram />
+// Use it like a Component in your render function.
 ```
 
 ![Instagram Style](https://cloud.githubusercontent.com/assets/4838076/22555637/749f9e26-e94b-11e6-84ff-83cd415c1eb9.gif)
@@ -102,7 +100,7 @@ const MyInstagramLoader = () => <Instagram />
 // import the component
 import { Code } from 'react-content-loader'
 
-const MyCodeLoader = () => <Code />
+// Use it like a Component in your render function.
 ```
 
 ![Code Style](https://cloud.githubusercontent.com/assets/4838076/22555473/effa54c2-e94a-11e6-9128-9b608bcc69d9.gif)
@@ -113,7 +111,7 @@ const MyCodeLoader = () => <Code />
 // import the component
 import { List } from 'react-content-loader'
 
-const MyListLoader = () => <List />
+// Use it like a Component in your render function.
 ```
 
 ![List Style](https://user-images.githubusercontent.com/2671660/27986068-7a0040d6-63f9-11e7-8e54-dcb220e42fd7.gif)
@@ -124,7 +122,7 @@ const MyListLoader = () => <List />
 // import the component
 import { BulletList } from 'react-content-loader'
 
-const MyBulletListLoader = () => <BulletList />
+// Use it like a Component in your render function.
 ```
 
 ![Bullet list Style](https://user-images.githubusercontent.com/4838076/31998372-59817bac-b96e-11e7-8ef8-07f61670ee18.gif)
