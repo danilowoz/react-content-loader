@@ -4,6 +4,16 @@ import * as React from 'react'
 import uid from './uid'
 import type { Props as ContentLoaderProps } from './index'
 
+export const defaultProps = {
+  animate: true,
+  speed: 2,
+  width: 400,
+  height: 130,
+  primaryColor: '#f0f0f0',
+  secondaryColor: '#e0e0e0',
+  preserveAspectRatio: 'xMidYMid meet',
+}
+
 export type WrapProps = {
   children?: React.ChildrenArray<*>,
 } & ContentLoaderProps
@@ -68,5 +78,6 @@ const Wrap = (props: WrapProps): React.Element<*> => {
     </svg>
   )
 }
+Wrap.defaultProps = defaultProps;
 
 export default Wrap

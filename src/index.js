@@ -23,25 +23,15 @@ export type Props = {
   uniquekey: string,
 }
 
-export const defaultProps = {
-  animate: true,
-  speed: 2,
-  width: 400,
-  height: 130,
-  primaryColor: '#f0f0f0',
-  secondaryColor: '#e0e0e0',
-  preserveAspectRatio: 'xMidYMid meet',
-}
 
 const InitialComponent = props => (
   <rect x="0" y="0" rx="5" ry="5" width={props.width} height={props.height} />
 )
 
 const ContentLoader = (props: Props) => {
-  const mergedProps = { ...defaultProps, ...props }
-  const children = props.children ? props.children : <InitialComponent {...mergedProps} />
+  const children = props.children || InitialComponent(props);
 
-  return <Wrap {...mergedProps}>{children}</Wrap>
+  return <Wrap {...props}>{children}</Wrap>
 }
 
 export default ContentLoader

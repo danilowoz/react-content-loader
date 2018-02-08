@@ -13,7 +13,7 @@ chai.use(chaiEnzyme())
 
 import ContentLoader from '../src/index'
 import Wrap, { generateId } from '../src/Wrap'
-import defaultProps from '../src/index'
+import defaultProps from '../src/Wrap'
 
 describe('<Wrap /> Check id`s to render the SVG', () => {
   const wrapper = mount(<Wrap {...defaultProps} />)
