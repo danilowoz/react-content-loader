@@ -23,13 +23,12 @@ export type Props = {
   uniquekey: string,
 }
 
-
-const InitialComponent = props => (
-  <rect x="0" y="0" rx="5" ry="5" width={props.width} height={props.height} />
+const InitialComponent = ({ width = 400, height = 130 }) => (
+  <rect x="0" y="0" rx="5" ry="5" width={width} height={height} />
 )
 
 const ContentLoader = (props: Props) => {
-  const children = props.children || InitialComponent(props);
+  const children = props.children || InitialComponent(props)
 
   return <Wrap {...props}>{children}</Wrap>
 }
