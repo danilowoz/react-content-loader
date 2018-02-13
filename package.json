@@ -1,8 +1,7 @@
 {
   "name": "react-content-loader",
-  "version": "3.0.2",
-  "description":
-    "React component that uses SVG to create a collection of loaders which simulates the structure of the content that will be loaded, similar to Facebook cards loaders.",
+  "version": "3.1.0",
+  "description": "React component that uses SVG to create a collection of loaders which simulates the structure of the content that will be loaded, similar to Facebook cards loaders.",
   "repository": {
     "type": "git",
     "url": "https://github.com/danilowoz/react-content-loader"
@@ -16,8 +15,17 @@
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
   "homepage": "https://github.com/danilowoz/react-content-loader",
-  "keywords": ["react", "facebook-style", "loader", "loading", "content", "svg"],
-  "files": ["dist"],
+  "keywords": [
+    "react",
+    "facebook-style",
+    "loader",
+    "loading",
+    "content",
+    "svg"
+  ],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "options": {
     "mocha": "--require scripts/mocha_runner ./tests/**/*.js ./tests/*.js"
@@ -35,8 +43,7 @@
     "flow": "flow",
     "precommit": "npm run lint",
     "prepush": "npm run test",
-    "coverage":
-      "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --compilers js:babel-register tests/**/*.js"
+    "coverage": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --compilers js:babel-register tests/**/*.js"
   },
   "devDependencies": {
     "@storybook/react": "^3.1.9",
