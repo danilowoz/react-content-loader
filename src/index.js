@@ -10,16 +10,15 @@ export { default as List } from './stylized/ListStyle'
 export { default as BulletList } from './stylized/BulletListStyle'
 
 export type Props = {
-  style: { [key: string]: any },
-  type: string,
   animate: boolean,
   speed: number,
+  className: string,
   width: number,
   height: number,
+  preserveAspectRatio: string,
   primaryColor: string,
   secondaryColor: string,
-  preserveAspectRatio: string,
-  className: string,
+  style: { [key: string]: any },
   uniquekey: string,
 }
 
@@ -28,9 +27,9 @@ export const defaultProps = {
   speed: 2,
   width: 400,
   height: 130,
+  preserveAspectRatio: 'xMidYMid meet',
   primaryColor: '#f0f0f0',
   secondaryColor: '#e0e0e0',
-  preserveAspectRatio: 'xMidYMid meet',
 }
 
 const InitialComponent = props => (
