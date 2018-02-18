@@ -116,7 +116,7 @@ import { List } from 'react-content-loader'
 const MyListLoader = () => <List />
 ```
 
-![List Style](https://user-images.githubusercontent.com/2671660/27986068-7a0040d6-63f9-11e7-8e54-dcb220e42fd7.gif)
+![List Style](https://user-images.githubusercontent.com/4838076/36352948-b8931430-149e-11e8-9f4b-3f00bc444a6d.gif)
 
 #### Bullet list Style
 
@@ -145,9 +145,9 @@ const MyLoader = () => (
 )
 ```
 
-![Code Style](https://cloud.githubusercontent.com/assets/4838076/22760218/aa619f32-ee3c-11e6-9cd1-c4af9dd1278e.gif)
+![Custom](https://user-images.githubusercontent.com/4838076/36352947-b87019a8-149e-11e8-99ba-c71c2bcf8733.gif)
 
-## Similares
+## Similars
 
 * [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
 * [Preact](https://github.com/bonitasoft/preact-content-loader);
