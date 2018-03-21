@@ -151,7 +151,7 @@ const MyLoader = () => (
 
 * [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
 * [Preact](https://github.com/bonitasoft/preact-content-loader);
-* [Vue.js](https://github.com/LucasLeandro1204/vue-content-loading);
+* Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
 * [Angular](https://github.com/Gbuomprisco/ngx-content-loading).
 
 ## Development
