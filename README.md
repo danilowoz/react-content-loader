@@ -22,8 +22,8 @@ content that will be loaded, similar to Facebook cards loaders.
   your customs loadings easily;
 * :ok_hand: **You can use right now:** there are a lot of presets to use the loader, see the
   [options](#options);
-* :rocket: **Perfomance:** react-content-loader uses pure SVG to work, so it's works without any extra scritp,
-  canvas, image, etc;
+* :rocket: **Perfomance:** react-content-loader uses pure SVG to work, so it's works without any extra scritpt,
+  canvas, etc;
 
 ## Usage
 
