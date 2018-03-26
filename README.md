@@ -16,14 +16,14 @@ content that will be loaded, similar to Facebook cards loaders.
 
 ## Features
 
-* **Complety customizable:** you can change the colors, speed and sizes;
-* **Create your own loading:** use the
+* :gear: **Complety customizable:** you can change the colors, speed and sizes;
+* :pencil2: **Create your own loading:** use the
   [create-react-content-loader](https://danilowoz.github.io/create-react-content-loader/) to create
   your customs loadings easily;
-* **You can use right now:** there are a lot of presets to use the loader, see the
+* :ok_hand: **You can use right now:** there are a lot of presets to use the loader, see the
   [options](#options);
-* **Perfomance:** react-content-loader uses pure SVG to work, so it's works without any javascript,
-  canvas, etc;
+* :rocket: **Perfomance:** react-content-loader uses pure SVG to work, so it's works without any extra scritp,
+  canvas, image, etc;
 
 ## Usage
 
