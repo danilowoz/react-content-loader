@@ -69,8 +69,8 @@ const MyLoader = () => (
 | **preserveAspectRatio** | `{String}`  | `xMidYMid meet`  | Aspect ratio option of `<svg/>`                            |
 | **primaryColor**        | `{String}`  | `#f3f3f3`        | Background                                                 |
 | **secondaryColor**      | `{String}`  | `#ecebeb`        | Animation color                                            |
-| **style**               | `{Object}`  | `null`           | Ex: `{ marginTop: '50px' }`                                |
-| **uniquekey**           | `{String}`  | random unique id | **Use the same key value, it works to Server Side Render** |
+| **style**               | `{Object}`  | `null`           | Ex: `{ width: '100%', height: '70px' }`                                |
+| **uniquekey**           | `{String}`  | random unique id | Use the same value of prop key, that will solve inconsistency on the SSR. |
 
 ### Examples
 
