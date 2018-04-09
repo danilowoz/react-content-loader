@@ -171,6 +171,3 @@ Run the storybook to see your changes
 ## License
 
 [MIT](https://github.com/danilowoz/react-content-loader/blob/master/LICENSE)
-
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
