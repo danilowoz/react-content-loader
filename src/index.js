@@ -18,8 +18,8 @@ export type Props = {
   preserveAspectRatio: string,
   primaryColor: string,
   secondaryColor: string,
-  primaryOpacity?: number,
-  secondaryOpacity?: number,
+  primaryOpacity: number,
+  secondaryOpacity: number,
   style: { [key: string]: any },
   uniquekey: string,
 }
