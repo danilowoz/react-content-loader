@@ -33,7 +33,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
         <clipPath id={idClip}>{props.children}</clipPath>
 
         <linearGradient id={idGradient}>
-          <stop offset="0%" stopColor={props.primaryColor}>
+          <stop offset="0%" stopColor={props.primaryColor} stopOpacity={props.primaryOpacity}>
             {props.animate ? (
               <animate
                 attributeName="offset"
@@ -43,7 +43,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
               />
             ) : null}
           </stop>
-          <stop offset="50%" stopColor={props.secondaryColor}>
+          <stop offset="50%" stopColor={props.secondaryColor} stopOpacity={props.secondaryOpacity}>
             {props.animate ? (
               <animate
                 attributeName="offset"
@@ -53,7 +53,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
               />
             ) : null}
           </stop>
-          <stop offset="100%" stopColor={props.primaryColor}>
+          <stop offset="100%" stopColor={props.primaryColor} stopOpacity={props.primaryOpacity}>
             {props.animate ? (
               <animate
                 attributeName="offset"

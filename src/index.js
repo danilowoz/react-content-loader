@@ -18,6 +18,8 @@ export type Props = {
   preserveAspectRatio: string,
   primaryColor: string,
   secondaryColor: string,
+  primaryOpacity: number,
+  secondaryOpacity: number,
   style: { [key: string]: any },
   uniquekey: string,
 }
@@ -30,6 +32,8 @@ export const defaultProps = {
   preserveAspectRatio: 'xMidYMid meet',
   primaryColor: '#f0f0f0',
   secondaryColor: '#e0e0e0',
+  primaryOpacity: 1,
+  secondaryOpacity: 1,
 }
 
 const InitialComponent = props => (

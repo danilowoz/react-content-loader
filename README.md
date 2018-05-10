@@ -72,6 +72,8 @@ const MyLoader = () => (
 | **preserveAspectRatio** | `{String}`  | `xMidYMid meet`  | Aspect ratio option of `<svg/>`                            |
 | **primaryColor**        | `{String}`  | `#f3f3f3`        | Background                                                 |
 | **secondaryColor**      | `{String}`  | `#ecebeb`        | Animation color                                            |
+| **primaryOpacity**      | `{Number}`  | `1`              | Background opacity (0 = transparent, 1 = opaque)           |
+| **secondaryOpacity**    | `{Number}`  | `1`              | Animation opacity (0 = transparent, 1 = opaque)            |
 | **style**               | `{Object}`  | `null`           | Ex: `{ width: '100%', height: '70px' }`                                |
 | **uniquekey**           | `{String}`  | random unique id | Use the same value of prop key, that will solve inconsistency on the SSR. |
 
@@ -174,3 +176,24 @@ Run the storybook to see your changes
 ## License
 
 [MIT](https://github.com/danilowoz/react-content-loader/blob/master/LICENSE)
+
+## Known Issues
+
+* **Safari / iOS**
+      
+  When using `rgba` as a `primaryColor` or `secondaryColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `primaryColor`/`secondaryColor`, use the `rgb` equivalent and move the alpha channel value to the `primaryOpacity`/`secondaryOpacity` props.
+  
+  ```jsx
+  {/* Opaque color in Safari and iOS */}
+  <ContentLoader 
+    primaryColor="rgba(0,0,0,0.06)" 
+    secondaryColor="rgba(0,0,0,0.12)">
+  
+
+  {/* Semi-transparent color in Safari and iOS */}
+  <ContentLoader 
+    primaryColor="rgb(0,0,0)"
+    secondaryColor="rgb(0,0,0)"
+    primaryOpacity={0.06}
+    secondaryOpacity={0.12}>
+  ```
