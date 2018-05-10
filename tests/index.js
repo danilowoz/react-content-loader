@@ -38,6 +38,8 @@ describe('<ContentLoader />:', () => {
         animate={false}
         primaryColor="#000"
         secondaryColor="#fff"
+        primaryOpacity={0.06}
+        secondaryOpacity={0.12}
         preserveAspectRatio="xMaxYMax"
         className="random-className"
         style={{ marginBottom: '10px' }}
@@ -66,6 +68,14 @@ describe('<ContentLoader />:', () => {
 
     it('`secondaryColor` is a string and used', () => {
       expect(wrapper.props().secondaryColor).to.string('#fff')
+    })
+
+    it('`primaryOpacity` is a number and used', () => {
+      expect(wrapper.props().primaryOpacity).to.equal(0.06)
+    })
+
+    it('`secondaryOpacity` is a number and used', () => {
+      expect(wrapper.props().secondaryOpacity).to.equal(0.12)
     })
 
     it('`preserveAspectRatio` is a string and used', () => {
