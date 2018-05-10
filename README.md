@@ -13,6 +13,7 @@ content that will be loaded, similar to Facebook cards loaders.
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)]()
 [![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
+[![](https://data.jsdelivr.com/v1/package/npm/react-content-loader/badge)](https://www.jsdelivr.com/package/npm/react-content-loader)
 
 ## Features
 
@@ -32,6 +33,8 @@ content that will be loaded, similar to Facebook cards loaders.
 Yarn: `$ yarn add react-content-loader`
 
 Npm: `$ npm i react-content-loader --save`
+
+CDN: [from JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
 
 **You can use it in two ways ([See the options)](#options):**
 
