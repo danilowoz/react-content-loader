@@ -10,7 +10,7 @@ import chaiEnzyme from 'chai-enzyme'
 Enzyme.configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
 
-import Wrap, { generateId } from '../src/Wrap'
+import Wrap from '../src/Wrap'
 import defaultProps from '../src/index'
 
 describe('<Wrap /> Check id`s to render the SVG', () => {
