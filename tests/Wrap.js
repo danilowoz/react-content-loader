@@ -10,7 +10,6 @@ import chaiEnzyme from 'chai-enzyme'
 Enzyme.configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
 
-import ContentLoader from '../src/index'
 import Wrap, { generateId } from '../src/Wrap'
 import defaultProps from '../src/index'
 
