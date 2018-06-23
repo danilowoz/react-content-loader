@@ -6,7 +6,6 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
-import sinon from 'sinon'
 
 Enzyme.configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
