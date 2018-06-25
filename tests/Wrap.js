@@ -6,13 +6,11 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
-import sinon from 'sinon'
 
 Enzyme.configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
 
-import ContentLoader from '../src/index'
-import Wrap, { generateId } from '../src/Wrap'
+import Wrap from '../src/Wrap'
 import defaultProps from '../src/index'
 
 describe('<Wrap /> Check id`s to render the SVG', () => {
