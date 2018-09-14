@@ -21,8 +21,8 @@ const Wrap = (props: WrapProps): React.Element<*> => {
       className={props.className}
     >
       <rect
-        style={{ fill: `url(#${idGradient})` }}
-        clipPath={`url(#${idClip})`}
+        style={{ fill: `url(${window.location.href}#${idGradient})` }}
+        clipPath={`url(${window.location.href}#${idClip})`}
         x="0"
         y="0"
         width={props.width}
