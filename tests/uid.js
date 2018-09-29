@@ -1,10 +1,10 @@
-import { expect } from 'chai'
+import { expect } from "chai"
 
-import uid from '../src/uid'
+import uid from "../src/uid"
 
-describe('unique id', () => {
+describe("unique id", () => {
   const options = 100
-  const ids = new Array(options).fill(' ').map(item => uid())
+  const ids = new Array(options).fill(" ").map(item => uid())
   const unique = Array.from(new Set(ids))
 
   it(`should have ${options} diferents ids`, () => {
@@ -12,6 +12,6 @@ describe('unique id', () => {
   })
 
   it(`return a string`, () => {
-    expect(uid()).to.be.a('string')
+    expect(uid()).to.be.a("string")
   })
 })

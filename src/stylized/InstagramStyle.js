@@ -1,7 +1,7 @@
-//@flow
-import * as React from 'react'
-import ContentLoader from '../index'
-import type { WrapProps } from '../Wrap'
+// @flow
+import * as React from "react"
+import ContentLoader from "../index"
+import type { WrapProps } from "../Wrap"
 
 const InstagramStyle = (props: WrapProps): React.Element<*> => (
   <ContentLoader {...props} height={480}>

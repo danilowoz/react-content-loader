@@ -17,14 +17,13 @@ content that will be loaded, similar to Facebook cards loaders.
 
 ## Features
 
-* :gear: **Completely customizable:** you can change the colors, speed and sizes;
+* :gear: **Completely customizable:** you can change the colors, speed, sizes and even with RTL content support;
 * :pencil2: **Create your own loading:** use the
   [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create
   your own custom loadings easily;
 * :ok_hand: **You can use right now:** there are a lot of presets to use it, see the
   [examples](#examples);
-* :rocket: **Performance:** it uses pure SVG to work, so it works without any extra scripts,
-  canvas, etc;
+* :rocket: **Performance:** written using only the SVG API.
 
 ## Usage
 
@@ -69,6 +68,7 @@ const MyLoader = () => (
 | **className**           | `{String}`  | `''`             | Classname in the `<svg/>`                                  |
 | **width**               | `{Number}`  | `400`            | viewBox width of `<svg/>`                                  |
 | **height**              | `{Number}`  | `130`            | viewBox height of `<svg/>`                                 |
+| **rtl**                 | `{Boolean}`  | `false`         | Right-to-left animation                                    |
 | **preserveAspectRatio** | `{String}`  | `xMidYMid meet`  | Aspect ratio option of `<svg/>`                            |
 | **primaryColor**        | `{String}`  | `#f3f3f3`        | Background                                                 |
 | **secondaryColor**      | `{String}`  | `#ecebeb`        | Animation color                                            |
