@@ -31,9 +31,10 @@ describe("<ContentLoader />:", () => {
   describe("Props are propagated", () => {
     const wrapper = mount(
       <ContentLoader
+        rtl
         speed={10}
-        height={200}
         width={200}
+        height={200}
         animate={false}
         primaryColor="#000"
         secondaryColor="#fff"
@@ -45,44 +46,48 @@ describe("<ContentLoader />:", () => {
       />
     )
 
-    it("`speed` is a number and used", () => {
+    it("`speed` is a number and it's used", () => {
       expect(wrapper.props().speed).to.equal(10)
     })
 
-    it("`height` is a number and used", () => {
+    it("`height` is a number and it's used", () => {
       expect(wrapper.props().height).to.equal(200)
     })
 
-    it("`width` is a number and used", () => {
+    it("`width` is a number and it's used", () => {
       expect(wrapper.props().width).to.equal(200)
     })
 
-    it("`animate` is a boolean and used", () => {
+    it("`animate` is a boolean and it's used", () => {
       expect(wrapper.props().animate).to.be.false
     })
 
-    it("`primaryColor` is a string and used", () => {
+    it("`primaryColor` is a string and it's used", () => {
       expect(wrapper.props().primaryColor).to.string("#000")
     })
 
-    it("`secondaryColor` is a string and used", () => {
+    it("`secondaryColor` is a string and it's used", () => {
       expect(wrapper.props().secondaryColor).to.string("#fff")
     })
 
-    it("`primaryOpacity` is a number and used", () => {
+    it("`primaryOpacity` is a number and it's used", () => {
       expect(wrapper.props().primaryOpacity).to.equal(0.06)
     })
 
-    it("`secondaryOpacity` is a number and used", () => {
+    it("`secondaryOpacity` is a number and it's used", () => {
       expect(wrapper.props().secondaryOpacity).to.equal(0.12)
     })
 
-    it("`preserveAspectRatio` is a string and used", () => {
+    it("`preserveAspectRatio` is a string and it's used", () => {
       expect(wrapper.props().preserveAspectRatio).to.string("xMaxYMax")
     })
 
-    it("`style` is a object and used", () => {
+    it("`style` is an object and it's used", () => {
       expect(wrapper.props().style).to.deep.equal({ marginBottom: "10px" })
+    })
+
+    it("`rtl` is a boolean and it's used", () => {
+      expect(wrapper.props().rtl).to.equal(true)
     })
 
     it("`uniquekey` does not generate undefined `id` values for svg", () => {

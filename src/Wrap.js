@@ -12,10 +12,10 @@ const Wrap = (props: WrapProps): React.Element<*> => {
   const idClip = props.uniquekey ? `${props.uniquekey}-idClip` : uid()
   const idGradient = props.uniquekey ? `${props.uniquekey}-idGradient` : uid()
 
-  const defautlDirection = ["-3; 1", "-2; 2", "-1; 3"]
-  const rtlDirection = ["1; -3", "2; -2", "3; -1"]
+  const defautlAnimation = ["-3; 1", "-2; 2", "-1; 3"]
+  const rtlAnimation = ["1; -3", "2; -2", "3; -1"]
 
-  const direction = props.rtl ? rtlDirection : defautlDirection
+  const animationValues = props.rtl ? rtlAnimation : defautlAnimation
 
   return (
     <svg
@@ -45,7 +45,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             {props.animate && (
               <animate
                 attributeName="offset"
-                values={direction[0]}
+                values={animationValues[0]}
                 dur={`${props.speed}s`}
                 repeatCount="indefinite"
               />
@@ -60,7 +60,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             {props.animate && (
               <animate
                 attributeName="offset"
-                values={direction[1]}
+                values={animationValues[1]}
                 dur={`${props.speed}s`}
                 repeatCount="indefinite"
               />
@@ -75,7 +75,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             {props.animate && (
               <animate
                 attributeName="offset"
-                values={direction[2]}
+                values={animationValues[2]}
                 dur={`${props.speed}s`}
                 repeatCount="indefinite"
               />
