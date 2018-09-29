@@ -103,3 +103,11 @@ storiesOf("ContentLoader", module)
       />
     </Container>
   ))
+  .add("rtl content", () => (
+    <Container>
+      <p>Left-to-right:</p>
+      <ContentLoader />
+      <p>Right-to-left:</p>
+      <ContentLoader rtl />
+    </Container>
+  ))

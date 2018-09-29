@@ -12,6 +12,11 @@ const Wrap = (props: WrapProps): React.Element<*> => {
   const idClip = props.uniquekey ? `${props.uniquekey}-idClip` : uid()
   const idGradient = props.uniquekey ? `${props.uniquekey}-idGradient` : uid()
 
+  const defautlDirection = ["-3; 1", "-2; 2", "-1; 3"]
+  const rtlDirection = ["1; -3", "2; -2", "3; -1"]
+
+  const direction = props.rtl ? rtlDirection : defautlDirection
+
   return (
     <svg
       viewBox={`0 0 ${props.width} ${props.height}`}
@@ -40,7 +45,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             {props.animate && (
               <animate
                 attributeName="offset"
-                values="-2; 1"
+                values={direction[0]}
                 dur={`${props.speed}s`}
                 repeatCount="indefinite"
               />
@@ -55,7 +60,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             {props.animate && (
               <animate
                 attributeName="offset"
-                values="-1.5; 2.5"
+                values={direction[1]}
                 dur={`${props.speed}s`}
                 repeatCount="indefinite"
               />
@@ -70,7 +75,7 @@ const Wrap = (props: WrapProps): React.Element<*> => {
             {props.animate && (
               <animate
                 attributeName="offset"
-                values="-1; 3"
+                values={direction[2]}
                 dur={`${props.speed}s`}
                 repeatCount="indefinite"
               />
