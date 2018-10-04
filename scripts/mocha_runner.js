@@ -23,5 +23,5 @@ global.navigator = {
 
 documentRef = document
 
-require('babel-core/register')
-require('babel-polyfill')
+require('@babel/register')
+require('@babel/polyfill')
