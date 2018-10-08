@@ -1,14 +1,13 @@
 import babel from 'rollup-plugin-babel'
 import replace from 'rollup-plugin-replace'
-import uglify from 'rollup-plugin-uglify'
+import { uglify } from "rollup-plugin-uglify";
 import pkg from './package.json'
 
 const mergeAll = (objs) => Object.assign({}, ...objs)
 
 const commonPlugins = [
   babel({
-    exclude: 'node_modules/**',
-    plugins: ['external-helpers']
+    exclude: 'node_modules/**'
   }),
 ]
 
