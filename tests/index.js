@@ -97,6 +97,16 @@ describe("<ContentLoader />:", () => {
       expect(idGradient).to.not.contain(undefined)
     })
 
+    it("`uniquekey` is used", () => {
+      const uniquekey = "my-unique-key"
+      const componentSSR = mount(<ContentLoader uniquekey={uniquekey} />)
+      const idClip = componentSSR.find("clipPath").prop("id")
+      const idGradient = componentSSR.find("linearGradient").prop("id")
+
+      expect(idClip).to.equal(`${uniquekey}-idClip`)
+      expect(idGradient).to.equal(`${uniquekey}-idGradient`)
+    })
+
     it("render two components with diferents ids", () => {
       const otherComp = mount(<ContentLoader />)
 
