@@ -111,3 +111,8 @@ storiesOf("ContentLoader", module)
       <ContentLoader rtl />
     </Container>
   ))
+  .add("remove viewBox", () => (
+    <Container>
+      <ContentLoader viewBox="" />
+    </Container>
+  ))

@@ -122,11 +122,11 @@ describe("<ContentLoader />:", () => {
 
     describe("inside <Wrap />", () => {
       it("exists", () => {
-        expect(wrapper.find("Wrap")).to.have.length(1)
+        expect(wrapper.find("svg")).to.have.length(1)
       })
 
       it("has no `animate` element", () => {
-        expect(wrapper.find("animate")).to.be.empty
+        expect(wrapper.find("animate")).to.have.length(0)
       })
     })
   })

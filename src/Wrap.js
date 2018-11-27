@@ -8,45 +8,62 @@ export type WrapProps = {
   children?: React.ChildrenArray<*>
 } & ContentLoaderProps
 
-const Wrap = (props: WrapProps): React.Element<*> => {
-  const idClip = props.uniquekey ? `${props.uniquekey}-idClip` : uid()
-  const idGradient = props.uniquekey ? `${props.uniquekey}-idGradient` : uid()
+export default ({
+  animate,
+  children,
+  className,
+  height,
+  preserveAspectRatio,
+  primaryColor,
+  primaryOpacity,
+  rtl,
+  secondaryColor,
+  secondaryOpacity,
+  speed,
+  style,
+  uniquekey,
+  width,
+  ...props
+}: WrapProps): React.Element<*> => {
+  const idClip = uniquekey ? `${uniquekey}-idClip` : uid()
+  const idGradient = uniquekey ? `${uniquekey}-idGradient` : uid()
 
   const defautlAnimation = ["-3; 1", "-2; 2", "-1; 3"]
   const rtlAnimation = ["1; -3", "2; -2", "3; -1"]
 
-  const animationValues = props.rtl ? rtlAnimation : defautlAnimation
+  const animationValues = rtl ? rtlAnimation : defautlAnimation
 
   return (
     <svg
-      viewBox={`0 0 ${props.width} ${props.height}`}
-      style={props.style}
-      preserveAspectRatio={props.preserveAspectRatio}
-      className={props.className}
+      viewBox={`0 0 ${width} ${height}`}
+      style={style}
+      preserveAspectRatio={preserveAspectRatio}
+      className={className}
+      {...props}
     >
       <rect
         style={{ fill: `url(#${idGradient})` }}
         clipPath={`url(#${idClip})`}
         x="0"
         y="0"
-        width={props.width}
-        height={props.height}
+        width={width}
+        height={height}
       />
 
       <defs>
-        <clipPath id={idClip}>{props.children}</clipPath>
+        <clipPath id={idClip}>{children}</clipPath>
 
         <linearGradient id={idGradient}>
           <stop
             offset="0%"
-            stopColor={props.primaryColor}
-            stopOpacity={props.primaryOpacity}
+            stopColor={primaryColor}
+            stopOpacity={primaryOpacity}
           >
-            {props.animate && (
+            {animate && (
               <animate
                 attributeName="offset"
                 values={animationValues[0]}
-                dur={`${props.speed}s`}
+                dur={`${speed}s`}
                 repeatCount="indefinite"
               />
             )}
@@ -54,14 +71,14 @@ const Wrap = (props: WrapProps): React.Element<*> => {
 
           <stop
             offset="50%"
-            stopColor={props.secondaryColor}
-            stopOpacity={props.secondaryOpacity}
+            stopColor={secondaryColor}
+            stopOpacity={secondaryOpacity}
           >
-            {props.animate && (
+            {animate && (
               <animate
                 attributeName="offset"
                 values={animationValues[1]}
-                dur={`${props.speed}s`}
+                dur={`${speed}s`}
                 repeatCount="indefinite"
               />
             )}
@@ -69,14 +86,14 @@ const Wrap = (props: WrapProps): React.Element<*> => {
 
           <stop
             offset="100%"
-            stopColor={props.primaryColor}
-            stopOpacity={props.primaryOpacity}
+            stopColor={primaryColor}
+            stopOpacity={primaryOpacity}
           >
-            {props.animate && (
+            {animate && (
               <animate
                 attributeName="offset"
                 values={animationValues[2]}
-                dur={`${props.speed}s`}
+                dur={`${speed}s`}
                 repeatCount="indefinite"
               />
             )}
@@ -86,5 +103,3 @@ const Wrap = (props: WrapProps): React.Element<*> => {
     </svg>
   )
 }
-
-export default Wrap
