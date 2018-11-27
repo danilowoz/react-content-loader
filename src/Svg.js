@@ -10,6 +10,7 @@ export type SvgProps = {
 
 export default ({
   animate,
+  ariaLabel,
   children,
   className,
   height,
@@ -35,19 +36,22 @@ export default ({
 
   return (
     <svg
-      viewBox={`0 0 ${width} ${height}`}
+      role="img"
       style={style}
-      preserveAspectRatio={preserveAspectRatio}
       className={className}
+      aria-labelledby={ariaLabel}
+      viewBox={`0 0 ${width} ${height}`}
+      preserveAspectRatio={preserveAspectRatio}
       {...props}
     >
+      <title>{ariaLabel}</title>
       <rect
-        style={{ fill: `url(#${idGradient})` }}
-        clipPath={`url(#${idClip})`}
         x="0"
         y="0"
         width={width}
         height={height}
+        clipPath={`url(#${idClip})`}
+        style={{ fill: `url(#${idGradient})` }}
       />
 
       <defs>
