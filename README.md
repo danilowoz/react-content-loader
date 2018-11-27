@@ -61,21 +61,22 @@ const MyLoader = () => (
 
 ## Options
 
-| Name                    | Type        | Default          | Description                                                |
-| ----------------------- | ----------- | ---------------- | ---------------------------------------------------------- |
-| **animate**             | `{Boolean}` | `true`           | `false` to render with no animation                        |
-| **speed**               | `{Number}`  | `2`              | Animation speed in seconds                                 |
-| **className**           | `{String}`  | `''`             | Classname in the `<svg/>`                                  |
-| **width**               | `{Number}`  | `400`            | viewBox width of `<svg/>`                                  |
-| **height**              | `{Number}`  | `130`            | viewBox height of `<svg/>`                                 |
-| **rtl**                 | `{Boolean}`  | `false`         | Right-to-left animation                                    |
-| **preserveAspectRatio** | `{String}`  | `xMidYMid meet`  | Aspect ratio option of `<svg/>`                            |
-| **primaryColor**        | `{String}`  | `#f3f3f3`        | Background                                                 |
-| **secondaryColor**      | `{String}`  | `#ecebeb`        | Animation color                                            |
-| **primaryOpacity**      | `{Number}`  | `1`              | Background opacity (0 = transparent, 1 = opaque)           |
-| **secondaryOpacity**    | `{Number}`  | `1`              | Animation opacity (0 = transparent, 1 = opaque)            |
-| **style**               | `{Object}`  | `null`           | Ex: `{ width: '100%', height: '70px' }`                                |
-| **uniquekey**           | `{String}`  | random unique id | Use the same value of prop key, that will solve inconsistency on the SSR. |
+| Name                    | Type        | Default                | Description                                                               |
+| ----------------------- | ----------- | ---------------------- | ------------------------------------------------------------------------- |
+| **animate**             | `{Boolean}` | `true`                 | `false` to render with no animation                                       |
+| **ariaLabel**           | `{String}`  | `Loading interface...` | Descrive what element it is                                               |
+| **speed**               | `{Number}`  | `2`                    | Animation speed in seconds                                                |
+| **className**           | `{String}`  | `''`                   | Classname in the `<svg/>`                                                 |
+| **width**               | `{Number}`  | `400`                  | viewBox width of `<svg/>`                                                 |
+| **height**              | `{Number}`  | `130`                  | viewBox height of `<svg/>`                                                |
+| **rtl**                 | `{Boolean}` | `false`                | Right-to-left animation                                                   |
+| **preserveAspectRatio** | `{String}`  | `xMidYMid meet`        | Aspect ratio option of `<svg/>`                                           |
+| **primaryColor**        | `{String}`  | `#f3f3f3`              | Background                                                                |
+| **secondaryColor**      | `{String}`  | `#ecebeb`              | Animation color                                                           |
+| **primaryOpacity**      | `{Number}`  | `1`                    | Background opacity (0 = transparent, 1 = opaque)                          |
+| **secondaryOpacity**    | `{Number}`  | `1`                    | Animation opacity (0 = transparent, 1 = opaque)                           |
+| **style**               | `{Object}`  | `null`                 | Ex: `{ width: '100%', height: '70px' }`                                   |
+| **uniquekey**           | `{String}`  | random unique id       | Use the same value of prop key, that will solve inconsistency on the SSR. |
 
 ### Examples
 

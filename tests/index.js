@@ -13,8 +13,26 @@ chai.use(chaiEnzyme())
 import ContentLoader from "../src/index"
 
 describe("<ContentLoader />:", () => {
+  const wrapper = mount(
+    <ContentLoader
+      rtl
+      speed={10}
+      width={200}
+      height={200}
+      animate={false}
+      primaryColor="#000"
+      secondaryColor="#fff"
+      primaryOpacity={0.06}
+      secondaryOpacity={0.12}
+      preserveAspectRatio="xMaxYMax"
+      className="random-className"
+      style={{ marginBottom: "10px" }}
+      ariaLabel="My custom loading title"
+    />
+  )
+
   describe("when type is custom", () => {
-    const wrapper = mount(
+    const customWrapper = mount(
       <ContentLoader>
         <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
         <rect x="82" y="44" rx="3" ry="3" width="250" height="10" />
@@ -23,29 +41,12 @@ describe("<ContentLoader />:", () => {
     )
 
     it("should render custom element", () => {
-      expect(wrapper.find("rect")).to.have.length(3)
-      expect(wrapper.find("circle")).to.have.length(1)
+      expect(customWrapper.find("rect")).to.have.length(3)
+      expect(customWrapper.find("circle")).to.have.length(1)
     })
   })
 
   describe("Props are propagated", () => {
-    const wrapper = mount(
-      <ContentLoader
-        rtl
-        speed={10}
-        width={200}
-        height={200}
-        animate={false}
-        primaryColor="#000"
-        secondaryColor="#fff"
-        primaryOpacity={0.06}
-        secondaryOpacity={0.12}
-        preserveAspectRatio="xMaxYMax"
-        className="random-className"
-        style={{ marginBottom: "10px" }}
-      />
-    )
-
     it("`speed` is a number and it's used", () => {
       expect(wrapper.props().speed).to.equal(10)
     })
@@ -90,44 +91,63 @@ describe("<ContentLoader />:", () => {
       expect(wrapper.props().rtl).to.equal(true)
     })
 
-    it("`uniquekey` does not generate undefined `id` values for svg", () => {
-      const idClip = wrapper.find("clipPath").prop("id")
-      const idGradient = wrapper.find("linearGradient").prop("id")
-      expect(idClip).to.not.contain(undefined)
-      expect(idGradient).to.not.contain(undefined)
+    it("`ariaLabel` is a string and it's used", () => {
+      expect(wrapper.props().ariaLabel).to.string("My custom loading title")
+    })
+  })
+
+  it("`uniquekey` does not generate undefined `id` values for svg", () => {
+    const idClip = wrapper.find("clipPath").prop("id")
+    const idGradient = wrapper.find("linearGradient").prop("id")
+    expect(idClip).to.not.contain(undefined)
+    expect(idGradient).to.not.contain(undefined)
+  })
+
+  it("`uniquekey` is used", () => {
+    const uniquekey = "my-unique-key"
+    const componentSSR = mount(<ContentLoader uniquekey={uniquekey} />)
+    const idClip = componentSSR.find("clipPath").prop("id")
+    const idGradient = componentSSR.find("linearGradient").prop("id")
+
+    expect(idClip).to.equal(`${uniquekey}-idClip`)
+    expect(idGradient).to.equal(`${uniquekey}-idGradient`)
+  })
+
+  it("render two components with diferents ids", () => {
+    const otherComp = mount(<ContentLoader />)
+
+    const idClip = wrapper.find("clipPath").prop("id")
+    const idGradient = wrapper.find("linearGradient").prop("id")
+
+    const idClipOtherCom = otherComp.find("clipPath").prop("id")
+    const idGradientOtherCom = otherComp.find("linearGradient").prop("id")
+
+    expect(idClip).to.not.equal(idClipOtherCom)
+    expect(idGradient).to.not.equal(idGradientOtherCom)
+  })
+
+  describe("inside <SVG />", () => {
+    it("exists", () => {
+      expect(wrapper.find("svg")).to.have.length(1)
     })
 
-    it("`uniquekey` is used", () => {
-      const uniquekey = "my-unique-key"
-      const componentSSR = mount(<ContentLoader uniquekey={uniquekey} />)
-      const idClip = componentSSR.find("clipPath").prop("id")
-      const idGradient = componentSSR.find("linearGradient").prop("id")
+    it("has no `animate` element", () => {
+      expect(wrapper.find("animate")).to.have.length(0)
+    })
+  })
 
-      expect(idClip).to.equal(`${uniquekey}-idClip`)
-      expect(idGradient).to.equal(`${uniquekey}-idGradient`)
+  describe("a11y", () => {
+    it("svg has aria label", () => {
+      expect(wrapper.find("svg").prop("aria-labelledby")).to.string("")
     })
 
-    it("render two components with diferents ids", () => {
-      const otherComp = mount(<ContentLoader />)
-
-      const idClip = wrapper.find("clipPath").prop("id")
-      const idGradient = wrapper.find("linearGradient").prop("id")
-
-      const idClipOtherCom = otherComp.find("clipPath").prop("id")
-      const idGradientOtherCom = otherComp.find("linearGradient").prop("id")
-
-      expect(idClip).to.not.equal(idClipOtherCom)
-      expect(idGradient).to.not.equal(idGradientOtherCom)
+    it("svg has role", () => {
+      expect(wrapper.find("svg").prop("role")).to.string("img")
     })
 
-    describe("inside <Wrap />", () => {
-      it("exists", () => {
-        expect(wrapper.find("svg")).to.have.length(1)
-      })
-
-      it("has no `animate` element", () => {
-        expect(wrapper.find("animate")).to.have.length(0)
-      })
+    it("svg has a title", () => {
+      expect(wrapper.find("title")).to.have.length(1)
+      expect(wrapper.find("title").text()).to.string("")
     })
   })
 })

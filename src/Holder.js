@@ -4,6 +4,7 @@ import Svg from "./Svg"
 
 export type Props = {
   animate: boolean,
+  ariaLabel: string,
   className: string,
   height: number,
   preserveAspectRatio: string,
@@ -20,6 +21,7 @@ export type Props = {
 
 export const defaultProps = {
   animate: true,
+  ariaLabel: "Loading interface...",
   height: 130,
   preserveAspectRatio: "xMidYMid meet",
   primaryColor: "#f0f0f0",
