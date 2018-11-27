@@ -64,7 +64,7 @@ const MyLoader = () => (
 | Name                    | Type        | Default                | Description                                                               |
 | ----------------------- | ----------- | ---------------------- | ------------------------------------------------------------------------- |
 | **animate**             | `{Boolean}` | `true`                 | `false` to render with no animation                                       |
-| **ariaLabel**           | `{String}`  | `Loading interface...` | Descrive what element it is                                               |
+| **ariaLabel**           | `{String}`  | `Loading interface...` | Describe what element it is                                               |
 | **speed**               | `{Number}`  | `2`                    | Animation speed in seconds                                                |
 | **className**           | `{String}`  | `''`                   | Classname in the `<svg/>`                                                 |
 | **width**               | `{Number}`  | `400`                  | viewBox width of `<svg/>`                                                 |
