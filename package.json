@@ -33,8 +33,8 @@
   "scripts": {
     "dev": "start-storybook -p 6006",
     "build": "rollup -c",
-    "build:commit": "npm run build && git commit -am \"Latest build\"",
-    "deploy": "rm -fr ./dist && npm run build && npm publish",
+    "deploy": "rm -fr ./dist && npm run build",
+    "deploy:commit": " git commit -am \"Update version\"",
     "test": "npm run lint && npm run testonly && npm run flow",
     "test:watch": "npm run testonly -- --watch --watch-extensions js",
     "testonly": "cross-env NODE_ENV=test mocha $npm_package_options_mocha",
@@ -42,9 +42,9 @@
     "flow": "flow",
     "precommit": "npm run lint",
     "prepush": "npm run test",
-    "release:major": "npm run build:commit && npm version major",
-    "release:minor": "npm run build:commit && npm version minor",
-    "release:patch": "npm run build:commit && npm version patch"
+    "release:major": "npm run deploy && npm version major && npm run deploy:commit",
+    "release:minor": "npm run deploy && npm version minor && npm run deploy:commit",
+    "release:patch": "npm run deploy && npm version patch && npm run deploy:commit"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
