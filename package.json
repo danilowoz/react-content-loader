@@ -1,6 +1,6 @@
 {
   "name": "react-content-loader",
-  "version": "3.1.2",
+  "version": "3.2.0",
   "description": "SVG component to create placeholder loading, like Facebook cards loading.",
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "dev": "start-storybook -p 6006",
     "build": "rollup -c",
     "deploy": "rm -fr ./dist && npm run build",
-    "deploy:commit": " git commit -am \"Update version\"",
+    "deploy:commit": " git commit -am \"Update version\" --no-verify",
     "test": "npm run lint && npm run testonly && npm run flow",
     "test:watch": "npm run testonly -- --watch --watch-extensions js",
     "testonly": "cross-env NODE_ENV=test mocha $npm_package_options_mocha",
