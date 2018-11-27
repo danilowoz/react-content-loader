@@ -1,6 +1,6 @@
 {
   "name": "react-content-loader",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "SVG component to create placeholder loading, like Facebook cards loading.",
   "repository": {
     "type": "git",
