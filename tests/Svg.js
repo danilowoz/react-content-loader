@@ -10,11 +10,11 @@ import chaiEnzyme from "chai-enzyme"
 Enzyme.configure({ adapter: new Adapter() })
 chai.use(chaiEnzyme())
 
-import Wrap from "../src/Wrap"
+import Svg from "../src/Svg"
 import defaultProps from "../src/index"
 
-describe("<Wrap /> Check id`s to render the SVG", () => {
-  const wrapper = mount(<Wrap {...defaultProps} />)
+describe("<Svg /> Check id`s to render the SVG", () => {
+  const wrapper = mount(<Svg {...defaultProps} />)
 
   it("is mask with the same `idClip`", () => {
     const idClip = wrapper.find("clipPath").prop("id")

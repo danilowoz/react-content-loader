@@ -2,11 +2,11 @@
 import * as React from "react"
 
 import uid from "./uid"
-import type { Props as ContentLoaderProps } from "./index"
+import type { Props as HolderProps } from "./Holder"
 
-export type WrapProps = {
+export type SvgProps = {
   children?: React.ChildrenArray<*>
-} & ContentLoaderProps
+} & HolderProps
 
 export default ({
   animate,
@@ -24,7 +24,7 @@ export default ({
   uniquekey,
   width,
   ...props
-}: WrapProps): React.Element<*> => {
+}: SvgProps): React.Element<*> => {
   const idClip = uniquekey ? `${uniquekey}-idClip` : uid()
   const idGradient = uniquekey ? `${uniquekey}-idGradient` : uid()
 

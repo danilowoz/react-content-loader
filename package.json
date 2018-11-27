@@ -33,6 +33,7 @@
   "scripts": {
     "dev": "start-storybook -p 6006",
     "build": "rollup -c",
+    "build:commit": "npm run build && git commit -am \"Latest build\"",
     "deploy": "rm -fr ./dist && npm run build && npm publish",
     "test": "npm run lint && npm run testonly && npm run flow",
     "test:watch": "npm run testonly -- --watch --watch-extensions js",
@@ -40,7 +41,10 @@
     "lint": "eslint 'src/**/*.js'",
     "flow": "flow",
     "precommit": "npm run lint",
-    "prepush": "npm run test"
+    "prepush": "npm run test",
+    "release:major": "npm run build:commit && npm version major",
+    "release:minor": "npm run build:commit && npm version minor",
+    "release:patch": "npm run build:commit && npm version patch"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
