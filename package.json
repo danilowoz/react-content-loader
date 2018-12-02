@@ -50,7 +50,6 @@
     "@babel/core": "^7.1.2",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.0.0",
@@ -75,10 +74,10 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "rollup": "0.66.4",
-    "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-typescript2": "^0.18.0",
     "rollup-plugin-uglify": "^6.0.0",
+    "ts-node": "^7.0.1",
     "typescript": "^3.2.1"
   },
   "peerDependencies": {
