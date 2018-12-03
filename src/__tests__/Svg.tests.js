@@ -5,127 +5,122 @@ import Svg from "../"
 
 describe("Svg", () => {
   const wrapper = renderer.create(<Svg />).root
+  const predicateRectClipPath = ({ type, props }) =>
+    type === "rect" && props.clipPath
+  const partsOfComponent = {
+    allLinearGradient: wrapper.findAllByType("linearGradient"),
+    allRectClipPath: wrapper.findAll(predicateRectClipPath),
+    allStops: wrapper.findAllByType("stop"),
+    clipPath: wrapper.findByType("clipPath"),
+    linearGradient: wrapper.findByType("linearGradient"),
+    rectClipPath: wrapper.find(predicateRectClipPath),
+    svg: wrapper.findByType("svg"),
+    title: wrapper.findByType("title")
+  }
 
   describe("it has basic elements necessary to work ", () => {
     it("has a `rect` with `clipPath`", () => {
-      const clipPath = wrapper.findAll(
-        ({ type, props }) => type === "rect" && props.clipPath
-      )
+      const { allRectClipPath } = partsOfComponent
 
-      expect(clipPath.length).toBe(1)
+      expect(allRectClipPath.length).toBe(1)
     })
 
     it("has a `linearGradient`", () => {
-      const linearGradient = wrapper.findAllByType("linearGradient")
+      const { allLinearGradient } = partsOfComponent
 
-      expect(linearGradient.length).toBe(1)
+      expect(allLinearGradient.length).toBe(1)
     })
 
     it("has three `stop`", () => {
-      const stops = wrapper.findAllByType("stop")
+      const { allStops } = partsOfComponent
 
-      expect(stops.length).toBe(3)
+      expect(allStops.length).toBe(3)
     })
 
     it("has `stop` inside the `linearGradient`", () => {
-      const linearGradient = wrapper.find(
-        ({ type }) => type === "linearGradient"
-      )
-      const stops = linearGradient.findAllByType("stop")
+      const { linearGradient } = partsOfComponent
+      const stopsIntoLinearGradient = linearGradient.findAllByType("stop")
 
-      expect(stops.length).toBe(3)
+      expect(stopsIntoLinearGradient.length).toBe(3)
     })
 
     it("has one `animate` inside each `stop`", () => {
-      const stops = wrapper.findAllByType("stop")
+      const { allStops } = partsOfComponent
 
-      stops.forEach(element => {
-        const animate = element.findAllByType("animate")
+      allStops.forEach(stop => {
+        const animate = stop.findAllByType("animate")
         expect(animate.length).toBe(1)
       })
     })
   })
 
   describe("unique key", () => {
-    it("`uniquekey` does not generate undefined `id` values for svg", () => {
-      const clipPath = wrapper.find(
-        ({ type, props }) => type === "rect" && props.clipPath
-      )
-      const linearGradient = wrapper.findByType("linearGradient")
+    it("`uniquekey` does not generate undefined `id` values for SVG", () => {
+      const { clipPath, linearGradient } = partsOfComponent
 
-      console.log(clipPath)
-
-      // expect(clipPath.props).not.toBe(undefined)
-      // expect(linearGradient.props).not.toBe(undefined)
+      expect(clipPath.props.id).not.toBe(undefined)
+      expect(linearGradient.props.id).not.toBe(undefined)
     })
 
-    // it("`uniquekey` is used", () => {
-    //   const uniquekey = "my-unique-key"
-    //   const componentSSR = mount(<ContentLoader uniquekey={uniquekey} />)
-    //   const idClip = componentSSR.find("clipPath").prop("id")
-    //   const idGradient = componentSSR.find("wlinearGradient").prop("id")
-    //   expect(idClip).to.equal(`${uniquekey}-idClip`)
-    //   expect(idGradient).to.equal(`${uniquekey}-idGradient`)
-    // })
+    it("custom `uniquekey` is used", () => {
+      const uniquekey = "my-unique-key"
+      const wrapperUniqueKey = renderer.create(<Svg uniquekey={uniquekey} />)
+
+      const clipPath = wrapperUniqueKey.root.findByType("clipPath")
+      const linearGradient = wrapperUniqueKey.root.findByType("linearGradient")
+
+      expect(clipPath.props.id).toBe(`${uniquekey}-idClip`)
+      expect(linearGradient.props.id).toBe(`${uniquekey}-idGradient`)
+    })
+
+    it("render two components with diferents ids", () => {
+      // Wrapper
+      const { clipPath, linearGradient } = partsOfComponent
+
+      // Another component
+      const anotherComp = renderer.create(<Svg />).root
+      const anotherClipPath = anotherComp.findByType("clipPath")
+      const anotherLinearGradient = anotherComp.findByType("linearGradient")
+
+      expect(clipPath.props.id).not.toBe(anotherClipPath.props.id)
+      expect(linearGradient.props.id).not.toBe(anotherLinearGradient.props.id)
+    })
+
+    it("clipPath id and rect clipPath url are the same", () => {
+      const { clipPath, rectClipPath } = partsOfComponent
+
+      expect(rectClipPath.props.clipPath).toBe(`url(#${clipPath.props.id})`)
+    })
+
+    it("linearGradient id and rect clipPath fill are the same", () => {
+      const { linearGradient, rectClipPath } = partsOfComponent
+
+      expect(rectClipPath.props.style.fill).toBe(
+        `url(#${linearGradient.props.id})`
+      )
+    })
+  })
+
+  describe("a11y", () => {
+    it("svg has aria-label", () => {
+      const { svg } = partsOfComponent
+
+      expect(typeof svg.props["aria-labelledby"]).toBe("string")
+      expect(svg.props["aria-labelledby"].length).not.toBe(0)
+    })
+
+    it("svg has role", () => {
+      const { svg } = partsOfComponent
+
+      expect(typeof svg.props["role"]).toBe("string")
+      expect(svg.props["role"]).toBe("img")
+    })
+
+    it("svg has a title", () => {
+      const { title } = partsOfComponent
+
+      expect(typeof title.props.children).toBe("string")
+      expect(title.props.children.length).not.toBe(0)
+    })
   })
 })
-
-// it("render two components with diferents ids", () => {
-//   const otherComp = mount(<ContentLoader />)
-
-//   const idClip = wrapper.find("clipPath").prop("id")
-//   const idGradient = wrapper.find("linearGradient").prop("id")
-
-//   const idClipOtherCom = otherComp.find("clipPath").prop("id")
-//   const idGradientOtherCom = otherComp.find("linearGradient").prop("id")
-
-//   expect(idClip).to.not.equal(idClipOtherCom)
-//   expect(idGradient).to.not.equal(idGradientOtherCom)
-// })
-
-// describe("inside <SVG />", () => {
-//   it("exists", () => {
-//     expect(wrapper.find("svg")).to.have.length(1)
-//   })
-
-//   it("has no `animate` element", () => {
-//     expect(wrapper.find("animate")).to.have.length(0)
-//   })
-// })
-
-// describe("a11y", () => {
-//   it("svg has aria label", () => {
-//     expect(wrapper.find("svg").prop("aria-labelledby")).to.string("")
-//   })
-
-//   it("svg has role", () => {
-//     expect(wrapper.find("svg").prop("role")).to.string("img")
-//   })
-
-//   it("svg has a title", () => {
-//     expect(wrapper.find("title")).to.have.length(1)
-//     expect(wrapper.find("title").text()).to.string("")
-//   })
-// })
-
-// describe("<Svg /> Check id`s to render the SVG", () => {
-//   const wrapper = mount(<Svg {...defaultProps} />)
-
-//   it("is mask with the same `idClip`", () => {
-//     const idClip = wrapper.find("clipPath").prop("id")
-//     expect(wrapper.find("rect[clipPath]").prop("clipPath")).to.have.equal(
-//       `url(#${idClip})`
-//     )
-//   })
-
-//   it("is linearGradient with the same `idClip`", () => {
-//     const idGradient = wrapper.find("linearGradient").prop("id")
-//     expect(wrapper.find("rect[clipPath]").prop("style").fill).to.have.equal(
-//       `url(#${idGradient})`
-//     )
-//   })
-
-//   it("has a `svg`", () => {
-//     expect(wrapper.find("svg")).to.have.length(1)
-//   })
-// })
