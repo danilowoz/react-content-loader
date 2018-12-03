@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import FacebookStyle from "../../src/stylized/FacebookStyle"
+import InstagramStyle from "../../stylized/InstagramStyle"
 
-describe("FacebookStyle", () => {
+describe("InstagramStyle", () => {
   const wrapper = renderer.create(
-    <FacebookStyle uniquekey="FacebookStyle" speed={20} />
+    <InstagramStyle uniquekey="InstagramStyle" speed={20} />
   )
 
   test("renders correctly", () => {
@@ -16,6 +16,6 @@ describe("FacebookStyle", () => {
 
   test("props are propagated ", () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.uniquekey).toEqual("FacebookStyle")
+    expect(wrapper.root.props.uniquekey).toEqual("InstagramStyle")
   })
 })

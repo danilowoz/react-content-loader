@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import BulletListStyle from "../../src/stylized/BulletListStyle"
+import ListStyle from "../../stylized/ListStyle"
 
-describe("BulletListStyle", () => {
+describe("ListStyle", () => {
   const wrapper = renderer.create(
-    <BulletListStyle uniquekey="BulletListStyle" speed={20} />
+    <ListStyle uniquekey="ListStyle" speed={20} />
   )
 
   test("renders correctly", () => {
@@ -16,6 +16,6 @@ describe("BulletListStyle", () => {
 
   test("props are propagated ", () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.uniquekey).toEqual("BulletListStyle")
+    expect(wrapper.root.props.uniquekey).toEqual("ListStyle")
   })
 })

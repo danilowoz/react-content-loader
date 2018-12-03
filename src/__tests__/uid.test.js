@@ -1,6 +1,6 @@
 import React from "react"
 
-import uid from "../src/uid"
+import uid from "../uid"
 
 describe("unique id", () => {
   const options = 100

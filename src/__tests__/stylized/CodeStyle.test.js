@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import ListStyle from "../../src/stylized/ListStyle"
+import CodeStyle from "../../stylized/CodeStyle"
 
-describe("ListStyle", () => {
+describe("CodeStyle", () => {
   const wrapper = renderer.create(
-    <ListStyle uniquekey="ListStyle" speed={20} />
+    <CodeStyle uniquekey="CodeStyle" speed={20} />
   )
 
   test("renders correctly", () => {
@@ -16,6 +16,6 @@ describe("ListStyle", () => {
 
   test("props are propagated ", () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.uniquekey).toEqual("ListStyle")
+    expect(wrapper.root.props.uniquekey).toEqual("CodeStyle")
   })
 })

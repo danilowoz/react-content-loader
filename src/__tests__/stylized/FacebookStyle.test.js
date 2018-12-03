@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import CodeStyle from "../../src/stylized/CodeStyle"
+import FacebookStyle from "../../stylized/FacebookStyle"
 
-describe("CodeStyle", () => {
+describe("FacebookStyle", () => {
   const wrapper = renderer.create(
-    <CodeStyle uniquekey="CodeStyle" speed={20} />
+    <FacebookStyle uniquekey="FacebookStyle" speed={20} />
   )
 
   test("renders correctly", () => {
@@ -16,6 +16,6 @@ describe("CodeStyle", () => {
 
   test("props are propagated ", () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.uniquekey).toEqual("CodeStyle")
+    expect(wrapper.root.props.uniquekey).toEqual("FacebookStyle")
   })
 })

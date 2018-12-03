@@ -5,6 +5,7 @@ exports[`ListStyle renders correctly 1`] = `
   aria-labelledby="Loading interface..."
   preserveAspectRatio="xMidYMid meet"
   role="img"
+  style={Object {}}
   viewBox="0 0 400 130"
 >
   <title>

@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react"
+
 import Svg from "./Svg"
 
 export type Props = {
@@ -30,7 +31,8 @@ export const defaultProps = {
   secondaryColor: "#e0e0e0",
   secondaryOpacity: 1,
   speed: 2,
-  width: 400
+  width: 400,
+  style: {}
 }
 
 const InitialComponent = props => (

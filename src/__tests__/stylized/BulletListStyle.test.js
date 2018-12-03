@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import InstagramStyle from "../../src/stylized/InstagramStyle"
+import BulletListStyle from "../../stylized/BulletListStyle"
 
-describe("InstagramStyle", () => {
+describe("BulletListStyle", () => {
   const wrapper = renderer.create(
-    <InstagramStyle uniquekey="InstagramStyle" speed={20} />
+    <BulletListStyle uniquekey="BulletListStyle" speed={20} />
   )
 
   test("renders correctly", () => {
@@ -16,6 +16,6 @@ describe("InstagramStyle", () => {
 
   test("props are propagated ", () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.uniquekey).toEqual("InstagramStyle")
+    expect(wrapper.root.props.uniquekey).toEqual("BulletListStyle")
   })
 })
