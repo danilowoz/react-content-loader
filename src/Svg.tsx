@@ -1,12 +1,8 @@
 import * as React from "react";
 
-import { IProps } from "./Holder";
+import { IContentLoaderProps } from "./Holder";
 
 import uid from "./uid";
-
-export interface ISvgProps extends IProps {
-  children?: React.ReactNode;
-}
 
 export default ({
   rtl,
@@ -26,7 +22,7 @@ export default ({
   preserveAspectRatio,
   // tslint:disable-next-line:trailing-comma
   ...props
-}: ISvgProps) => {
+}: IContentLoaderProps) => {
   const idClip = uniquekey ? `${uniquekey}-idClip` : uid();
   const idGradient = uniquekey ? `${uniquekey}-idGradient` : uid();
 
