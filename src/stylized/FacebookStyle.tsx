@@ -1,8 +1,7 @@
 import * as React from "react";
-import Holder from "../Holder";
-import { ISvgProps} from "../Svg";
+import Holder, {IContentLoaderProps} from "../Holder";
 
-const FacebookStyle = (props: ISvgProps) => (
+const FacebookStyle = (props: IContentLoaderProps) => (
   <Holder {...props}>
     <rect x="70" y="15" rx="4" ry="4" width="117" height="6.4" />
     <rect x="70" y="35" rx="3" ry="3" width="85" height="6.4" />

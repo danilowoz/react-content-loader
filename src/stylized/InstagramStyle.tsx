@@ -1,8 +1,7 @@
 import * as React from "react";
-import Holder from "../Holder";
-import { ISvgProps } from "../Svg";
+import Holder, { IContentLoaderProps } from "../Holder";
 
-const InstagramStyle = (props: ISvgProps) => (
+const InstagramStyle = (props: IContentLoaderProps) => (
   <Holder {...props} height={480}>
     <circle cx="30" cy="30" r="30" />
 

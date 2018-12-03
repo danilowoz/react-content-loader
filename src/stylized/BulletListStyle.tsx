@@ -1,8 +1,7 @@
 import * as React from "react";
-import Holder from "../Holder";
-import { ISvgProps } from "../Svg";
+import Holder, { IContentLoaderProps } from "../Holder";
 
-const BulletListStyle = (props: ISvgProps) => (
+const BulletListStyle = (props: IContentLoaderProps) => (
   <Holder {...props}>
     <circle cx="10" cy="20" r="8" />
     <rect x="25" y="15" rx="5" ry="5" width="220" height="10" />
