@@ -41,7 +41,7 @@
     "release:minor": "npm run build && npm version minor",
     "release:patch": "npm run build && npm version patch",
     "lint": "eslint 'src/**/*.js'",
-    "watch": "node_modules/.bin/tsc --watch",
+    "tsc:watch": "npm run tsc -- --watch",
     "tsc": "node_modules/.bin/tsc",
     "precommit": "npm run lint",
     "prepush": "npm run test"
