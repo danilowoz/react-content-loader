@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg from "./Svg";
 
-export interface IProps {
+export interface IContentLoaderProps {
   rtl?: boolean;
   speed?: number;
   width?: number;
@@ -33,11 +33,11 @@ export const defaultProps = {
   width: 400,
 };
 
-const InitialComponent = (props: IProps) => (
+const InitialComponent: React.FunctionComponent<IContentLoaderProps> = (props) => (
   <rect x="0" y="0" rx="5" ry="5" width={props.width} height={props.height} />
 );
 
-export default (props: IProps) => {
+export default (props: IContentLoaderProps) => {
   const mergedProps = { ...defaultProps, ...props };
   const children = props.children ? (
     props.children
