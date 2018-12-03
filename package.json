@@ -75,7 +75,12 @@
     "react": "^15.0.0-0 || ^16.0.0-0"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   },
   "dependencies": {}
 }
