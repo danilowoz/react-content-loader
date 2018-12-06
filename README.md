@@ -170,9 +170,9 @@ Install the dependencies
 
 `$ yarn`
 
-Run the storybook to see your changes
+Run the docz to see your changes
 
-`$ yarn storybook`
+`$ yarn dev`
 
 ## License
 
