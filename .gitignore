@@ -10,3 +10,5 @@ dist
 coverage
 .docz/
 .rpt2_cache
+settings.json
+*.code-workspace
