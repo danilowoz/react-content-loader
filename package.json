@@ -31,8 +31,7 @@
     "mocha": "--require scripts/mocha_runner ./tests/**/*.js ./tests/*.js"
   },
   "scripts": {
-	"dev": "start-storybook -p 6006",
-	"docz:dev": "docz dev",
+    "dev": "docz dev",
     "docz:build": "docz build",
     "build": "rm -fr ./dist && rollup -c",
     "test": "npm run lint && npm run testonly && npm run flow",
@@ -54,7 +53,6 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.0.0",
-    "@storybook/react": "^3.4.11",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
