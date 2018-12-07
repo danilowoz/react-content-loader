@@ -35,7 +35,7 @@
     "dev": "docz dev",
     "docz:build": "docz build",
     "build": "rm -fr ./dist && rollup -c",
-    "test": "npm run lint && npm run testonly && npm run tsc",
+    "test": "npm run tsc && npm run testonly && npm run tsc",
     "test:watch": "npm run testonly -- --watch --watch-extensions ts",
     "testonly": "cross-env NODE_ENV=test mocha $npm_package_options_mocha",
     "release:major": "npm run build && npm version major",
