@@ -42,7 +42,8 @@
     "lint": "eslint 'src/**/*.js'",
     "flow": "flow",
     "precommit": "npm run lint",
-    "prepush": "npm run test"
+    "prepush": "npm run test",
+    "coverage": "codecov"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -77,6 +78,7 @@
   "jest": {
     "verbose": true,
     "collectCoverage": true,
+    "coverageDirectory": "./coverage/",
     "coverageReporters": [
       "json",
       "html"
