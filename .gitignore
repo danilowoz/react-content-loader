@@ -9,4 +9,6 @@ node_modules
 dist
 coverage
 .docz/
-.rpt2_cache/
+.rpt2_cache
+settings.json
+*.code-workspace
