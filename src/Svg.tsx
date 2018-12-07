@@ -20,7 +20,6 @@ export default ({
   secondaryColor,
   secondaryOpacity,
   preserveAspectRatio,
-  // tslint:disable-next-line:trailing-comma
   ...props
 }: IContentLoaderProps) => {
   const idClip = uniquekey ? `${uniquekey}-idClip` : uid();
