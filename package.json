@@ -78,11 +78,7 @@
   "jest": {
     "verbose": true,
     "collectCoverage": true,
-    "coverageDirectory": "./coverage/",
-    "coverageReporters": [
-      "json",
-      "html"
-    ]
+    "coverageDirectory": "./coverage/"
   },
   "dependencies": {}
 }
