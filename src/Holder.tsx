@@ -2,28 +2,30 @@ import * as React from "react";
 import Svg from "./Svg";
 
 export interface IContentLoaderProps {
-  rtl?: boolean;
-  speed?: number;
-  width?: number;
-  height?: number;
   animate?: boolean;
   ariaLabel?: string;
-  className: string;
-  uniquekey?: string;
-  primaryColor?: string;
-  primaryOpacity: number;
-  secondaryColor?: string;
-  secondaryOpacity: number;
   children?: React.ReactNode;
-  preserveAspectRatio?: string;
-  style: { [key: string]: any };
+  className?: string;
+  height?: number;
+  preserveAspectRatio?: "none" | "xMinYMin meet" | "xMidYMin meet" | "xMaxYMin meet" |
+  "xMinYMid meet" | "xMidYMid meet" | "xMaxYMid meet" | "xMinYMax meet" | "xMidYMax meet" | "xMaxYMax meet" | "xMinYMin slice" | "xMidYMin slice" | "xMaxYMin slice" | "xMinYMid slice" |
+    "xMidYMid slice" | "xMaxYMid slice" | "xMinYMax slice" | "xMidYMax slice" | "xMaxYMax slice";
+  primaryColor?: string;
+  primaryOpacity?: number;
+  rtl?: boolean;
+  secondaryColor?: string;
+  secondaryOpacity?: number;
+  speed?: number;
+  style?: React.CSSProperties;
+  uniquekey?: string;
+  width?: number;
 }
 
-export const defaultProps = {
+export const defaultProps: IContentLoaderProps = {
   animate: true,
   ariaLabel: "Loading interface...",
   height: 130,
-  preserveAspectRatio: "xMidYMid meet",
+  preserveAspectRatio: "none",
   primaryColor: "#f0f0f0",
   primaryOpacity: 1,
   rtl: false,
@@ -33,7 +35,7 @@ export const defaultProps = {
   width: 400,
 };
 
-const InitialComponent: React.FunctionComponent<IContentLoaderProps> = (props) => (
+const InitialComponent: React.FunctionComponent<IContentLoaderProps> = (props) =>  (
   <rect x="0" y="0" rx="5" ry="5" width={props.width} height={props.height} />
 );
 
