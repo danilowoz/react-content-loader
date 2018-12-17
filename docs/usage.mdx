@@ -1,0 +1,98 @@
+---
+name: Usage
+route: /usage
+---
+import { Playground, PropsTable } from 'docz'
+import ContentLoader, {
+  Facebook,
+  Instagram,
+  Code,
+  List,
+  BulletList
+} from "../src/index"
+import FacebookStyle from "../src/stylized/FacebookStyle"
+
+
+# React Content Loader
+<PropsTable of={FacebookStyle} />
+
+## Different Type of Loaders
+
+### Facebook Style Loader
+<Playground>
+		<Facebook/>
+</Playground>
+
+### Instagram Style Loader
+<Playground>
+		<Instagram/>
+</Playground>
+
+### Code Style Loader
+<Playground>
+		<Code/>
+</Playground>
+
+### List Style Loader
+<Playground>
+		<List/>
+</Playground>
+
+### BulletList Style Loader
+<Playground>
+		<BulletList/>
+</Playground>
+
+### Custom Loader
+<Playground>
+	<ContentLoader
+      height={140}
+      speed={1}
+      primaryColor={"#333"}
+      secondaryColor={"#999"}
+    >
+      <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+      <rect x="82" y="44" rx="3" ry="3" width="250" height="10" />
+      <circle cx="35" cy="35" r="35" />
+    </ContentLoader>
+</Playground>
+
+## Unique key
+<Playground>
+		<Facebook uniquekey="unique-key" />
+</Playground>
+
+## No Animation
+Set animate props to false to stop Animation
+
+<Playground>
+		<Facebook animate={false} />
+</Playground>
+
+## Right To Left Animation
+Set rtl props to animate from right to left
+<Playground>
+		<Instagram rtl />
+</Playground>
+
+## Use ViewBox
+Use viewbox props to set viewbox value.
+Additionally, pass viewBox props as empty string to remove viewBox.
+<Playground>
+		<ContentLoader viewBox=""  />
+</Playground>
+
+## BugFix in Safari
+When using `rgba` as a `primaryColor` or `secondaryColor` value, 
+[Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180),
+meaning that the color will be opaque. To prevent this, instead of using an 
+`rgba` value for `primaryColor`/`secondaryColor`, use the `rgb` equivalent and
+move the alpha channel value to the `primaryOpacity`/`secondaryOpacity` props.
+<Playground>
+	<ContentLoader
+        primaryColor="rgb(0,0,0)"
+        secondaryColor="rgb(0,0,0)"
+        primaryOpacity={0.06}
+        secondaryOpacity={0.12}
+      />
+</Playground>
