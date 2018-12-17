@@ -1,6 +1,6 @@
-import { expect } from "chai"
+import React from "react"
 
-import uid from "../src/uid"
+import uid from "../uid"
 
 describe("unique id", () => {
   const options = 100
@@ -8,10 +8,10 @@ describe("unique id", () => {
   const unique = Array.from(new Set(ids))
 
   it(`should have ${options} diferents ids`, () => {
-    expect(unique).to.have.length(options)
+    expect(unique.length).toBe(options)
   })
 
   it(`return a string`, () => {
-    expect(uid()).to.be.a("string")
+    expect(typeof uid()).toBe("string")
   })
 })
