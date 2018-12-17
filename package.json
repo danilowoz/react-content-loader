@@ -36,14 +36,10 @@
     "test": "jest tests",
     "test:watch": "jest tests --watch",
     "testonly": "cross-env NODE_ENV=test mocha $npm_package_options_mocha",
-    "release:major": "npm run build && npm version major",
-    "release:minor": "npm run build && npm version minor",
-    "release:patch": "npm run build && npm version patch",
     "lint": "eslint 'src/**/*.js'",
     "flow": "flow",
-    "precommit": "npm run lint",
-    "prepush": "npm run test",
-    "coverage": "codecov"
+    "coverage": "codecov",
+    "release": "semantic-release"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -61,7 +57,7 @@
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-prettier": "^2.2.0",
     "flow-bin": "^0.59.0",
-    "husky": "^0.14.3",
+    "husky": "^1.1.2",
     "jest": "^23.6.0",
     "prettier": "^1.6.1",
     "react": "^16.1.1",
@@ -70,10 +66,17 @@
     "rollup": "0.66.4",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^6.0.0"
+    "rollup-plugin-uglify": "^6.0.0",
+    "semantic-release": "^15.13.1"
   },
   "peerDependencies": {
     "react": "^15.0.0-0 || ^16.0.0-0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
   },
   "jest": {
     "verbose": true,
