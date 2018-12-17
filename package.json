@@ -52,6 +52,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.12.0",
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-prettier": "^2.2.0",
@@ -59,9 +60,9 @@
     "husky": "^1.1.2",
     "jest": "^23.6.0",
     "prettier": "^1.6.1",
-    "react-test-renderer": "^16.6.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-test-renderer": "^16.6.3",
     "remark-emoji": "^2.0.2",
     "rollup": "0.66.4",
     "rollup-plugin-babel": "^4.0.3",
@@ -72,6 +73,7 @@
   "peerDependencies": {
     "react": "^15.0.0-0 || ^16.0.0-0"
   },
+  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
@@ -83,5 +85,9 @@
     "collectCoverage": true,
     "coverageDirectory": "./coverage/"
   },
-  "dependencies": {}
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
