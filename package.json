@@ -35,7 +35,6 @@
     "build": "rm -fr ./dist && rollup -c",
     "test": "jest tests",
     "test:watch": "jest tests --watch",
-    "testonly": "cross-env NODE_ENV=test mocha $npm_package_options_mocha",
     "lint": "eslint 'src/**/*.js'",
     "flow": "flow",
     "coverage": "codecov",
