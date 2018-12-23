@@ -7,6 +7,9 @@
     "jsx": "react",
     "sourceMap": true,
     "noImplicitAny": true,
+    "resolveJsonModule": true, // To load package.json
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
   "include": [
       "./src/**/*"
