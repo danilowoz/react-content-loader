@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import Holder, { IContentLoaderProps } from "../Holder";
 
 const InstagramStyle = (props: IContentLoaderProps) => (
