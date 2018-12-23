@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Holder, { IContentLoaderProps } from "../Holder";
 
-const InstagramStyle = (props: IContentLoaderProps) => (
+export default (props: IContentLoaderProps) => (
   <Holder {...props} height={480}>
     <circle cx="30" cy="30" r="30" />
 
@@ -11,5 +11,3 @@ const InstagramStyle = (props: IContentLoaderProps) => (
     <rect x="0" y="70" rx="5" ry="5" width="400" height="400" />
   </Holder>
 );
-
-export default InstagramStyle;
