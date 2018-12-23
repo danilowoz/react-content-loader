@@ -32,6 +32,7 @@ export const defaultProps: IContentLoaderProps = {
   secondaryColor: "#e0e0e0",
   secondaryOpacity: 1,
   speed: 2,
+  style: {},
   width: 400,
 };
 
