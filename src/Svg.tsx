@@ -1,8 +1,7 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { IContentLoaderProps } from "./Holder";
-
-import uid from "./uid";
+import { IContentLoaderProps } from './interface'
+import uid from './uid'
 
 export default ({
   rtl,
@@ -22,13 +21,13 @@ export default ({
   preserveAspectRatio,
   ...props
 }: IContentLoaderProps) => {
-  const idClip = uniquekey ? `${uniquekey}-idClip` : uid();
-  const idGradient = uniquekey ? `${uniquekey}-idGradient` : uid();
+  const idClip = uniquekey ? `${uniquekey}-idClip` : uid()
+  const idGradient = uniquekey ? `${uniquekey}-idGradient` : uid()
 
-  const defautlAnimation = ["-3; 1", "-2; 2", "-1; 3"];
-  const rtlAnimation = ["1; -3", "2; -2", "3; -1"];
+  const defautlAnimation = ['-3; 1', '-2; 2', '-1; 3']
+  const rtlAnimation = ['1; -3', '2; -2', '3; -1']
 
-  const animationValues = rtl ? rtlAnimation : defautlAnimation;
+  const animationValues = rtl ? rtlAnimation : defautlAnimation
 
   return (
     <svg
@@ -101,5 +100,5 @@ export default ({
         </linearGradient>
       </defs>
     </svg>
-  );
-};
+  )
+}

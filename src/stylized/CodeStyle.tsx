@@ -1,6 +1,7 @@
-import * as React from "react";
+import * as React from 'react'
 
-import Holder, {IContentLoaderProps} from "../Holder";
+import Holder from '../Holder'
+import { IContentLoaderProps } from '../interface'
 
 export default (props: IContentLoaderProps) => (
   <Holder {...props}>
@@ -17,5 +18,4 @@ export default (props: IContentLoaderProps) => (
 
     <rect x="0" y="60" rx="3" ry="3" width="30" height="10" />
   </Holder>
-);
-
+)

@@ -1,6 +1,8 @@
 import emoji from "remark-emoji"
+
 export default {
   title: "React Content Loader",
+  typescript: true,
   mdPlugins: [emoji],
   codeSandbox: false,
   htmlContext: {
