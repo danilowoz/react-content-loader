@@ -1,9 +1,8 @@
-// @flow
-import * as React from "react"
-import Holder from "../Holder"
-import type { SvgProps } from "../Svg"
+import * as React from "react";
 
-const BulletListStyle = (props: SvgProps): React.Element<*> => (
+import Holder, { IContentLoaderProps } from "../Holder";
+
+export default (props: IContentLoaderProps) => (
   <Holder {...props}>
     <circle cx="10" cy="20" r="8" />
     <rect x="25" y="15" rx="5" ry="5" width="220" height="10" />
@@ -14,6 +13,4 @@ const BulletListStyle = (props: SvgProps): React.Element<*> => (
     <circle cx="10" cy="110" r="8" />
     <rect x="25" y="105" rx="5" ry="5" width="220" height="10" />
   </Holder>
-)
-
-export default BulletListStyle
+);

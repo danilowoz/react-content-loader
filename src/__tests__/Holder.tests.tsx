@@ -1,6 +1,6 @@
-import React from "react"
-import renderer from "react-test-renderer"
-import ShallowRenderer from "react-test-renderer/shallow"
+import * as React from "react"
+import * as renderer from "react-test-renderer"
+import * as ShallowRenderer from 'react-test-renderer/shallow';
 
 import ContentLoader from "../Holder"
 
@@ -24,10 +24,10 @@ describe("Holder", () => {
   })
 
   describe("Props are propagated", () => {
-    const noPropsComponent = new ShallowRenderer()
+    const noPropsComponent = ShallowRenderer.createRenderer()
     noPropsComponent.render(<ContentLoader />)
 
-    const withPropsComponent = new ShallowRenderer()
+    const withPropsComponent = ShallowRenderer.createRenderer()
     withPropsComponent.render(
       <ContentLoader
         rtl
@@ -39,7 +39,7 @@ describe("Holder", () => {
         secondaryColor="#fff"
         primaryOpacity={0.06}
         secondaryOpacity={0.12}
-        preserveAspectRatio="xMaxYMax"
+        preserveAspectRatio="xMaxYMax meet"
         className="random-className"
         style={{ marginBottom: "10px" }}
         ariaLabel="My custom loading title"
@@ -124,10 +124,10 @@ describe("Holder", () => {
     it("`preserveAspectRatio` is a string and it's used", () => {
       // defaultProps
       expect(typeof propsFromEmpty.preserveAspectRatio).toBe("string")
-      expect(propsFromEmpty.preserveAspectRatio).toBe("xMidYMid meet")
+      expect(propsFromEmpty.preserveAspectRatio).toBe("none")
       // custom props
       expect(typeof propsFromFullfield.preserveAspectRatio).toBe("string")
-      expect(propsFromFullfield.preserveAspectRatio).toBe("xMaxYMax")
+      expect(propsFromFullfield.preserveAspectRatio).toBe("xMaxYMax meet")
     })
 
     it("`style` is an object and it's used", () => {

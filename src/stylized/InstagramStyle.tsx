@@ -1,9 +1,8 @@
-// @flow
-import * as React from "react"
-import Holder from "../Holder"
-import type { SvgProps } from "../Svg"
+import * as React from "react";
 
-const InstagramStyle = (props: SvgProps): React.Element<*> => (
+import Holder, { IContentLoaderProps } from "../Holder";
+
+export default (props: IContentLoaderProps) => (
   <Holder {...props} height={480}>
     <circle cx="30" cy="30" r="30" />
 
@@ -11,6 +10,4 @@ const InstagramStyle = (props: SvgProps): React.Element<*> => (
     <rect x="75" y="37" rx="4" ry="4" width="50" height="8" />
     <rect x="0" y="70" rx="5" ry="5" width="400" height="400" />
   </Holder>
-)
-
-export default InstagramStyle
+);

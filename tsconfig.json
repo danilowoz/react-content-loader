@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "outDir": "./dist",
+    "target": "es5",
+    "jsx": "react",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true, // To load package.json
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+      "./src/**/*"
+  ],
+  "exclude": ["node_modules"]
+}

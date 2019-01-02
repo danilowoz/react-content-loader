@@ -1,9 +1,8 @@
-// @flow
-import * as React from "react"
-import Holder from "../Holder"
-import type { SvgProps } from "../Svg"
+import * as React from "react";
 
-const CodeStyle = (props: SvgProps): React.Element<*> => (
+import Holder, {IContentLoaderProps} from "../Holder";
+
+export default (props: IContentLoaderProps) => (
   <Holder {...props}>
     <rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
     <rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
@@ -18,6 +17,5 @@ const CodeStyle = (props: SvgProps): React.Element<*> => (
 
     <rect x="0" y="60" rx="3" ry="3" width="30" height="10" />
   </Holder>
-)
+);
 
-export default CodeStyle

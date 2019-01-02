@@ -1,11 +1,16 @@
-import React from "react"
-import renderer from "react-test-renderer"
+import * as React from "react"
+import * as renderer from "react-test-renderer"
 
-import Svg from "../"
+import Svg from ".."
+
+interface IpredicateArgs {
+  type: any,
+  props: any
+}
 
 describe("Svg", () => {
   const wrapper = renderer.create(<Svg />).root
-  const predicateRectClipPath = ({ type, props }) =>
+  const predicateRectClipPath = ({ type, props }: IpredicateArgs) =>
     type === "rect" && props.clipPath
   const partsOfComponent = {
     allLinearGradient: wrapper.findAllByType("linearGradient"),
@@ -111,9 +116,9 @@ describe("Svg", () => {
 
     it("svg has role", () => {
       const { svg } = partsOfComponent
-
-      expect(typeof svg.props["role"]).toBe("string")
-      expect(svg.props["role"]).toBe("img")
+      const role = "role";
+      expect(typeof svg.props[role]).toBe("string")
+      expect(svg.props[role]).toBe("img")
     })
 
     it("svg has a title", () => {

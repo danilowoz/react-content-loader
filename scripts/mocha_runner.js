@@ -18,10 +18,11 @@ global.requestAnimationFrame = callback => {
 }
 
 global.navigator = {
-  userAgent: 'node.js',
+  userAgent: 'node.js'
 }
 
 documentRef = document
 
 require('@babel/register')
 require('@babel/polyfill')
+require('ts-node').register({ fast: true })

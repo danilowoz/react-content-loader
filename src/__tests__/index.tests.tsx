@@ -1,7 +1,7 @@
-import React from "react"
-import { render } from "react-dom"
+import * as React from "react"
+import * as ReactDOM from "react-dom"
 
-import ContentLoader from "../"
+import ContentLoader from ".."
 
 describe("index", () => {
   const div = document.createElement("div")
@@ -9,11 +9,11 @@ describe("index", () => {
   document.body.appendChild(div)
 
   it("renders", () => {
-    render(<ContentLoader />, document.getElementById("root"))
+    ReactDOM.render(<ContentLoader />, document.getElementById("root"))
   })
 
   it("renders a SVG as root element ", () => {
-    render(<ContentLoader />, document.getElementById("root"))
+    ReactDOM.render(<ContentLoader />, document.getElementById("root"))
     const svgElement = document
       .getElementById("root")
       .getElementsByTagName("svg")

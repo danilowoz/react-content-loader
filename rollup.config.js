@@ -1,18 +1,18 @@
-import babel from "rollup-plugin-babel"
 import replace from "rollup-plugin-replace"
 import { uglify } from "rollup-plugin-uglify"
+import typescript from "rollup-plugin-typescript2"
 import pkg from "./package.json"
 
 const mergeAll = objs => Object.assign({}, ...objs)
 
 const commonPlugins = [
-  babel({
-    exclude: "node_modules/**"
+  typescript({
+    typescript: require("typescript")
   })
 ]
 
 const configBase = {
-  input: "src/index.js",
+  input: "src/index.ts",
   output: {
     exports: "named"
   },
