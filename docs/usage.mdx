@@ -3,16 +3,16 @@ name: Usage
 route: /usage
 ---
 
-import { Playground, PropsTable } from "docz";
+import { Playground, PropsTable } from 'docz'
 
 import ContentLoader, {
   Facebook,
   Instagram,
   Code,
   List,
-  BulletList
-} from "../src";
-import FacebookStyle from "../src/stylized/FacebookStyle";
+  BulletList,
+} from '../src'
+import FacebookStyle from '../src/stylized/FacebookStyle'
 
 # React Content Loader
 
@@ -56,8 +56,8 @@ import FacebookStyle from "../src/stylized/FacebookStyle";
   <ContentLoader
     height={140}
     speed={1}
-    primaryColor={"#333"}
-    secondaryColor={"#999"}
+    primaryColor={'#333'}
+    secondaryColor={'#999'}
   >
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <rect x="82" y="44" rx="3" ry="3" width="250" height="10" />
@@ -79,7 +79,7 @@ Set animate props to false to stop Animation
   <Facebook animate={false} />
 </Playground>
 
-## Right To Left Animation
+## RTL: Right To Left Animation
 
 Set rtl props to animate from right to left
 
