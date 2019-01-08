@@ -4,7 +4,7 @@ import Svg from "./Svg"
 
 export type Props = {
   animate: boolean,
-  ariaLabel: string,
+  ariaLabel: string | boolean,
   className: string,
   height: number,
   preserveAspectRatio: string,
