@@ -1,6 +1,6 @@
 export interface IContentLoaderProps {
   animate?: boolean
-  ariaLabel?: string
+  ariaLabel?: string | boolean
   children?: React.ReactNode
   className?: string
   height?: number

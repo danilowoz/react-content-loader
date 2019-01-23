@@ -96,6 +96,18 @@ Additionally, pass viewBox props as empty string to remove viewBox.
   <ContentLoader viewBox="" />
 </Playground>
 
+## Custom aria label
+
+<Playground>
+  <ContentLoader ariaLabel="My custom loader" />
+</Playground>
+
+### Remove aria label
+
+<Playground>
+  <ContentLoader ariaLabel={false} />
+</Playground>
+
 ## BugFix in Safari
 
 When using `rgba` as a `primaryColor` or `secondaryColor` value,
