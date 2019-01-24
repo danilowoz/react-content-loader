@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BulletListStyle renders correctly 1`] = `
+<svg
+  aria-labelledby="Loading interface..."
+  preserveAspectRatio="none"
+  role="img"
+  style={Object {}}
+  viewBox="0 0 400 130"
+>
+  <title>
+    Loading interface...
+  </title>
+  <rect
+    clipPath="url(#BulletListStyle-idClip)"
+    height={130}
+    style={
+      Object {
+        "fill": "url(#BulletListStyle-idGradient)",
+      }
+    }
+    width={400}
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="BulletListStyle-idClip"
+    >
+      <circle
+        cx="10"
+        cy="20"
+        r="8"
+      />
+      <rect
+        height="10"
+        rx="5"
+        ry="5"
+        width="220"
+        x="25"
+        y="15"
+      />
+      <circle
+        cx="10"
+        cy="50"
+        r="8"
+      />
+      <rect
+        height="10"
+        rx="5"
+        ry="5"
+        width="220"
+        x="25"
+        y="45"
+      />
+      <circle
+        cx="10"
+        cy="80"
+        r="8"
+      />
+      <rect
+        height="10"
+        rx="5"
+        ry="5"
+        width="220"
+        x="25"
+        y="75"
+      />
+      <circle
+        cx="10"
+        cy="110"
+        r="8"
+      />
+      <rect
+        height="10"
+        rx="5"
+        ry="5"
+        width="220"
+        x="25"
+        y="105"
+      />
+    </clipPath>
+    <linearGradient
+      id="BulletListStyle-idGradient"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-3; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#e0e0e0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-2; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-1; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;

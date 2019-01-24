@@ -1,43 +1,34 @@
-// @flow
-import * as React from "react"
+import * as React from 'react'
 
-import uid from "./uid"
-import type { Props as HolderProps } from "./Holder"
-
-export type SvgProps = {
-  children?: React.ChildrenArray<*>
-} & HolderProps
+import { IContentLoaderProps } from './interface'
+import uid from './uid'
 
 export default ({
+  rtl,
+  speed,
+  style,
+  width,
+  height,
   animate,
   ariaLabel,
   children,
   className,
-  height,
-  preserveAspectRatio,
+  uniquekey,
   primaryColor,
   primaryOpacity,
-  rtl,
   secondaryColor,
   secondaryOpacity,
-  speed,
-  style,
-  uniquekey,
-  width,
+  preserveAspectRatio,
   ...props
-}: SvgProps): React.Element<*> => {
+}: IContentLoaderProps) => {
   const idClip = uniquekey ? `${uniquekey}-idClip` : uid()
   const idGradient = uniquekey ? `${uniquekey}-idGradient` : uid()
-
-  const defautlAnimation = ["-3; 1", "-2; 2", "-1; 3"]
-  const rtlAnimation = ["1; -3", "2; -2", "3; -1"]
-
-  const animationValues = rtl ? rtlAnimation : defautlAnimation
+  const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : {}
 
   return (
     <svg
       role="img"
-      style={style}
+      style={{ ...style, ...rtlStyle }}
       className={className}
       aria-labelledby={ariaLabel ? ariaLabel : null}
       viewBox={`0 0 ${width} ${height}`}
@@ -66,7 +57,7 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values={animationValues[0]}
+                values="-3; 1"
                 dur={`${speed}s`}
                 repeatCount="indefinite"
               />
@@ -81,7 +72,7 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values={animationValues[1]}
+                values="-2; 2"
                 dur={`${speed}s`}
                 repeatCount="indefinite"
               />
@@ -96,7 +87,7 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values={animationValues[2]}
+                values="-1; 3"
                 dur={`${speed}s`}
                 repeatCount="indefinite"
               />

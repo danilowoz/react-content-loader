@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InstagramStyle renders correctly 1`] = `
+<svg
+  aria-labelledby="Loading interface..."
+  preserveAspectRatio="none"
+  role="img"
+  style={Object {}}
+  viewBox="0 0 400 480"
+>
+  <title>
+    Loading interface...
+  </title>
+  <rect
+    clipPath="url(#InstagramStyle-idClip)"
+    height={480}
+    style={
+      Object {
+        "fill": "url(#InstagramStyle-idGradient)",
+      }
+    }
+    width={400}
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="InstagramStyle-idClip"
+    >
+      <circle
+        cx="30"
+        cy="30"
+        r="30"
+      />
+      <rect
+        height="13"
+        rx="4"
+        ry="4"
+        width="100"
+        x="75"
+        y="13"
+      />
+      <rect
+        height="8"
+        rx="4"
+        ry="4"
+        width="50"
+        x="75"
+        y="37"
+      />
+      <rect
+        height="400"
+        rx="5"
+        ry="5"
+        width="400"
+        x="0"
+        y="70"
+      />
+    </clipPath>
+    <linearGradient
+      id="InstagramStyle-idGradient"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-3; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#e0e0e0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-2; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-1; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;

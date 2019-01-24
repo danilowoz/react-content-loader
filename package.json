@@ -11,6 +11,7 @@
   "main": "dist/react-content-loader.cjs.js",
   "module": "dist/react-content-loader.es.js",
   "jsnext:main": "dist/react-content-loader.es.js",
+  "types": "dist/src/index.d.ts",
   "bugs": {
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
@@ -27,60 +28,83 @@
     "dist"
   ],
   "sideEffects": false,
-  "options": {
-    "mocha": "--require scripts/mocha_runner ./tests/**/*.js ./tests/*.js"
-  },
   "scripts": {
     "dev": "docz dev",
-    "docz:build": "docz build",
     "build": "rm -fr ./dist && rollup -c",
-    "test": "npm run lint && npm run testonly && npm run flow",
-    "test:watch": "npm run testonly -- --watch --watch-extensions js",
-    "testonly": "cross-env NODE_ENV=test mocha $npm_package_options_mocha",
-    "release:major": "npm run build && npm version major",
-    "release:minor": "npm run build && npm version minor",
-    "release:patch": "npm run build && npm version patch",
-    "lint": "eslint 'src/**/*.js'",
-    "flow": "flow",
-    "precommit": "npm run lint",
-    "prepush": "npm run test"
+    "test": "npm run tsc && jest",
+    "test:watch": "jest tests --watch",
+    "tsc": "node_modules/.bin/tsc",
+    "tsc:watch": "npm run tsc -- --watch",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "coverage": "codecov",
+    "release": "semantic-release"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "@types/jest": "^23.3.10",
+    "@types/react": "^16.7.13",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-test-renderer": "^16.0.3",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
-    "chai": "^4.1.2",
-    "chai-enzyme": "^1.0.0-beta.0",
-    "cross-env": "^5.1.3",
+    "babel-jest": "^23.6.0",
+    "cz-conventional-changelog": "^2.1.0",
     "docz": "^0.12.13",
     "docz-theme-default": "^0.12.13",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
-    "eslint": "^4.12.0",
-    "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-prettier": "^2.2.0",
-    "flow-bin": "^0.59.0",
-    "husky": "^0.14.3",
-    "jsdom": "11.6.0",
-    "jsdom-global": "3.0.2",
-    "mocha": "^4.0.1",
-    "prettier": "^1.6.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-test-renderer": "^16.6.3",
     "remark-emoji": "^2.0.2",
     "rollup": "0.66.4",
-    "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^6.0.0"
+    "rollup-plugin-typescript2": "^0.18.0",
+    "rollup-plugin-uglify": "^6.0.0",
+    "semantic-release": "^15.13.1",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.1"
   },
   "peerDependencies": {
     "react": "^15.0.0-0 || ^16.0.0-0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && npm run tsc",
+      "pre-push": "npm run test"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage/",
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

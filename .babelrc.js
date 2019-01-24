@@ -5,12 +5,12 @@ const loose = true
 module.exports = {
   presets: [
     [
-      '@babel/preset-env', {
+      '@babel/preset-env',
+      {
         modules,
         loose
       }
     ],
-    '@babel/preset-react',
-    '@babel/preset-flow'
-  ],
+    '@babel/preset-react'
+  ]
 }

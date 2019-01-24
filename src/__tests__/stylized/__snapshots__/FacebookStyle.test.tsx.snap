@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FacebookStyle renders correctly 1`] = `
+<svg
+  aria-labelledby="Loading interface..."
+  preserveAspectRatio="none"
+  role="img"
+  style={Object {}}
+  viewBox="0 0 400 130"
+>
+  <title>
+    Loading interface...
+  </title>
+  <rect
+    clipPath="url(#FacebookStyle-idClip)"
+    height={130}
+    style={
+      Object {
+        "fill": "url(#FacebookStyle-idGradient)",
+      }
+    }
+    width={400}
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="FacebookStyle-idClip"
+    >
+      <rect
+        height="6.4"
+        rx="4"
+        ry="4"
+        width="117"
+        x="70"
+        y="15"
+      />
+      <rect
+        height="6.4"
+        rx="3"
+        ry="3"
+        width="85"
+        x="70"
+        y="35"
+      />
+      <rect
+        height="6.4"
+        rx="3"
+        ry="3"
+        width="350"
+        x="0"
+        y="80"
+      />
+      <rect
+        height="6.4"
+        rx="3"
+        ry="3"
+        width="380"
+        x="0"
+        y="100"
+      />
+      <rect
+        height="6.4"
+        rx="3"
+        ry="3"
+        width="201"
+        x="0"
+        y="120"
+      />
+      <circle
+        cx="30"
+        cy="30"
+        r="30"
+      />
+    </clipPath>
+    <linearGradient
+      id="FacebookStyle-idGradient"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-3; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#e0e0e0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-2; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          repeatCount="indefinite"
+          values="-1; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
