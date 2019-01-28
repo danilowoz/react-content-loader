@@ -6,13 +6,13 @@
   <img width="400" alt="Example's react-content-loader" src="https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif" />
 </p>
 
-SVG-Powered component to easily create placeholder loadings, like Facebook cards loading.
+SVG-Powered component to easily create placeholder loadings (like Facebook's cards loading).
 
 ## Features
 
 - :gear: **Customizable:** Feel free to change the colors, speed, sizes and even **RTL**;
 - :ok_hand: **Plug and play:** with many presets to use, see the [examples](#examples);
-- :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create your own custom loadings easily;
+- :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create your own custom loaders easily;
 - ⚛️ **Lightweight:** only **1.4kB** gzipped and **0 dependencies**;
 
 ## Index
@@ -21,7 +21,7 @@ SVG-Powered component to easily create placeholder loadings, like Facebook cards
 - [Usage](#usage)
 - [Options](#options)
 - [Examples](#examples)
-- [Similars](#similars)
+- [Similar packages](#similars-packages)
 - [Development](#development)
 - [Known Issues](#known-issues)
 
@@ -63,65 +63,65 @@ const MyLoader = () => (
 )
 ```
 
-**Any doubt yet?** Take a look at [codesandbox.io](https://codesandbox.io/s/moojk887z9) working.
+**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)
 
 ## Options
 
 **`animate?: boolean`**
 
-Default is `true`. To render with no animation, set `false`.
+Defaults to `true`. Opt-out of animations with `false`
 
 **`ariaLabel? string | boolean`**
 
-Default is `Loading interface...`. It's used to describe what element it is. Use `false` to remove.
+Defaults to `Loading interface...`. It's used to describe what element it is. Use `false` to remove.
 
 **`speed?: number`**
 
-Default is `2`. Animation speed in seconds.
+Defaults to `2`. Animation speed in seconds.
 
 **`className? string`**
 
-Default is an empty string and the classname will set in the `<svg />` element.
+Defaults to an empty string. The classname will be set in the `<svg />` element.
 
 **`width? number`**
 
-Default is `400` and it will set in the viewbox attr in `<svg />`.
+Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
 
 **`height? number`**
 
-Default is `130` and it will set in the viewbox attr in `<svg />`.
+Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
 
 **`rtl? boolean`**
 
-Default is `false`. Content right-to-left.
+Defaults to `false`. Content right-to-left.
 
 **`preserveAspectRatio?: string`**
 
-Default is `xMidYMid meet`. Aspect ratio option of `<svg/>`, see the [here](https://github.com/danilowoz/react-content-loader/blob/improv/doc/src/interface.ts#L7).
+Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/improv/doc/src/interface.ts#L7).
 
 **`primaryColor?: string`**
 
-Default is `#f3f3f3` which is used as background of animation.
+Defaults to `#f3f3f3` which is used as background of animation.
 
 **`secondaryColor?: string`**
 
-Default is `#ecebeb` which is used as the placeholder/layer of animation.
+Defaults to `#ecebeb` which is used as the placeholder/layer of animation.
 
 **`primaryOpacity?: string`**
 
-Default is `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
 **`secondaryOpacity?: string`**
 
-Default is `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
 **`style?: React.CSSProperties`**
 
-The default is an empty object.
+Defaults to an empty object.
 
 **`uniquekey?: string`**
 
-The default is random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
+Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
 
 ## Examples
 
@@ -200,7 +200,7 @@ const MyLoader = () => (
 
 ![Custom](https://user-images.githubusercontent.com/4838076/36352947-b87019a8-149e-11e8-99ba-c71c2bcf8733.gif)
 
-## Similars
+## Similar packages
 
 - [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
 - [Preact](https://github.com/bonitasoft/preact-content-loader);
@@ -250,7 +250,7 @@ When using `rgba` as a `primaryColor` or `secondaryColor` value, [Safari does no
 
 ##### **Black box in Safari / iOS (again)**
 
-Using base tag on a page that contains SVG elements fails to render, it looks like a black box. Just remove the **base-href** tag from `<head />` and issue solved. 
+Using base tag on a page that contains SVG elements fails to render and it looks like a black box. Just remove the **base-href** tag from the `<head />` and issue solved.
 
 <img width="200" alt="Black box" src="https://user-images.githubusercontent.com/11562881/39406054-2f308de6-4bce-11e8-91fb-bbb35e29fc10.png" />
 
