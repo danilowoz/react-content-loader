@@ -128,7 +128,6 @@ The default is random unique id. Use the same value of prop key, that will solve
 ##### Facebook Style
 
 ```jsx
-// import the component
 import { Facebook } from 'react-content-loader'
 
 const MyFacebookLoader = () => <Facebook />
@@ -139,7 +138,6 @@ const MyFacebookLoader = () => <Facebook />
 ##### Instagram Style
 
 ```jsx
-// import the component
 import { Instagram } from 'react-content-loader'
 
 const MyInstagramLoader = () => <Instagram />
@@ -150,7 +148,6 @@ const MyInstagramLoader = () => <Instagram />
 ##### Code Style
 
 ```jsx
-// import the component
 import { Code } from 'react-content-loader'
 
 const MyCodeLoader = () => <Code />
@@ -161,7 +158,6 @@ const MyCodeLoader = () => <Code />
 ##### List Style
 
 ```jsx
-// import the component
 import { List } from 'react-content-loader'
 
 const MyListLoader = () => <List />
@@ -172,7 +168,6 @@ const MyListLoader = () => <List />
 ##### Bullet list Style
 
 ```jsx
-// import the component
 import { BulletList } from 'react-content-loader'
 
 const MyBulletListLoader = () => <BulletList />
@@ -193,7 +188,7 @@ const MyLoader = () => (
     primaryColor={'#333'}
     secondaryColor={'#999'}
   >
-    {/* Pure SVG */}
+    {/* Only SVG shapes */}
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
@@ -217,14 +212,13 @@ const MyLoader = () => (
 Fork the repo then clone it
 
 `$ git clone git@github.com:YourUsername/react-content-loader.git && cd react-content-loader`
-
-Install the dependencies
-
-`$ yarn`
-
-Run the docz to see your changes
-
-`$ yarn dev`
+`$ yarn`: Install the dependencies;
+`$ yarn build`: Build to production;
+`$ yarn dev`: Run the docz to see your changes;
+`$ yarn test`: Run all tests: type checking and unit tests;
+`$ yarn test:watch`: Watch unit tests;
+`$ yarn tsc`: Typescript checking;
+`$ yarn tsc:watch`: Typescript checking with watching;
 
 ## License
 
