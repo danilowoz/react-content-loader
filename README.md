@@ -21,7 +21,7 @@ SVG-Powered component to easily create placeholder loadings (like Facebook's car
 - [Usage](#usage)
 - [Options](#options)
 - [Examples](#examples)
-- [Similar packages](#similars-packages)
+- [Similar packages](#similar-packages)
 - [Development](#development)
 - [Known Issues](#known-issues)
 
