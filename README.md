@@ -6,52 +6,56 @@
   <img width="400" alt="Example's react-content-loader" src="https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif" />
 </p>
 
-React component that uses SVG to create a collection of loaders which simulates the structure of the
-content that will be loaded, similar to Facebook cards loaders.
-
-[![Size](https://img.shields.io/badge/gzip%20size-1.4kb-brightgreen.svg)]()
-[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)]()
-[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()
-[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
-[![](https://data.jsdelivr.com/v1/package/npm/react-content-loader/badge)](https://www.jsdelivr.com/package/npm/react-content-loader)
+SVG-Powered component to easily create placeholder loadings (like Facebook's cards loading).
 
 ## Features
 
-* :gear: **Completely customizable:** you can change the colors, speed, sizes and even with RTL content support;
-* :pencil2: **Create your own loading:** use the
-  [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create
-  your own custom loadings easily;
-* :ok_hand: **You can use right now:** there are a lot of presets to use it, see the
-  [examples](#examples);
-* :rocket: **Performance:** written using only the SVG API.
+- :gear: **Customizable:** Feel free to change the colors, speed, sizes and even **RTL**;
+- :ok_hand: **Plug and play:** with many presets to use, see the [examples](#examples);
+- :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create your own custom loaders easily;
+- ⚛️ **Lightweight:** only **1.4kB** gzipped and **0 dependencies**;
+
+## Index
+
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Options](#options)
+- [Examples](#examples)
+- [Similar packages](#similars-packages)
+- [Development](#development)
+- [Known Issues](#known-issues)
+
+## Getting Started
+
+```sh
+npm i react-content-loader --save
+```
+
+```sh
+yarn add react-content-loader
+```
+
+CDN from [JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
 
 ## Usage
 
-### Installation
+There are two ways to use it:
 
-Yarn: `$ yarn add react-content-loader`
-
-Npm: `$ npm i react-content-loader --save`
-
-CDN: [from JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
-
-**You can use it in two ways ([See the options)](#options):**
+**1. Presets, see the [examples](#examples):**
 
 ```jsx
-// import the component
 import ContentLoader, { Facebook } from 'react-content-loader'
 
 const MyLoader = () => <ContentLoader />
 const MyFacebookLoader = () => <Facebook />
 ```
 
-**Or in custom mode, using the
-[online tool](https://danilowoz.github.io/create-react-content-loader/)**
+**2. Custom mode, see the [online tool](https://danilowoz.github.io/create-react-content-loader/)**
 
 ```jsx
 const MyLoader = () => (
   <ContentLoader>
-    {/* Pure SVG */}
+    {/* Only SVG shapes */}
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
@@ -59,31 +63,71 @@ const MyLoader = () => (
 )
 ```
 
+**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)
+
 ## Options
 
-| Name                    | Type        | Default                | Description                                                               |
-| ----------------------- | ----------- | ---------------------- | ------------------------------------------------------------------------- |
-| **animate**             | `{Boolean}` | `true`                 | `false` to render with no animation                                       |
-| **ariaLabel**           | `{String}`  | `Loading interface...` | Describe what element it is                                               |
-| **speed**               | `{Number}`  | `2`                    | Animation speed in seconds                                                |
-| **className**           | `{String}`  | `''`                   | Classname in the `<svg/>`                                                 |
-| **width**               | `{Number}`  | `400`                  | viewBox width of `<svg/>`                                                 |
-| **height**              | `{Number}`  | `130`                  | viewBox height of `<svg/>`                                                |
-| **rtl**                 | `{Boolean}` | `false`                | Right-to-left animation                                                   |
-| **preserveAspectRatio** | `{String}`  | `xMidYMid meet`        | Aspect ratio option of `<svg/>`                                           |
-| **primaryColor**        | `{String}`  | `#f3f3f3`              | Background                                                                |
-| **secondaryColor**      | `{String}`  | `#ecebeb`              | Animation color                                                           |
-| **primaryOpacity**      | `{Number}`  | `1`                    | Background opacity (0 = transparent, 1 = opaque)                          |
-| **secondaryOpacity**    | `{Number}`  | `1`                    | Animation opacity (0 = transparent, 1 = opaque)                           |
-| **style**               | `{Object}`  | `null`                 | Ex: `{ width: '100%', height: '70px' }`                                   |
-| **uniquekey**           | `{String}`  | random unique id       | Use the same value of prop key, that will solve inconsistency on the SSR. |
+**`animate?: boolean`**
 
-### Examples
+Defaults to `true`. Opt-out of animations with `false`
 
-#### Facebook Style
+**`ariaLabel? string | boolean`**
+
+Defaults to `Loading interface...`. It's used to describe what element it is. Use `false` to remove.
+
+**`speed?: number`**
+
+Defaults to `2`. Animation speed in seconds.
+
+**`className? string`**
+
+Defaults to an empty string. The classname will be set in the `<svg />` element.
+
+**`width? number`**
+
+Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
+
+**`height? number`**
+
+Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
+
+**`rtl? boolean`**
+
+Defaults to `false`. Content right-to-left.
+
+**`preserveAspectRatio?: string`**
+
+Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/improv/doc/src/interface.ts#L7).
+
+**`primaryColor?: string`**
+
+Defaults to `#f3f3f3` which is used as background of animation.
+
+**`secondaryColor?: string`**
+
+Defaults to `#ecebeb` which is used as the placeholder/layer of animation.
+
+**`primaryOpacity?: string`**
+
+Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+
+**`secondaryOpacity?: string`**
+
+Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+
+**`style?: React.CSSProperties`**
+
+Defaults to an empty object.
+
+**`uniquekey?: string`**
+
+Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
+
+## Examples
+
+##### Facebook Style
 
 ```jsx
-// import the component
 import { Facebook } from 'react-content-loader'
 
 const MyFacebookLoader = () => <Facebook />
@@ -91,10 +135,9 @@ const MyFacebookLoader = () => <Facebook />
 
 ![Facebook Style](https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif)
 
-#### Instagram Style
+##### Instagram Style
 
 ```jsx
-// import the component
 import { Instagram } from 'react-content-loader'
 
 const MyInstagramLoader = () => <Instagram />
@@ -102,10 +145,9 @@ const MyInstagramLoader = () => <Instagram />
 
 ![Instagram Style](https://cloud.githubusercontent.com/assets/4838076/22555637/749f9e26-e94b-11e6-84ff-83cd415c1eb9.gif)
 
-#### Code Style
+##### Code Style
 
 ```jsx
-// import the component
 import { Code } from 'react-content-loader'
 
 const MyCodeLoader = () => <Code />
@@ -113,10 +155,9 @@ const MyCodeLoader = () => <Code />
 
 ![Code Style](https://cloud.githubusercontent.com/assets/4838076/22555473/effa54c2-e94a-11e6-9128-9b608bcc69d9.gif)
 
-#### List Style
+##### List Style
 
 ```jsx
-// import the component
 import { List } from 'react-content-loader'
 
 const MyListLoader = () => <List />
@@ -124,10 +165,9 @@ const MyListLoader = () => <List />
 
 ![List Style](https://user-images.githubusercontent.com/4838076/36352948-b8931430-149e-11e8-9f4b-3f00bc444a6d.gif)
 
-#### Bullet list Style
+##### Bullet list Style
 
 ```jsx
-// import the component
 import { BulletList } from 'react-content-loader'
 
 const MyBulletListLoader = () => <BulletList />
@@ -135,15 +175,20 @@ const MyBulletListLoader = () => <BulletList />
 
 ![Bullet list Style](https://user-images.githubusercontent.com/4838076/31998372-59817bac-b96e-11e7-8ef8-07f61670ee18.gif)
 
-#### Custom Style
+### Custom Style
 
-**For the custom mode, use the
-[online tool](https://danilowoz.github.io/create-react-content-loader/)**
+For the custom mode, use the
+[online tool](https://danilowoz.github.io/create-react-content-loader/).
 
 ```jsx
 const MyLoader = () => (
-  <ContentLoader height={140} speed={1} primaryColor={'#333'} secondaryColor={'#999'}>
-    {/* Pure SVG */}
+  <ContentLoader
+    height={140}
+    speed={1}
+    primaryColor={'#333'}
+    secondaryColor={'#999'}
+  >
+    {/* Only SVG shapes */}
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
@@ -151,28 +196,29 @@ const MyLoader = () => (
 )
 ```
 
+---
+
 ![Custom](https://user-images.githubusercontent.com/4838076/36352947-b87019a8-149e-11e8-99ba-c71c2bcf8733.gif)
 
-## Similars
+## Similar packages
 
-* [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
-* [Preact](https://github.com/bonitasoft/preact-content-loader);
-* Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
-* [Angular](https://github.com/Gbuomprisco/ngx-content-loading).
+- [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
+- [Preact](https://github.com/bonitasoft/preact-content-loader);
+- Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
+- [Angular](https://github.com/Gbuomprisco/ngx-content-loading).
 
 ## Development
 
 Fork the repo then clone it
 
 `$ git clone git@github.com:YourUsername/react-content-loader.git && cd react-content-loader`
-
-Install the dependencies
-
-`$ yarn`
-
-Run the docz to see your changes
-
-`$ yarn dev`
+`$ yarn`: Install the dependencies;
+`$ yarn build`: Build to production;
+`$ yarn dev`: Run the docz to see your changes;
+`$ yarn test`: Run all tests: type checking and unit tests;
+`$ yarn test:watch`: Watch unit tests;
+`$ yarn tsc`: Typescript checking;
+`$ yarn tsc:watch`: Typescript checking with watching;
 
 ## License
 
@@ -180,21 +226,32 @@ Run the docz to see your changes
 
 ## Known Issues
 
-* **Safari / iOS**
-      
-  When using `rgba` as a `primaryColor` or `secondaryColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `primaryColor`/`secondaryColor`, use the `rgb` equivalent and move the alpha channel value to the `primaryOpacity`/`secondaryOpacity` props.
-  
-  ```jsx
-  {/* Opaque color in Safari and iOS */}
-  <ContentLoader 
-    primaryColor="rgba(0,0,0,0.06)" 
-    secondaryColor="rgba(0,0,0,0.12)">
-  
+##### **Alpha is not working: Safari / iOS**
 
-  {/* Semi-transparent color in Safari and iOS */}
-  <ContentLoader 
+When using `rgba` as a `primaryColor` or `secondaryColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `primaryColor`/`secondaryColor`, use the `rgb` equivalent and move the alpha channel value to the `primaryOpacity`/`secondaryOpacity` props.
+
+```jsx
+{/* Opaque color in Safari and iOS */}
+<ContentLoader
+  primaryColor="rgba(0,0,0,0.06)"
+  secondaryColor="rgba(0,0,0,0.12)">
+
+```
+
+```
+{/_ Semi-transparent color in Safari and iOS _/}
+<ContentLoader
     primaryColor="rgb(0,0,0)"
     secondaryColor="rgb(0,0,0)"
     primaryOpacity={0.06}
     secondaryOpacity={0.12}>
-  ```
+
+```
+
+##### **Black box in Safari / iOS (again)**
+
+Using base tag on a page that contains SVG elements fails to render and it looks like a black box. Just remove the **base-href** tag from the `<head />` and issue solved.
+
+<img width="200" alt="Black box" src="https://user-images.githubusercontent.com/11562881/39406054-2f308de6-4bce-11e8-91fb-bbb35e29fc10.png" />
+
+See: [#93](https://github.com/danilowoz/react-content-loader/issues/93) / [109](https://github.com/danilowoz/react-content-loader/issues/109)
