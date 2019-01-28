@@ -8,9 +8,6 @@
 
 SVG-Powered component to easily create placeholder loadings, like Facebook cards loading.
 
-[![Size](https://img.shields.io/badge/gzip%20size-1.4kb-brightgreen.svg)]()
-[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)]()
-
 ## Features
 
 - :gear: **Customizable:** Feel free to change the colors, speed, sizes and even **RTL**;
@@ -18,33 +15,47 @@ SVG-Powered component to easily create placeholder loadings, like Facebook cards
 - :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create your own custom loadings easily;
 - ⚛️ **Lightweight:** only **1.4kB** gzipped and **0 dependencies**;
 
+## Index
+
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Options](#options)
+- [Examples](#examples)
+- [Similars](#similares)
+- [Development](#development)
+- [Known Issues](#known-issues)
+
+## Getting Started
+
+```sh
+npm i react-content-loader --save
+```
+
+```sh
+yarn add react-content-loader
+```
+
+CDN from [JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
+
 ## Usage
 
-### Installation
+There are two ways to use it:
 
-Yarn: `$ yarn add react-content-loader`
-
-Npm: `$ npm i react-content-loader --save`
-
-CDN: [from JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
-
-**You can use it in two ways ([See the options)](#options):**
+**1. Presets, see the [examples](#examples):**
 
 ```jsx
-// import the component
 import ContentLoader, { Facebook } from 'react-content-loader'
 
 const MyLoader = () => <ContentLoader />
 const MyFacebookLoader = () => <Facebook />
 ```
 
-**Or in custom mode, using the
-[online tool](https://danilowoz.github.io/create-react-content-loader/)**
+**2. Custom mode, see the [online tool](https://danilowoz.github.io/create-react-content-loader/)**
 
 ```jsx
 const MyLoader = () => (
   <ContentLoader>
-    {/* Pure SVG */}
+    {/* Only SVG shapes */}
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
@@ -52,24 +63,26 @@ const MyLoader = () => (
 )
 ```
 
+**Any doubt yet?** Take a look at [codesandbox.io](https://codesandbox.io/s/moojk887z9) working.
+
 ## Options
 
-| Name                    | Type        | Default                | Description                                                               |
-| ----------------------- | ----------- | ---------------------- | ------------------------------------------------------------------------- |
-| **animate**             | `{Boolean}` | `true`                 | `false` to render with no animation                                       |
-| **ariaLabel**           | `{String}`  | `Loading interface...` | Describe what element it is                                               |
-| **speed**               | `{Number}`  | `2`                    | Animation speed in seconds                                                |
-| **className**           | `{String}`  | `''`                   | Classname in the `<svg/>`                                                 |
-| **width**               | `{Number}`  | `400`                  | viewBox width of `<svg/>`                                                 |
-| **height**              | `{Number}`  | `130`                  | viewBox height of `<svg/>`                                                |
-| **rtl**                 | `{Boolean}` | `false`                | Right-to-left animation                                                   |
-| **preserveAspectRatio** | `{String}`  | `xMidYMid meet`        | Aspect ratio option of `<svg/>`                                           |
-| **primaryColor**        | `{String}`  | `#f3f3f3`              | Background                                                                |
-| **secondaryColor**      | `{String}`  | `#ecebeb`              | Animation color                                                           |
-| **primaryOpacity**      | `{Number}`  | `1`                    | Background opacity (0 = transparent, 1 = opaque)                          |
-| **secondaryOpacity**    | `{Number}`  | `1`                    | Animation opacity (0 = transparent, 1 = opaque)                           |
-| **style**               | `{Object}`  | `null`                 | Ex: `{ width: '100%', height: '70px' }`                                   |
-| **uniquekey**           | `{String}`  | random unique id       | Use the same value of prop key, that will solve inconsistency on the SSR. |
+| Name                    | Type                  | Default                | Description                                                               |
+| ----------------------- | --------------------- | ---------------------- | ------------------------------------------------------------------------- |
+| **animate**             | `boolean`             | `true`                 | `false` to render with no animation                                       |
+| **ariaLabel**           | `string`              | `Loading interface...` | Describe what element it is                                               |
+| **speed**               | `number`              | `2`                    | Animation speed in seconds                                                |
+| **className**           | `string`              | `''`                   | Classname in the `<svg/>`                                                 |
+| **width**               | `number`              | `400`                  | viewBox width of `<svg/>`                                                 |
+| **height**              | `number`              | `130`                  | viewBox height of `<svg/>`                                                |
+| **rtl**                 | `boolean`             | `false`                | Content right-to-left                                                     |
+| **preserveAspectRatio** | `string`              | `xMidYMid meet`        | Aspect ratio option of `<svg/>`                                           |
+| **primaryColor**        | `string`              | `#f3f3f3`              | Background                                                                |
+| **secondaryColor**      | `string`              | `#ecebeb`              | Animation color                                                           |
+| **primaryOpacity**      | `number`              | `1`                    | Background opacity (0 = transparent, 1 = opaque)                          |
+| **secondaryOpacity**    | `number`              | `1`                    | Animation opacity (0 = transparent, 1 = opaque)                           |
+| **style**               | `React.CSSProperties` | `null`                 | Ex: `{ width: '100%', height: '70px' }`                                   |
+| **uniquekey**           | `string`              | random unique id       | Use the same value of prop key, that will solve inconsistency on the SSR. |
 
 ### Examples
 
@@ -130,8 +143,8 @@ const MyBulletListLoader = () => <BulletList />
 
 #### Custom Style
 
-**For the custom mode, use the
-[online tool](https://danilowoz.github.io/create-react-content-loader/)**
+For the custom mode, use the
+[online tool](https://danilowoz.github.io/create-react-content-loader/).
 
 ```jsx
 const MyLoader = () => (
