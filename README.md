@@ -6,24 +6,17 @@
   <img width="400" alt="Example's react-content-loader" src="https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif" />
 </p>
 
-React component that uses SVG to create a collection of loaders which simulates the structure of the
-content that will be loaded, similar to Facebook cards loaders.
+SVG-Powered component to easily create placeholder loadings, like Facebook cards loading.
 
 [![Size](https://img.shields.io/badge/gzip%20size-1.4kb-brightgreen.svg)]()
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)]()
-[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()
-[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
-[![](https://data.jsdelivr.com/v1/package/npm/react-content-loader/badge)](https://www.jsdelivr.com/package/npm/react-content-loader)
 
 ## Features
 
-* :gear: **Completely customizable:** you can change the colors, speed, sizes and even with RTL content support;
-* :pencil2: **Create your own loading:** use the
-  [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create
-  your own custom loadings easily;
-* :ok_hand: **You can use right now:** there are a lot of presets to use it, see the
-  [examples](#examples);
-* :rocket: **Performance:** written using only the SVG API.
+- :gear: **Customizable:** Feel free to change the colors, speed, sizes and even **RTL**;
+- :ok_hand: **Plug and play:** with many presets to use, see the [examples](#examples);
+- :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create your own custom loadings easily;
+- ⚛️ **Lightweight:** only **1.4kB** gzipped and **0 dependencies**;
 
 ## Usage
 
@@ -142,7 +135,12 @@ const MyBulletListLoader = () => <BulletList />
 
 ```jsx
 const MyLoader = () => (
-  <ContentLoader height={140} speed={1} primaryColor={'#333'} secondaryColor={'#999'}>
+  <ContentLoader
+    height={140}
+    speed={1}
+    primaryColor={'#333'}
+    secondaryColor={'#999'}
+  >
     {/* Pure SVG */}
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
@@ -155,10 +153,10 @@ const MyLoader = () => (
 
 ## Similars
 
-* [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
-* [Preact](https://github.com/bonitasoft/preact-content-loader);
-* Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
-* [Angular](https://github.com/Gbuomprisco/ngx-content-loading).
+- [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
+- [Preact](https://github.com/bonitasoft/preact-content-loader);
+- Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
+- [Angular](https://github.com/Gbuomprisco/ngx-content-loading).
 
 ## Development
 
@@ -180,21 +178,25 @@ Run the docz to see your changes
 
 ## Known Issues
 
-* **Safari / iOS**
-      
+- **Safari / iOS**
+
   When using `rgba` as a `primaryColor` or `secondaryColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `primaryColor`/`secondaryColor`, use the `rgb` equivalent and move the alpha channel value to the `primaryOpacity`/`secondaryOpacity` props.
-  
+
   ```jsx
   {/* Opaque color in Safari and iOS */}
-  <ContentLoader 
-    primaryColor="rgba(0,0,0,0.06)" 
+  <ContentLoader
+    primaryColor="rgba(0,0,0,0.06)"
     secondaryColor="rgba(0,0,0,0.12)">
-  
 
-  {/* Semi-transparent color in Safari and iOS */}
-  <ContentLoader 
+  ```
+
+{/_ Semi-transparent color in Safari and iOS _/}
+<ContentLoader 
     primaryColor="rgb(0,0,0)"
     secondaryColor="rgb(0,0,0)"
     primaryOpacity={0.06}
     secondaryOpacity={0.12}>
-  ```
+
+```
+
+```
