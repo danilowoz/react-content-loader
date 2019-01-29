@@ -212,13 +212,21 @@ const MyLoader = () => (
 Fork the repo then clone it
 
 `$ git clone git@github.com:YourUsername/react-content-loader.git && cd react-content-loader`
+
 `$ yarn`: Install the dependencies;
+
 `$ yarn build`: Build to production;
+
 `$ yarn dev`: Run the docz to see your changes;
+
 `$ yarn test`: Run all tests: type checking and unit tests;
+
 `$ yarn test:watch`: Watch unit tests;
+
 `$ yarn tsc`: Typescript checking;
+
 `$ yarn tsc:watch`: Typescript checking with watching;
+
 
 ## License
 
