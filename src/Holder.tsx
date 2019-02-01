@@ -24,7 +24,7 @@ const InitialComponent: React.FunctionComponent<
   <rect x="0" y="0" rx="5" ry="5" width={props.width} height={props.height} />
 )
 
-export default (props: IContentLoaderProps) => {
+const ContentLoader = (props: IContentLoaderProps) => {
   const mergedProps = { ...defaultProps, ...props }
   const children = props.children ? (
     props.children
@@ -34,3 +34,5 @@ export default (props: IContentLoaderProps) => {
 
   return <Svg {...mergedProps}>{children}</Svg>
 }
+
+export default ContentLoader
