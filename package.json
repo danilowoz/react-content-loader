@@ -35,7 +35,7 @@
     "test:watch": "jest tests --watch",
     "tsc": "node_modules/.bin/tsc",
     "tsc:watch": "npm run tsc -- --watch",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "coverage": "codecov",
     "release": "semantic-release"
   },
