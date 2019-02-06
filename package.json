@@ -35,6 +35,7 @@
     "test:watch": "jest tests --watch",
     "tsc": "node_modules/.bin/tsc",
     "tsc:watch": "npm run tsc -- --watch",
+    "commit": "git-cz",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "coverage": "codecov",
     "release": "semantic-release"
@@ -46,12 +47,15 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "@commitlint/cli": "^7.5.0",
+    "@commitlint/config-conventional": "^7.5.0",
     "@types/jest": "^23.3.10",
     "@types/react": "^16.7.13",
     "@types/react-dom": "^16.0.11",
     "@types/react-test-renderer": "^16.0.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
+    "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "docz": "^0.12.13",
     "docz-theme-default": "^0.12.13",
@@ -79,7 +83,18 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run format && npm run tsc",
-      "pre-push": "npm run test"
+      "pre-push": "npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "jest": {
@@ -101,10 +116,5 @@
       "json",
       "node"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
