@@ -3,64 +3,116 @@ name: Home
 route: /
 ---
 
-# Introduction
-
 <p align="center">
-  <img width="350" alt="react-content-loader" src="https://user-images.githubusercontent.com/4838076/34419335-5669c3f8-ebea-11e7-9668-c47b7846970b.png" />
+  <img width="350" alt="react-content-loader" src="https://user-images.githubusercontent.com/4838076/34419335-5669c3f8-ebea-11e7-9668-c47b7846970b.png"/>
 </p>
 <p align="center">
   <img width="400" alt="Example's react-content-loader" src="https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif" />
 </p>
 
-React component that uses SVG to create a collection of loaders which simulates
-the structure of the content that will be loaded, similar to Facebook cards loaders.
+SVG-Powered component to easily create placeholder loadings (like Facebook's cards loading).
 
 ## Features
 
-- :gear: **Completely customizable:** you can change the colors, speed, sizes and even with RTL content support;
-- :pencil2: **Create your own loading:** use the
-  [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create
-  your own custom loadings easily;
-- :ok_hand: **You can use right now:** there are a lot of presets to use it, see the
-  [examples](usage#different-type-of-loaders);
-- :rocket: **Performance:** written using only the SVG API.
+- :gear: **Customizable:** Feel free to change the colors, speed, sizes and even **RTL**;
+- :ok_hand: **Plug and play:** with many presets to use, see the [examples](#examples);
+- :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create your own custom loaders easily;
+- ⚛️ **Lightweight:** only **1.4kB** gzipped and **0 dependencies**;
 
-## Installation
+## Getting Started
 
-Yarn: `yarn add react-content-loader`
+```sh
+npm i react-content-loader --save
+```
 
-Npm: `npm i react-content-loader --save`
+```sh
+yarn add react-content-loader
+```
 
-CDN: [from JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
+CDN from [JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
 
-**You can use it in two ways ([See the options)](#options):**
+## Usage
+
+There are two ways to use it:
+
+**1. Presets, see the [examples](#examples):**
 
 ```jsx
-// import the component
 import ContentLoader, { Facebook } from 'react-content-loader'
 
 const MyLoader = () => <ContentLoader />
 const MyFacebookLoader = () => <Facebook />
 ```
 
-**Or in custom mode, using the
-[online tool](https://danilowoz.github.io/create-react-content-loader/)**
+**2. Custom mode, see the [online tool](https://danilowoz.github.io/create-react-content-loader/)**
+
+```jsx
+const MyLoader = () => (
+  <ContentLoader>
+    {/* Only SVG shapes */}
+    <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+    <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+    <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
+  </ContentLoader>
+)
+```
+
+**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)
 
 ## Options
 
-| Name                    | Type               | Default                | Description                                                               |
-| ----------------------- | ------------------ | ---------------------- | ------------------------------------------------------------------------- |
-| **animate**             | `Boolean`          | `true`                 | `false` to render with no animation                                       |
-| **ariaLabel**           | `String | Boolean` | `Loading interface...` | Describe what element it is                                               |
-| **speed**               | `Number`           | `2`                    | Animation speed in seconds                                                |
-| **className**           | `String`           | ``                     | Classname in the `<svg/>`                                                 |
-| **width**               | `Number`           | `400`                  | viewBox width of `<svg/>`                                                 |
-| **height**              | `Number`           | `130`                  | viewBox height of `<svg/>`                                                |
-| **rtl**                 | `Boolean`          | `false`                | Right-to-left animation                                                   |
-| **preserveAspectRatio** | `String`           | `xMidYMid meet`        | Aspect ratio option of `<svg/>`                                           |
-| **primaryColor**        | `String`           | `#f3f3f3`              | Background                                                                |
-| **secondaryColor**      | `String`           | `#ecebeb`              | Animation color                                                           |
-| **primaryOpacity**      | `Number`           | `1`                    | Background opacity (0 = transparent, 1 = opaque)                          |
-| **secondaryOpacity**    | `Number`           | `1`                    | Animation opacity (0 = transparent, 1 = opaque)                           |
-| **style**               | `Object`           | `null`                 | Ex: `{ width: '100%', height: '70px' }`                                   |
-| **uniquekey**           | `String`           | random unique id       | Use the same value of prop key, that will solve inconsistency on the SSR. |
+**`animate?: boolean`**
+
+Defaults to `true`. Opt-out of animations with `false`
+
+**`ariaLabel? string | boolean`**
+
+Defaults to `Loading interface...`. It's used to describe what element it is. Use `false` to remove.
+
+**`speed?: number`**
+
+Defaults to `2`. Animation speed in seconds.
+
+**`className? string`**
+
+Defaults to an empty string. The classname will be set in the `<svg />` element.
+
+**`width? number`**
+
+Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
+
+**`height? number`**
+
+Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
+
+**`rtl? boolean`**
+
+Defaults to `false`. Content right-to-left.
+
+**`preserveAspectRatio?: string`**
+
+Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/improv/doc/src/interface.ts#L7).
+
+**`primaryColor?: string`**
+
+Defaults to `#f3f3f3` which is used as background of animation.
+
+**`secondaryColor?: string`**
+
+Defaults to `#ecebeb` which is used as the placeholder/layer of animation.
+
+**`primaryOpacity?: string`**
+
+Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+
+**`secondaryOpacity?: string`**
+
+Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+
+**`style?: React.CSSProperties`**
+
+Defaults to an empty object.
+
+**`uniquekey?: string`**
+
+Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
