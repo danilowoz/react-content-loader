@@ -96,7 +96,7 @@ Defaults to `false`. Content right-to-left.
 
 **`preserveAspectRatio?: string`**
 
-Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/improv/doc/src/interface.ts#L7).
+Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/master/src/interface.ts#L7).
 
 **`primaryColor?: string`**
 
@@ -204,7 +204,7 @@ const MyLoader = () => (
 - [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
 - [Preact](https://github.com/bonitasoft/preact-content-loader);
 - Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
-- [Angular](https://github.com/Gbuomprisco/ngx-content-loading).
+- Angular: [ngx-content-loading](https://github.com/Gbuomprisco/ngx-content-loading), [ngx-content-loader](https://github.com/NetanelBasal/ngx-content-loader).
 
 ## Development
 
