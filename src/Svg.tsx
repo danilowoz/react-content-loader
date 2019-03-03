@@ -6,6 +6,7 @@ import uid from './uid'
 export default ({
   rtl,
   speed,
+  interval,
   style,
   width,
   height,
@@ -24,6 +25,8 @@ export default ({
   const idClip = uniquekey ? `${uniquekey}-idClip` : uid()
   const idGradient = uniquekey ? `${uniquekey}-idGradient` : uid()
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : {}
+  const keyTimes = `0; ${interval}; 1`
+  const dur = `${speed}s`
 
   return (
     <svg
@@ -57,8 +60,9 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values="-3; 1"
-                dur={`${speed}s`}
+                values={`-2; -2; 1`}
+                keyTimes={keyTimes}
+                dur={dur}
                 repeatCount="indefinite"
               />
             )}
@@ -72,8 +76,9 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values="-2; 2"
-                dur={`${speed}s`}
+                values={`-1; -1; 2`}
+                keyTimes={keyTimes}
+                dur={dur}
                 repeatCount="indefinite"
               />
             )}
@@ -87,8 +92,9 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values="-1; 3"
-                dur={`${speed}s`}
+                values={`0; 0; 3`}
+                keyTimes={keyTimes}
+                dur={dur}
                 repeatCount="indefinite"
               />
             )}

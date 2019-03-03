@@ -30,6 +30,7 @@ export interface IContentLoaderProps {
   secondaryColor?: string
   secondaryOpacity?: number
   speed?: number
+  interval?: number
   style?: React.CSSProperties
   uniquekey?: string
   width?: number

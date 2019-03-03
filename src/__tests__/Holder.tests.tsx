@@ -32,6 +32,7 @@ describe('Holder', () => {
       <ContentLoader
         rtl
         speed={10}
+        interval={0.5}
         width={200}
         height={200}
         animate={false}
@@ -56,6 +57,15 @@ describe('Holder', () => {
       // custom props
       expect(typeof propsFromFullfield.speed).toBe('number')
       expect(propsFromFullfield.speed).toBe(10)
+    })
+
+    it("`interval` is a number and it's used", () => {
+      // defaultProps
+      expect(typeof propsFromEmpty.interval).toBe('number')
+      expect(propsFromEmpty.interval).toBe(0.25)
+      // custom props
+      expect(typeof propsFromFullfield.interval).toBe('number')
+      expect(propsFromFullfield.interval).toBe(0.5)
     })
 
     it("`height` is a number and it's used", () => {
