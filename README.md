@@ -122,6 +122,10 @@ Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve 
 
 Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
+**`stops?: Array<{ offset: number; color: string; opacity: number }>`**
+
+Defaults to a linear gradient with 3 evenly spaced stops for the colors primary, secondary, then primary again. If set, the values of `primaryColor`, `secondaryColor`, `primaryOpacity` and `secondaryOpacity` are ignored.
+
 **`style?: React.CSSProperties`**
 
 Defaults to an empty object.

@@ -1,3 +1,9 @@
+export interface IStop {
+  offset: number
+  color: string
+  opacity?: number
+}
+
 export interface IContentLoaderProps {
   animate?: boolean
   ariaLabel?: string | boolean
@@ -35,4 +41,5 @@ export interface IContentLoaderProps {
   uniquekey?: string
   width?: number
   gradientRatio?: number
+  stops?: Array<IStop>
 }

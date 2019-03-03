@@ -45,6 +45,10 @@ describe('Holder', () => {
         className="random-className"
         style={{ marginBottom: '10px' }}
         ariaLabel="My custom loading title"
+        stops={[
+          { offset: 0, color: 'red', opacity: 0 },
+          { offset: 1, color: 'blue', opacity: 1 },
+        ]}
       />
     )
 
@@ -139,6 +143,16 @@ describe('Holder', () => {
       // custom props
       expect(typeof propsFromFullfield.secondaryOpacity).toBe('number')
       expect(propsFromFullfield.secondaryOpacity).toBe(0.12)
+    })
+
+    it("`stops` is an array and it's used", () => {
+      // defaultProps
+      expect(typeof propsFromEmpty.stops).toBe('undefined')
+      // custom props
+      expect(propsFromFullfield.stops).toMatchObject([
+        { offset: 0, color: 'red', opacity: 0 },
+        { offset: 1, color: 'blue', opacity: 1 },
+      ])
     })
 
     it("`preserveAspectRatio` is a string and it's used", () => {

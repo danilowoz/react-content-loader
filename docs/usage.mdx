@@ -67,7 +67,35 @@ import FacebookStyle from '../src/stylized/FacebookStyle'
   </ContentLoader>
 </Playground>
 
+#### Custom Loader with smooth gradient
 
+<Playground>
+  <ContentLoader
+    height={140}
+    speed={2}
+    interval={0.5}
+    gradientRatio={0.5}
+    stops={[
+      {offset: 0, color:"#333"},
+      {offset: 0.04, color:"#454545"},
+      {offset: 0.12, color:"#636363"},
+      {offset: 0.2, color:"#7b7b7b"},
+      {offset: 0.29, color:"#8c8c8c"},
+      {offset: 0.38, color:"#969696"},
+      {offset: 0.5, color:"#999"},
+      {offset: 0.62, color:"#969696"},
+      {offset: 0.71, color:"#8c8c8c"},
+      {offset: 0.8, color:"#7b7b7b"},
+      {offset: 0.88, color:"#636363"},
+      {offset: 0.96, color:"#454545"},
+      {offset: 1, color:"#333"},
+    ]}
+  >
+    <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+    <rect x="82" y="44" rx="3" ry="3" width="250" height="10" />
+    <circle cx="35" cy="35" r="35" />
+  </ContentLoader>
+</Playground>
 
 ## Unique key
 

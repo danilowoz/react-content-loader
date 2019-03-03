@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { IContentLoaderProps } from './interface'
+import { IContentLoaderProps, IStop } from './interface'
 import uid from './uid'
 
 export default ({
@@ -21,6 +21,7 @@ export default ({
   secondaryColor,
   secondaryOpacity,
   preserveAspectRatio,
+  stops,
   ...props
 }: IContentLoaderProps) => {
   const idClip = uniquekey ? `${uniquekey}-idClip` : uid()
@@ -28,6 +29,11 @@ export default ({
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : {}
   const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`
+  const stopPoints: IStop[] = stops || [
+    { offset: 0, color: primaryColor, opacity: primaryOpacity },
+    { offset: 0.5, color: secondaryColor, opacity: secondaryOpacity },
+    { offset: 1, color: primaryColor, opacity: primaryOpacity },
+  ]
 
   return (
     <svg
@@ -53,54 +59,26 @@ export default ({
         <clipPath id={idClip}>{children}</clipPath>
 
         <linearGradient id={idGradient}>
-          <stop
-            offset="0%"
-            stopColor={primaryColor}
-            stopOpacity={primaryOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`${-gradientRatio}; ${-gradientRatio}; 1`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-              />
-            )}
-          </stop>
-
-          <stop
-            offset="50%"
-            stopColor={secondaryColor}
-            stopOpacity={secondaryOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`${-gradientRatio / 2}; ${-gradientRatio / 2}; ${1 +
-                  gradientRatio / 2}`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-              />
-            )}
-          </stop>
-
-          <stop
-            offset="100%"
-            stopColor={primaryColor}
-            stopOpacity={primaryOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`0; 0; ${1 + gradientRatio}`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-              />
-            )}
-          </stop>
+          {stopPoints.map((stop, i) => (
+            <stop
+              key={i}
+              offset={`${stop.offset * 100}%`}
+              stopColor={stop.color}
+              stopOpacity={stop.opacity != null ? stop.opacity : 1}
+            >
+              {animate && (
+                <animate
+                  attributeName="offset"
+                  values={`${-gradientRatio *
+                    (1 - stop.offset)}; ${-gradientRatio *
+                    (1 - stop.offset)}; ${1 + gradientRatio * stop.offset}`}
+                  keyTimes={keyTimes}
+                  dur={dur}
+                  repeatCount="indefinite"
+                />
+              )}
+            </stop>
+          ))}
         </linearGradient>
       </defs>
     </svg>
