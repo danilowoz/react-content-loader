@@ -34,4 +34,5 @@ export interface IContentLoaderProps {
   style?: React.CSSProperties
   uniquekey?: string
   width?: number
+  gradientRatio?: number
 }

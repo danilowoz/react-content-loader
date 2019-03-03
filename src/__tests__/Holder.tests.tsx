@@ -34,6 +34,7 @@ describe('Holder', () => {
         speed={10}
         interval={0.5}
         width={200}
+        gradientRatio={0.5}
         height={200}
         animate={false}
         primaryColor="#000"
@@ -84,6 +85,15 @@ describe('Holder', () => {
       // custom props
       expect(typeof propsFromFullfield.width).toBe('number')
       expect(propsFromFullfield.width).toBe(200)
+    })
+
+    it("`gradientRatio` is a number and it's used", () => {
+      // defaultProps
+      expect(typeof propsFromEmpty.gradientRatio).toBe('number')
+      expect(propsFromEmpty.gradientRatio).toBe(2)
+      // custom props
+      expect(typeof propsFromFullfield.gradientRatio).toBe('number')
+      expect(propsFromFullfield.gradientRatio).toBe(0.5)
     })
 
     it("`animate` is a boolean and it's used", () => {

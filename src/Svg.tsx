@@ -10,6 +10,7 @@ export default ({
   style,
   width,
   height,
+  gradientRatio,
   animate,
   ariaLabel,
   children,
@@ -60,7 +61,7 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values={`-2; -2; 1`}
+                values={`${-gradientRatio}; ${-gradientRatio}; 1`}
                 keyTimes={keyTimes}
                 dur={dur}
                 repeatCount="indefinite"
@@ -76,7 +77,8 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values={`-1; -1; 2`}
+                values={`${-gradientRatio / 2}; ${-gradientRatio / 2}; ${1 +
+                  gradientRatio / 2}`}
                 keyTimes={keyTimes}
                 dur={dur}
                 repeatCount="indefinite"
@@ -92,7 +94,7 @@ export default ({
             {animate && (
               <animate
                 attributeName="offset"
-                values={`0; 0; 3`}
+                values={`0; 0; ${1 + gradientRatio}`}
                 keyTimes={keyTimes}
                 dur={dur}
                 repeatCount="indefinite"
