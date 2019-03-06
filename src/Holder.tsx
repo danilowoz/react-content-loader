@@ -7,6 +7,7 @@ export const defaultProps: IContentLoaderProps = {
   animate: true,
   ariaLabel: 'Loading interface...',
   height: 130,
+  interval: 0.25,
   preserveAspectRatio: 'none',
   primaryColor: '#f0f0f0',
   primaryOpacity: 1,
