@@ -6,6 +6,7 @@ import { IContentLoaderProps } from './interface'
 export const defaultProps: IContentLoaderProps = {
   animate: true,
   ariaLabel: 'Loading interface...',
+  gradientRatio: 2,
   height: 130,
   interval: 0.25,
   preserveAspectRatio: 'none',

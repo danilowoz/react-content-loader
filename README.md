@@ -94,6 +94,10 @@ Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
 
 Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
 
+**`gradientRatio? number`**
+
+Defaults to `2`. Width of the animated gradient as a fraction of the viewbox width.
+
 **`rtl? boolean`**
 
 Defaults to `false`. Content right-to-left.
