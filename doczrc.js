@@ -1,25 +1,25 @@
-import emoji from "remark-emoji"
+import emoji from 'remark-emoji'
 
 export default {
-  title: "React Content Loader",
+  title: 'React Content Loader',
   typescript: true,
   mdPlugins: [emoji],
-  codeSandbox: false,
+  menu: ['Welcome', 'Usage', 'Props'],
   htmlContext: {
     head: {
       links: [
         {
-          rel: "stylesheet",
-          href: "https://codemirror.net/theme/dracula.css"
-        }
-      ]
-    }
+          rel: 'stylesheet',
+          href: 'https://codemirror.net/theme/dracula.css',
+        },
+      ],
+    },
   },
   themeConfig: {
-    codemirrorTheme: "dracula",
+    codemirrorTheme: 'dracula',
     colors: {
-      primary: "#673ab7",
-      sidebarBg: "#f3f3f3"
-    }
-  }
+      primary: '#673ab7',
+      sidebarBg: '#f3f3f3',
+    },
+  },
 }
