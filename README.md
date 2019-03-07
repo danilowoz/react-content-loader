@@ -76,7 +76,7 @@ Defaults to `Loading interface...`. It's used to describe what element it is. Us
 
 **`baseUrl? string`**
 
-Required if you're using `<base url="/" />` in your `<head/>`. Defaults to an empty string. This prop is commom used as: `<ContentLoader baseUrl={window.location.pathname} />` which will fill the svg attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93).
+Required if you're using `<base url="/" />` in your `<head/>`. Defaults to an empty string. This prop is common used as: `<ContentLoader baseUrl={window.location.pathname} />` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93).
 
 **`speed?: number`**
 
