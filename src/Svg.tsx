@@ -10,6 +10,7 @@ export default ({
   style,
   width,
   height,
+  baseUrl,
   gradientRatio,
   animate,
   ariaLabel,
@@ -45,8 +46,8 @@ export default ({
         y="0"
         width={width}
         height={height}
-        clipPath={`url(#${idClip})`}
-        style={{ fill: `url(#${idGradient})` }}
+        clipPath={`url(${baseUrl}#${idClip})`}
+        style={{ fill: `url(${baseUrl}#${idGradient})` }}
       />
 
       <defs>

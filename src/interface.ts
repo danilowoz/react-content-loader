@@ -2,6 +2,7 @@ export interface IContentLoaderProps {
   animate?: boolean
   ariaLabel?: string | boolean
   children?: React.ReactNode
+  baseUrl?: string
   className?: string
   height?: number
   preserveAspectRatio?:
