@@ -23,6 +23,22 @@ describe('Svg', () => {
     title: wrapper.findByType('title'),
   }
 
+  it('baseUrl is used correctly', () => {
+    const baseUrl = '/page-path'
+    const wrapperWithBaseUrl = renderer.create(<Svg baseUrl={baseUrl} />).root
+
+    const clipPath = wrapperWithBaseUrl.findByType('clipPath')
+    const linearGradient = wrapperWithBaseUrl.findByType('linearGradient')
+    const rectClipPath = wrapperWithBaseUrl.find(predicateRectClipPath)
+
+    expect(rectClipPath.props.clipPath).toBe(
+      `url(${baseUrl}#${clipPath.props.id})`
+    )
+    expect(rectClipPath.props.style.fill).toBe(
+      `url(${baseUrl}#${linearGradient.props.id})`
+    )
+  })
+
   describe('it has basic elements necessary to work ', () => {
     it('has a `rect` with `clipPath`', () => {
       const { allRectClipPath } = partsOfComponent

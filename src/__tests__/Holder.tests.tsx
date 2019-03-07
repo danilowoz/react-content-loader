@@ -30,21 +30,22 @@ describe('Holder', () => {
     const withPropsComponent = ShallowRenderer.createRenderer()
     withPropsComponent.render(
       <ContentLoader
-        rtl
-        speed={10}
-        interval={0.5}
-        width={200}
+        animate={false}
+        ariaLabel="My custom loading title"
+        baseUrl="/mypage"
+        className="random-className"
         gradientRatio={0.5}
         height={200}
-        animate={false}
-        primaryColor="#000"
-        secondaryColor="#fff"
-        primaryOpacity={0.06}
-        secondaryOpacity={0.12}
+        interval={0.5}
         preserveAspectRatio="xMaxYMax meet"
-        className="random-className"
+        primaryColor="#000"
+        primaryOpacity={0.06}
+        rtl
+        secondaryColor="#fff"
+        secondaryOpacity={0.12}
+        speed={10}
         style={{ marginBottom: '10px' }}
-        ariaLabel="My custom loading title"
+        width={200}
       />
     )
 
@@ -173,6 +174,15 @@ describe('Holder', () => {
       // custom props
       expect(typeof propsFromFullfield.ariaLabel).toBe('string')
       expect(propsFromFullfield.ariaLabel).toBe('My custom loading title')
+    })
+
+    it("`baseUrl` is a string and it's used", () => {
+      // defaultProps
+      expect(typeof propsFromEmpty.baseUrl).toBe('string')
+      expect(propsFromEmpty.baseUrl).toBe('')
+      // custom props
+      expect(typeof propsFromFullfield.baseUrl).toBe('string')
+      expect(propsFromFullfield.baseUrl).toBe('/mypage')
     })
   })
 })
