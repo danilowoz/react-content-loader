@@ -66,71 +66,71 @@ const MyLoader = () => (
 
 ## Options
 
-**`animate?: boolean`**
+#### **`animate?: boolean`**
 
 Defaults to `true`. Opt-out of animations with `false`
 
-**`ariaLabel? string | boolean`**
+#### **`ariaLabel? string | boolean`**
 
 Defaults to `Loading interface...`. It's used to describe what element it is. Use `false` to remove.
 
-**`baseUrl? string`**
+#### **`baseUrl? string`**
 
 Required if you're using `<base url="/" />` in your `<head/>`. Defaults to an empty string. This prop is common used as: `<ContentLoader baseUrl={window.location.pathname} />` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93).
 
-**`speed?: number`**
+#### **`speed?: number`**
 
 Defaults to `2`. Animation speed in seconds.
 
-**`interval?: number`**
+#### **`interval?: number`**
 
 Defaults to `0.25`. Interval of time between runs of the animation, as a fraction of the animation speed.
 
-**`className? string`**
+#### **`className? string`**
 
 Defaults to an empty string. The classname will be set in the `<svg />` element.
 
-**`width? number`**
+#### **`width? number`**
 
 Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
 
-**`height? number`**
+#### **`height? number`**
 
 Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
 
-**`gradientRatio? number`**
+#### **`gradientRatio? number`**
 
 Defaults to `2`. Width of the animated gradient as a fraction of the viewbox width.
 
-**`rtl? boolean`**
+#### **`rtl? boolean`**
 
 Defaults to `false`. Content right-to-left.
 
-**`preserveAspectRatio?: string`**
+#### **`preserveAspectRatio?: string`**
 
 Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/master/src/interface.ts#L7).
 
-**`primaryColor?: string`**
+#### **`primaryColor?: string`**
 
 Defaults to `#f3f3f3` which is used as background of animation.
 
-**`secondaryColor?: string`**
+#### **`secondaryColor?: string`**
 
 Defaults to `#ecebeb` which is used as the placeholder/layer of animation.
 
-**`primaryOpacity?: string`**
+#### **`primaryOpacity?: string`**
 
 Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
-**`secondaryOpacity?: string`**
+#### **`secondaryOpacity?: string`**
 
 Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
-**`style?: React.CSSProperties`**
+#### **`style?: React.CSSProperties`**
 
 Defaults to an empty object.
 
-**`uniquekey?: string`**
+#### **`uniquekey?: string`**
 
 Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
 
