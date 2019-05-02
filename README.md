@@ -213,7 +213,7 @@ const MyLoader = () => (
 
 ## Similar packages
 
-- [React Native](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
+- React Native: [rn-placeholder](https://github.com/mfrachet/rn-placeholder), [react-native-svg-animated-linear-gradient](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
 - [Preact](https://github.com/bonitasoft/preact-content-loader);
 - Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
 - Angular: [ngx-content-loading](https://github.com/Gbuomprisco/ngx-content-loading), [ngx-content-loader](https://github.com/NetanelBasal/ngx-content-loader).
