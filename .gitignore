@@ -13,3 +13,5 @@ coverage
 .rpt2_cache
 settings.json
 *.code-workspace
+yarn.lock
+yarn-error.log
