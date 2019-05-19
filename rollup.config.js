@@ -1,26 +1,27 @@
-import replace from "rollup-plugin-replace"
-import { uglify } from "rollup-plugin-uglify"
-import typescript from "rollup-plugin-typescript2"
-import pkg from "./package.json"
+import replace from 'rollup-plugin-replace'
+import { uglify } from 'rollup-plugin-uglify'
+import typescript from 'rollup-plugin-typescript2'
+import analyze from 'rollup-plugin-analyzer'
+import pkg from './package.json'
 
 const mergeAll = objs => Object.assign({}, ...objs)
 
 const commonPlugins = [
   typescript({
-    typescript: require("typescript")
-  })
+    typescript: require('typescript'),
+  }),
 ]
 
 const configBase = {
-  input: "src/index.ts",
+  input: 'src/index.ts',
   output: {
-    exports: "named"
+    exports: 'named',
   },
   external: [
     ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {})
+    ...Object.keys(pkg.peerDependencies || {}),
   ],
-  plugins: commonPlugins
+  plugins: commonPlugins,
 }
 
 const umdConfig = mergeAll([
@@ -30,16 +31,16 @@ const umdConfig = mergeAll([
       configBase.output,
       {
         file: `dist/${pkg.name}.js`,
-        format: "umd",
-        name: "ContentLoader",
+        format: 'umd',
+        name: 'ContentLoader',
         globals: {
-          react: "React",
-          "react-dom": "ReactDOM"
-        }
-      }
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
     ]),
-    external: Object.keys(pkg.peerDependencies || {})
-  }
+    external: Object.keys(pkg.peerDependencies || {}),
+  },
 ])
 
 const devUmdConfig = mergeAll([
@@ -47,10 +48,10 @@ const devUmdConfig = mergeAll([
   {
     plugins: umdConfig.plugins.concat(
       replace({
-        "process.env.NODE_ENV": JSON.stringify("development")
+        'process.env.NODE_ENV': JSON.stringify('development'),
       })
-    )
-  }
+    ),
+  },
 ])
 
 const prodUmdConfig = mergeAll([
@@ -58,33 +59,34 @@ const prodUmdConfig = mergeAll([
   {
     output: mergeAll([
       umdConfig.output,
-      { file: umdConfig.output.file.replace(/\.js$/, ".min.js") }
-    ])
+      { file: umdConfig.output.file.replace(/\.js$/, '.min.js') },
+    ]),
   },
   {
     plugins: umdConfig.plugins.concat(
       replace({
-        "process.env.NODE_ENV": JSON.stringify("production")
+        'process.env.NODE_ENV': JSON.stringify('production'),
       }),
       uglify({
         compress: {
           pure_getters: true,
           unsafe: true,
-          unsafe_comps: true
-        }
+          unsafe_comps: true,
+        },
       })
-    )
-  }
+    ),
+  },
 ])
 
 const webConfig = mergeAll([
   configBase,
   {
     output: [
-      mergeAll([configBase.output, { file: pkg.module, format: "es" }]),
-      mergeAll([configBase.output, { file: pkg.main, format: "cjs" }])
-    ]
-  }
+      mergeAll([configBase.output, { file: pkg.module, format: 'es' }]),
+      mergeAll([configBase.output, { file: pkg.main, format: 'cjs' }]),
+    ],
+    plugins: configBase.plugins.concat(analyze()),
+  },
 ])
 
 export default [devUmdConfig, prodUmdConfig, webConfig]
