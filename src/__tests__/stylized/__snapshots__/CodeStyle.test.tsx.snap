@@ -2,7 +2,7 @@
 
 exports[`CodeStyle renders correctly 1`] = `
 <svg
-  aria-labelledby="Loading interface..."
+  aria-label="Loading interface..."
   preserveAspectRatio="none"
   role="img"
   style={Object {}}
