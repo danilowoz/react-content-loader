@@ -35,7 +35,7 @@ export default ({
       role="img"
       style={{ ...style, ...rtlStyle }}
       className={className}
-      aria-labelledby={ariaLabel ? ariaLabel : null}
+      aria-label={ariaLabel ? ariaLabel : null}
       viewBox={`0 0 ${width} ${height}`}
       preserveAspectRatio={preserveAspectRatio}
       {...props}
