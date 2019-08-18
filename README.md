@@ -62,7 +62,8 @@ const MyLoader = () => (
 )
 ```
 
-**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)
+**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)  
+Or try the components editable demo hands-on and install it from [bit.dev](https://bit.dev/danilowoz/react-content-loader)
 
 ## Options
 
