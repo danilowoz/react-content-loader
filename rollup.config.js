@@ -1,10 +1,24 @@
 import replace from 'rollup-plugin-replace'
 import { uglify } from 'rollup-plugin-uglify'
 import typescript from 'rollup-plugin-typescript2'
-import analyze from 'rollup-plugin-analyzer'
+
 import pkg from './package.json'
+import pkgNative from './src/native/package.json'
 
 const mergeAll = objs => Object.assign({}, ...objs)
+
+const cjs = {
+  exports: 'named',
+  format: 'cjs',
+  sourcemap: true,
+};
+
+const esm = {
+  format: 'esm',
+  sourcemap: true,
+};
+
+const globals = { react: 'React', 'react-dom': 'ReactDOM' };
 
 const commonPlugins = [
   typescript({
@@ -13,13 +27,14 @@ const commonPlugins = [
 ]
 
 const configBase = {
-  input: 'src/index.ts',
   output: {
     exports: 'named',
   },
   external: [
     ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkgNative.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
+    ...Object.keys(pkgNative.peerDependencies || {}),
   ],
   plugins: commonPlugins,
 }
@@ -27,16 +42,14 @@ const configBase = {
 const umdConfig = mergeAll([
   configBase,
   {
+    input: 'src/index.ts',
     output: mergeAll([
       configBase.output,
       {
         file: `dist/${pkg.name}.js`,
         format: 'umd',
         name: 'ContentLoader',
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
+        globals
       },
     ]),
     external: Object.keys(pkg.peerDependencies || {}),
@@ -46,6 +59,7 @@ const umdConfig = mergeAll([
 const devUmdConfig = mergeAll([
   umdConfig,
   {
+    input: 'src/index.ts',
     plugins: umdConfig.plugins.concat(
       replace({
         'process.env.NODE_ENV': JSON.stringify('development'),
@@ -57,6 +71,7 @@ const devUmdConfig = mergeAll([
 const prodUmdConfig = mergeAll([
   umdConfig,
   {
+    input: 'src/index.ts',
     output: mergeAll([
       umdConfig.output,
       { file: umdConfig.output.file.replace(/\.js$/, '.min.js') },
@@ -81,12 +96,24 @@ const prodUmdConfig = mergeAll([
 const webConfig = mergeAll([
   configBase,
   {
+    input: 'src/index.ts',
     output: [
-      mergeAll([configBase.output, { file: pkg.module, format: 'es' }]),
-      mergeAll([configBase.output, { file: pkg.main, format: 'cjs' }]),
+      mergeAll([configBase.output, { ...esm, file: pkg.module }]),
+      mergeAll([configBase.output, { ...cjs, file: pkg.main,  }]),
     ],
-    plugins: configBase.plugins.concat(analyze()),
+    plugins: configBase.plugins.concat(),
   },
 ])
 
-export default [devUmdConfig, prodUmdConfig, webConfig]
+const nativeConfig = mergeAll([
+  configBase,
+  {
+    input: './src/native/index.ts',
+    output: [
+      mergeAll([configBase.output, { ...esm, file: pkgNative.module }]),
+      mergeAll([configBase.output, { ...cjs, file: pkgNative.main,  }]),
+    ],
+  },
+])
+
+export default [devUmdConfig, prodUmdConfig, webConfig, nativeConfig]

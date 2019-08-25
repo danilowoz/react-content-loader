@@ -1,6 +1,6 @@
 {
   "name": "react-content-loader",
-  "version": "3.4.2",
+  "version": "4.4.2",
   "description": "SVG-Powered component to easily create placeholder loadings (like Facebook cards loading)",
   "repository": {
     "type": "git",
@@ -18,14 +18,17 @@
   "homepage": "https://github.com/danilowoz/react-content-loader",
   "keywords": [
     "react",
-    "facebook-style",
+    "react-native",
+    "skeleton",
+    "placeholder",
     "loader",
     "loading",
     "content",
     "svg"
   ],
   "files": [
-    "dist"
+    "dist",
+    "native"
   ],
   "sideEffects": false,
   "scripts": {
@@ -38,49 +41,54 @@
     "commit": "git-cz",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "coverage": "codecov",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "size": "bundlesize"
+  },
+  "dependencies": {
+    "react-native": "^0.60.5",
+    "react-native-svg": "^9.6.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
+    "@babel/core": "^7.5.5",
     "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.4.4",
-    "@babel/runtime": "^7.4.4",
-    "@commitlint/cli": "^7.6.1",
-    "@commitlint/config-conventional": "^7.6.0",
-    "@types/jest": "^24.0.13",
-    "@types/react": "^16.8.17",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-test-renderer": "^16.8.1",
+    "@babel/register": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-native": "^0.60.8",
+    "@types/react-test-renderer": "^16.9.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.8.0",
-    "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "^2.1.0",
+    "bundlesize": "^0.18.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "docz": "^1.2.0",
     "docz-theme-default": "^1.2.0",
-    "husky": "^2.3.0",
-    "jest": "^24.8.0",
-    "prettier": "^1.17.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6",
+    "husky": "^3.0.4",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.9.0",
     "remark-emoji": "^2.0.2",
-    "rollup": "1.12.3",
-    "rollup-plugin-analyzer": "^3.0.0",
+    "rollup": "1.20.2",
     "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-typescript2": "^0.21.1",
+    "rollup-plugin-typescript2": "^0.23.0",
     "rollup-plugin-uglify": "^6.0.2",
-    "semantic-release": "^15.13.12",
+    "semantic-release": "^15.13.24",
     "ts-jest": "^24.0.2",
-    "tslint": "^5.16.0",
+    "tslint": "^5.19.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.3"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.9.0"
   },
-  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "npm run format && npm run tsc",
@@ -117,5 +125,11 @@
       "json",
       "node"
     ]
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/react-content-loader.min.js",
+      "maxSize": "1.56 kB"
+    }
+  ]
 }
