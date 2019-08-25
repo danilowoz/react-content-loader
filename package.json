@@ -11,6 +11,7 @@
   "main": "dist/react-content-loader.cjs.js",
   "module": "dist/react-content-loader.es.js",
   "jsnext:main": "dist/react-content-loader.es.js",
+  "native": "native/react-content-loader.native.cjs.js",
   "types": "dist/src/index.d.ts",
   "bugs": {
     "url": "https://github.com/danilowoz/react-content-loader/issues"
@@ -33,16 +34,16 @@
   "sideEffects": false,
   "scripts": {
     "dev": "docz dev",
-    "build": "rm -fr ./dist && rollup -c",
-    "test": "npm run tsc && jest",
+    "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
+    "test": "npm run tsc && jest && npm run build",
     "test:watch": "jest tests --watch",
+    "test:size": "bundlesize",
     "tsc": "node_modules/.bin/tsc",
     "tsc:watch": "npm run tsc -- --watch",
     "commit": "git-cz",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "coverage": "codecov",
-    "release": "semantic-release",
-    "size": "bundlesize"
+    "release": "semantic-release"
   },
   "dependencies": {
     "react-native": "^0.60.5",
@@ -60,7 +61,6 @@
     "@types/jest": "^24.0.18",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
-    "@types/react-native": "^0.60.8",
     "@types/react-test-renderer": "^16.9.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.8.0",
@@ -77,6 +77,7 @@
     "react-test-renderer": "^16.9.0",
     "remark-emoji": "^2.0.2",
     "rollup": "1.20.2",
+    "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-typescript2": "^0.23.0",
     "rollup-plugin-uglify": "^6.0.2",
@@ -130,6 +131,10 @@
     {
       "path": "./dist/react-content-loader.min.js",
       "maxSize": "1.56 kB"
+    },
+    {
+      "path": "./native/react-content-loader.native.es.js",
+      "maxSize": "1.78 kB"
     }
   ]
 }

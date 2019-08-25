@@ -1,8 +1,7 @@
 {
-  "private": true,
   "name": "react-content-loader/native",
-  "main": "./native/react-content-loader.cjs.js",
-  "module": "./native/react-content-loader.es.js",
-  "jsnext:main": "./native/react-content-loader.es.js",
-  "author": "Danilo Woznica <danilowoz@gmail.com>"
+  "private": true,
+  "main": "./native/react-content-loader.native.cjs.js",
+  "module": "./native/react-content-loader.native.es.js",
+  "jsnext:main": "./native/react-content-loader.native.es.js"
 }

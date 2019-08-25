@@ -1,9 +1,9 @@
 import replace from 'rollup-plugin-replace'
 import { uglify } from 'rollup-plugin-uglify'
 import typescript from 'rollup-plugin-typescript2'
+import copy from 'rollup-plugin-copy'
 
 import pkg from './package.json'
-import pkgNative from './src/native/package.json'
 
 const mergeAll = objs => Object.assign({}, ...objs)
 
@@ -14,7 +14,7 @@ const cjs = {
 };
 
 const esm = {
-  format: 'esm',
+  format: 'es',
   sourcemap: true,
 };
 
@@ -32,9 +32,7 @@ const configBase = {
   },
   external: [
     ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkgNative.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
-    ...Object.keys(pkgNative.peerDependencies || {}),
   ],
   plugins: commonPlugins,
 }
@@ -110,9 +108,14 @@ const nativeConfig = mergeAll([
   {
     input: './src/native/index.ts',
     output: [
-      mergeAll([configBase.output, { ...esm, file: pkgNative.module }]),
-      mergeAll([configBase.output, { ...cjs, file: pkgNative.main,  }]),
+      mergeAll([configBase.output, { ...esm, file: `native/${pkg.name}.native.es.js` }]),
+      mergeAll([configBase.output, { ...cjs, file: `native/${pkg.name}.native.cjs.js`,  }]),
     ],
+    plugins: configBase.plugins.concat(copy({
+      targets: [
+        { src: 'src/native/package.json', dest: 'native' },
+      ]
+    }))
   },
 ])
 

@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
     "declaration": true,
     "declarationDir": "./dist/types",
-    "outDir": "./dist",
-    "target": "es5",
-    "jsx": "react",
+    "declarationMap": true,
+    "noEmit": true,
     "sourceMap": true,
-    "noImplicitAny": true,
-    "resolveJsonModule": true, // To load package.json
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "noImplicitAny": false
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/__tests__"]
 }
