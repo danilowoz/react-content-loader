@@ -11,8 +11,7 @@ import Svg, {
 
 import offsetValueBound from './offsetValueBound'
 import uid from './uid'
-
-import { IContentLoaderProps } from './interface'
+import { IContentLoaderProps } from './'
 
 type RequiredIContentLoaderProps = Required<IContentLoaderProps>
 

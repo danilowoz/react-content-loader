@@ -2,8 +2,7 @@ import * as React from 'react'
 export { Circle, Rect } from 'react-native-svg'
 
 import Svg from './Svg'
-
-import { IContentLoaderProps } from './interface'
+import { IContentLoaderProps } from './'
 
 type DefaultProps = Pick<
   Required<IContentLoaderProps>,

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Svg from './Svg'
 
-import { IContentLoaderProps } from './interface'
+import Svg from './Svg'
+import { IContentLoaderProps } from './'
 
 export const defaultProps: IContentLoaderProps = {
   animate: true,

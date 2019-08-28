@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import Holder from '../Holder'
-import { IContentLoaderProps } from '../interface'
+import { IContentLoaderProps } from '../'
 
 export default (props: IContentLoaderProps) => (
   <Holder {...props} height={480}>

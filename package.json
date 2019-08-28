@@ -12,7 +12,7 @@
   "module": "dist/react-content-loader.es.js",
   "jsnext:main": "dist/react-content-loader.es.js",
   "native": "native/react-content-loader.native.cjs.js",
-  "types": "dist/src/index.d.ts",
+  "types": "dist/index.d.ts",
   "bugs": {
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
@@ -35,21 +35,22 @@
   "scripts": {
     "dev": "docz dev",
     "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
-    "test": "npm run tsc && jest && npm run build",
-    "test:watch": "jest tests --watch",
+    "test": "npm run test:tsc && npm run test:unit && npm run build",
+    "test:unit": "jest",
+    "test:watch": "npm run test:unit -- --watch",
     "test:size": "bundlesize",
-    "tsc": "node_modules/.bin/tsc",
-    "tsc:watch": "npm run tsc -- --watch",
+    "test:tsc": "node_modules/.bin/tsc",
+    "test:tsc:watch": "npm run tsc -- --watch",
     "commit": "git-cz",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "coverage": "codecov",
     "release": "semantic-release"
   },
   "dependencies": {
-    "react-native": "^0.60.5",
     "react-native-svg": "^9.6.4"
   },
   "devDependencies": {
+    "@types/react-native": "^0.60.8",
     "@babel/core": "^7.5.5",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
@@ -88,11 +89,12 @@
     "typescript": "^3.5.3"
   },
   "peerDependencies": {
-    "react": "^16.9.0"
+    "react": "^16.9.0",
+    "react-native": "^0.60.5"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && npm run tsc",
+      "pre-commit": "npm run format",
       "pre-push": "npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
@@ -134,7 +136,7 @@
     },
     {
       "path": "./native/react-content-loader.native.es.js",
-      "maxSize": "1.78 kB"
+      "maxSize": "2.04 kB"
     }
   ]
 }
