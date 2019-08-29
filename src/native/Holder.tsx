@@ -1,5 +1,5 @@
 import * as React from 'react'
-export { Circle, Rect } from 'react-native-svg'
+import { Circle, Rect } from 'react-native-svg'
 
 import Svg from './Svg'
 import { IContentLoaderProps } from './'
@@ -29,11 +29,23 @@ export const defaultProps: DefaultProps = {
   width: 400,
 }
 
+const InitialComponent: React.FunctionComponent<
+  IContentLoaderProps
+> = props => (
+  <Rect x="0" y="0" rx="5" ry="5" width={props.width} height={props.height} />
+)
+
 const ContentLoader = (props: IContentLoaderProps) => {
   const mergedProps = { ...defaultProps, ...props }
-  const children = props.children ? props.children : null
+  const children = props.children ? (
+    props.children
+  ) : (
+    <InitialComponent {...mergedProps} />
+  )
 
   return <Svg {...mergedProps}>{children}</Svg>
 }
+
+export { Circle, Rect }
 
 export default ContentLoader

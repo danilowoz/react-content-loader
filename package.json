@@ -141,7 +141,7 @@
     },
     {
       "path": "./native/react-content-loader.native.es.js",
-      "maxSize": "2.04 kB"
+      "maxSize": "2.08 kB"
     }
   ]
 }
