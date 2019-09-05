@@ -3,15 +3,18 @@ import { Animated } from 'react-native'
 
 import Svg, {
   ClipPath,
+  Defs,
   LinearGradient,
   Rect,
-  Defs,
   Stop,
 } from 'react-native-svg'
 
+import { IContentLoaderProps } from './'
 import offsetValueBound from './offsetValueBound'
 import uid from './uid'
-import { IContentLoaderProps } from './'
+
+const isTEstEnv = process.env.NODE_ENV === 'test'
+
 
 type RequiredIContentLoaderProps = Required<IContentLoaderProps>
 
@@ -28,8 +31,8 @@ export default ({
   const animatedValue = React.useRef(new Animated.Value(0)).current
   const [offset, setOffset] = React.useState(-1)
 
-  const idClip = React.useRef(uid()).current
-  const idGradient = React.useRef(uid()).current
+  const idClip = React.useRef(isTEstEnv ? 'idClip' : uid()).current
+  const idGradient = React.useRef(isTEstEnv ? 'idGradient' : uid()).current
 
   const setAnimation = useCallback(() => {
     Animated.timing(animatedValue, {
@@ -46,12 +49,12 @@ export default ({
   React.useEffect(() => {
     if (animate) {
       setAnimation()
-    }
-  }, [animate, animatedValue, setAnimation])
 
-  animatedValue.addListener(({ value }) => {
-    setOffset(value)
-  })
+      animatedValue.addListener(({ value }) => {
+        setOffset(value)
+      })
+    }
+  }, [animate])
 
   const offset1 = offsetValueBound(offset - 1)
   const offset2 = offsetValueBound(offset)

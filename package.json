@@ -36,7 +36,9 @@
     "dev": "docz dev",
     "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
     "test": "npm run test:tsc && npm run test:unit && npm run build",
-    "test:unit": "jest",
+    "test:unit": "npm run test:unit:web && npm run test:unit:native",
+    "test:unit:web": "NODE_ENV=test jest -c jest.web.config.js",
+    "test:unit:native": "NODE_ENV=test jest -c jest.native.config.js",
     "test:watch": "npm run test:unit -- --watch",
     "test:size": "bundlesize",
     "test:tsc": "node_modules/.bin/tsc",
@@ -50,7 +52,6 @@
     "react-native-svg": "^9.6.4"
   },
   "devDependencies": {
-    "@types/react-native": "^0.60.8",
     "@babel/core": "^7.5.5",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
@@ -62,6 +63,7 @@
     "@types/jest": "^24.0.18",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "@types/react-native": "^0.60.8",
     "@types/react-test-renderer": "^16.9.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.8.0",
@@ -72,9 +74,11 @@
     "docz-theme-default": "^1.2.0",
     "husky": "^3.0.4",
     "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.56.0",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-native": "^0.60.5",
     "react-test-renderer": "^16.9.0",
     "remark-emoji": "^2.0.2",
     "rollup": "1.20.2",
@@ -109,31 +113,6 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "jest": {
-    "verbose": true,
-    "collectCoverage": true,
-    "coverageDirectory": "./coverage/",
-    "transform": {
-      "^.+\\.(t|j)sx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.test.json"
-      }
-    }
-  },
   "bundlesize": [
     {
       "path": "./dist/react-content-loader.min.js",
@@ -141,7 +120,7 @@
     },
     {
       "path": "./native/react-content-loader.native.es.js",
-      "maxSize": "2.08 kB"
+      "maxSize": "2.13 kB"
     }
   ]
 }
