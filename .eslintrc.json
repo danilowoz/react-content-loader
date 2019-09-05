@@ -1,0 +1,6 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "@typescript-eslint/no-angle-bracket-type-assertion": 0 // I don't know wtf it is
+  }
+}

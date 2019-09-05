@@ -4,9 +4,6 @@ import * as renderer from 'react-test-renderer'
 
 import BulletListStyle from '../../stylized/BulletListStyle'
 
-
-jest.useFakeTimers();
-
 describe('BulletListStyle', () => {
   const wrapper = renderer.create(
     <BulletListStyle animate={false} speed={20} />

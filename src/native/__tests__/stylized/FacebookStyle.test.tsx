@@ -5,9 +5,7 @@ import * as renderer from 'react-test-renderer'
 import FacebookStyle from '../../stylized/FacebookStyle'
 
 describe('FacebookStyle', () => {
-  const wrapper = renderer.create(
-    <FacebookStyle animate={false} speed={20} />
-  )
+  const wrapper = renderer.create(<FacebookStyle animate={false} speed={20} />)
 
   test('renders correctly', () => {
     const tree = wrapper.toJSON()

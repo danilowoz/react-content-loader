@@ -15,7 +15,6 @@ import uid from './uid'
 
 const isTEstEnv = process.env.NODE_ENV === 'test'
 
-
 type RequiredIContentLoaderProps = Required<IContentLoaderProps>
 
 export default ({
@@ -54,7 +53,7 @@ export default ({
         setOffset(value)
       })
     }
-  }, [animate])
+  }, [animate, animatedValue, setAnimation])
 
   const offset1 = offsetValueBound(offset - 1)
   const offset2 = offsetValueBound(offset)
