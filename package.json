@@ -101,7 +101,7 @@
     "typescript": "^3.5.3"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
+    "react": "^16.0.0",
     "react-native": "^0.60.5"
   },
   "husky": {
@@ -128,7 +128,7 @@
     },
     {
       "path": "./native/react-content-loader.native.es.js",
-      "maxSize": "2.2 kB"
+      "maxSize": "2.4 kB"
     }
   ]
 }

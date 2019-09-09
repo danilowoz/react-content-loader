@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { Component } from 'react'
 import { Animated } from 'react-native'
 
 import Svg, {
@@ -16,74 +16,86 @@ import uid from './uid'
 const isTEstEnv = process.env.NODE_ENV === 'test'
 
 type RequiredIContentLoaderProps = Required<IContentLoaderProps>
+interface State {
+  offset: number
+}
 
-export default ({
-  animate,
-  children,
-  height,
-  primaryColor,
-  secondaryColor,
-  speed,
-  width,
-}: RequiredIContentLoaderProps) => {
-  const durInSeconds = speed * 1000 // transform to seconds to maintable the compatible with regular package
-  const animatedValue = React.useRef(new Animated.Value(0)).current
-  const [offset, setOffset] = React.useState(-1)
+class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
+  state = { offset: -1 }
 
-  const idClip = React.useRef(isTEstEnv ? 'idClip' : uid()).current
-  const idGradient = React.useRef(isTEstEnv ? 'idGradient' : uid()).current
+  animatedValue = new Animated.Value(0)
 
-  const setAnimation = useCallback(() => {
-    Animated.timing(animatedValue, {
+  idClip = isTEstEnv ? 'idClip' : uid()
+
+  idGradient = isTEstEnv ? 'idGradient' : uid()
+
+  setAnimation = () => {
+    const durInSeconds = this.props.speed * 1000 // transform to seconds to maintable the compatible with regular package
+
+    Animated.timing(this.animatedValue, {
       toValue: 2,
       delay: durInSeconds,
       duration: durInSeconds,
       useNativeDriver: true,
     }).start(() => {
-      animatedValue.setValue(-1)
-      setAnimation()
+      this.animatedValue.setValue(-1)
+      this.setAnimation()
     })
-  }, [animatedValue, durInSeconds])
+  }
 
-  React.useEffect(() => {
-    if (animate) {
-      setAnimation()
+  componentDidMount = () => {
+    if (this.props.animate) {
+      this.setAnimation()
 
-      animatedValue.addListener(({ value }) => {
-        setOffset(value)
+      this.animatedValue.addListener(({ value }) => {
+        this.setState({
+          offset: value,
+        })
       })
     }
-  }, [animate, animatedValue, setAnimation])
+  }
 
-  const offset1 = offsetValueBound(offset - 1)
-  const offset2 = offsetValueBound(offset)
-  const offset3 = offsetValueBound(offset + 1)
+  render() {
+    const { children, height, primaryColor, secondaryColor, width } = this.props
 
-  return (
-    <Svg
-      viewBox={`0 0 ${width} ${height}`}
-      width={width}
-      height={height}
-      preserveAspectRatio="none"
-    >
-      <Rect
-        x="0"
-        y="0"
+    const offset1 = offsetValueBound(this.state.offset - 1)
+    const offset2 = offsetValueBound(this.state.offset)
+    const offset3 = offsetValueBound(this.state.offset + 1)
+
+    return (
+      <Svg
+        viewBox={`0 0 ${width} ${height}`}
         width={width}
         height={height}
-        fill={`url(#${idClip})`}
-        clipPath={`url(#${idGradient})`}
-      />
+        preserveAspectRatio="none"
+      >
+        <Rect
+          x="0"
+          y="0"
+          width={width}
+          height={height}
+          fill={`url(#${this.idClip})`}
+          clipPath={`url(#${this.idGradient})`}
+        />
 
-      <Defs>
-        <ClipPath id={idGradient}>{children}</ClipPath>
+        <Defs>
+          <ClipPath id={this.idGradient}>{children}</ClipPath>
 
-        <LinearGradient id={idClip} x1={'-100%'} y1={0} x2={'100%'} y2={0}>
-          <Stop offset={offset1} stopColor={primaryColor} />
-          <Stop offset={offset2} stopColor={secondaryColor} />
-          <Stop offset={offset3} stopColor={primaryColor} />
-        </LinearGradient>
-      </Defs>
-    </Svg>
-  )
+          <LinearGradient
+            id={this.idClip}
+            x1={'-100%'}
+            y1={0}
+            x2={'100%'}
+            y2={0}
+          >
+            <Stop offset={offset1} stopColor={primaryColor} />
+            <Stop offset={offset2} stopColor={secondaryColor} />
+            <Stop offset={offset3} stopColor={primaryColor} />
+          </LinearGradient>
+        </Defs>
+      </Svg>
+    )
+  }
 }
+
+export default NativeSvg
