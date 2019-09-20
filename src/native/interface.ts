@@ -22,6 +22,7 @@ export interface IContentLoaderProps {
     | 'xMinYMax slice'
     | 'xMidYMax slice'
     | 'xMaxYMax slice'
+  id?: string
   primaryColor?: string
   rtl?: boolean
   secondaryColor?: string

@@ -94,7 +94,7 @@ describe('Svg', () => {
       expect(linearGradient.props.id).toBe(`${uniquekey}-idGradient`)
     })
 
-    it('render two components with diferents ids', () => {
+    it('render two components with different ids', () => {
       // Wrapper
       const { clipPath, linearGradient } = partsOfComponent
 

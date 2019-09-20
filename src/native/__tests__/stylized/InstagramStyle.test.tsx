@@ -5,7 +5,9 @@ import * as renderer from 'react-test-renderer'
 import InstagramStyle from '../../stylized/InstagramStyle'
 
 describe('InstagramStyle', () => {
-  const wrapper = renderer.create(<InstagramStyle animate={false} speed={20} />)
+  const wrapper = renderer.create(
+    <InstagramStyle id="InstagramStyle" animate={false} speed={20} />
+  )
 
   test('renders correctly', () => {
     const tree = wrapper.toJSON()

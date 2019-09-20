@@ -6,7 +6,7 @@ import BulletListStyle from '../../stylized/BulletListStyle'
 
 describe('BulletListStyle', () => {
   const wrapper = renderer.create(
-    <BulletListStyle animate={false} speed={20} />
+    <BulletListStyle id="BulletListStyle" animate={false} speed={20} />
   )
 
   test('renders correctly', () => {

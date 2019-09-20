@@ -8,8 +8,8 @@ exports[`ListStyle renders correctly 1`] = `
   width={400}
 >
   <Rect
-    clipPath="url(#idGradient)"
-    fill="url(#idClip)"
+    clipPath="url(#ListStyle-idGradient)"
+    fill="url(#ListStyle-idClip)"
     height={130}
     width={400}
     x="0"
@@ -17,7 +17,7 @@ exports[`ListStyle renders correctly 1`] = `
   />
   <Defs>
     <ClipPath
-      id="idGradient"
+      id="ListStyle-idGradient"
     >
       <Rect
         height="10"
@@ -69,7 +69,7 @@ exports[`ListStyle renders correctly 1`] = `
       />
     </ClipPath>
     <LinearGradient
-      id="idClip"
+      id="ListStyle-idClip"
       x1="-100%"
       x2="100%"
       y1={0}

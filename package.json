@@ -124,11 +124,11 @@
   "bundlesize": [
     {
       "path": "./dist/react-content-loader.min.js",
-      "maxSize": "1.56 kB"
+      "maxSize": "2 kB"
     },
     {
       "path": "./native/react-content-loader.native.es.js",
-      "maxSize": "2.4 kB"
+      "maxSize": "3 kB"
     }
   ]
 }

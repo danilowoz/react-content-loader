@@ -13,9 +13,20 @@ import { IContentLoaderProps } from './'
 import offsetValueBound from './offsetValueBound'
 import uid from './uid'
 
-const isTEstEnv = process.env.NODE_ENV === 'test'
+type RequiredIContentLoaderProps = IContentLoaderProps &
+  Pick<
+    Required<IContentLoaderProps>,
+    | 'animate'
+    | 'height'
+    | 'preserveAspectRatio'
+    | 'primaryColor'
+    | 'rtl'
+    | 'secondaryColor'
+    | 'speed'
+    | 'style'
+    | 'width'
+  >
 
-type RequiredIContentLoaderProps = Required<IContentLoaderProps>
 interface State {
   offset: number
 }
@@ -25,12 +36,12 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
 
   animatedValue = new Animated.Value(0)
 
-  idClip = isTEstEnv ? 'idClip' : uid()
+  idClip = this.props.id ? `${this.props.id}-idClip` : uid()
 
-  idGradient = isTEstEnv ? 'idGradient' : uid()
+  idGradient = this.props.id ? `${this.props.id}-idGradient` : uid()
 
   setAnimation = () => {
-    const durInSeconds = this.props.speed * 1000 // transform to seconds to maintable the compatible with regular package
+    const durInSeconds = this.props.speed * 1000 // transform to seconds to maintainable the compatible with regular package
 
     Animated.timing(this.animatedValue, {
       toValue: 2,
