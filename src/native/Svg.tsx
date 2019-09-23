@@ -67,11 +67,22 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
   }
 
   render() {
-    const { children, height, primaryColor, secondaryColor, width } = this.props
+    const {
+      children,
+      height,
+      primaryColor,
+      secondaryColor,
+      width,
+      rtl,
+      style,
+    } = this.props
 
     const offset1 = offsetValueBound(this.state.offset - 1)
     const offset2 = offsetValueBound(this.state.offset)
     const offset3 = offsetValueBound(this.state.offset + 1)
+
+    const rtlStyle = rtl ? { transform: [{ rotateY: '180deg' }] } : {}
+    const composedStyle = { ...style, ...rtlStyle }
 
     return (
       <Svg
@@ -79,6 +90,7 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
         width={width}
         height={height}
         preserveAspectRatio="none"
+        style={composedStyle}
       >
         <Rect
           x="0"

@@ -1,3 +1,5 @@
+import * as ReactNative from 'react-native'
+
 export interface IContentLoaderProps {
   animate?: boolean
   children?: React.ReactNode
@@ -27,6 +29,6 @@ export interface IContentLoaderProps {
   rtl?: boolean
   secondaryColor?: string
   speed?: number
-  style?: React.CSSProperties
+  style?: ReactNative.ViewStyle
   width?: number
 }
