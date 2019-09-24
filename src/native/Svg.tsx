@@ -75,6 +75,7 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
       width,
       rtl,
       style,
+      ...props
     } = this.props
 
     const offset1 = offsetValueBound(this.state.offset - 1)
@@ -84,6 +85,11 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
     const rtlStyle = rtl ? { transform: [{ rotateY: '180deg' }] } : {}
     const composedStyle = { ...style, ...rtlStyle }
 
+    // Remove unnecessary keys
+    delete props.id
+    delete props.animate
+    delete props.speed
+
     return (
       <Svg
         viewBox={`0 0 ${width} ${height}`}
@@ -91,6 +97,7 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
         height={height}
         preserveAspectRatio="none"
         style={composedStyle}
+        {...props}
       >
         <Rect
           x="0"

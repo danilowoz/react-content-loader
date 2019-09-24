@@ -3,6 +3,7 @@ import * as ReactNative from 'react-native'
 export interface IContentLoaderProps {
   animate?: boolean
   children?: React.ReactNode
+  className?: string
   height?: number
   preserveAspectRatio?:
     | 'none'
