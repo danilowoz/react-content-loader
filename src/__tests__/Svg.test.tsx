@@ -126,8 +126,8 @@ describe('Svg', () => {
     it('svg has aria-label', () => {
       const { svg } = partsOfComponent
 
-      expect(typeof svg.props['aria-labelledby']).toBe('string')
-      expect(svg.props['aria-labelledby'].length).not.toBe(0)
+      expect(typeof svg.props['aria-label']).toBe('string')
+      expect(svg.props['aria-label'].length).not.toBe(0)
     })
 
     it('svg has role', () => {

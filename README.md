@@ -82,7 +82,7 @@ const MyFacebookLoader = () => <Facebook />
 
 **2. Custom mode**
 
-**To create custom loaders there is an important difference** as React Native doesn't have any native module for SVG components, it's necessary to import the shapes from [react-native-svg](https://github.com/react-native-community/react-native-svg) or used the named export in the same `react-content-loader` import:
+**To create custom loaders there is an important difference:** as React Native doesn't have any native module for SVG components, it's necessary to import the shapes from [react-native-svg](https://github.com/react-native-community/react-native-svg) or use the named export Rect and Circle from `react-content-loader` import:
 
 ```jsx
 import ContentLoader, { Rect, Circle } from 'react-content-loader/native'
@@ -96,8 +96,6 @@ const MyLoader = () => (
   </ContentLoader>
 )
 ```
-
-_Only supports `Rect` and `Circle`_
 
 ## Options
 

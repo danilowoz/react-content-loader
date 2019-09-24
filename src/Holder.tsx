@@ -29,13 +29,12 @@ const InitialComponent: React.FunctionComponent<
 
 const ContentLoader = (props: IContentLoaderProps) => {
   const mergedProps = { ...defaultProps, ...props }
-  const children = props.children ? (
-    props.children
-  ) : (
-    <InitialComponent {...mergedProps} />
-  )
 
-  return <Svg {...mergedProps}>{children}</Svg>
+  return (
+    <Svg {...mergedProps}>
+      {props.children || <InitialComponent {...mergedProps} />}
+    </Svg>
+  )
 }
 
 export default ContentLoader

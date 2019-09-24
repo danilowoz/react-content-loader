@@ -11,7 +11,7 @@ import Svg, {
 
 import { IContentLoaderProps } from './'
 import offsetValueBound from './offsetValueBound'
-import uid from './uid'
+import uid from '../uid'
 
 type RequiredIContentLoaderProps = IContentLoaderProps &
   Pick<
@@ -41,7 +41,8 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
   idGradient = this.props.id ? `${this.props.id}-idGradient` : uid()
 
   setAnimation = () => {
-    const durInSeconds = this.props.speed * 1000 // transform to seconds to maintainable the compatible with regular package
+    // Turn in seconds to keep compatible with web one
+    const durInSeconds = this.props.speed * 1000 
 
     Animated.timing(this.animatedValue, {
       toValue: 2,
