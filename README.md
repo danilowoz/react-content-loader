@@ -17,14 +17,14 @@ SVG-Powered component to easily create placeholder loadings (like Facebo
 
 ## Index
 
-- [Getting Started](#getting-started)
+- [Getting Started](#gettingstarted)
 - [Usage](#usage)
   - [Native](#native)
 - [Options](#options)
 - [Examples](#examples)
-- [Similar packages](#similar-packages)
+- [Similar packages](#similarpackages)
 - [Development](#development)
-- [Known Issues](#known-issues)
+- [Known Issues](#knownissues)
 
 ## Getting Started
 
