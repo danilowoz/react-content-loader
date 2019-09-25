@@ -90,7 +90,6 @@ import ContentLoader, { Rect, Circle } from 'react-content-loader/native'
 const MyLoader = () => (
   <ContentLoader>
     <Circle cx="30" cy="30" r="30" />
-    <Rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <Rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <Rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
   </ContentLoader>
