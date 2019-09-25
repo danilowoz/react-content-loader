@@ -1,0 +1,8 @@
+{
+  "name": "react-content-loader/native",
+  "private": true,
+  "main": "./react-content-loader.native.cjs.js",
+  "module": "./react-content-loader.native.es.js",
+  "jsnext:main": "./react-content-loader.native.es.js",
+  "types": "./native/index.d.ts"
+}

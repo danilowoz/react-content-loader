@@ -1,16 +1,14 @@
 language: node_js
 sudo: false
 node_js:
-  - 9
+  - 10
 cache:
   directories:
     - node_modules
 install:
   - npm install
-  - npm install -g codecov
 script:
   - npm run test
   - npm run build
 after_success:
-  - npm run coverage
   - npm run release

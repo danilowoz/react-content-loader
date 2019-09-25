@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { IContentLoaderProps } from './interface'
+import { IContentLoaderProps } from './'
 import uid from './uid'
 
 export default ({

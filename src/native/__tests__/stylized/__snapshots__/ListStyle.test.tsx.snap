@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListStyle renders correctly 1`] = `
+<Svg
+  height={130}
+  preserveAspectRatio="none"
+  style={Object {}}
+  viewBox="0 0 400 130"
+  width={400}
+>
+  <Rect
+    clipPath="url(#ListStyle-idGradient)"
+    fill="url(#ListStyle-idClip)"
+    height={130}
+    width={400}
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="ListStyle-idGradient"
+    >
+      <Rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="250"
+        x="0"
+        y="0"
+      />
+      <Rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="220"
+        x="20"
+        y="20"
+      />
+      <Rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="170"
+        x="20"
+        y="40"
+      />
+      <Rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="250"
+        x="0"
+        y="60"
+      />
+      <Rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="200"
+        x="20"
+        y="80"
+      />
+      <Rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="80"
+        x="20"
+        y="100"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="ListStyle-idClip"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#e0e0e0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;

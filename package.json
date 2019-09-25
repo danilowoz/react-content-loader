@@ -1,6 +1,6 @@
 {
   "name": "react-content-loader",
-  "version": "3.4.2",
+  "version": "4.4.2",
   "description": "SVG-Powered component to easily create placeholder loadings (like Facebook cards loading)",
   "repository": {
     "type": "git",
@@ -11,79 +11,101 @@
   "main": "dist/react-content-loader.cjs.js",
   "module": "dist/react-content-loader.es.js",
   "jsnext:main": "dist/react-content-loader.es.js",
-  "types": "dist/src/index.d.ts",
+  "types": "dist/index.d.ts",
   "bugs": {
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
   "homepage": "https://github.com/danilowoz/react-content-loader",
   "keywords": [
     "react",
-    "facebook-style",
+    "react-native",
+    "skeleton",
+    "placeholder",
     "loader",
     "loading",
     "content",
     "svg"
   ],
   "files": [
-    "dist"
+    "dist",
+    "native"
   ],
   "sideEffects": false,
   "scripts": {
     "dev": "docz dev",
-    "build": "rm -fr ./dist && rollup -c",
-    "test": "npm run tsc && jest",
-    "test:watch": "jest tests --watch",
-    "tsc": "node_modules/.bin/tsc",
-    "tsc:watch": "npm run tsc -- --watch",
+    "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
+    "test": "npm run test:tsc && npm run test:unit && npm run build",
+    "test:unit": "npm run test:unit:web && npm run test:unit:native",
+    "test:unit:web": "jest -c jest.web.config.js",
+    "test:unit:native": "jest -c jest.native.config.js",
+    "test:watch": "npm run test:unit -- --watch",
+    "test:size": "bundlesize",
+    "test:tsc": "node_modules/.bin/tsc",
+    "test:tsc:watch": "npm run tsc -- --watch",
     "commit": "git-cz",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "coverage": "codecov",
+    "lint": "eslint --ext .jsx --ext .ts,.tsx src/",
     "release": "semantic-release"
   },
+  "dependencies": {
+    "react-native-svg": "9.6.4"
+  },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.4.4",
-    "@babel/runtime": "^7.4.4",
-    "@commitlint/cli": "^7.6.1",
-    "@commitlint/config-conventional": "^7.6.0",
-    "@types/jest": "^24.0.13",
-    "@types/react": "^16.8.17",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-test-renderer": "^16.8.1",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^24.8.0",
-    "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "^2.1.0",
-    "docz": "^1.2.0",
-    "docz-theme-default": "^1.2.0",
-    "husky": "^2.3.0",
-    "jest": "^24.8.0",
-    "prettier": "^1.17.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6",
-    "remark-emoji": "^2.0.2",
-    "rollup": "1.12.3",
-    "rollup-plugin-analyzer": "^3.0.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-typescript2": "^0.21.1",
-    "rollup-plugin-uglify": "^6.0.2",
-    "semantic-release": "^15.13.12",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.16.0",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.4.5"
+    "@babel/core": "7.5.5",
+    "@babel/polyfill": "7.4.4",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0",
+    "@babel/register": "7.5.5",
+    "@babel/runtime": "7.5.5",
+    "@commitlint/cli": "8.1.0",
+    "@commitlint/config-conventional": "8.1.0",
+    "@types/jest": "24.0.18",
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.9.0",
+    "@types/react-native": "0.60.11",
+    "@types/react-test-renderer": "16.9.0",
+    "@typescript-eslint/eslint-plugin": "2.1.0",
+    "@typescript-eslint/parser": "2.1.0",
+    "babel-core": "6.26.3",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.8.0",
+    "bundlesize": "0.18.0",
+    "commitizen": "4.0.3",
+    "cz-conventional-changelog": "3.0.2",
+    "docz": "1.2.0",
+    "docz-theme-default": "1.2.0",
+    "eslint": "6.3.0",
+    "eslint-config-react-app": "5.0.1",
+    "eslint-plugin-flowtype": "4.3.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "2.0.1",
+    "husky": "3.0.4",
+    "jest": "24.9.0",
+    "metro-react-native-babel-preset": "0.56.0",
+    "prettier": "1.18.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-native": "0.60.5",
+    "react-test-renderer": "16.9.0",
+    "remark-emoji": "2.0.2",
+    "rollup": "1.20.2",
+    "rollup-plugin-copy": "3.1.0",
+    "rollup-plugin-replace": "2.2.0",
+    "rollup-plugin-typescript2": "0.23.0",
+    "rollup-plugin-uglify": "6.0.2",
+    "semantic-release": "15.13.24",
+    "ts-jest": "24.0.2",
+    "typescript": "3.5.3"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.0.0",
+    "react-native": "^0.60.5"
   },
-  "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && npm run tsc",
+      "pre-commit": "npm run lint && npm run format",
       "pre-push": "npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
@@ -98,24 +120,14 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "jest": {
-    "verbose": true,
-    "collectCoverage": true,
-    "coverageDirectory": "./coverage/",
-    "transform": {
-      "^.+\\.(t|j)sx?$": "ts-jest"
+  "bundlesize": [
+    {
+      "path": "./dist/react-content-loader.min.js",
+      "maxSize": "2 kB"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
-  }
+    {
+      "path": "./native/react-content-loader.native.es.js",
+      "maxSize": "3 kB"
+    }
+  ]
 }

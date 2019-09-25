@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FacebookStyle renders correctly 1`] = `
+<Svg
+  height={130}
+  preserveAspectRatio="none"
+  style={Object {}}
+  viewBox="0 0 400 130"
+  width={400}
+>
+  <Rect
+    clipPath="url(#FacebookStyle-idGradient)"
+    fill="url(#FacebookStyle-idClip)"
+    height={130}
+    width={400}
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="FacebookStyle-idGradient"
+    >
+      <Rect
+        height="6"
+        rx="4"
+        ry="4"
+        width="117"
+        x="70"
+        y="15"
+      />
+      <Rect
+        height="6"
+        rx="3"
+        ry="3"
+        width="85"
+        x="70"
+        y="35"
+      />
+      <Rect
+        height="6"
+        rx="3"
+        ry="3"
+        width="350"
+        x="0"
+        y="80"
+      />
+      <Rect
+        height="6"
+        rx="3"
+        ry="3"
+        width="380"
+        x="0"
+        y="100"
+      />
+      <Rect
+        height="6"
+        rx="3"
+        ry="3"
+        width="201"
+        x="0"
+        y="120"
+      />
+      <Circle
+        cx="30"
+        cy="30"
+        r="30"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="FacebookStyle-idClip"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#e0e0e0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;

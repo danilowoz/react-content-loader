@@ -1,8 +1,8 @@
+import * as ReactNative from 'react-native'
+
 export interface IContentLoaderProps {
   animate?: boolean
-  ariaLabel?: string
   children?: React.ReactNode
-  baseUrl?: string
   className?: string
   height?: number
   preserveAspectRatio?:
@@ -25,15 +25,11 @@ export interface IContentLoaderProps {
     | 'xMinYMax slice'
     | 'xMidYMax slice'
     | 'xMaxYMax slice'
+  id?: string
   primaryColor?: string
-  primaryOpacity?: number
   rtl?: boolean
   secondaryColor?: string
-  secondaryOpacity?: number
   speed?: number
-  interval?: number
-  style?: React.CSSProperties
-  uniquekey?: string
+  style?: ReactNative.ViewStyle
   width?: number
-  gradientRatio?: number
 }
