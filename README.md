@@ -10,21 +10,21 @@ SVG-Powered component to easily create placeholder loadings (like Facebo
 ## Features
 
 - :gear: **Customizable:** Feel free to change the colors, speed, sizes and even **RTL**;
-- :ok_hand: **Plug and play:** with many presets to use, see the [examples](#examples);
+- :ok_hand: **Plug and play:** with many presets to use, see the [examples](http://danilowoz.com/create-content-loader/#gallery);
 - :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create your own custom loaders easily;
 - 📱 **React Native support**: same API, as same powerful features;
 - ⚛️ **Really lightweight:** less than **2kB** and **0 dependencies** for web version;
 
 ## Index
 
-- [Getting Started](#getting-started)
+- [Getting Started](#gettingstarted)
 - [Usage](#usage)
   - [Native](#native)
 - [Options](#options)
 - [Examples](#examples)
-- [Similar packages](#similar-packages)
+- [Similar packages](#similarpackages)
 - [Development](#development)
-- [Known Issues](#known-issues)
+- [Known Issues](#knownissues)
 
 ## Getting Started
 
@@ -90,7 +90,6 @@ import ContentLoader, { Rect, Circle } from 'react-content-loader/native'
 const MyLoader = () => (
   <ContentLoader>
     <Circle cx="30" cy="30" r="30" />
-    <Rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <Rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <Rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
   </ContentLoader>
