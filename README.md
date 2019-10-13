@@ -36,6 +36,16 @@ npm i react-content-loader --save
 yarn add react-content-loader
 ```
 
+### For React Native
+
+```sh
+npm i react-content-loader react-native-svg --save
+```
+
+```sh
+yarn add react-content-loader react-native-svg
+```
+
 CDN from [JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
 
 ## Usage
