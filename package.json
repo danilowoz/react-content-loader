@@ -47,9 +47,7 @@
     "lint": "eslint --ext .jsx --ext .ts,.tsx src/",
     "release": "semantic-release"
   },
-  "dependencies": {
-    "react-native-svg": "9.6.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.5.5",
     "@babel/polyfill": "7.4.4",
@@ -88,6 +86,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-native": "0.60.5",
+    "react-native-svg": "9.11.1",
     "react-test-renderer": "16.9.0",
     "remark-emoji": "2.0.2",
     "rollup": "1.20.2",
@@ -100,8 +99,7 @@
     "typescript": "3.5.3"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-native": "^0.60.5"
+    "react": "^16.0.0"
   },
   "husky": {
     "hooks": {

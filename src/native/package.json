@@ -4,5 +4,12 @@
   "main": "./react-content-loader.native.cjs.js",
   "module": "./react-content-loader.native.es.js",
   "jsnext:main": "./react-content-loader.native.es.js",
-  "types": "./native/index.d.ts"
+  "types": "./native/index.d.ts",
+  "dependencies": {
+    "react-native-svg": "9.6.4"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-native": "^0.60.5"
+  }
 }
