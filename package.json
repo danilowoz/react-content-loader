@@ -86,6 +86,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-native": "0.60.5",
+    "react-native-svg": "9.11.1",
     "react-test-renderer": "16.9.0",
     "remark-emoji": "2.0.2",
     "rollup": "1.20.2",
