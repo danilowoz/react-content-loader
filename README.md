@@ -1,4 +1,7 @@
 <p align="center">
+  <a href="https://www.react-europe.org/"><img alt="react-europe-badge" src="https://img.shields.io/badge/join%20us%20at-ReactEurope-blue"/></a>
+</p>
+<p align="center">
   <img width="350" alt="react-content-loader" src="https://user-images.githubusercontent.com/4838076/34419335-5669c3f8-ebea-11e7-9668-c47b7846970b.png"/>
 </p>
 <p align="center">
