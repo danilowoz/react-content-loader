@@ -2,7 +2,7 @@ import ContentLoader from './Holder'
 
 export interface IContentLoaderProps {
   animate?: boolean
-  ariaLabel?: string
+  ariaLabel?: string | boolean
   children?: React.ReactNode
   baseUrl?: string
   className?: string
