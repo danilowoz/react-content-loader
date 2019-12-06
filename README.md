@@ -115,9 +115,9 @@ const MyLoader = () => (
 
 Defaults to `true`. Opt-out of animations with `false`
 
-#### **`ariaLabel? string | boolean`** - _Web only_
+#### **`ariaLabel? string`** - _Web only_
 
-Defaults to `Loading interface...`. It's used to describe what element it is. Use `false` to remove.
+Defaults to `Loading interface...`. It's used to describe what element it is. Use ''(empty string) to remove.
 
 #### **`baseUrl? string`** - _Web only_
 
