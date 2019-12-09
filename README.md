@@ -144,6 +144,10 @@ Defaults to `400`. It will be set in the viewbox attr in the `<svg 
 
 Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
 
+#### **`viewBox?: string`**
+
+Use viewBox props to set a custom viewBox value. Additionally, pass viewBox props as empty string to remove viewBox.
+
 #### **`gradientRatio? number`** - _Web only_
 
 Defaults to `2`. Width of the animated gradient as a fraction of the viewbox width.
