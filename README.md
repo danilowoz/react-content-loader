@@ -166,13 +166,13 @@ Defaults to `#f3f3f3` which is used as background of animation.
 
 #### **`secondaryColor?: string`**
 
-Defaults to `#ecebeb` which is used as the placeholder/layer of animation.
+Defaults to `#ecebeb` which is used as the foreground of animation.
 
-#### **`primaryOpacity?: string`** - _Web only_
+#### **`primaryOpacity?: number`** - _Web only_
 
 Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
-#### **`secondaryOpacity?: string`** - _Web only_
+#### **`secondaryOpacity?: number`** - _Web only_
 
 Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 

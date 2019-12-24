@@ -9,8 +9,7 @@
     "noEmit": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "noImplicitAny": false,
-    "resolveJsonModule": true
+    "noImplicitAny": false
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "src/__tests__"]
