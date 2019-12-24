@@ -3,7 +3,7 @@ import * as React from 'react'
 import Holder, { Rect, Circle } from '../Holder'
 import { IContentLoaderProps } from '../'
 
-export default (props: IContentLoaderProps) => (
+const ReactContentLoaderInstagram: React.FC<IContentLoaderProps> = props => (
   <Holder {...props} height={480}>
     <Circle cx="30" cy="30" r="30" />
 
@@ -12,3 +12,5 @@ export default (props: IContentLoaderProps) => (
     <Rect x="0" y="70" rx="5" ry="5" width="400" height="400" />
   </Holder>
 )
+
+export default ReactContentLoaderInstagram
