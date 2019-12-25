@@ -104,7 +104,7 @@ width.story = {
 }
 
 /**
- * Width
+ * Height
  */
 export const height = () => {
   return <Facebook height={50} />
@@ -207,7 +207,7 @@ primaryOpacity.story = {
 }
 
 /**
- * Primary opacity
+ * Secondary opacity
  */
 export const secondaryOpacity = () => {
   return <Facebook secondaryOpacity={0.06} />
