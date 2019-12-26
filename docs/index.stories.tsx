@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Facebook, Instagram } from '../src'
+import ContentLoader, { Facebook, Instagram } from '../src'
 
 export default {
   title: 'React Content Loader',
@@ -30,7 +30,7 @@ export const ariaLabel = () => {
 
 ariaLabel.story = {
   parameters: {
-    notes: `## \`ariaLabel? string | boolean\`
+    notes: `## \`ariaLabel?: string | boolean\`
 
     Defaults to \`Loading interface...\`. It's used to describe what element it is. Use \`false\` to remove.
     `,
@@ -46,12 +46,27 @@ export const baseURL = () => {
 
 baseURL.story = {
   parameters: {
-    notes: `## \`baseUrl? string\`
+    notes: `## \`baseUrl?: string\`
 
     Required if you're using \`<base url="/" />\` in the \`<head/>\`. Defaults to an empty string. This prop is common used as: \`<ContentLoader baseUrl={window.location.pathname} />\` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93).
     `,
   },
 }
+
+/**
+ * Children
+ */
+export const children = () => {
+  return (
+    <ContentLoader>
+      <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+      <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+      <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
+    </ContentLoader>
+  )
+}
+
+children.story = { parameters: { notes: `## \`children?: ReactNode\`` } }
 
 /**
  * Speed
@@ -97,7 +112,7 @@ export const width = () => {
 
 width.story = {
   parameters: {
-    notes: `## \`width? number\`
+    notes: `## \`width?: number\`
 
     Defaults to \`400\`. It will be set in the viewbox attr in the \`<svg />\`.`,
   },
@@ -112,7 +127,7 @@ export const height = () => {
 
 height.story = {
   parameters: {
-    notes: `## \`height? number\`
+    notes: `## \`height?: number\`
 
     Defaults to \`130\`. It will be set in the viewbox attr in the \`<svg />\`.`,
   },
@@ -140,7 +155,7 @@ export const gradientRatio = () => {
 
 gradientRatio.story = {
   parameters: {
-    notes: `## \`gradientRatio? number\`
+    notes: `## \`gradientRatio?: number\`
 
     Defaults to \`2\`. Width of the animated gradient as a fraction of the viewbox width.`,
   },
@@ -155,7 +170,7 @@ export const RTL = () => {
 
 RTL.story = {
   parameters: {
-    notes: `## \`rtl? boolean\`
+    notes: `## \`rtl?: boolean\`
 
     Defaults to \`false\`. Content right-to-left.`,
   },
@@ -239,15 +254,15 @@ uniqueKey.story = {
 /**
  * View box
  */
-// export const viewBox = () => {
-//   return <Facebook viewBox="" />
-// }
+export const viewBox = () => {
+  return <Facebook viewBox="" />
+}
 
-// viewBox.story = {
-//   parameters: {
-//     notes: `## \`viewBox?: string\`
+viewBox.story = {
+  parameters: {
+    notes: `## \`viewBox?: string\`
 
-//     Use viewbox props to set viewbox value.
-//     Additionally, pass viewBox props as empty string to remove viewBox.`,
-//   },
-// }
+    Use viewbox props to set viewbox value.
+    Additionally, pass viewBox props as empty string to remove viewBox.`,
+  },
+}
