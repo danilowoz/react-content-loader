@@ -1,6 +1,11 @@
 {
-  "extends": "react-app",
+  "extends": "@significa/eslint-config",
+  "plugins": ["jest"],
   "rules": {
-    "@typescript-eslint/no-angle-bracket-type-assertion": 0 // I don't know wtf it is
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/ban-ts-ignore": "off"
+  },
+  "env": {
+    "jest": true
   }
 }

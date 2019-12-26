@@ -3,7 +3,7 @@ import * as React from 'react'
 import Holder, { Rect } from '../Holder'
 import { IContentLoaderProps } from '../'
 
-export default (props: IContentLoaderProps) => (
+const ReactContentLoaderCode: React.FC<IContentLoaderProps> = props => (
   <Holder {...props}>
     <Rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
     <Rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
@@ -19,3 +19,5 @@ export default (props: IContentLoaderProps) => (
     <Rect x="0" y="60" rx="3" ry="3" width="30" height="10" />
   </Holder>
 )
+
+export default ReactContentLoaderCode

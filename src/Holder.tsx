@@ -21,9 +21,7 @@ export const defaultProps: IContentLoaderProps = {
   width: 400,
 }
 
-const InitialComponent: React.FunctionComponent<
-  IContentLoaderProps
-> = props => (
+const InitialComponent: React.FC<IContentLoaderProps> = props => (
   <rect x="0" y="0" rx="5" ry="5" width={props.width} height={props.height} />
 )
 

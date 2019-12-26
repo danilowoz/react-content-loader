@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import replace from 'rollup-plugin-replace'
 import { uglify } from 'rollup-plugin-uglify'
 import typescript from 'rollup-plugin-typescript2'
@@ -11,14 +12,14 @@ const cjs = {
   exports: 'named',
   format: 'cjs',
   sourcemap: true,
-};
+}
 
 const esm = {
   format: 'es',
   sourcemap: true,
-};
+}
 
-const globals = { react: 'React', 'react-dom': 'ReactDOM' };
+const globals = { react: 'React', 'react-dom': 'ReactDOM' }
 
 const commonPlugins = [
   typescript({
@@ -47,7 +48,7 @@ const umdConfig = mergeAll([
         file: `dist/${pkg.name}.js`,
         format: 'umd',
         name: 'ContentLoader',
-        globals
+        globals,
       },
     ]),
     external: Object.keys(pkg.peerDependencies || {}),
@@ -97,7 +98,7 @@ const webConfig = mergeAll([
     input: 'src/index.ts',
     output: [
       mergeAll([configBase.output, { ...esm, file: pkg.module }]),
-      mergeAll([configBase.output, { ...cjs, file: pkg.main,  }]),
+      mergeAll([configBase.output, { ...cjs, file: pkg.main }]),
     ],
     plugins: configBase.plugins.concat(),
   },
@@ -108,14 +109,20 @@ const nativeConfig = mergeAll([
   {
     input: './src/native/index.ts',
     output: [
-      mergeAll([configBase.output, { ...esm, file: `native/${pkg.name}.native.es.js` }]),
-      mergeAll([configBase.output, { ...cjs, file: `native/${pkg.name}.native.cjs.js`,  }]),
+      mergeAll([
+        configBase.output,
+        { ...esm, file: `native/${pkg.name}.native.es.js` },
+      ]),
+      mergeAll([
+        configBase.output,
+        { ...cjs, file: `native/${pkg.name}.native.cjs.js` },
+      ]),
     ],
-    plugins: configBase.plugins.concat(copy({
-      targets: [
-        { src: 'src/native/package.json', dest: 'native' },
-      ]
-    }))
+    plugins: configBase.plugins.concat(
+      copy({
+        targets: [{ src: 'src/native/package.json', dest: 'native' }],
+      })
+    ),
   },
 ])
 
