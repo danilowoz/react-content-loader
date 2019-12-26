@@ -115,11 +115,11 @@ const MyLoader = () => (
 
 Defaults to `true`. Opt-out of animations with `false`
 
-#### **`ariaLabel? string`** - _Web only_
+#### **`ariaLabel?: string`** - _Web only_
 
 Defaults to `Loading interface...`. It's used to describe what element it is. Use ''(empty string) to remove.
 
-#### **`baseUrl? string`** - _Web only_
+#### **`baseUrl?: string`** - _Web only_
 
 Required if you're using `<base url="/" />` document `<head/>`. 
 Defaults to an empty string. This prop is common used as: `<ContentLoader baseUrl={window.location.pathname} />` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93).
@@ -132,15 +132,15 @@ Defaults to `2`. Animation speed in seconds.
 
 Defaults to `0.25`. Interval of time between runs of the animation, as a fraction of the animation speed.
 
-#### **`className? string`**
+#### **`className?: string`**
 
 Defaults to an empty string. The classname will be set in the `<svg />` element.
 
-#### **`width? number`**
+#### **`width?: number`**
 
 Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
 
-#### **`height? number`**
+#### **`height?: number`**
 
 Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
 
@@ -148,11 +148,11 @@ Defaults to `130`. It will be set in the viewbox attr in the `<svg 
 
 Use viewBox props to set a custom viewBox value. Additionally, pass viewBox props as empty string to remove viewBox.
 
-#### **`gradientRatio? number`** - _Web only_
+#### **`gradientRatio?: number`** - _Web only_
 
 Defaults to `2`. Width of the animated gradient as a fraction of the viewbox width.
 
-#### **`rtl? boolean`**
+#### **`rtl?: boolean`**
 
 Defaults to `false`. Content right-to-left.
 

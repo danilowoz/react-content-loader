@@ -90,7 +90,7 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
     const offset3 = offsetValueBound(this.state.offset + 1)
 
     const rtlStyle = rtl ? { transform: [{ rotateY: '180deg' }] } : {}
-    const composedStyle = { ...style, ...rtlStyle }
+    const composedStyle = Object.assign(style, rtlStyle)
 
     // Remove unnecessary keys
     delete props.id
