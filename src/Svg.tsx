@@ -16,7 +16,7 @@ export default ({
   ariaLabel,
   children,
   className,
-  uniquekey,
+  id,
   backgroundColor,
   backgroundOpacity,
   foregroundColor,
@@ -24,8 +24,8 @@ export default ({
   preserveAspectRatio,
   ...props
 }: IContentLoaderProps) => {
-  const idClip = uniquekey ? `${uniquekey}-idClip` : uid()
-  const idGradient = uniquekey ? `${uniquekey}-idGradient` : uid()
+  const idClip = id ? `${id}-idClip` : uid()
+  const idGradient = id ? `${id}-idGradient` : uid()
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : {}
   const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`

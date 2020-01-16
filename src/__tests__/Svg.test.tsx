@@ -76,22 +76,22 @@ describe('Svg', () => {
   })
 
   describe('unique key', () => {
-    it('`uniquekey` does not generate undefined `id` values for SVG', () => {
+    it('`id` does not generate undefined `id` values for SVG', () => {
       const { clipPath, linearGradient } = partsOfComponent
 
       expect(clipPath.props.id).not.toBe(undefined)
       expect(linearGradient.props.id).not.toBe(undefined)
     })
 
-    it('custom `uniquekey` is used', () => {
-      const uniquekey = 'my-unique-key'
-      const wrapperUniqueKey = renderer.create(<Svg uniquekey={uniquekey} />)
+    it('custom `id` is used', () => {
+      const id = 'my-unique-key'
+      const wrapperid = renderer.create(<Svg id={id} />)
 
-      const clipPath = wrapperUniqueKey.root.findByType('clipPath')
-      const linearGradient = wrapperUniqueKey.root.findByType('linearGradient')
+      const clipPath = wrapperid.root.findByType('clipPath')
+      const linearGradient = wrapperid.root.findByType('linearGradient')
 
-      expect(clipPath.props.id).toBe(`${uniquekey}-idClip`)
-      expect(linearGradient.props.id).toBe(`${uniquekey}-idGradient`)
+      expect(clipPath.props.id).toBe(`${id}-idClip`)
+      expect(linearGradient.props.id).toBe(`${id}-idGradient`)
     })
 
     it('render two components with different ids', () => {

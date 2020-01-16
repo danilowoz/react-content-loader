@@ -239,13 +239,13 @@ foregroundOpacity.story = {
 /**
  * Unique key
  */
-export const uniqueKey = () => {
-  return <Facebook uniquekey="my-uniqye-key" />
+export const id = () => {
+  return <Facebook id="my-uniqye-key" />
 }
 
-uniqueKey.story = {
+id.story = {
   parameters: {
-    notes: `## \`uniquekey?: string\`
+    notes: `## \`id?: string\`
     
     Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).`,
   },

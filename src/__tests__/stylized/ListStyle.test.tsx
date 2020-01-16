@@ -4,9 +4,7 @@ import * as renderer from 'react-test-renderer'
 import ListStyle from '../../stylized/ListStyle'
 
 describe('ListStyle', () => {
-  const wrapper = renderer.create(
-    <ListStyle uniquekey="ListStyle" speed={20} />
-  )
+  const wrapper = renderer.create(<ListStyle id="ListStyle" speed={20} />)
 
   test('renders correctly', () => {
     const tree = wrapper.toJSON()
@@ -16,6 +14,6 @@ describe('ListStyle', () => {
 
   test('props are propagated ', () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.uniquekey).toEqual('ListStyle')
+    expect(wrapper.root.props.id).toEqual('ListStyle')
   })
 })
