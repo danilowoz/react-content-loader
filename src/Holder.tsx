@@ -5,18 +5,18 @@ import { IContentLoaderProps } from './'
 
 export const defaultProps: IContentLoaderProps = {
   animate: true,
-  ariaLabel: 'Loading interface...',
+  backgroundColor: '#f0f0f0',
+  backgroundOpacity: 1,
   baseUrl: '',
+  foregroundColor: '#e0e0e0',
+  foregroundOpacity: 1,
   gradientRatio: 2,
   height: 130,
   interval: 0.25,
-  backgroundColor: '#f0f0f0',
-  backgroundOpacity: 1,
   rtl: false,
-  foregroundColor: '#e0e0e0',
-  foregroundOpacity: 1,
   speed: 2,
   style: {},
+  title: 'Loading...',
   width: 400,
 }
 

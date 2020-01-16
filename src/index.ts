@@ -4,7 +4,7 @@ import ContentLoader from './Holder'
 
 export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   animate?: boolean
-  ariaLabel?: string
+  title?: string
   baseUrl?: string
   backgroundColor?: string
   backgroundOpacity?: number

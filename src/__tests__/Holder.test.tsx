@@ -31,7 +31,7 @@ describe('Holder', () => {
     withPropsComponent.render(
       <ContentLoader
         animate={false}
-        ariaLabel="My custom loading title"
+        title="My custom loading title"
         baseUrl="/mypage"
         gradientRatio={0.5}
         height={200}
@@ -163,13 +163,13 @@ describe('Holder', () => {
       expect(propsFromFullfield.rtl).toBe(true)
     })
 
-    it("`ariaLabel` is a string and it's used", () => {
+    it("`title` is a string and it's used", () => {
       // defaultProps
-      expect(typeof propsFromEmpty.ariaLabel).toBe('string')
-      expect(propsFromEmpty.ariaLabel).toBe('Loading interface...')
+      expect(typeof propsFromEmpty.title).toBe('string')
+      expect(propsFromEmpty.title).toBe('Loading interface...')
       // custom props
-      expect(typeof propsFromFullfield.ariaLabel).toBe('string')
-      expect(propsFromFullfield.ariaLabel).toBe('My custom loading title')
+      expect(typeof propsFromFullfield.title).toBe('string')
+      expect(propsFromFullfield.title).toBe('My custom loading title')
     })
 
     it("`baseUrl` is a string and it's used", () => {

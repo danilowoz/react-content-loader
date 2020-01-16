@@ -13,7 +13,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   baseUrl,
   gradientRatio,
   animate,
-  ariaLabel,
+  title,
   children,
   id,
   backgroundColor,
@@ -30,14 +30,15 @@ const SVG: React.FC<IContentLoaderProps> = ({
 
   return (
     <svg
-      role="img"
       style={{ ...style, ...rtlStyle }}
-      aria-label={ariaLabel ? ariaLabel : null}
+      role="img"
+      aria-labelledby={id}
       viewBox={`0 0 ${width} ${height}`}
       {...props}
     >
-      {ariaLabel ? <title>{ariaLabel}</title> : null}
+      {title ? <title id={id}>{title}</title> : null}
       <rect
+        role="presentation"
         x="0"
         y="0"
         width={width}
@@ -46,7 +47,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
         style={{ fill: `url(${baseUrl}#${idGradient})` }}
       />
 
-      <defs>
+      <defs role="presentation">
         <clipPath id={idClip}>{children}</clipPath>
 
         <linearGradient id={idGradient}>

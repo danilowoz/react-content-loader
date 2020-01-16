@@ -24,13 +24,13 @@ animate.story = {
 /**
  * Aria label
  */
-export const ariaLabel = () => {
-  return <Facebook ariaLabel="my custom loader" />
+export const title = () => {
+  return <Facebook title="my custom loader" />
 }
 
-ariaLabel.story = {
+title.story = {
   parameters: {
-    notes: `## \`ariaLabel?: string | boolean\`
+    notes: `## \`title?: string | boolean\`
 
     Defaults to \`Loading interface...\`. It's used to describe what element it is. Use \`false\` to remove.
     `,
