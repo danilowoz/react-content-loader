@@ -1,24 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BulletListStyle renders correctly 1`] = `
+exports[`CodeStyle renders correctly 1`] = `
 <svg
-  aria-labelledby="BulletListStyle"
+  aria-labelledby="CodeStyle-aria"
+  height={130}
   role="img"
   style={Object {}}
   viewBox="0 0 400 130"
+  width={400}
 >
   <title
-    id="BulletListStyle"
+    id="CodeStyle-aria"
   >
     Loading...
   </title>
   <rect
-    clipPath="url(#BulletListStyle-diff)"
+    clipPath="url(#CodeStyle-diff)"
     height={130}
     role="presentation"
     style={
       Object {
-        "fill": "url(#BulletListStyle-animated-diff)",
+        "fill": "url(#CodeStyle-animated-diff)",
       }
     }
     width={400}
@@ -29,63 +31,83 @@ exports[`BulletListStyle renders correctly 1`] = `
     role="presentation"
   >
     <clipPath
-      id="BulletListStyle-diff"
+      id="CodeStyle-diff"
     >
-      <circle
-        cx="10"
-        cy="20"
-        r="8"
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="70"
+        x="0"
+        y="0"
       />
       <rect
         height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="15"
-      />
-      <circle
-        cx="10"
-        cy="50"
-        r="8"
+        rx="3"
+        ry="3"
+        width="100"
+        x="80"
+        y="0"
       />
       <rect
         height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="45"
-      />
-      <circle
-        cx="10"
-        cy="80"
-        r="8"
+        rx="3"
+        ry="3"
+        width="10"
+        x="190"
+        y="0"
       />
       <rect
         height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="75"
-      />
-      <circle
-        cx="10"
-        cy="110"
-        r="8"
+        rx="3"
+        ry="3"
+        width="130"
+        x="15"
+        y="20"
       />
       <rect
         height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="105"
+        rx="3"
+        ry="3"
+        width="130"
+        x="155"
+        y="20"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="90"
+        x="15"
+        y="40"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="60"
+        x="115"
+        y="40"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="60"
+        x="185"
+        y="40"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="30"
+        x="0"
+        y="60"
       />
     </clipPath>
     <linearGradient
-      id="BulletListStyle-animated-diff"
+      id="CodeStyle-animated-diff"
     >
       <stop
         offset="0%"

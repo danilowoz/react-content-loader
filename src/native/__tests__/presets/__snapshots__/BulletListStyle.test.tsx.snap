@@ -8,8 +8,8 @@ exports[`BulletListStyle renders correctly 1`] = `
   width={400}
 >
   <Rect
-    clipPath="url(#BulletListStyle-idGradient)"
-    fill="url(#BulletListStyle-idClip)"
+    clipPath="url(#BulletListStyle-animated-diff)"
+    fill="url(#BulletListStyle-diff)"
     height={130}
     width={400}
     x="0"
@@ -17,7 +17,7 @@ exports[`BulletListStyle renders correctly 1`] = `
   />
   <Defs>
     <ClipPath
-      id="BulletListStyle-idGradient"
+      id="BulletListStyle-animated-diff"
     >
       <Circle
         cx="10"
@@ -73,7 +73,7 @@ exports[`BulletListStyle renders correctly 1`] = `
       />
     </ClipPath>
     <LinearGradient
-      id="BulletListStyle-idClip"
+      id="BulletListStyle-diff"
       x1="-100%"
       x2="100%"
       y1={0}

@@ -164,18 +164,18 @@ describe('ContentLoader', () => {
     })
 
     it("`title` is a string and it's used", () => {
-      // TODO
-      // // defaultProps
-      // expect(typeof propsFromEmpty.title).toBe('string')
-      // expect(propsFromEmpty.title).toBe('Loading...')
-      // // custom props
-      // expect(typeof propsFromFullfield.title).toBe('string')
-      // expect(propsFromFullfield.title).toBe('My custom loading title')
+      // defaultProps
+      expect(typeof propsFromEmpty.title).toBe('string')
+      expect(propsFromEmpty.title).toBe('Loading...')
+      // custom props
+      expect(typeof propsFromFullfield.title).toBe('string')
+      expect(propsFromFullfield.title).toBe('My custom loading title')
     })
 
     it("`baseUrl` is a string and it's used", () => {
       // defaultProps
-      expect(typeof propsFromEmpty.baseUrl).toBe('undefined')
+      expect(typeof propsFromEmpty.baseUrl).toBe('string')
+      expect(propsFromEmpty.baseUrl).toBe('')
       // custom props
       expect(typeof propsFromFullfield.baseUrl).toBe('string')
       expect(propsFromFullfield.baseUrl).toBe('/mypage')

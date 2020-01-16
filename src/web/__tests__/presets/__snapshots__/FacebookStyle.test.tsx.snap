@@ -2,13 +2,15 @@
 
 exports[`FacebookStyle renders correctly 1`] = `
 <svg
-  aria-labelledby="FacebookStyle"
+  aria-labelledby="FacebookStyle-aria"
+  height={130}
   role="img"
   style={Object {}}
   viewBox="0 0 400 130"
+  width={400}
 >
   <title
-    id="FacebookStyle"
+    id="FacebookStyle-aria"
   >
     Loading...
   </title>

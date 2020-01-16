@@ -1,24 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CodeStyle renders correctly 1`] = `
+exports[`InstagramStyle renders correctly 1`] = `
 <svg
-  aria-labelledby="CodeStyle"
+  aria-labelledby="InstagramStyle-aria"
+  height={480}
   role="img"
   style={Object {}}
-  viewBox="0 0 400 130"
+  viewBox="0 0 400 480"
+  width={400}
 >
   <title
-    id="CodeStyle"
+    id="InstagramStyle-aria"
   >
     Loading...
   </title>
   <rect
-    clipPath="url(#CodeStyle-diff)"
-    height={130}
+    clipPath="url(#InstagramStyle-diff)"
+    height={480}
     role="presentation"
     style={
       Object {
-        "fill": "url(#CodeStyle-animated-diff)",
+        "fill": "url(#InstagramStyle-animated-diff)",
       }
     }
     width={400}
@@ -29,83 +31,40 @@ exports[`CodeStyle renders correctly 1`] = `
     role="presentation"
   >
     <clipPath
-      id="CodeStyle-diff"
+      id="InstagramStyle-diff"
     >
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="70"
-        x="0"
-        y="0"
+      <circle
+        cx="30"
+        cy="30"
+        r="30"
       />
       <rect
-        height="10"
-        rx="3"
-        ry="3"
+        height="13"
+        rx="4"
+        ry="4"
         width="100"
-        x="80"
-        y="0"
+        x="75"
+        y="13"
       />
       <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="10"
-        x="190"
-        y="0"
+        height="8"
+        rx="4"
+        ry="4"
+        width="50"
+        x="75"
+        y="37"
       />
       <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="130"
-        x="15"
-        y="20"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="130"
-        x="155"
-        y="20"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="90"
-        x="15"
-        y="40"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="60"
-        x="115"
-        y="40"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="60"
-        x="185"
-        y="40"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="30"
+        height="400"
+        rx="5"
+        ry="5"
+        width="400"
         x="0"
-        y="60"
+        y="70"
       />
     </clipPath>
     <linearGradient
-      id="CodeStyle-animated-diff"
+      id="InstagramStyle-animated-diff"
     >
       <stop
         offset="0%"

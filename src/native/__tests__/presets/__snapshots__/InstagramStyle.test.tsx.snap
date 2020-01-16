@@ -8,8 +8,8 @@ exports[`InstagramStyle renders correctly 1`] = `
   width={400}
 >
   <Rect
-    clipPath="url(#InstagramStyle-idGradient)"
-    fill="url(#InstagramStyle-idClip)"
+    clipPath="url(#InstagramStyle-animated-diff)"
+    fill="url(#InstagramStyle-diff)"
     height={480}
     width={400}
     x="0"
@@ -17,7 +17,7 @@ exports[`InstagramStyle renders correctly 1`] = `
   />
   <Defs>
     <ClipPath
-      id="InstagramStyle-idGradient"
+      id="InstagramStyle-animated-diff"
     >
       <Circle
         cx="30"
@@ -50,7 +50,7 @@ exports[`InstagramStyle renders correctly 1`] = `
       />
     </ClipPath>
     <LinearGradient
-      id="InstagramStyle-idClip"
+      id="InstagramStyle-diff"
       x1="-100%"
       x2="100%"
       y1={0}

@@ -8,8 +8,8 @@ exports[`CodeStyle renders correctly 1`] = `
   width={400}
 >
   <Rect
-    clipPath="url(#CodeStyle-idGradient)"
-    fill="url(#CodeStyle-idClip)"
+    clipPath="url(#CodeStyle-animated-diff)"
+    fill="url(#CodeStyle-diff)"
     height={130}
     width={400}
     x="0"
@@ -17,7 +17,7 @@ exports[`CodeStyle renders correctly 1`] = `
   />
   <Defs>
     <ClipPath
-      id="CodeStyle-idGradient"
+      id="CodeStyle-animated-diff"
     >
       <Rect
         height="10"
@@ -93,7 +93,7 @@ exports[`CodeStyle renders correctly 1`] = `
       />
     </ClipPath>
     <LinearGradient
-      id="CodeStyle-idClip"
+      id="CodeStyle-diff"
       x1="-100%"
       x2="100%"
       y1={0}

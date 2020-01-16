@@ -2,13 +2,15 @@
 
 exports[`ListStyle renders correctly 1`] = `
 <svg
-  aria-labelledby="ListStyle"
+  aria-labelledby="ListStyle-aria"
+  height={130}
   role="img"
   style={Object {}}
   viewBox="0 0 400 130"
+  width={400}
 >
   <title
-    id="ListStyle"
+    id="ListStyle-aria"
   >
     Loading...
   </title>

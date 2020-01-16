@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
+<Svg
+  height={130}
+  style={Object {}}
+  viewBox="0 0 400 130"
+  width={400}
+>
+  <Rect
+    clipPath="url(#snapshots-animated-diff)"
+    fill="url(#snapshots-diff)"
+    height={130}
+    width={400}
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="snapshots-animated-diff"
+    >
+      <Rect
+        rx="5"
+        ry="5"
+        x="0"
+        y="0"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="snapshots-diff"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#e0e0e0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;
+
+exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
+<Svg
+  height={130}
+  style={Object {}}
+  viewBox="0 0 100 100"
+  width={400}
+>
+  <Rect
+    clipPath="url(#snapshots-animated-diff)"
+    fill="url(#snapshots-diff)"
+    height={100}
+    width={100}
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="snapshots-animated-diff"
+    >
+      <Rect
+        rx="5"
+        ry="5"
+        x="0"
+        y="0"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="snapshots-diff"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#e0e0e0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;
+
+exports[`ContentLoader snapshots renders correctly with viewBox defined and sizes defined too 1`] = `
+<Svg
+  height={100}
+  style={Object {}}
+  viewBox="0 0 100 100"
+  width={100}
+>
+  <Rect
+    clipPath="url(#snapshots-animated-diff)"
+    fill="url(#snapshots-diff)"
+    height={100}
+    width={100}
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="snapshots-animated-diff"
+    >
+      <Rect
+        height={100}
+        rx="5"
+        ry="5"
+        width={100}
+        x="0"
+        y="0"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="snapshots-diff"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#e0e0e0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;
+
+exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
+<Svg
+  height={130}
+  style={Object {}}
+  viewBox=""
+  width={400}
+>
+  <Rect
+    clipPath="url(#snapshots-animated-diff)"
+    fill="url(#snapshots-diff)"
+    height={130}
+    width={400}
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="snapshots-animated-diff"
+    >
+      <Rect
+        rx="5"
+        ry="5"
+        x="0"
+        y="0"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="snapshots-diff"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#e0e0e0"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f0f0f0"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;

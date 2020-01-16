@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
+<svg
+  aria-labelledby="snapshots-aria"
+  height={130}
+  role="img"
+  style={Object {}}
+  viewBox="0 0 400 130"
+  width={400}
+>
+  <title
+    id="snapshots-aria"
+  >
+    Loading...
+  </title>
+  <rect
+    clipPath="url(#snapshots-diff)"
+    height={130}
+    role="presentation"
+    style={
+      Object {
+        "fill": "url(#snapshots-animated-diff)",
+      }
+    }
+    width={400}
+    x="0"
+    y="0"
+  />
+  <defs
+    role="presentation"
+  >
+    <clipPath
+      id="snapshots-diff"
+    >
+      <rect
+        rx="5"
+        ry="5"
+        x="0"
+        y="0"
+      />
+    </clipPath>
+    <linearGradient
+      id="snapshots-animated-diff"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-2; -2; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#e0e0e0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-1; -1; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="0; 0; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
+<svg
+  aria-labelledby="snapshots-aria"
+  height={130}
+  role="img"
+  style={Object {}}
+  viewBox="0 0 100 100"
+  width={400}
+>
+  <title
+    id="snapshots-aria"
+  >
+    Loading...
+  </title>
+  <rect
+    clipPath="url(#snapshots-diff)"
+    height={100}
+    role="presentation"
+    style={
+      Object {
+        "fill": "url(#snapshots-animated-diff)",
+      }
+    }
+    width={100}
+    x="0"
+    y="0"
+  />
+  <defs
+    role="presentation"
+  >
+    <clipPath
+      id="snapshots-diff"
+    >
+      <rect
+        rx="5"
+        ry="5"
+        x="0"
+        y="0"
+      />
+    </clipPath>
+    <linearGradient
+      id="snapshots-animated-diff"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-2; -2; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#e0e0e0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-1; -1; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="0; 0; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`ContentLoader snapshots renders correctly with viewBox defined and sizes defined too 1`] = `
+<svg
+  aria-labelledby="snapshots-aria"
+  height={100}
+  role="img"
+  style={Object {}}
+  viewBox="0 0 100 100"
+  width={100}
+>
+  <title
+    id="snapshots-aria"
+  >
+    Loading...
+  </title>
+  <rect
+    clipPath="url(#snapshots-diff)"
+    height={100}
+    role="presentation"
+    style={
+      Object {
+        "fill": "url(#snapshots-animated-diff)",
+      }
+    }
+    width={100}
+    x="0"
+    y="0"
+  />
+  <defs
+    role="presentation"
+  >
+    <clipPath
+      id="snapshots-diff"
+    >
+      <rect
+        height={100}
+        rx="5"
+        ry="5"
+        width={100}
+        x="0"
+        y="0"
+      />
+    </clipPath>
+    <linearGradient
+      id="snapshots-animated-diff"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-2; -2; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#e0e0e0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-1; -1; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="0; 0; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
+<svg
+  aria-labelledby="snapshots-aria"
+  height={130}
+  role="img"
+  style={Object {}}
+  viewBox=""
+  width={400}
+>
+  <title
+    id="snapshots-aria"
+  >
+    Loading...
+  </title>
+  <rect
+    clipPath="url(#snapshots-diff)"
+    height={130}
+    role="presentation"
+    style={
+      Object {
+        "fill": "url(#snapshots-animated-diff)",
+      }
+    }
+    width={400}
+    x="0"
+    y="0"
+  />
+  <defs
+    role="presentation"
+  >
+    <clipPath
+      id="snapshots-diff"
+    >
+      <rect
+        rx="5"
+        ry="5"
+        x="0"
+        y="0"
+      />
+    </clipPath>
+    <linearGradient
+      id="snapshots-animated-diff"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-2; -2; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#e0e0e0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-1; -1; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f0f0f0"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="0; 0; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;

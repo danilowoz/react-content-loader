@@ -3,14 +3,14 @@ import * as renderer from 'react-test-renderer'
 
 import Svg from '..'
 
-interface IpredicateArgs {
+interface PredicateArgs {
   type: any
   props: any
 }
 
 describe('Svg', () => {
   const wrapper = renderer.create(<Svg />).root
-  const predicateRectClipPath = ({ type, props }: IpredicateArgs) =>
+  const predicateRectClipPath = ({ type, props }: PredicateArgs) =>
     type === 'rect' && props.clipPath
   const partsOfComponent = {
     allLinearGradient: wrapper.findAllByType('linearGradient'),
@@ -23,7 +23,7 @@ describe('Svg', () => {
     title: wrapper.findByType('title'),
   }
 
-  it('baseUrl is used correctly', () => {
+  it('`baseUrl` is used correctly', () => {
     const baseUrl = '/page-path'
     const wrapperWithBaseUrl = renderer.create(<Svg baseUrl={baseUrl} />).root
 
@@ -123,19 +123,26 @@ describe('Svg', () => {
   })
 
   describe('a11y', () => {
-    // TODO
-    // it('svg has aria-label', () => {
-    //   const { svg } = partsOfComponent
+    it('svg has aria-labelledby', () => {
+      const { svg } = partsOfComponent
 
-    //   expect(typeof svg.props['aria-label']).toBe('string')
-    //   expect(svg.props['aria-label'].length).not.toBe(0)
-    // })
+      expect(typeof svg.props['aria-labelledby']).toBe('string')
+      expect(svg.props['aria-labelledby'].length).not.toBe(0)
+    })
+
+    it('aria-labelledby point to title', () => {
+      const { svg } = partsOfComponent
+      const ariaId = svg.props['aria-labelledby']
+
+      const title = wrapper.findByType('title')
+      expect(title.props.id).toBe(ariaId)
+    })
 
     it('svg has role', () => {
       const { svg } = partsOfComponent
-      const role = 'role'
-      expect(typeof svg.props[role]).toBe('string')
-      expect(svg.props[role]).toBe('img')
+
+      expect(typeof svg.props['role']).toBe('string')
+      expect(svg.props['role']).toBe('img')
     })
 
     it('svg has a title', () => {

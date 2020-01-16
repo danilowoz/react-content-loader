@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ContentLoader, { Facebook, Instagram } from '../src'
+import ContentLoader, { Facebook, Instagram } from '../src/web'
 
 export default {
   title: 'React Content Loader',
@@ -10,7 +10,12 @@ export default {
  * Animated
  */
 export const animate = () => {
-  return <Facebook animate={false} />
+  return (
+    <>
+      <Facebook />
+      <Facebook animate={false} />
+    </>
+  )
 }
 
 animate.story = {
@@ -25,7 +30,7 @@ animate.story = {
  * Aria label
  */
 export const title = () => {
-  return <Facebook title="my custom loader" />
+  return <Facebook title="Loading..." />
 }
 
 title.story = {
@@ -252,10 +257,40 @@ id.story = {
 }
 
 /**
+ * Responsive
+ */
+export const responsive = () => {
+  const style = { width: '100%' }
+  return (
+    <div style={{ width: 300 }}>
+      <p>{'<Facebook width="400" height="130" />'}</p>
+      <Facebook style={style} width="400" height="130" />
+
+      <p>{'<Facebook width="400" height="130" viewBox="0 0 200 200" />'}</p>
+      <Facebook style={style} width="400" height="130" viewBox="0 0 200 200" />
+
+      <p>{'<Facebook width="400" height="130" viewBox="0 0 300 300" />'}</p>
+      <Facebook style={style} width="400" height="130" viewBox="0 0 300 300" />
+
+      <p>{'<Facebook width="400" height="130" viewBox="" />'}</p>
+      <Facebook style={style} width="400" height="130" viewBox="" />
+    </div>
+  )
+}
+
+/**
  * View box
  */
 export const viewBox = () => {
-  return <Facebook viewBox="" />
+  return (
+    <>
+      <p>{'<Facebook width="400" height="130" viewBox="0 0 300 300" />'}</p>
+      <Facebook width="400" height="130" viewBox="0 0 300 300" />
+
+      <p>{'<Facebook width="400" height="130" viewBox="" />'}</p>
+      <Facebook width="400" height="130" viewBox="" />
+    </>
+  )
 }
 
 viewBox.story = {

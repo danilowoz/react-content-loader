@@ -1,5 +1,15 @@
+import { SvgProps } from 'react-native-svg'
+
 import ContentLoader from './ContentLoader'
-export { IContentLoaderProps } from './interface'
+
+export interface IContentLoaderProps extends SvgProps {
+  animate?: boolean
+  id?: string
+  backgroundColor?: string
+  rtl?: boolean
+  foregroundColor?: string
+  speed?: number
+}
 
 export { default as Facebook } from './presets/FacebookStyle'
 export { default as Instagram } from './presets/InstagramStyle'
