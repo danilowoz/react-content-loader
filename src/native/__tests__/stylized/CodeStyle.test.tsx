@@ -1,8 +1,9 @@
 import 'react-native'
+
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 
-import CodeStyle from '../../stylized/CodeStyle'
+import CodeStyle from '../../presets/CodeStyle'
 
 describe('CodeStyle', () => {
   const wrapper = renderer.create(

@@ -1,8 +1,9 @@
 import 'react-native'
+
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 
-import InstagramStyle from '../../stylized/InstagramStyle'
+import InstagramStyle from '../../presets/InstagramStyle'
 
 describe('InstagramStyle', () => {
   const wrapper = renderer.create(

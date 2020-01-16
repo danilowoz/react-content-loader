@@ -41,7 +41,7 @@ const configBase = {
 const umdConfig = mergeAll([
   configBase,
   {
-    input: 'src/index.ts',
+    input: 'src/web/index.ts',
     output: mergeAll([
       configBase.output,
       {
@@ -58,7 +58,7 @@ const umdConfig = mergeAll([
 const devUmdConfig = mergeAll([
   umdConfig,
   {
-    input: 'src/index.ts',
+    input: 'src/web/index.ts',
     plugins: umdConfig.plugins.concat(
       replace({
         'process.env.NODE_ENV': JSON.stringify('development'),
@@ -70,7 +70,7 @@ const devUmdConfig = mergeAll([
 const prodUmdConfig = mergeAll([
   umdConfig,
   {
-    input: 'src/index.ts',
+    input: 'src/web/index.ts',
     output: mergeAll([
       umdConfig.output,
       { file: umdConfig.output.file.replace(/\.js$/, '.min.js') },
@@ -95,7 +95,7 @@ const prodUmdConfig = mergeAll([
 const webConfig = mergeAll([
   configBase,
   {
-    input: 'src/index.ts',
+    input: 'src/web/index.ts',
     output: [
       mergeAll([configBase.output, { ...esm, file: pkg.module }]),
       mergeAll([configBase.output, { ...cjs, file: pkg.main }]),

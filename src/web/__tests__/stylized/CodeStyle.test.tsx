@@ -1,14 +1,10 @@
-import 'react-native'
-
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 
-import FacebookStyle from '../../presets/FacebookStyle'
+import CodeStyle from '../../presets/CodeStyle'
 
-describe('FacebookStyle', () => {
-  const wrapper = renderer.create(
-    <FacebookStyle id="FacebookStyle" animate={false} speed={20} />
-  )
+describe('CodeStyle', () => {
+  const wrapper = renderer.create(<CodeStyle id="CodeStyle" speed={20} />)
 
   test('renders correctly', () => {
     const tree = wrapper.toJSON()
@@ -18,5 +14,6 @@ describe('FacebookStyle', () => {
 
   test('props are propagated ', () => {
     expect(wrapper.root.props.speed).toEqual(20)
+    expect(wrapper.root.props.id).toEqual('CodeStyle')
   })
 })

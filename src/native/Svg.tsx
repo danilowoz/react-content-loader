@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Animated } from 'react-native'
-
 import Svg, {
   ClipPath,
   Defs,
@@ -9,35 +8,18 @@ import Svg, {
   Stop,
 } from 'react-native-svg'
 
+import uid from '../shared/uid'
 import { IContentLoaderProps } from './'
 import offsetValueBound from './offsetValueBound'
-import uid from '../uid'
 
-type RequiredIContentLoaderProps = IContentLoaderProps &
-  Pick<
-    Required<IContentLoaderProps>,
-    | 'animate'
-    | 'height'
-    | 'backgroundColor'
-    | 'rtl'
-    | 'foregroundColor'
-    | 'speed'
-    | 'style'
-    | 'width'
-  >
-
-interface State {
-  offset: number
-}
-
-class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
+class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
   state = { offset: -1 }
 
   animatedValue = new Animated.Value(0)
 
-  idClip = this.props.id ? `${this.props.id}-idClip` : uid()
+  idClip = this.props.id ? `${this.props.id}-diff` : uid()
 
-  idGradient = this.props.id ? `${this.props.id}-idGradient` : uid()
+  idGradient = this.props.id ? `${this.props.id}-animated-diff` : uid()
 
   setAnimation = () => {
     // Turn in seconds to keep compatible with web one

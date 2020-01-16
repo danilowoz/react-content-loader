@@ -1,8 +1,9 @@
 import 'react-native'
+
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 
-import BulletListStyle from '../../stylized/BulletListStyle'
+import BulletListStyle from '../../presets/BulletListStyle'
 
 describe('BulletListStyle', () => {
   const wrapper = renderer.create(

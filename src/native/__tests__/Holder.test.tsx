@@ -2,9 +2,9 @@ import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 
-import ContentLoader, { Rect, Circle } from '../Holder'
+import ContentLoader, { Circle, Rect } from '../ContentLoader'
 
-describe('Holder', () => {
+describe('ContentLoader', () => {
   describe('when type is custom', () => {
     const customWrapper = renderer.create(
       <ContentLoader animate={false}>

@@ -1,8 +1,9 @@
 import 'react-native'
+
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 
-import ListStyle from '../../stylized/ListStyle'
+import ListStyle from '../../presets/ListStyle'
 
 describe('ListStyle', () => {
   const wrapper = renderer.create(
