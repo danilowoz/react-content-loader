@@ -132,10 +132,6 @@ Defaults to `2`. Animation speed in seconds.
 
 Defaults to `0.25`. Interval of time between runs of the animation, as a fraction of the animation speed.
 
-#### **`className?: string`**
-
-Defaults to an empty string. The classname will be set in the `<svg />` element.
-
 #### **`width?: number`**
 
 Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
@@ -155,10 +151,6 @@ Defaults to `2`. Width of the animated gradient as a fraction of the
 #### **`rtl?: boolean`**
 
 Defaults to `false`. Content right-to-left.
-
-#### **`preserveAspectRatio?: string`**
-
-Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/master/src/interface.ts#L7).
 
 #### **`backgroundColor?: string`**
 

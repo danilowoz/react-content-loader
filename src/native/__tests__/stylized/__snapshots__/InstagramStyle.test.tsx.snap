@@ -3,7 +3,6 @@
 exports[`InstagramStyle renders correctly 1`] = `
 <Svg
   height={480}
-  preserveAspectRatio="none"
   style={Object {}}
   viewBox="0 0 400 480"
   width={400}

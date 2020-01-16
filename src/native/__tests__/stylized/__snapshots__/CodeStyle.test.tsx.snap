@@ -3,7 +3,6 @@
 exports[`CodeStyle renders correctly 1`] = `
 <Svg
   height={130}
-  preserveAspectRatio="none"
   style={Object {}}
   viewBox="0 0 400 130"
   width={400}

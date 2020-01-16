@@ -8,7 +8,6 @@ type DefaultProps = Pick<
   Required<IContentLoaderProps>,
   | 'animate'
   | 'height'
-  | 'preserveAspectRatio'
   | 'backgroundColor'
   | 'rtl'
   | 'foregroundColor'
@@ -20,7 +19,6 @@ type DefaultProps = Pick<
 export const defaultProps: DefaultProps = {
   animate: true,
   height: 130,
-  preserveAspectRatio: 'none',
   backgroundColor: '#f0f0f0',
   rtl: false,
   foregroundColor: '#e0e0e0',

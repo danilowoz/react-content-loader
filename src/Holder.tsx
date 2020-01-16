@@ -10,7 +10,6 @@ export const defaultProps: IContentLoaderProps = {
   gradientRatio: 2,
   height: 130,
   interval: 0.25,
-  preserveAspectRatio: 'none',
   backgroundColor: '#f0f0f0',
   backgroundOpacity: 1,
   rtl: false,

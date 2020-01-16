@@ -18,7 +18,6 @@ type RequiredIContentLoaderProps = IContentLoaderProps &
     Required<IContentLoaderProps>,
     | 'animate'
     | 'height'
-    | 'preserveAspectRatio'
     | 'backgroundColor'
     | 'rtl'
     | 'foregroundColor'
@@ -102,7 +101,6 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
         viewBox={`0 0 ${width} ${height}`}
         width={width}
         height={height}
-        preserveAspectRatio="none"
         style={composedStyle}
         {...props}
       >

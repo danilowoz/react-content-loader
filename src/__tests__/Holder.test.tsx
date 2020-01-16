@@ -33,7 +33,6 @@ describe('Holder', () => {
         animate={false}
         ariaLabel="My custom loading title"
         baseUrl="/mypage"
-        className="random-className"
         gradientRatio={0.5}
         height={200}
         interval={0.5}
@@ -143,9 +142,6 @@ describe('Holder', () => {
     })
 
     it("`preserveAspectRatio` is a string and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.preserveAspectRatio).toBe('string')
-      expect(propsFromEmpty.preserveAspectRatio).toBe('none')
       // custom props
       expect(typeof propsFromFullfield.preserveAspectRatio).toBe('string')
       expect(propsFromFullfield.preserveAspectRatio).toBe('xMaxYMax meet')

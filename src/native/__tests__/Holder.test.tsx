@@ -100,9 +100,6 @@ describe('Holder', () => {
     })
 
     it("`preserveAspectRatio` is a string and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.preserveAspectRatio).toBe('string')
-      expect(propsFromEmpty.preserveAspectRatio).toBe('none')
       // custom props
       expect(typeof propsFromFullField.preserveAspectRatio).toBe('string')
       expect(propsFromFullField.preserveAspectRatio).toBe('xMaxYMax meet')

@@ -15,13 +15,11 @@ export default ({
   animate,
   ariaLabel,
   children,
-  className,
   id,
   backgroundColor,
   backgroundOpacity,
   foregroundColor,
   foregroundOpacity,
-  preserveAspectRatio,
   ...props
 }: IContentLoaderProps) => {
   const idClip = id ? `${id}-idClip` : uid()
@@ -34,10 +32,8 @@ export default ({
     <svg
       role="img"
       style={{ ...style, ...rtlStyle }}
-      className={className}
       aria-label={ariaLabel ? ariaLabel : null}
       viewBox={`0 0 ${width} ${height}`}
-      preserveAspectRatio={preserveAspectRatio}
       {...props}
     >
       {ariaLabel ? <title>{ariaLabel}</title> : null}
