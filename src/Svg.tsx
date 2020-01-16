@@ -3,7 +3,7 @@ import * as React from 'react'
 import { IContentLoaderProps } from './'
 import uid from './uid'
 
-export default ({
+const SVG: React.FC<IContentLoaderProps> = ({
   rtl,
   speed,
   interval,
@@ -21,7 +21,7 @@ export default ({
   foregroundColor,
   foregroundOpacity,
   ...props
-}: IContentLoaderProps) => {
+}) => {
   const idClip = id ? `${id}-idClip` : uid()
   const idGradient = id ? `${id}-idGradient` : uid()
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : {}
@@ -103,3 +103,5 @@ export default ({
     </svg>
   )
 }
+
+export default SVG

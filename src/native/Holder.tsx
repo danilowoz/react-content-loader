@@ -31,7 +31,7 @@ const InitialComponent: React.FC<IContentLoaderProps> = props => (
   <Rect x="0" y="0" rx="5" ry="5" width={props.width} height={props.height} />
 )
 
-const ContentLoader = (props: IContentLoaderProps) => {
+const ContentLoader: React.FC<IContentLoaderProps> = props => {
   const mergedProps = { ...defaultProps, ...props }
 
   return (
