@@ -17,10 +17,10 @@ export default ({
   children,
   className,
   uniquekey,
-  primaryColor,
-  primaryOpacity,
-  secondaryColor,
-  secondaryOpacity,
+  backgroundColor,
+  backgroundOpacity,
+  foregroundColor,
+  foregroundOpacity,
   preserveAspectRatio,
   ...props
 }: IContentLoaderProps) => {
@@ -56,8 +56,8 @@ export default ({
         <linearGradient id={idGradient}>
           <stop
             offset="0%"
-            stopColor={primaryColor}
-            stopOpacity={primaryOpacity}
+            stopColor={backgroundColor}
+            stopOpacity={backgroundOpacity}
           >
             {animate && (
               <animate
@@ -72,8 +72,8 @@ export default ({
 
           <stop
             offset="50%"
-            stopColor={secondaryColor}
-            stopOpacity={secondaryOpacity}
+            stopColor={foregroundColor}
+            stopOpacity={foregroundOpacity}
           >
             {animate && (
               <animate
@@ -89,8 +89,8 @@ export default ({
 
           <stop
             offset="100%"
-            stopColor={primaryColor}
-            stopOpacity={primaryOpacity}
+            stopColor={backgroundColor}
+            stopOpacity={backgroundOpacity}
           >
             {animate && (
               <animate

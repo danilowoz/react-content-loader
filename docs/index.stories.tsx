@@ -141,13 +141,13 @@ export const gradientRatio = () => {
     <>
       <Instagram
         gradientRatio={0.2}
-        primaryColor={'#333'}
-        secondaryColor={'#999'}
+        backgroundColor={'#333'}
+        foregroundColor={'#999'}
       />
       <Instagram
         gradientRatio={4}
-        primaryColor={'#333'}
-        secondaryColor={'#999'}
+        backgroundColor={'#333'}
+        foregroundColor={'#999'}
       />
     </>
   )
@@ -179,13 +179,13 @@ RTL.story = {
 /**
  * Primary color
  */
-export const primaryColor = () => {
-  return <Facebook primaryColor="#333" />
+export const backgroundColor = () => {
+  return <Facebook backgroundColor="#333" />
 }
 
-primaryColor.story = {
+backgroundColor.story = {
   parameters: {
-    notes: `## \`primaryColor?: string\`
+    notes: `## \`backgroundColor?: string\`
 
     Defaults to \`#f3f3f3\` which is used as background of animation.`,
   },
@@ -194,13 +194,13 @@ primaryColor.story = {
 /**
  * Secondary color
  */
-export const secondaryColor = () => {
-  return <Facebook secondaryColor="#333" />
+export const foregroundColor = () => {
+  return <Facebook foregroundColor="#333" />
 }
 
-secondaryColor.story = {
+foregroundColor.story = {
   parameters: {
-    notes: `## \`secondaryColor?: string\`
+    notes: `## \`foregroundColor?: string\`
 
     Defaults to \`#ecebeb\` which is used as foreground of animation.`,
   },
@@ -209,13 +209,13 @@ secondaryColor.story = {
 /**
  * Primary opacity
  */
-export const primaryOpacity = () => {
-  return <Facebook primaryOpacity={0.06} />
+export const backgroundOpacity = () => {
+  return <Facebook backgroundOpacity={0.06} />
 }
 
-primaryOpacity.story = {
+backgroundOpacity.story = {
   parameters: {
-    notes: `## \`primaryOpacity?: number\`
+    notes: `## \`backgroundOpacity?: number\`
 
     Defaults to \`1\`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#bugfix-in-safari)`,
   },
@@ -224,13 +224,13 @@ primaryOpacity.story = {
 /**
  * Secondary opacity
  */
-export const secondaryOpacity = () => {
-  return <Facebook secondaryOpacity={0.06} />
+export const foregroundOpacity = () => {
+  return <Facebook foregroundOpacity={0.06} />
 }
 
-secondaryOpacity.story = {
+foregroundOpacity.story = {
   parameters: {
-    notes: `## \`secondaryOpacity?: number\`
+    notes: `## \`foregroundOpacity?: number\`
 
     Defaults to \`1\`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#bugfix-in-safari)`,
   },

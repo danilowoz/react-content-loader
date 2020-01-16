@@ -9,9 +9,9 @@ type DefaultProps = Pick<
   | 'animate'
   | 'height'
   | 'preserveAspectRatio'
-  | 'primaryColor'
+  | 'backgroundColor'
   | 'rtl'
-  | 'secondaryColor'
+  | 'foregroundColor'
   | 'speed'
   | 'style'
   | 'width'
@@ -21,9 +21,9 @@ export const defaultProps: DefaultProps = {
   animate: true,
   height: 130,
   preserveAspectRatio: 'none',
-  primaryColor: '#f0f0f0',
+  backgroundColor: '#f0f0f0',
   rtl: false,
-  secondaryColor: '#e0e0e0',
+  foregroundColor: '#e0e0e0',
   speed: 1,
   style: {},
   width: 400,

@@ -19,9 +19,9 @@ type RequiredIContentLoaderProps = IContentLoaderProps &
     | 'animate'
     | 'height'
     | 'preserveAspectRatio'
-    | 'primaryColor'
+    | 'backgroundColor'
     | 'rtl'
-    | 'secondaryColor'
+    | 'foregroundColor'
     | 'speed'
     | 'style'
     | 'width'
@@ -77,8 +77,8 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
     const {
       children,
       height,
-      primaryColor,
-      secondaryColor,
+      backgroundColor,
+      foregroundColor,
       width,
       rtl,
       style,
@@ -125,9 +125,9 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
             x2={'100%'}
             y2={0}
           >
-            <Stop offset={offset1} stopColor={primaryColor} />
-            <Stop offset={offset2} stopColor={secondaryColor} />
-            <Stop offset={offset3} stopColor={primaryColor} />
+            <Stop offset={offset1} stopColor={backgroundColor} />
+            <Stop offset={offset2} stopColor={foregroundColor} />
+            <Stop offset={offset3} stopColor={backgroundColor} />
           </LinearGradient>
         </Defs>
       </Svg>

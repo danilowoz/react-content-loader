@@ -4,8 +4,8 @@ export interface IContentLoaderProps extends SvgProps {
   animate?: boolean
   children?: React.ReactNode
   id?: string
-  primaryColor?: string
+  backgroundColor?: string
   rtl?: boolean
-  secondaryColor?: string
+  foregroundColor?: string
   speed?: number
 }

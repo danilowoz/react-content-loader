@@ -33,9 +33,9 @@ describe('Holder', () => {
         animate={false}
         height={200}
         preserveAspectRatio="xMaxYMax meet"
-        primaryColor="#000"
+        backgroundColor="#000"
         rtl
-        secondaryColor="#fff"
+        foregroundColor="#fff"
         speed={10}
         style={{ marginBottom: '10px' }}
         width={200}
@@ -81,22 +81,22 @@ describe('Holder', () => {
       expect(propsFromFullField.animate).toBe(false)
     })
 
-    it("`primaryColor` is a string and it's used", () => {
+    it("`backgroundColor` is a string and it's used", () => {
       // defaultProps
-      expect(typeof propsFromEmpty.primaryColor).toBe('string')
-      expect(propsFromEmpty.primaryColor).toBe('#f0f0f0')
+      expect(typeof propsFromEmpty.backgroundColor).toBe('string')
+      expect(propsFromEmpty.backgroundColor).toBe('#f0f0f0')
       // custom props
-      expect(typeof propsFromFullField.primaryColor).toBe('string')
-      expect(propsFromFullField.primaryColor).toBe('#000')
+      expect(typeof propsFromFullField.backgroundColor).toBe('string')
+      expect(propsFromFullField.backgroundColor).toBe('#000')
     })
 
-    it("`secondaryColor` is a string and it's used", () => {
+    it("`foregroundColor` is a string and it's used", () => {
       // defaultProps
-      expect(typeof propsFromEmpty.secondaryColor).toBe('string')
-      expect(propsFromEmpty.secondaryColor).toBe('#e0e0e0')
+      expect(typeof propsFromEmpty.foregroundColor).toBe('string')
+      expect(propsFromEmpty.foregroundColor).toBe('#e0e0e0')
       // custom props
-      expect(typeof propsFromFullField.secondaryColor).toBe('string')
-      expect(propsFromFullField.secondaryColor).toBe('#fff')
+      expect(typeof propsFromFullField.foregroundColor).toBe('string')
+      expect(propsFromFullField.foregroundColor).toBe('#fff')
     })
 
     it("`preserveAspectRatio` is a string and it's used", () => {

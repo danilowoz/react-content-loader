@@ -38,11 +38,11 @@ describe('Holder', () => {
         height={200}
         interval={0.5}
         preserveAspectRatio="xMaxYMax meet"
-        primaryColor="#000"
-        primaryOpacity={0.06}
+        backgroundColor="#000"
+        backgroundOpacity={0.06}
         rtl
-        secondaryColor="#fff"
-        secondaryOpacity={0.12}
+        foregroundColor="#fff"
+        foregroundOpacity={0.12}
         speed={10}
         style={{ marginBottom: '10px' }}
         width={200}
@@ -106,40 +106,40 @@ describe('Holder', () => {
       expect(propsFromFullfield.animate).toBe(false)
     })
 
-    it("`primaryColor` is a string and it's used", () => {
+    it("`backgroundColor` is a string and it's used", () => {
       // defaultProps
-      expect(typeof propsFromEmpty.primaryColor).toBe('string')
-      expect(propsFromEmpty.primaryColor).toBe('#f0f0f0')
+      expect(typeof propsFromEmpty.backgroundColor).toBe('string')
+      expect(propsFromEmpty.backgroundColor).toBe('#f0f0f0')
       // custom props
-      expect(typeof propsFromFullfield.primaryColor).toBe('string')
-      expect(propsFromFullfield.primaryColor).toBe('#000')
+      expect(typeof propsFromFullfield.backgroundColor).toBe('string')
+      expect(propsFromFullfield.backgroundColor).toBe('#000')
     })
 
-    it("`secondaryColor` is a string and it's used", () => {
+    it("`foregroundColor` is a string and it's used", () => {
       // defaultProps
-      expect(typeof propsFromEmpty.secondaryColor).toBe('string')
-      expect(propsFromEmpty.secondaryColor).toBe('#e0e0e0')
+      expect(typeof propsFromEmpty.foregroundColor).toBe('string')
+      expect(propsFromEmpty.foregroundColor).toBe('#e0e0e0')
       // custom props
-      expect(typeof propsFromFullfield.secondaryColor).toBe('string')
-      expect(propsFromFullfield.secondaryColor).toBe('#fff')
+      expect(typeof propsFromFullfield.foregroundColor).toBe('string')
+      expect(propsFromFullfield.foregroundColor).toBe('#fff')
     })
 
-    it("`primaryOpacity` is a number and it's used", () => {
+    it("`backgroundOpacity` is a number and it's used", () => {
       // defaultProps
-      expect(typeof propsFromEmpty.primaryOpacity).toBe('number')
-      expect(propsFromEmpty.primaryOpacity).toBe(1)
+      expect(typeof propsFromEmpty.backgroundOpacity).toBe('number')
+      expect(propsFromEmpty.backgroundOpacity).toBe(1)
       // custom props
-      expect(typeof propsFromFullfield.primaryOpacity).toBe('number')
-      expect(propsFromFullfield.primaryOpacity).toBe(0.06)
+      expect(typeof propsFromFullfield.backgroundOpacity).toBe('number')
+      expect(propsFromFullfield.backgroundOpacity).toBe(0.06)
     })
 
-    it("`secondaryOpacity` is a number and it's used", () => {
+    it("`foregroundOpacity` is a number and it's used", () => {
       // defaultProps
-      expect(typeof propsFromEmpty.secondaryOpacity).toBe('number')
-      expect(propsFromEmpty.secondaryOpacity).toBe(1)
+      expect(typeof propsFromEmpty.foregroundOpacity).toBe('number')
+      expect(propsFromEmpty.foregroundOpacity).toBe(1)
       // custom props
-      expect(typeof propsFromFullfield.secondaryOpacity).toBe('number')
-      expect(propsFromFullfield.secondaryOpacity).toBe(0.12)
+      expect(typeof propsFromFullfield.foregroundOpacity).toBe('number')
+      expect(propsFromFullfield.foregroundOpacity).toBe(0.12)
     })
 
     it("`preserveAspectRatio` is a string and it's used", () => {

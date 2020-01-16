@@ -6,11 +6,11 @@ export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   animate?: boolean
   ariaLabel?: string
   baseUrl?: string
-  primaryColor?: string
-  primaryOpacity?: number
+  backgroundColor?: string
+  backgroundOpacity?: number
   rtl?: boolean
-  secondaryColor?: string
-  secondaryOpacity?: number
+  foregroundColor?: string
+  foregroundOpacity?: number
   speed?: number
   interval?: number
   uniquekey?: string

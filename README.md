@@ -160,19 +160,19 @@ Defaults to `false`. Content right-to-left.
 
 Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/master/src/interface.ts#L7).
 
-#### **`primaryColor?: string`**
+#### **`backgroundColor?: string`**
 
 Defaults to `#f3f3f3` which is used as background of animation.
 
-#### **`secondaryColor?: string`**
+#### **`foregroundColor?: string`**
 
 Defaults to `#ecebeb` which is used as the foreground of animation.
 
-#### **`primaryOpacity?: number`** - _Web only_
+#### **`backgroundOpacity?: number`** - _Web only_
 
 Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
-#### **`secondaryOpacity?: number`** - _Web only_
+#### **`foregroundOpacity?: number`** - _Web only_
 
 Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
@@ -246,8 +246,8 @@ const MyLoader = () => (
   <ContentLoader
     height={140}
     speed={1}
-    primaryColor={'#333'}
-    secondaryColor={'#999'}
+    backgroundColor={'#333'}
+    foregroundColor={'#999'}
   >
         {/* Only SVG shapes */}
         
@@ -306,21 +306,21 @@ Commit messages should follow the [commit message convention](https://con
 
 ##### **Alpha is not working: Safari / iOS**
 
-When using `rgba` as a `primaryColor` or `secondaryColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `primaryColor`/`secondaryColor`, use the `rgb` equivalent and move the alpha channel value to the `primaryOpacity`/`secondaryOpacity` props.
+When using `rgba` as a `backgroundColor` or `foregroundColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `backgroundColor`/`foregroundColor`, use the `rgb` equivalent and move the alpha channel value to the `backgroundOpacity`/`foregroundOpacity` props.
 
 ```jsx
 {/* Opaque color in Safari and iOS */}
 <ContentLoader
-  primaryColor="rgba(0,0,0,0.06)"
-  secondaryColor="rgba(0,0,0,0.12)">
+  backgroundColor="rgba(0,0,0,0.06)"
+  foregroundColor="rgba(0,0,0,0.12)">
 
 
 {/_ Semi-transparent color in Safari and iOS _/}
 <ContentLoader
-    primaryColor="rgb(0,0,0)"
-    secondaryColor="rgb(0,0,0)"
-    primaryOpacity={0.06}
-    secondaryOpacity={0.12}>
+    backgroundColor="rgb(0,0,0)"
+    foregroundColor="rgb(0,0,0)"
+    backgroundOpacity={0.06}
+    foregroundOpacity={0.12}>
 
 
 ```
