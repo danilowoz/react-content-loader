@@ -5,7 +5,7 @@ import InstagramStyle from '../../presets/InstagramStyle'
 
 describe('InstagramStyle', () => {
   const wrapper = renderer.create(
-    <InstagramStyle id="InstagramStyle" speed={20} />
+    <InstagramStyle uniqueKey="InstagramStyle" speed={20} />
   )
 
   test('renders correctly', () => {
@@ -16,6 +16,6 @@ describe('InstagramStyle', () => {
 
   test('props are propagated ', () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.id).toEqual('InstagramStyle')
+    expect(wrapper.root.props.uniqueKey).toEqual('InstagramStyle')
   })
 })

@@ -4,17 +4,19 @@ import ContentLoader from './ContentLoader'
 
 export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   animate?: boolean
-  title?: string
-  baseUrl?: string
   backgroundColor?: string
   backgroundOpacity?: number
-  rtl?: boolean
+  baseUrl?: string
   foregroundColor?: string
   foregroundOpacity?: number
-  speed?: number
-  interval?: number
-  id?: string
   gradientRatio?: number
+  height?: number
+  interval?: number
+  rtl?: boolean
+  speed?: number
+  title?: string
+  uniqueKey?: string
+  width?: number
 }
 
 export { default as Facebook } from './presets/FacebookStyle'

@@ -4,7 +4,9 @@ import * as renderer from 'react-test-renderer'
 import CodeStyle from '../../presets/CodeStyle'
 
 describe('CodeStyle', () => {
-  const wrapper = renderer.create(<CodeStyle id="CodeStyle" speed={20} />)
+  const wrapper = renderer.create(
+    <CodeStyle uniqueKey="CodeStyle" speed={20} />
+  )
 
   test('renders correctly', () => {
     const tree = wrapper.toJSON()
@@ -14,6 +16,6 @@ describe('CodeStyle', () => {
 
   test('props are propagated ', () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.id).toEqual('CodeStyle')
+    expect(wrapper.root.props.uniqueKey).toEqual('CodeStyle')
   })
 })

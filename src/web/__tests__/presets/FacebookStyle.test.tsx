@@ -5,7 +5,7 @@ import FacebookStyle from '../../presets/FacebookStyle'
 
 describe('FacebookStyle', () => {
   const wrapper = renderer.create(
-    <FacebookStyle id="FacebookStyle" speed={20} />
+    <FacebookStyle uniqueKey="FacebookStyle" speed={20} />
   )
 
   test('renders correctly', () => {
@@ -16,6 +16,6 @@ describe('FacebookStyle', () => {
 
   test('props are propagated ', () => {
     expect(wrapper.root.props.speed).toEqual(20)
-    expect(wrapper.root.props.id).toEqual('FacebookStyle')
+    expect(wrapper.root.props.uniqueKey).toEqual('FacebookStyle')
   })
 })

@@ -4,11 +4,11 @@ import ContentLoader from './ContentLoader'
 
 export interface IContentLoaderProps extends SvgProps {
   animate?: boolean
-  id?: string
   backgroundColor?: string
-  rtl?: boolean
   foregroundColor?: string
+  rtl?: boolean
   speed?: number
+  uniqueKey?: string
 }
 
 export { default as Facebook } from './presets/FacebookStyle'

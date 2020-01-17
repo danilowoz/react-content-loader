@@ -7,7 +7,7 @@ import InstagramStyle from '../../presets/InstagramStyle'
 
 describe('InstagramStyle', () => {
   const wrapper = renderer.create(
-    <InstagramStyle id="InstagramStyle" animate={false} speed={20} />
+    <InstagramStyle uniqueKey="InstagramStyle" animate={false} speed={20} />
   )
 
   test('renders correctly', () => {

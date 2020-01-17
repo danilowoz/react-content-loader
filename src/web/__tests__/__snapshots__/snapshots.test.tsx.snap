@@ -4,6 +4,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
   height={130}
+  id={null}
   role="img"
   style={Object {}}
   viewBox="0 0 400 130"
@@ -91,6 +92,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
   height={130}
+  id={null}
   role="img"
   style={Object {}}
   viewBox="0 0 100 100"
@@ -178,6 +180,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
 <svg
   aria-labelledby="snapshots-aria"
   height={100}
+  id={null}
   role="img"
   style={Object {}}
   viewBox="0 0 100 100"
@@ -267,6 +270,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
   height={130}
+  id={null}
   role="img"
   style={Object {}}
   viewBox=""

@@ -7,7 +7,7 @@ import FacebookStyle from '../../presets/FacebookStyle'
 
 describe('FacebookStyle', () => {
   const wrapper = renderer.create(
-    <FacebookStyle id="FacebookStyle" animate={false} speed={20} />
+    <FacebookStyle uniqueKey="FacebookStyle" animate={false} speed={20} />
   )
 
   test('renders correctly', () => {

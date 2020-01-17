@@ -85,7 +85,7 @@ describe('Svg', () => {
 
     it('custom `id` is used', () => {
       const id = 'my-unique-key'
-      const wrapperid = renderer.create(<Svg id={id} />)
+      const wrapperid = renderer.create(<Svg uniqueKey={id} />)
 
       const clipPath = wrapperid.root.findByType('clipPath')
       const linearGradient = wrapperid.root.findByType('linearGradient')

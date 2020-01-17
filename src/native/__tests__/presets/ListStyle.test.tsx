@@ -7,7 +7,7 @@ import ListStyle from '../../presets/ListStyle'
 
 describe('ListStyle', () => {
   const wrapper = renderer.create(
-    <ListStyle id="ListStyle" animate={false} speed={20} />
+    <ListStyle uniqueKey="ListStyle" animate={false} speed={20} />
   )
 
   test('renders correctly', () => {

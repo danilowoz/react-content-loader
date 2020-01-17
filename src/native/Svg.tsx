@@ -28,9 +28,11 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
 
   animatedValue = new Animated.Value(0)
 
-  idClip = this.props.id ? `${this.props.id}-diff` : uid()
+  fixedId = this.props.uniqueKey || uid()
 
-  idGradient = this.props.id ? `${this.props.id}-animated-diff` : uid()
+  idClip = `${this.fixedId}-diff`
+
+  idGradient = `${this.fixedId}-animated-diff`
 
   setAnimation = () => {
     // Turn in seconds to keep compatible with web one
@@ -87,7 +89,7 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
     const [_vbX, _vbY, vbWidth = width, vbHeight = height] = viewBox.split(' ')
 
     // Remove unnecessary keys
-    delete props.id
+    delete props.uniqueKey
     delete props.animate
     delete props.speed
 
@@ -102,8 +104,8 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
         <Rect
           x="0"
           y="0"
-          width={Number(vbWidth)}
-          height={Number(vbHeight)}
+          width={parseInt(vbWidth as string)}
+          height={parseInt(vbHeight as string)}
           fill={`url(#${this.idClip})`}
           clipPath={`url(#${this.idGradient})`}
         />

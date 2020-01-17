@@ -172,7 +172,7 @@ Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used
 
 Defaults to an empty object.
 
-#### **`id?: string`** - _Web only_
+#### **`uniqueKey?: string`** - _Web only_
 
 Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
 
@@ -241,14 +241,10 @@ const MyLoader = () => (
     backgroundColor={'#333'}
     foregroundColor={'#999'}
   >
-        {/* Only SVG shapes */}
-        
+    {/* Only SVG shapes */}
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-        
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
-        
     <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
-      
   </ContentLoader>
 )
 ```

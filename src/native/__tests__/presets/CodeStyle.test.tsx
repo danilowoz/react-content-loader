@@ -7,7 +7,7 @@ import CodeStyle from '../../presets/CodeStyle'
 
 describe('CodeStyle', () => {
   const wrapper = renderer.create(
-    <CodeStyle id="CodeStyle" animate={false} speed={20} />
+    <CodeStyle uniqueKey="CodeStyle" animate={false} speed={20} />
   )
 
   test('renders correctly', () => {

@@ -13,7 +13,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   foregroundOpacity,
   gradientRatio,
   height,
-  id,
+  uniqueKey,
   interval,
   rtl,
   speed,
@@ -23,7 +23,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   viewBox = `0 0 ${width} ${height}`,
   ...props
 }) => {
-  const fixedId = id || uid()
+  const fixedId = uniqueKey || uid()
   const idClip = `${fixedId}-diff`
   const idGradient = `${fixedId}-animated-diff`
   const idAria = `${fixedId}-aria`
@@ -48,8 +48,8 @@ const SVG: React.FC<IContentLoaderProps> = ({
         role="presentation"
         x="0"
         y="0"
-        width={Number(vbWidth)}
-        height={Number(vbHeight)}
+        width={parseInt(vbWidth as string)}
+        height={parseInt(vbHeight as string)}
         clipPath={`url(${baseUrl}#${idClip})`}
         style={{ fill: `url(${baseUrl}#${idGradient})` }}
       />
