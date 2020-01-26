@@ -1,21 +1,9 @@
 import * as React from 'react'
 
-import { IContentLoaderProps } from '.'
+import { Facebook, IContentLoaderProps } from '.'
 import Svg from './Svg'
 
-const ContentLoader: React.FC<IContentLoaderProps> = props => (
-  <Svg {...props}>
-    {props.children || (
-      <rect
-        x="0"
-        y="0"
-        rx="5"
-        ry="5"
-        width={props.width}
-        height={props.height}
-      />
-    )}
-  </Svg>
-)
+const ContentLoader: React.FC<IContentLoaderProps> = props =>
+  props.children ? <Svg {...props}></Svg> : <Facebook {...props} />
 
 export default ContentLoader

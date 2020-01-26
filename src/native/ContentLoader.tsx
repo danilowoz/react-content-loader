@@ -1,23 +1,11 @@
 import * as React from 'react'
 import { Circle, Rect } from 'react-native-svg'
 
-import { IContentLoaderProps } from '.'
+import { Facebook, IContentLoaderProps } from '.'
 import Svg from './Svg'
 
-const ContentLoader: React.FC<IContentLoaderProps> = props => (
-  <Svg {...props}>
-    {props.children || (
-      <Rect
-        x="0"
-        y="0"
-        rx="5"
-        ry="5"
-        width={props.width}
-        height={props.height}
-      />
-    )}
-  </Svg>
-)
+const ContentLoader: React.FC<IContentLoaderProps> = props =>
+  props.children ? <Svg {...props}></Svg> : <Facebook {...props} />
 
 export { Circle, Rect }
 
