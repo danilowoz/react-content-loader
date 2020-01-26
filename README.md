@@ -68,7 +68,7 @@ const MyFacebookLoader = () => <Facebook />
 
 ```jsx
 const MyLoader = () => (
-  <ContentLoader>
+  <ContentLoader viewBox="0 0 380 70">
     {/* Only SVG shapes */}    
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
@@ -101,7 +101,7 @@ const MyFacebookLoader = () => <Facebook />
 import ContentLoader, { Rect, Circle } from 'react-content-loader/native'
 
 const MyLoader = () => (
-  <ContentLoader>
+  <ContentLoader viewBox="0 0 380 70">
     <Circle cx="30" cy="30" r="30" />
     <Rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <Rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
@@ -126,27 +126,19 @@ Defaults to an empty string. This prop is common used as: `<ContentLo
 
 #### **`speed?: number`**
 
-Defaults to `2`. Animation speed in seconds.
+Defaults to `1.2`. Animation speed in seconds.
 
 #### **`interval?: number`** - _Web only_
 
 Defaults to `0.25`. Interval of time between runs of the animation, as a fraction of the animation speed.
 
-#### **`width?: number`**
-
-Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
-
-#### **`height?: number`**
-
-Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
-
 #### **`viewBox?: string`**
 
-Use viewBox props to set a custom viewBox value. Additionally, pass viewBox props as empty string to remove viewBox.
+Use viewBox props to set a custom viewBox value, for more information about how to use it, read the article [How to Scale SVG](https://css-tricks.com/scale-svg/).
 
 #### **`gradientRatio?: number`** - _Web only_
 
-Defaults to `2`. Width of the animated gradient as a fraction of the viewbox width.
+Defaults to `1.2`. Width of the animated gradient as a fraction of the viewbox width.
 
 #### **`rtl?: boolean`**
 
@@ -154,11 +146,11 @@ Defaults to `false`. Content right-to-left.
 
 #### **`backgroundColor?: string`**
 
-Defaults to `#f3f3f3` which is used as background of animation.
+Defaults to `#f5f6f7` which is used as background of animation.
 
 #### **`foregroundColor?: string`**
 
-Defaults to `#ecebeb` which is used as the foreground of animation.
+Defaults to `#eee` which is used as the foreground of animation.
 
 #### **`backgroundOpacity?: number`** - _Web only_
 
@@ -240,6 +232,7 @@ const MyLoader = () => (
     speed={1}
     backgroundColor={'#333'}
     foregroundColor={'#999'}
+    viewBox="0 0 380 70"
   >
     {/* Only SVG shapes */}
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />

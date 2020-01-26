@@ -47,7 +47,9 @@
     "lint": "eslint --ext .jsx --ext .ts,.tsx src/",
     "release": "semantic-release"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-syntax-highlighter": "^12.2.1"
+  },
   "devDependencies": {
     "@babel/core": "7.7.7",
     "@babel/polyfill": "7.7.0",
