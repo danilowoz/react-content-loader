@@ -4,13 +4,13 @@ import { IContentLoaderProps } from '..'
 import ContentLoader, { Circle, Rect } from '../ContentLoader'
 
 const ReactContentLoaderFacebook: React.FC<IContentLoaderProps> = props => (
-  <ContentLoader {...props}>
-    <Rect x="70" y="15" rx="4" ry="4" width="117" height="6" />
-    <Rect x="70" y="35" rx="3" ry="3" width="85" height="6" />
-    <Rect x="0" y="80" rx="3" ry="3" width="350" height="6" />
-    <Rect x="0" y="100" rx="3" ry="3" width="380" height="6" />
-    <Rect x="0" y="120" rx="3" ry="3" width="201" height="6" />
-    <Circle cx="30" cy="30" r="30" />
+  <ContentLoader viewBox="0 0 476 124" {...props}>
+    <Rect x="48" y="8" width="88" height="6" rx="3" />
+    <Rect x="48" y="26" width="52" height="6" rx="3" />
+    <Rect x="0" y="56" width="410" height="6" rx="3" />
+    <Rect x="0" y="72" width="380" height="6" rx="3" />
+    <Rect x="0" y="88" width="178" height="6" rx="3" />
+    <Circle cx="20" cy="20" r="20" />
   </ContentLoader>
 )
 

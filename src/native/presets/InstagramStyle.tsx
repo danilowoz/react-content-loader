@@ -4,12 +4,11 @@ import { IContentLoaderProps } from '..'
 import ContentLoader, { Circle, Rect } from '../ContentLoader'
 
 const ReactContentLoaderInstagram: React.FC<IContentLoaderProps> = props => (
-  <ContentLoader {...props} height={480}>
-    <Circle cx="30" cy="30" r="30" />
-
-    <Rect x="75" y="13" rx="4" ry="4" width="100" height="13" />
-    <Rect x="75" y="37" rx="4" ry="4" width="50" height="8" />
-    <Rect x="0" y="70" rx="5" ry="5" width="400" height="400" />
+  <ContentLoader viewBox="0 0 400 460" {...props}>
+    <Circle cx="31" cy="31" r="15" />
+    <Rect x="58" y="18" rx="2" ry="2" width="140" height="10" />
+    <Rect x="58" y="34" rx="2" ry="2" width="140" height="10" />
+    <Rect x="0" y="60" rx="2" ry="2" width="400" height="400" />
   </ContentLoader>
 )
 
