@@ -25,27 +25,34 @@ describe('ContentLoader', () => {
 
   describe('Props are propagated', () => {
     const noPropsComponent = ShallowRenderer.createRenderer()
-    noPropsComponent.render(<ContentLoader />)
+    noPropsComponent.render(
+      <ContentLoader>
+        <rect />
+      </ContentLoader>
+    )
 
     const withPropsComponent = ShallowRenderer.createRenderer()
     withPropsComponent.render(
       <ContentLoader
         animate={false}
-        title="My custom loading title"
+        backgroundColor="#000"
+        backgroundOpacity={0.06}
         baseUrl="/mypage"
+        foregroundColor="#fff"
+        foregroundOpacity={0.12}
         gradientRatio={0.5}
         height={200}
         interval={0.5}
         preserveAspectRatio="xMaxYMax meet"
-        backgroundColor="#000"
-        backgroundOpacity={0.06}
         rtl
-        foregroundColor="#fff"
-        foregroundOpacity={0.12}
         speed={10}
         style={{ marginBottom: '10px' }}
+        title="My custom loading title"
+        uniqueKey="my-id"
         width={200}
-      />
+      >
+        <rect />
+      </ContentLoader>
     )
 
     const { props: propsFromEmpty } = noPropsComponent.getRenderOutput()
@@ -54,7 +61,7 @@ describe('ContentLoader', () => {
     it("`speed` is a number and it's used", () => {
       // defaultProps
       expect(typeof propsFromEmpty.speed).toBe('number')
-      expect(propsFromEmpty.speed).toBe(2)
+      expect(propsFromEmpty.speed).toBe(1.2)
       // custom props
       expect(typeof propsFromFullfield.speed).toBe('number')
       expect(propsFromFullfield.speed).toBe(10)
@@ -70,18 +77,12 @@ describe('ContentLoader', () => {
     })
 
     it("`height` is a number and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.height).toBe('number')
-      expect(propsFromEmpty.height).toBe(130)
       // custom props
       expect(typeof propsFromFullfield.height).toBe('number')
       expect(propsFromFullfield.height).toBe(200)
     })
 
     it("`width` is a number and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.width).toBe('number')
-      expect(propsFromEmpty.width).toBe(400)
       // custom props
       expect(typeof propsFromFullfield.width).toBe('number')
       expect(propsFromFullfield.width).toBe(200)
@@ -108,7 +109,7 @@ describe('ContentLoader', () => {
     it("`backgroundColor` is a string and it's used", () => {
       // defaultProps
       expect(typeof propsFromEmpty.backgroundColor).toBe('string')
-      expect(propsFromEmpty.backgroundColor).toBe('#f0f0f0')
+      expect(propsFromEmpty.backgroundColor).toBe('#f5f6f7')
       // custom props
       expect(typeof propsFromFullfield.backgroundColor).toBe('string')
       expect(propsFromFullfield.backgroundColor).toBe('#000')
@@ -117,7 +118,7 @@ describe('ContentLoader', () => {
     it("`foregroundColor` is a string and it's used", () => {
       // defaultProps
       expect(typeof propsFromEmpty.foregroundColor).toBe('string')
-      expect(propsFromEmpty.foregroundColor).toBe('#e0e0e0')
+      expect(propsFromEmpty.foregroundColor).toBe('#eee')
       // custom props
       expect(typeof propsFromFullfield.foregroundColor).toBe('string')
       expect(propsFromFullfield.foregroundColor).toBe('#fff')
@@ -179,6 +180,15 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.baseUrl).toBe('string')
       expect(propsFromFullfield.baseUrl).toBe('/mypage')
+    })
+
+    it("`uniqueKey` is a string and it's used", () => {
+      // defaultProps
+      expect(typeof propsFromEmpty.uniqueKey).toBe('undefined')
+      expect(propsFromEmpty.uniqueKey).toBe(undefined)
+      // custom props
+      expect(typeof propsFromFullfield.uniqueKey).toBe('string')
+      expect(propsFromFullfield.uniqueKey).toBe('my-id')
     })
   })
 })

@@ -16,9 +16,10 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
   static defaultProps = {
     animate: true,
     backgroundColor: '#f5f6f7',
-    rtl: false,
     foregroundColor: '#eee',
+    rtl: false,
     speed: 1.2,
+    style: {},
   }
 
   state = { offset: -1 }

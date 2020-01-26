@@ -3,12 +3,10 @@
 exports[`CodeStyle renders correctly 1`] = `
 <svg
   aria-labelledby="CodeStyle-aria"
-  height={130}
   id={null}
   role="img"
   style={Object {}}
-  viewBox="0 0 400 130"
-  width={400}
+  viewBox="0 0 340 84"
 >
   <title
     id="CodeStyle-aria"
@@ -17,14 +15,14 @@ exports[`CodeStyle renders correctly 1`] = `
   </title>
   <rect
     clipPath="url(#CodeStyle-diff)"
-    height={130}
+    height="100%"
     role="presentation"
     style={
       Object {
         "fill": "url(#CodeStyle-animated-diff)",
       }
     }
-    width={400}
+    width="100%"
     x="0"
     y="0"
   />
@@ -35,76 +33,60 @@ exports[`CodeStyle renders correctly 1`] = `
       id="CodeStyle-diff"
     >
       <rect
-        height="10"
+        height="11"
         rx="3"
-        ry="3"
-        width="70"
+        width="67"
         x="0"
         y="0"
       />
       <rect
-        height="10"
+        height="11"
         rx="3"
-        ry="3"
+        width="140"
+        x="76"
+        y="0"
+      />
+      <rect
+        height="11"
+        rx="3"
+        width="53"
+        x="127"
+        y="48"
+      />
+      <rect
+        height="11"
+        rx="3"
+        width="72"
+        x="187"
+        y="48"
+      />
+      <rect
+        height="11"
+        rx="3"
         width="100"
-        x="80"
-        y="0"
+        x="18"
+        y="48"
       />
       <rect
-        height="10"
+        height="11"
         rx="3"
-        ry="3"
-        width="10"
-        x="190"
-        y="0"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="130"
-        x="15"
-        y="20"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="130"
-        x="155"
-        y="20"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="90"
-        x="15"
-        y="40"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="60"
-        x="115"
-        y="40"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="60"
-        x="185"
-        y="40"
-      />
-      <rect
-        height="10"
-        rx="3"
-        ry="3"
-        width="30"
+        width="37"
         x="0"
-        y="60"
+        y="71"
+      />
+      <rect
+        height="11"
+        rx="3"
+        width="140"
+        x="18"
+        y="23"
+      />
+      <rect
+        height="11"
+        rx="3"
+        width="173"
+        x="166"
+        y="23"
       />
     </clipPath>
     <linearGradient
@@ -112,7 +94,7 @@ exports[`CodeStyle renders correctly 1`] = `
     >
       <stop
         offset="0%"
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
         stopOpacity={1}
       >
         <animate
@@ -125,7 +107,7 @@ exports[`CodeStyle renders correctly 1`] = `
       </stop>
       <stop
         offset="50%"
-        stopColor="#e0e0e0"
+        stopColor="#eee"
         stopOpacity={1}
       >
         <animate
@@ -138,7 +120,7 @@ exports[`CodeStyle renders correctly 1`] = `
       </stop>
       <stop
         offset="100%"
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
         stopOpacity={1}
       >
         <animate

@@ -47,9 +47,7 @@
     "lint": "eslint --ext .jsx --ext .ts,.tsx src/",
     "release": "semantic-release"
   },
-  "dependencies": {
-    "react-syntax-highlighter": "^12.2.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.7.7",
     "@babel/polyfill": "7.7.0",
@@ -90,6 +88,7 @@
     "react-dom": "16.12.0",
     "react-native": "0.61.5",
     "react-native-svg": "9.13.6",
+    "react-syntax-highlighter": "^12.2.1",
     "react-test-renderer": "16.12.0",
     "rollup": "1.27.14",
     "rollup-plugin-copy": "3.1.0",

@@ -4,7 +4,7 @@ import { IContentLoaderProps } from '..'
 import ContentLoader, { Rect } from '../ContentLoader'
 
 const ReactContentLoaderCode: React.FC<IContentLoaderProps> = props => (
-  <ContentLoader {...props}>
+  <ContentLoader viewBox="0 0 340 84" width={340} height={84} {...props}>
     <Rect x="0" y="0" width="67" height="11" rx="3" />
     <Rect x="76" y="0" width="140" height="11" rx="3" />
     <Rect x="127" y="48" width="53" height="11" rx="3" />

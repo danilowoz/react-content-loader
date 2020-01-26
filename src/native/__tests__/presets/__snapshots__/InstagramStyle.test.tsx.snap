@@ -2,16 +2,16 @@
 
 exports[`InstagramStyle renders correctly 1`] = `
 <Svg
-  height={480}
+  height={460}
   style={Object {}}
-  viewBox="0 0 400 480"
+  viewBox="0 0 400 460"
   width={400}
 >
   <Rect
     clipPath="url(#InstagramStyle-animated-diff)"
     fill="url(#InstagramStyle-diff)"
-    height={480}
-    width={400}
+    height="100%"
+    width="100%"
     x="0"
     y="0"
   />
@@ -20,33 +20,33 @@ exports[`InstagramStyle renders correctly 1`] = `
       id="InstagramStyle-animated-diff"
     >
       <Circle
-        cx="30"
-        cy="30"
-        r="30"
+        cx="31"
+        cy="31"
+        r="15"
       />
       <Rect
-        height="13"
-        rx="4"
-        ry="4"
-        width="100"
-        x="75"
-        y="13"
+        height="10"
+        rx="2"
+        ry="2"
+        width="140"
+        x="58"
+        y="18"
       />
       <Rect
-        height="8"
-        rx="4"
-        ry="4"
-        width="50"
-        x="75"
-        y="37"
+        height="10"
+        rx="2"
+        ry="2"
+        width="140"
+        x="58"
+        y="34"
       />
       <Rect
         height="400"
-        rx="5"
-        ry="5"
+        rx="2"
+        ry="2"
         width="400"
         x="0"
-        y="70"
+        y="60"
       />
     </ClipPath>
     <LinearGradient
@@ -58,15 +58,15 @@ exports[`InstagramStyle renders correctly 1`] = `
     >
       <Stop
         offset={0}
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
       />
       <Stop
         offset={0}
-        stopColor="#e0e0e0"
+        stopColor="#eee"
       />
       <Stop
         offset={0}
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
       />
     </LinearGradient>
   </Defs>

@@ -2,16 +2,16 @@
 
 exports[`ListStyle renders correctly 1`] = `
 <Svg
-  height={130}
+  height={110}
   style={Object {}}
-  viewBox="0 0 400 130"
+  viewBox="0 0 400 110"
   width={400}
 >
   <Rect
     clipPath="url(#ListStyle-animated-diff)"
     fill="url(#ListStyle-diff)"
-    height={130}
-    width={400}
+    height="100%"
+    width="100%"
     x="0"
     y="0"
   />
@@ -77,15 +77,15 @@ exports[`ListStyle renders correctly 1`] = `
     >
       <Stop
         offset={0}
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
       />
       <Stop
         offset={0}
-        stopColor="#e0e0e0"
+        stopColor="#eee"
       />
       <Stop
         offset={0}
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
       />
     </LinearGradient>
   </Defs>

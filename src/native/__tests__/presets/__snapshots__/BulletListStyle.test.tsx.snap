@@ -2,16 +2,16 @@
 
 exports[`BulletListStyle renders correctly 1`] = `
 <Svg
-  height={130}
+  height={125}
   style={Object {}}
-  viewBox="0 0 400 130"
-  width={400}
+  viewBox="0 0 245 125"
+  width={245}
 >
   <Rect
     clipPath="url(#BulletListStyle-animated-diff)"
     fill="url(#BulletListStyle-diff)"
-    height={130}
-    width={400}
+    height="100%"
+    width="100%"
     x="0"
     y="0"
   />
@@ -81,15 +81,15 @@ exports[`BulletListStyle renders correctly 1`] = `
     >
       <Stop
         offset={0}
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
       />
       <Stop
         offset={0}
-        stopColor="#e0e0e0"
+        stopColor="#eee"
       />
       <Stop
         offset={0}
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
       />
     </LinearGradient>
   </Defs>

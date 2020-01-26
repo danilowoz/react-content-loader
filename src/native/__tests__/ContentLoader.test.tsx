@@ -25,7 +25,11 @@ describe('ContentLoader', () => {
 
   describe('Props are propagated', () => {
     const noPropsComponent = ShallowRenderer.createRenderer()
-    noPropsComponent.render(<ContentLoader />)
+    noPropsComponent.render(
+      <ContentLoader>
+        <Rect />
+      </ContentLoader>
+    )
 
     const withPropsComponent = ShallowRenderer.createRenderer()
     withPropsComponent.render(
@@ -39,7 +43,9 @@ describe('ContentLoader', () => {
         speed={10}
         style={{ marginBottom: '10px' }}
         width={200}
-      />
+      >
+        <Rect />
+      </ContentLoader>
     )
 
     const { props: propsFromEmpty } = noPropsComponent.getRenderOutput()
@@ -48,25 +54,19 @@ describe('ContentLoader', () => {
     it("`speed` is a number and it's used", () => {
       // defaultProps
       expect(typeof propsFromEmpty.speed).toBe('number')
-      expect(propsFromEmpty.speed).toBe(1)
+      expect(propsFromEmpty.speed).toBe(1.2)
       // custom props
       expect(typeof propsFromFullField.speed).toBe('number')
       expect(propsFromFullField.speed).toBe(10)
     })
 
     it("`height` is a number and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.height).toBe('number')
-      expect(propsFromEmpty.height).toBe(130)
       // custom props
       expect(typeof propsFromFullField.height).toBe('number')
       expect(propsFromFullField.height).toBe(200)
     })
 
     it("`width` is a number and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.width).toBe('number')
-      expect(propsFromEmpty.width).toBe(400)
       // custom props
       expect(typeof propsFromFullField.width).toBe('number')
       expect(propsFromFullField.width).toBe(200)
@@ -84,7 +84,7 @@ describe('ContentLoader', () => {
     it("`backgroundColor` is a string and it's used", () => {
       // defaultProps
       expect(typeof propsFromEmpty.backgroundColor).toBe('string')
-      expect(propsFromEmpty.backgroundColor).toBe('#f0f0f0')
+      expect(propsFromEmpty.backgroundColor).toBe('#f5f6f7')
       // custom props
       expect(typeof propsFromFullField.backgroundColor).toBe('string')
       expect(propsFromFullField.backgroundColor).toBe('#000')
@@ -93,7 +93,7 @@ describe('ContentLoader', () => {
     it("`foregroundColor` is a string and it's used", () => {
       // defaultProps
       expect(typeof propsFromEmpty.foregroundColor).toBe('string')
-      expect(propsFromEmpty.foregroundColor).toBe('#e0e0e0')
+      expect(propsFromEmpty.foregroundColor).toBe('#eee')
       // custom props
       expect(typeof propsFromFullField.foregroundColor).toBe('string')
       expect(propsFromFullField.foregroundColor).toBe('#fff')

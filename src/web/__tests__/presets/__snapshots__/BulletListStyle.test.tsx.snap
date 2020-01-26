@@ -3,12 +3,10 @@
 exports[`BulletListStyle renders correctly 1`] = `
 <svg
   aria-labelledby="BulletListStyle-aria"
-  height={130}
   id={null}
   role="img"
   style={Object {}}
-  viewBox="0 0 400 130"
-  width={400}
+  viewBox="0 0 245 125"
 >
   <title
     id="BulletListStyle-aria"
@@ -17,14 +15,14 @@ exports[`BulletListStyle renders correctly 1`] = `
   </title>
   <rect
     clipPath="url(#BulletListStyle-diff)"
-    height={130}
+    height="100%"
     role="presentation"
     style={
       Object {
         "fill": "url(#BulletListStyle-animated-diff)",
       }
     }
-    width={400}
+    width="100%"
     x="0"
     y="0"
   />
@@ -92,7 +90,7 @@ exports[`BulletListStyle renders correctly 1`] = `
     >
       <stop
         offset="0%"
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
         stopOpacity={1}
       >
         <animate
@@ -105,7 +103,7 @@ exports[`BulletListStyle renders correctly 1`] = `
       </stop>
       <stop
         offset="50%"
-        stopColor="#e0e0e0"
+        stopColor="#eee"
         stopOpacity={1}
       >
         <animate
@@ -118,7 +116,7 @@ exports[`BulletListStyle renders correctly 1`] = `
       </stop>
       <stop
         offset="100%"
-        stopColor="#f0f0f0"
+        stopColor="#f5f6f7"
         stopOpacity={1}
       >
         <animate
