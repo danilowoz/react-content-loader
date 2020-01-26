@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FacebookStyle renders correctly 1`] = `
+<Svg
+  height={124}
+  style={Object {}}
+  viewBox="0 0 476 124"
+  width={476}
+>
+  <Rect
+    clipPath="url(#FacebookStyle-animated-diff)"
+    fill="url(#FacebookStyle-diff)"
+    height="100%"
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="FacebookStyle-animated-diff"
+    >
+      <Rect
+        height="6"
+        rx="3"
+        width="88"
+        x="48"
+        y="8"
+      />
+      <Rect
+        height="6"
+        rx="3"
+        width="52"
+        x="48"
+        y="26"
+      />
+      <Rect
+        height="6"
+        rx="3"
+        width="410"
+        x="0"
+        y="56"
+      />
+      <Rect
+        height="6"
+        rx="3"
+        width="380"
+        x="0"
+        y="72"
+      />
+      <Rect
+        height="6"
+        rx="3"
+        width="178"
+        x="0"
+        y="88"
+      />
+      <Circle
+        cx="20"
+        cy="20"
+        r="20"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="FacebookStyle-diff"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+      <Stop
+        offset={0}
+        stopColor="#eee"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;

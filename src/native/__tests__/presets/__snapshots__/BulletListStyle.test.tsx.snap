@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BulletListStyle renders correctly 1`] = `
+<Svg
+  height={125}
+  style={Object {}}
+  viewBox="0 0 245 125"
+  width={245}
+>
+  <Rect
+    clipPath="url(#BulletListStyle-animated-diff)"
+    fill="url(#BulletListStyle-diff)"
+    height="100%"
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="BulletListStyle-animated-diff"
+    >
+      <Circle
+        cx="10"
+        cy="20"
+        r="8"
+      />
+      <Rect
+        height="10"
+        rx="5"
+        ry="5"
+        width="220"
+        x="25"
+        y="15"
+      />
+      <Circle
+        cx="10"
+        cy="50"
+        r="8"
+      />
+      <Rect
+        height="10"
+        rx="5"
+        ry="5"
+        width="220"
+        x="25"
+        y="45"
+      />
+      <Circle
+        cx="10"
+        cy="80"
+        r="8"
+      />
+      <Rect
+        height="10"
+        rx="5"
+        ry="5"
+        width="220"
+        x="25"
+        y="75"
+      />
+      <Circle
+        cx="10"
+        cy="110"
+        r="8"
+      />
+      <Rect
+        height="10"
+        rx="5"
+        ry="5"
+        width="220"
+        x="25"
+        y="105"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="BulletListStyle-diff"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+      <Stop
+        offset={0}
+        stopColor="#eee"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;

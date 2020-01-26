@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListStyle renders correctly 1`] = `
+<svg
+  aria-labelledby="ListStyle-aria"
+  id={null}
+  role="img"
+  style={Object {}}
+  viewBox="0 0 400 110"
+>
+  <title
+    id="ListStyle-aria"
+  >
+    Loading...
+  </title>
+  <rect
+    clipPath="url(#ListStyle-diff)"
+    height="100%"
+    role="presentation"
+    style={
+      Object {
+        "fill": "url(#ListStyle-animated-diff)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs
+    role="presentation"
+  >
+    <clipPath
+      id="ListStyle-diff"
+    >
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="250"
+        x="0"
+        y="0"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="220"
+        x="20"
+        y="20"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="170"
+        x="20"
+        y="40"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="250"
+        x="0"
+        y="60"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="200"
+        x="20"
+        y="80"
+      />
+      <rect
+        height="10"
+        rx="3"
+        ry="3"
+        width="80"
+        x="20"
+        y="100"
+      />
+    </clipPath>
+    <linearGradient
+      id="ListStyle-animated-diff"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f5f6f7"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-2; -2; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#eee"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-1; -1; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f5f6f7"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="0; 0; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;

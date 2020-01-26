@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InstagramStyle renders correctly 1`] = `
+<svg
+  aria-labelledby="InstagramStyle-aria"
+  id={null}
+  role="img"
+  style={Object {}}
+  viewBox="0 0 400 460"
+>
+  <title
+    id="InstagramStyle-aria"
+  >
+    Loading...
+  </title>
+  <rect
+    clipPath="url(#InstagramStyle-diff)"
+    height="100%"
+    role="presentation"
+    style={
+      Object {
+        "fill": "url(#InstagramStyle-animated-diff)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs
+    role="presentation"
+  >
+    <clipPath
+      id="InstagramStyle-diff"
+    >
+      <circle
+        cx="31"
+        cy="31"
+        r="15"
+      />
+      <rect
+        height="10"
+        rx="2"
+        ry="2"
+        width="140"
+        x="58"
+        y="18"
+      />
+      <rect
+        height="10"
+        rx="2"
+        ry="2"
+        width="140"
+        x="58"
+        y="34"
+      />
+      <rect
+        height="400"
+        rx="2"
+        ry="2"
+        width="400"
+        x="0"
+        y="60"
+      />
+    </clipPath>
+    <linearGradient
+      id="InstagramStyle-animated-diff"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f5f6f7"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-2; -2; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#eee"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-1; -1; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f5f6f7"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="20s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="0; 0; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;

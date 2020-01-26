@@ -68,7 +68,7 @@ const MyFacebookLoader = () => <Facebook />
 
 ```jsx
 const MyLoader = () => (
-  <ContentLoader>
+  <ContentLoader viewBox="0 0 380 70">
     {/* Only SVG shapes */}    
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
@@ -101,7 +101,7 @@ const MyFacebookLoader = () => <Facebook />
 import ContentLoader, { Rect, Circle } from 'react-content-loader/native'
 
 const MyLoader = () => (
-  <ContentLoader>
+  <ContentLoader viewBox="0 0 380 70">
     <Circle cx="30" cy="30" r="30" />
     <Rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
     <Rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
@@ -115,7 +115,7 @@ const MyLoader = () => (
 
 Defaults to `true`. Opt-out of animations with `false`
 
-#### **`ariaLabel?: string`** - _Web only_
+#### **`title?: string`** - _Web only_
 
 Defaults to `Loading interface...`. It's used to describe what element it is. Use ''(empty string) to remove.
 
@@ -126,53 +126,37 @@ Defaults to an empty string. This prop is common used as: `<ContentLo
 
 #### **`speed?: number`**
 
-Defaults to `2`. Animation speed in seconds.
+Defaults to `1.2`. Animation speed in seconds.
 
 #### **`interval?: number`** - _Web only_
 
 Defaults to `0.25`. Interval of time between runs of the animation, as a fraction of the animation speed.
 
-#### **`className?: string`**
-
-Defaults to an empty string. The classname will be set in the `<svg />` element.
-
-#### **`width?: number`**
-
-Defaults to `400`. It will be set in the viewbox attr in the `<svg />`.
-
-#### **`height?: number`**
-
-Defaults to `130`. It will be set in the viewbox attr in the `<svg />`.
-
 #### **`viewBox?: string`**
 
-Use viewBox props to set a custom viewBox value. Additionally, pass viewBox props as empty string to remove viewBox.
+Use viewBox props to set a custom viewBox value, for more information about how to use it, read the article [How to Scale SVG](https://css-tricks.com/scale-svg/).
 
 #### **`gradientRatio?: number`** - _Web only_
 
-Defaults to `2`. Width of the animated gradient as a fraction of the viewbox width.
+Defaults to `1.2`. Width of the animated gradient as a fraction of the viewbox width.
 
 #### **`rtl?: boolean`**
 
 Defaults to `false`. Content right-to-left.
 
-#### **`preserveAspectRatio?: string`**
+#### **`backgroundColor?: string`**
 
-Defaults to `xMidYMid meet`. Aspect ratio option of `<svg/>`. See the available options [here](https://github.com/danilowoz/react-content-loader/blob/master/src/interface.ts#L7).
+Defaults to `#f5f6f7` which is used as background of animation.
 
-#### **`primaryColor?: string`**
+#### **`foregroundColor?: string`**
 
-Defaults to `#f3f3f3` which is used as background of animation.
+Defaults to `#eee` which is used as the foreground of animation.
 
-#### **`secondaryColor?: string`**
-
-Defaults to `#ecebeb` which is used as the foreground of animation.
-
-#### **`primaryOpacity?: number`** - _Web only_
+#### **`backgroundOpacity?: number`** - _Web only_
 
 Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
-#### **`secondaryOpacity?: number`** - _Web only_
+#### **`foregroundOpacity?: number`** - _Web only_
 
 Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
 
@@ -180,7 +164,7 @@ Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used
 
 Defaults to an empty object.
 
-#### **`uniquekey?: string`** - _Web only_
+#### **`uniqueKey?: string`** - _Web only_
 
 Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
 
@@ -246,17 +230,14 @@ const MyLoader = () => (
   <ContentLoader
     height={140}
     speed={1}
-    primaryColor={'#333'}
-    secondaryColor={'#999'}
+    backgroundColor={'#333'}
+    foregroundColor={'#999'}
+    viewBox="0 0 380 70"
   >
-        {/* Only SVG shapes */}
-        
+    {/* Only SVG shapes */}
     <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-        
     <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
-        
     <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
-      
   </ContentLoader>
 )
 ```
@@ -306,21 +287,21 @@ Commit messages should follow the [commit message convention](https://con
 
 ##### **Alpha is not working: Safari / iOS**
 
-When using `rgba` as a `primaryColor` or `secondaryColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `primaryColor`/`secondaryColor`, use the `rgb` equivalent and move the alpha channel value to the `primaryOpacity`/`secondaryOpacity` props.
+When using `rgba` as a `backgroundColor` or `foregroundColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `backgroundColor`/`foregroundColor`, use the `rgb` equivalent and move the alpha channel value to the `backgroundOpacity`/`foregroundOpacity` props.
 
 ```jsx
 {/* Opaque color in Safari and iOS */}
 <ContentLoader
-  primaryColor="rgba(0,0,0,0.06)"
-  secondaryColor="rgba(0,0,0,0.12)">
+  backgroundColor="rgba(0,0,0,0.06)"
+  foregroundColor="rgba(0,0,0,0.12)">
 
 
 {/_ Semi-transparent color in Safari and iOS _/}
 <ContentLoader
-    primaryColor="rgb(0,0,0)"
-    secondaryColor="rgb(0,0,0)"
-    primaryOpacity={0.06}
-    secondaryOpacity={0.12}>
+    backgroundColor="rgb(0,0,0)"
+    foregroundColor="rgb(0,0,0)"
+    backgroundOpacity={0.06}
+    foregroundOpacity={0.12}>
 
 
 ```

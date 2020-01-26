@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeStyle renders correctly 1`] = `
+<Svg
+  height={84}
+  style={Object {}}
+  viewBox="0 0 340 84"
+  width={340}
+>
+  <Rect
+    clipPath="url(#CodeStyle-animated-diff)"
+    fill="url(#CodeStyle-diff)"
+    height="100%"
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="CodeStyle-animated-diff"
+    >
+      <Rect
+        height="11"
+        rx="3"
+        width="67"
+        x="0"
+        y="0"
+      />
+      <Rect
+        height="11"
+        rx="3"
+        width="140"
+        x="76"
+        y="0"
+      />
+      <Rect
+        height="11"
+        rx="3"
+        width="53"
+        x="127"
+        y="48"
+      />
+      <Rect
+        height="11"
+        rx="3"
+        width="72"
+        x="187"
+        y="48"
+      />
+      <Rect
+        height="11"
+        rx="3"
+        width="100"
+        x="18"
+        y="48"
+      />
+      <Rect
+        height="11"
+        rx="3"
+        width="37"
+        x="0"
+        y="71"
+      />
+      <Rect
+        height="11"
+        rx="3"
+        width="140"
+        x="18"
+        y="23"
+      />
+      <Rect
+        height="11"
+        rx="3"
+        width="173"
+        x="166"
+        y="23"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="CodeStyle-diff"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+      <Stop
+        offset={0}
+        stopColor="#eee"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;

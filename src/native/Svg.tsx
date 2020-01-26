@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Animated } from 'react-native'
-
 import Svg, {
   ClipPath,
   Defs,
@@ -9,36 +8,29 @@ import Svg, {
   Stop,
 } from 'react-native-svg'
 
+import uid from '../shared/uid'
 import { IContentLoaderProps } from './'
 import offsetValueBound from './offsetValueBound'
-import uid from '../uid'
 
-type RequiredIContentLoaderProps = IContentLoaderProps &
-  Pick<
-    Required<IContentLoaderProps>,
-    | 'animate'
-    | 'height'
-    | 'preserveAspectRatio'
-    | 'primaryColor'
-    | 'rtl'
-    | 'secondaryColor'
-    | 'speed'
-    | 'style'
-    | 'width'
-  >
+class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
+  static defaultProps = {
+    animate: true,
+    backgroundColor: '#f5f6f7',
+    foregroundColor: '#eee',
+    rtl: false,
+    speed: 1.2,
+    style: {},
+  }
 
-interface State {
-  offset: number
-}
-
-class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
   state = { offset: -1 }
 
   animatedValue = new Animated.Value(0)
 
-  idClip = this.props.id ? `${this.props.id}-idClip` : uid()
+  fixedId = this.props.uniqueKey || uid()
 
-  idGradient = this.props.id ? `${this.props.id}-idGradient` : uid()
+  idClip = `${this.fixedId}-diff`
+
+  idGradient = `${this.fixedId}-animated-diff`
 
   setAnimation = () => {
     // Turn in seconds to keep compatible with web one
@@ -76,10 +68,8 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
   render() {
     const {
       children,
-      height,
-      primaryColor,
-      secondaryColor,
-      width,
+      backgroundColor,
+      foregroundColor,
       rtl,
       style,
       ...props
@@ -93,24 +83,17 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
     const composedStyle = Object.assign(style, rtlStyle)
 
     // Remove unnecessary keys
-    delete props.id
+    delete props.uniqueKey
     delete props.animate
     delete props.speed
 
     return (
-      <Svg
-        viewBox={`0 0 ${width} ${height}`}
-        width={width}
-        height={height}
-        preserveAspectRatio="none"
-        style={composedStyle}
-        {...props}
-      >
+      <Svg style={composedStyle} {...props}>
         <Rect
           x="0"
           y="0"
-          width={width}
-          height={height}
+          width="100%"
+          height="100%"
           fill={`url(#${this.idClip})`}
           clipPath={`url(#${this.idGradient})`}
         />
@@ -125,9 +108,9 @@ class NativeSvg extends Component<RequiredIContentLoaderProps, State> {
             x2={'100%'}
             y2={0}
           >
-            <Stop offset={offset1} stopColor={primaryColor} />
-            <Stop offset={offset2} stopColor={secondaryColor} />
-            <Stop offset={offset3} stopColor={primaryColor} />
+            <Stop offset={offset1} stopColor={backgroundColor} />
+            <Stop offset={offset2} stopColor={foregroundColor} />
+            <Stop offset={offset3} stopColor={backgroundColor} />
           </LinearGradient>
         </Defs>
       </Svg>

@@ -1,13 +1,19 @@
-import { SvgProps } from 'react-native-svg'
+import { SVGAttributes } from 'react'
 
 import ContentLoader from './ContentLoader'
 
-export interface IContentLoaderProps extends SvgProps {
+export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   animate?: boolean
   backgroundColor?: string
+  backgroundOpacity?: number
+  baseUrl?: string
   foregroundColor?: string
+  foregroundOpacity?: number
+  gradientRatio?: number
+  interval?: number
   rtl?: boolean
   speed?: number
+  title?: string
   uniqueKey?: string
 }
 
@@ -17,5 +23,4 @@ export { default as Code } from './presets/CodeStyle'
 export { default as List } from './presets/ListStyle'
 export { default as BulletList } from './presets/BulletListStyle'
 
-export { Circle, Rect } from './ContentLoader'
 export default ContentLoader

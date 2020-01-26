@@ -1,16 +1,40 @@
 import React from 'react'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-import ContentLoader, { Facebook, Instagram } from '../src'
+import ContentLoader, {
+  BulletList,
+  Code,
+  Facebook,
+  Instagram,
+  List,
+} from '../src/web'
 
 export default {
   title: 'React Content Loader',
+}
+
+const SyntaxCode = ({ children }) => {
+  return (
+    <SyntaxHighlighter language="jsx" style={docco}>
+      {children}
+    </SyntaxHighlighter>
+  )
 }
 
 /**
  * Animated
  */
 export const animate = () => {
-  return <Facebook animate={false} />
+  return (
+    <>
+      <SyntaxCode>{'<ContentLoader  />'}</SyntaxCode>
+      <ContentLoader />
+
+      <SyntaxCode>{'<ContentLoader animate={false} />'}</SyntaxCode>
+      <ContentLoader animate={false} />
+    </>
+  )
 }
 
 animate.story = {
@@ -22,18 +46,82 @@ animate.story = {
 }
 
 /**
- * Aria label
+ * Background color
  */
-export const ariaLabel = () => {
-  return <Facebook ariaLabel="my custom loader" />
+export const backgroundColor = () => {
+  return (
+    <>
+      <SyntaxCode>{'<ContentLoader backgroundColor="#333" />'}</SyntaxCode>
+      <ContentLoader backgroundColor="#333" />
+    </>
+  )
 }
 
-ariaLabel.story = {
+backgroundColor.story = {
   parameters: {
-    notes: `## \`ariaLabel?: string | boolean\`
+    notes: `## \`backgroundColor?: string\`
 
-    Defaults to \`Loading interface...\`. It's used to describe what element it is. Use \`false\` to remove.
-    `,
+    Defaults to \`#f5f6f7\` which is used as background of animation.`,
+  },
+}
+
+/**
+ * Foreground color
+ */
+export const foregroundColor = () => {
+  return (
+    <>
+      <SyntaxCode>{'<ContentLoader foregroundColor="#333" />'}</SyntaxCode>
+      <ContentLoader foregroundColor="#333" />
+    </>
+  )
+}
+
+foregroundColor.story = {
+  parameters: {
+    notes: `## \`foregroundColor?: string\`
+
+    Defaults to \`#eee\` which is used as foreground of animation.`,
+  },
+}
+
+/**
+ * Background opacity
+ */
+export const backgroundOpacity = () => {
+  return (
+    <>
+      <SyntaxCode>{'<ContentLoader backgroundOpacity="#333" />'}</SyntaxCode>
+      <ContentLoader backgroundOpacity={0.06} />
+    </>
+  )
+}
+
+backgroundOpacity.story = {
+  parameters: {
+    notes: `## \`backgroundOpacity?: number\`
+
+    Defaults to \`1\`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#bugfix-in-safari)`,
+  },
+}
+
+/**
+ * Foreground opacity
+ */
+export const foregroundOpacity = () => {
+  return (
+    <>
+      <SyntaxCode>{'<ContentLoader foregroundOpacity={0.06} />'}</SyntaxCode>
+      <ContentLoader foregroundOpacity={0.06} />
+    </>
+  )
+}
+
+foregroundOpacity.story = {
+  parameters: {
+    notes: `## \`foregroundOpacity?: number\`
+
+    Defaults to \`1\`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#bugfix-in-safari)`,
   },
 }
 
@@ -41,7 +129,12 @@ ariaLabel.story = {
  * Base URL
  */
 export const baseURL = () => {
-  return <Facebook baseUrl="path/" />
+  return (
+    <>
+      <SyntaxCode>{'<ContentLoader baseUrl="" />'}</SyntaxCode>
+      <ContentLoader baseUrl="" />
+    </>
+  )
 }
 
 baseURL.story = {
@@ -58,80 +151,27 @@ baseURL.story = {
  */
 export const children = () => {
   return (
-    <ContentLoader>
-      <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-      <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
-      <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
-    </ContentLoader>
-  )
-}
-
-children.story = { parameters: { notes: `## \`children?: ReactNode\`` } }
-
-/**
- * Speed
- */
-export const speed = () => {
-  return (
     <>
-      <Facebook speed={4} />
-      <Facebook speed={1} />
+      <p>Custom</p>
+      <SyntaxCode>{`<ContentLoader>
+  <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+  <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+  <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
+</ContentLoader>`}</SyntaxCode>
+      <ContentLoader>
+        <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+        <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />
+        <rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
+      </ContentLoader>
+
+      <p>Default</p>
+      <SyntaxCode>{`<ContentLoader />`}</SyntaxCode>
+      <ContentLoader />
     </>
   )
 }
 
-speed.story = {
-  parameters: {
-    notes: `## \`speed?: number\`
-
-    Defaults to \`2\`. Animation speed in seconds.`,
-  },
-}
-
-/**
- * Interval
- */
-export const interval = () => {
-  return <Facebook interval={0.8} />
-}
-
-interval.story = {
-  parameters: {
-    notes: `## \`interval?: number\`
-
-    Defaults to \`0.25\`. Interval of time between runs of the animation, as a fraction of the animation speed.`,
-  },
-}
-
-/**
- * Width
- */
-export const width = () => {
-  return <Facebook width={200} />
-}
-
-width.story = {
-  parameters: {
-    notes: `## \`width?: number\`
-
-    Defaults to \`400\`. It will be set in the viewbox attr in the \`<svg />\`.`,
-  },
-}
-
-/**
- * Height
- */
-export const height = () => {
-  return <Facebook height={50} />
-}
-
-height.story = {
-  parameters: {
-    notes: `## \`height?: number\`
-
-    Defaults to \`130\`. It will be set in the viewbox attr in the \`<svg />\`.`,
-  },
-}
+children.story = { parameters: { notes: `## \`children?: ReactNode\`` } }
 
 /**
  * Gradient Ratio
@@ -139,15 +179,26 @@ height.story = {
 export const gradientRatio = () => {
   return (
     <>
-      <Instagram
+      <SyntaxCode>{`<ContentLoader
+  gradientRatio={0.2}
+  backgroundColor={'#333'}
+  foregroundColor={'#999'}
+/>`}</SyntaxCode>
+      <ContentLoader
         gradientRatio={0.2}
-        primaryColor={'#333'}
-        secondaryColor={'#999'}
+        backgroundColor={'#333'}
+        foregroundColor={'#999'}
       />
-      <Instagram
+
+      <SyntaxCode>{`<ContentLoader
+  gradientRatio={4}
+  backgroundColor={'#333'}
+  foregroundColor={'#999'}
+/>`}</SyntaxCode>
+      <ContentLoader
         gradientRatio={4}
-        primaryColor={'#333'}
-        secondaryColor={'#999'}
+        backgroundColor={'#333'}
+        foregroundColor={'#999'}
       />
     </>
   )
@@ -162,10 +213,57 @@ gradientRatio.story = {
 }
 
 /**
+ * Speed
+ */
+export const speed = () => {
+  return (
+    <>
+      <SyntaxCode>{`<ContentLoader speed={4} />`}</SyntaxCode>
+      <ContentLoader speed={4} />
+      <SyntaxCode>{`<ContentLoader speed={1} />`}</SyntaxCode>
+      <ContentLoader speed={1} />
+    </>
+  )
+}
+
+speed.story = {
+  parameters: {
+    notes: `## \`speed?: number\`
+
+    Defaults to \`1.2\`. Animation speed in seconds.`,
+  },
+}
+
+/**
+ * Interval
+ */
+export const interval = () => {
+  return (
+    <>
+      <SyntaxCode>{`<ContentLoader interval={0.8} />`}</SyntaxCode>
+      <ContentLoader interval={0.8} />
+    </>
+  )
+}
+
+interval.story = {
+  parameters: {
+    notes: `## \`interval?: number\`
+
+    Defaults to \`0.25\`. Interval of time between runs of the animation, as a fraction of the animation speed.`,
+  },
+}
+
+/**
  * RTL
  */
 export const RTL = () => {
-  return <Instagram rtl />
+  return (
+    <>
+      <SyntaxCode>{`<ContentLoader rtl />`}</SyntaxCode>
+      <ContentLoader rtl />
+    </>
+  )
 }
 
 RTL.story = {
@@ -177,77 +275,55 @@ RTL.story = {
 }
 
 /**
- * Primary color
- */
-export const primaryColor = () => {
-  return <Facebook primaryColor="#333" />
-}
-
-primaryColor.story = {
-  parameters: {
-    notes: `## \`primaryColor?: string\`
-
-    Defaults to \`#f3f3f3\` which is used as background of animation.`,
-  },
-}
-
-/**
- * Secondary color
- */
-export const secondaryColor = () => {
-  return <Facebook secondaryColor="#333" />
-}
-
-secondaryColor.story = {
-  parameters: {
-    notes: `## \`secondaryColor?: string\`
-
-    Defaults to \`#ecebeb\` which is used as foreground of animation.`,
-  },
-}
-
-/**
- * Primary opacity
- */
-export const primaryOpacity = () => {
-  return <Facebook primaryOpacity={0.06} />
-}
-
-primaryOpacity.story = {
-  parameters: {
-    notes: `## \`primaryOpacity?: number\`
-
-    Defaults to \`1\`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#bugfix-in-safari)`,
-  },
-}
-
-/**
- * Secondary opacity
- */
-export const secondaryOpacity = () => {
-  return <Facebook secondaryOpacity={0.06} />
-}
-
-secondaryOpacity.story = {
-  parameters: {
-    notes: `## \`secondaryOpacity?: number\`
-
-    Defaults to \`1\`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#bugfix-in-safari)`,
-  },
-}
-
-/**
  * Unique key
  */
 export const uniqueKey = () => {
-  return <Facebook uniquekey="my-uniqye-key" />
+  return (
+    <>
+      <SyntaxCode>{`<ContentLoader uniqueKey="my-uniqye-key" />`}</SyntaxCode>
+      <ContentLoader uniqueKey="my-uniqye-key" />
+    </>
+  )
 }
 
 uniqueKey.story = {
   parameters: {
-    notes: `## \`uniquekey?: string\`
+    notes: `## \`uniqueKey?: string\`
     
     Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).`,
+  },
+}
+
+/**
+ * Responsive
+ */
+export const responsive = () => {
+  return (
+    <div style={{ width: 200, border: '1px solid #eee' }}>
+      <SyntaxCode>{"<ContentLoader style={{ width: '100%' }} />'"}</SyntaxCode>
+      <ContentLoader />
+    </div>
+  )
+}
+
+/**
+ * Title
+ */
+export const title = () => {
+  return (
+    <>
+      <SyntaxCode>{`<ContentLoader  title="Loading interface..." />`}</SyntaxCode>
+      <ContentLoader title="Loading interface..." />
+    </>
+  )
+}
+
+title.story = {
+  parameters: {
+    notes: `## \`title?: string | boolean\`
+
+    Defaults to \`Loading interface...\`. It's used to describe what element it is. Use \`false\` to remove.
+    `,
   },
 }
 
@@ -255,7 +331,15 @@ uniqueKey.story = {
  * View box
  */
 export const viewBox = () => {
-  return <Facebook viewBox="" />
+  return (
+    <>
+      <SyntaxCode>{'<ContentLoader />'}</SyntaxCode>
+      <ContentLoader />
+
+      <SyntaxCode>{'<ContentLoader viewBox="" />'}</SyntaxCode>
+      <ContentLoader viewBox="" />
+    </>
+  )
 }
 
 viewBox.story = {
@@ -265,4 +349,57 @@ viewBox.story = {
     Use viewbox props to set viewbox value.
     Additionally, pass viewBox props as empty string to remove viewBox.`,
   },
+}
+
+/**
+ * Presets
+ */
+export const presets = () => {
+  return (
+    <>
+      <SyntaxCode>{'<Facebook />'}</SyntaxCode>
+      <Facebook />
+
+      <SyntaxCode>{'<Instagram />'}</SyntaxCode>
+      <Instagram />
+
+      <SyntaxCode>{'<Code />'}</SyntaxCode>
+      <Code />
+
+      <SyntaxCode>{'<List />'}</SyntaxCode>
+      <List />
+
+      <SyntaxCode>{'<BulletList />'}</SyntaxCode>
+      <BulletList />
+    </>
+  )
+}
+
+/**
+ * Content loader vs SVG
+ */
+export const contentLoaderVsSVG = () => {
+  return (
+    <>
+      <ContentLoader viewBox="0 0 636 566">
+        <rect x="0" y="2" rx="4" ry="4" width="634" height="374" />
+        <rect x="12" y="404" rx="3" ry="3" width="259" height="18" />
+        <rect x="294" y="404" rx="3" ry="3" width="163" height="18" />
+        <rect x="12" y="441" rx="3" ry="3" width="575" height="18" />
+        <rect x="12" y="473" rx="3" ry="3" width="350" height="18" />
+        <rect x="70" y="523" rx="3" ry="3" width="251" height="18" />
+        <circle cx="37" cy="532" r="25" />
+      </ContentLoader>
+
+      <svg viewBox="0 0 636 566">
+        <rect x="0" y="2" rx="4" ry="4" width="634" height="374" />
+        <rect x="12" y="404" rx="3" ry="3" width="259" height="18" />
+        <rect x="294" y="404" rx="3" ry="3" width="163" height="18" />
+        <rect x="12" y="441" rx="3" ry="3" width="575" height="18" />
+        <rect x="12" y="473" rx="3" ry="3" width="350" height="18" />
+        <rect x="70" y="523" rx="3" ry="3" width="251" height="18" />
+        <circle cx="37" cy="532" r="25" />
+      </svg>
+    </>
+  )
 }

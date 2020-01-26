@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InstagramStyle renders correctly 1`] = `
+<Svg
+  height={460}
+  style={Object {}}
+  viewBox="0 0 400 460"
+  width={400}
+>
+  <Rect
+    clipPath="url(#InstagramStyle-animated-diff)"
+    fill="url(#InstagramStyle-diff)"
+    height="100%"
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="InstagramStyle-animated-diff"
+    >
+      <Circle
+        cx="31"
+        cy="31"
+        r="15"
+      />
+      <Rect
+        height="10"
+        rx="2"
+        ry="2"
+        width="140"
+        x="58"
+        y="18"
+      />
+      <Rect
+        height="10"
+        rx="2"
+        ry="2"
+        width="140"
+        x="58"
+        y="34"
+      />
+      <Rect
+        height="400"
+        rx="2"
+        ry="2"
+        width="400"
+        x="0"
+        y="60"
+      />
+    </ClipPath>
+    <LinearGradient
+      id="InstagramStyle-diff"
+      x1="-100%"
+      x2="100%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+      <Stop
+        offset={0}
+        stopColor="#eee"
+      />
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;

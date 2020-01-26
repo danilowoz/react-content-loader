@@ -1,8 +1,8 @@
 import * as React from 'react'
+import Svg, { ClipPath, LinearGradient, Stop } from 'react-native-svg'
 import * as renderer from 'react-test-renderer'
 
 import ContentLoader from '..'
-import Svg, { ClipPath, LinearGradient, Stop } from 'react-native-svg'
 
 interface IPredicateArgs {
   type: any

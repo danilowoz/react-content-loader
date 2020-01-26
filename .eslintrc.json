@@ -3,7 +3,8 @@
   "plugins": ["jest"],
   "rules": {
     "@typescript-eslint/interface-name-prefix": "off",
-    "@typescript-eslint/ban-ts-ignore": "off"
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "sort-exports/sort-exports": "off"
   },
   "env": {
     "jest": true

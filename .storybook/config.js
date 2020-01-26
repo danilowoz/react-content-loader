@@ -5,7 +5,7 @@ import { themes } from '@storybook/theming'
 addParameters({ options: { theme: themes.normal } })
 
 addDecorator(storyFn => (
-  <div style={{ maxWidth: '400px', margin: 'auto', fontFamily: 'sans-serif' }}>
+  <div style={{ maxWidth: '500px', margin: 'auto', fontFamily: 'sans-serif' }}>
     {storyFn()}
   </div>
 ))
