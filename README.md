@@ -55,7 +55,7 @@ CDN from [JSDELIVR](https://www.jsdelivr.com/package/npm/react-content-loader)
 
 There are two ways to use it:
 
-**1. Presets, see the [examples](#examples):**
+**1. Presets, see the [examples](https://danilowoz.com/react-content-loader/):**
 
 ```jsx
 import ContentLoader, { Facebook } from 'react-content-loader'
@@ -167,6 +167,8 @@ Defaults to an empty object.
 #### **`uniqueKey?: string`** - _Web only_
 
 Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
+
+See all options [live](https://danilowoz.com/react-content-loader/)
 
 ## Examples
 

@@ -34,6 +34,7 @@
   "scripts": {
     "dev": "start-storybook -p 6006",
     "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
+    "deploy:docs": "storybook-to-ghpages",
     "test": "npm run test:tsc && npm run test:unit && npm run build",
     "test:unit": "npm run test:unit:web && npm run test:unit:native",
     "test:unit:web": "jest -c jest.web.config.js",
@@ -62,6 +63,7 @@
     "@storybook/addon-notes": "5.2.8",
     "@storybook/addons": "5.2.8",
     "@storybook/react": "5.2.8",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@types/jest": "24.0.24",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
