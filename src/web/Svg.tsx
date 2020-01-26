@@ -12,15 +12,12 @@ const SVG: React.FC<IContentLoaderProps> = ({
   foregroundColor,
   foregroundOpacity,
   gradientRatio,
-  height,
   uniqueKey,
   interval,
   rtl,
   speed,
   style,
   title,
-  width,
-  viewBox = `0 0 ${width} ${height}`,
   ...props
 }) => {
   const fixedId = uniqueKey || uid()
@@ -31,16 +28,12 @@ const SVG: React.FC<IContentLoaderProps> = ({
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
   const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`
-  const [_vbX, _vbY, vbWidth = width, vbHeight = height] = viewBox.split(' ')
 
   return (
     <svg
-      style={{ ...style, ...rtlStyle }}
-      role="img"
       aria-labelledby={idAria}
-      width={width}
-      height={height}
-      viewBox={viewBox}
+      role="img"
+      style={{ ...style, ...rtlStyle }}
       {...props}
     >
       {title ? <title id={idAria}>{title}</title> : null}
@@ -48,8 +41,8 @@ const SVG: React.FC<IContentLoaderProps> = ({
         role="presentation"
         x="0"
         y="0"
-        width={parseInt(vbWidth as string)}
-        height={parseInt(vbHeight as string)}
+        width="100%"
+        height="100%"
         clipPath={`url(${baseUrl}#${idClip})`}
         style={{ fill: `url(${baseUrl}#${idGradient})` }}
       />
@@ -114,20 +107,18 @@ const SVG: React.FC<IContentLoaderProps> = ({
 
 SVG.defaultProps = {
   animate: true,
-  backgroundColor: '#f0f0f0',
+  backgroundColor: '#f5f6f7',
   backgroundOpacity: 1,
   baseUrl: '',
-  foregroundColor: '#e0e0e0',
+  foregroundColor: '#eee',
   foregroundOpacity: 1,
   gradientRatio: 2,
-  height: 130,
   id: null,
   interval: 0.25,
   rtl: false,
-  speed: 2,
+  speed: 1.2,
   style: {},
   title: 'Loading...',
-  width: 400,
 }
 
 export default SVG
