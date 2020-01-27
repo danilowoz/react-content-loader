@@ -180,7 +180,7 @@ import { Facebook } from 'react-content-loader'
 const MyFacebookLoader = () => <Facebook />
 ```
 
-![Facebook Style](https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif)
+<img alt="Facebook Style" src="https://user-images.githubusercontent.com/4838076/73212460-328f7500-4146-11ea-99e7-e19cd4e07a51.png" width="500px" />
 
 ##### Instagram Style
 
@@ -190,7 +190,7 @@ import { Instagram } from 'react-content-loader'
 const MyInstagramLoader = () => <Instagram />
 ```
 
-![Instagram Style](https://cloud.githubusercontent.com/assets/4838076/22555637/749f9e26-e94b-11e6-84ff-83cd415c1eb9.gif)
+<img alt="Instagram Style" src="https://user-images.githubusercontent.com/4838076/73212462-328f7500-4146-11ea-98dc-3a6aeafd4a26.png" width="500px" />
 
 ##### Code Style
 
@@ -200,7 +200,7 @@ import { Code } from 'react-content-loader'
 const MyCodeLoader = () => <Code />
 ```
 
-![Code Style](https://cloud.githubusercontent.com/assets/4838076/22555473/effa54c2-e94a-11e6-9128-9b608bcc69d9.gif)
+<img alt="Code Style" src="https://user-images.githubusercontent.com/4838076/73212459-328f7500-4146-11ea-89b0-1b7bbae8047b.png" width="500px" />
 
 ##### List Style
 
@@ -210,7 +210,7 @@ import { List } from 'react-content-loader'
 const MyListLoader = () => <List />
 ```
 
-![List Style](https://user-images.githubusercontent.com/4838076/36352948-b8931430-149e-11e8-9f4b-3f00bc444a6d.gif)
+<img alt="List Style" src="https://user-images.githubusercontent.com/4838076/73212463-33280b80-4146-11ea-9f93-95c2cbdef17b.png" width="500px" />
 
 ##### Bullet list Style
 
@@ -220,7 +220,7 @@ import { BulletList } from 'react-content-loader'
 const MyBulletListLoader = () => <BulletList />
 ```
 
-![Bullet list Style](https://user-images.githubusercontent.com/4838076/31998372-59817bac-b96e-11e7-8ef8-07f61670ee18.gif)
+<img alt="Bullet list Style" src="https://user-images.githubusercontent.com/4838076/73212458-328f7500-4146-11ea-826f-576059c4644e.png" width="500px" />
 
 ### Custom Style
 
