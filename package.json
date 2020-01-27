@@ -11,7 +11,7 @@
   "main": "dist/react-content-loader.cjs.js",
   "module": "dist/react-content-loader.es.js",
   "jsnext:main": "dist/react-content-loader.es.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/web/index.d.ts",
   "bugs": {
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
