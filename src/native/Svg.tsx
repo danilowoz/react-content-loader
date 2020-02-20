@@ -79,8 +79,8 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
     const offset2 = offsetValueBound(this.state.offset)
     const offset3 = offsetValueBound(this.state.offset + 1)
 
-    const rtlStyle = rtl ? { transform: [{ rotateY: '180deg' }] } : {}
-    const composedStyle = Object.assign(style, rtlStyle)
+    const rtlStyle: object = rtl ? { transform: [{ rotateY: '180deg' }] } : {}
+    const svgStyle = Object.assign(Object.assign({}, style), rtlStyle)
 
     // Remove unnecessary keys
     delete props.uniqueKey
@@ -88,7 +88,7 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
     delete props.speed
 
     return (
-      <Svg style={composedStyle} {...props}>
+      <Svg style={svgStyle} {...props}>
         <Rect
           x="0"
           y="0"
