@@ -1,7 +1,4 @@
 <p align="center">
-  <a href="https://www.react-europe.org/"><img alt="react-europe-badge" src="https://img.shields.io/badge/join%20us%20at-ReactEurope-blue"/></a>
-</p>
-<p align="center">
   <img width="350" alt="react-content-loader" src="https://user-images.githubusercontent.com/4838076/34419335-5669c3f8-ebea-11e7-9668-c47b7846970b.png"/>
 </p>
 <p align="center">
@@ -27,7 +24,7 @@ SVG-Powered component to easily create placeholder loadings (like Facebo
 - [Examples](#examples)
 - [Similar packages](#similarpackages)
 - [Development](#development)
-- [Known Issues](#knownissues)
+- [Troubleshooting](#troubleshooting)
 
 ## Getting Started
 
@@ -138,7 +135,7 @@ Use viewBox props to set a custom viewBox value, for more information about how 
 
 #### **`gradientRatio?: number`** - _Web only_
 
-Defaults to `1.2`. Width of the animated gradient as a fraction of the viewbox width.
+Defaults to `1.2`. Width of the animated gradient as a fraction of the view box width.
 
 #### **`rtl?: boolean`**
 
@@ -154,11 +151,11 @@ Defaults to `#eee` which is used as the foreground of animation.
 
 #### **`backgroundOpacity?: number`** - _Web only_
 
-Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve an issue in [Safari](#safari--ios)
 
 #### **`foregroundOpacity?: number`** - _Web only_
 
-Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve an issue in [Safari](#safari--ios)
 
 #### **`style?: React.CSSProperties`**
 
@@ -281,15 +278,24 @@ $ git clone git@github.com:YourUsername/react-content-loader.git && cd rea
 
 Commit messages should follow the [commit message convention](https://conventionalcommits.org/) so, changelogs could be generated automatically by that. Commit messages are validated automatically upon commit. If you aren't familiar with the commit message convention, you can use yarn commit (or `npm run commit`) instead of git commit, which provides an interactive CLI for generating proper commit messages.
 
-## License
+## Troubleshooting
 
-[MIT](https://github.com/danilowoz/react-content-loader/blob/master/LICENSE)
+#### Server-side rendering (SSR) - Match snapshot
 
-## Known Issues
+As the main component generates random values to match the id of the SVG element with background style, it can encounter unexpected errors and unmatching warning on render, once the random value of id will be generated twice, in case of SSR: server and client; or in case of snapshot test: on the first match and re-running the test.
 
-##### **Alpha is not working: Safari / iOS**
+To fix it, set the prop [`uniqueKey`](https://github.com/danilowoz/react-content-loader#uniquekey-string---web-only), then the id will not be random anymore:
 
-When using `rgba` as a `backgroundColor` or `foregroundColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `backgroundColor`/`foregroundColor`, use the `rgb` equivalent and move the alpha channel value to the `backgroundOpacity`/`foregroundOpacity` props.
+```jsx
+import { Facebook } from 'react-content-loader'
+
+const MyFacebookLoader = () => <Facebook uniqueKey="my-random-valye" />
+```
+
+
+#### **Alpha is not working: Safari / iOS**
+
+When using `rgba` as a `backgroundColor` or `foregroundColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using a `rgba` value for `backgroundColor`/`foregroundColor`, use the `rgb` equivalent and move the alpha channel value to the `backgroundOpacity`/`foregroundOpacity` props.
 
 ```jsx
 {/* Opaque color in Safari and iOS */}
@@ -308,10 +314,14 @@ When using `rgba` as a `backgroundColor` or `foregroundColor` value, [S
 
 ```
 
-##### **Black box in Safari / iOS (again)**
+#### **Black box in Safari / iOS (again)**
 
-Using base tag on a page that contains SVG elements fails to render and it looks like a black box. Just remove the **base-href** tag from the `<head />` and issue solved.
+Using the base tag on a page that contains SVG elements fails to render and it looks like a black box. Just remove the **base-href** tag from the `<head />` and issue solved.
 
-![](https://user-images.githubusercontent.com/11562881/39406054-2f308de6-4bce-11e8-91fb-bbb35e29fc10.png)
+<img width="350" src="https://user-images.githubusercontent.com/11562881/39406054-2f308de6-4bce-11e8-91fb-bbb35e29fc10.png" alt="black box" />
 
 See: [#93](https://github.com/danilowoz/react-content-loader/issues/93) / [109](https://github.com/danilowoz/react-content-loader/issues/109)
+
+## License
+
+[MIT](https://github.com/danilowoz/react-content-loader/blob/master/LICENSE)
