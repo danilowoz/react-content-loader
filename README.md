@@ -22,9 +22,9 @@ SVG-Powered component to easily create placeholder loadings (like Facebo
   - [Native](#native)
 - [Options](#options)
 - [Examples](#examples)
+- [Troubleshooting](#troubleshooting)
 - [Similar packages](#similarpackages)
 - [Development](#development)
-- [Troubleshooting](#troubleshooting)
 
 ## Getting Started
 
@@ -241,42 +241,7 @@ const MyLoader = () => (
 )
 ```
 
----
-
 ![Custom](https://user-images.githubusercontent.com/4838076/36352947-b87019a8-149e-11e8-99ba-c71c2bcf8733.gif)
-
-## Similar packages
-
-- React Native: [rn-placeholder](https://github.com/mfrachet/rn-placeholder), [react-native-svg-animated-linear-gradient](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
-- [Preact](https://github.com/bonitasoft/preact-content-loader);
-- Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
-- Angular: [ngx-content-loading](https://github.com/Gbuomprisco/ngx-content-loading), [ngx-content-loader](https://github.com/NetanelBasal/ngx-content-loader).
-
-## Development
-
-Fork the repo then clone it
-
-```
-$ git clone git@github.com:YourUsername/react-content-loader.git && cd react-content-loader
-```
-
-`$ npm i`: Install the dependencies;
-
-`$ npm run build`: Build to production;
-
-`$ npm run dev`: Run the docz to see your changes;
-
-`$ npm run test`: Run all tests: type checking, unit tests on web and native;
-
-`$ yarn test:watch`: Watch unit tests;
-
-`$ yarn tsc`: Typescript checking;
-
-`$ yarn tsc:watch`: Typescript checking with watching;
-
-### Commit messages
-
-Commit messages should follow the [commit message convention](https://conventionalcommits.org/) so, changelogs could be generated automatically by that. Commit messages are validated automatically upon commit. If you aren't familiar with the commit message convention, you can use yarn commit (or `npm run commit`) instead of git commit, which provides an interactive CLI for generating proper commit messages.
 
 ## Troubleshooting
 
@@ -321,6 +286,41 @@ Using the base tag on a page that contains SVG elements fails to ren
 <img width="350" src="https://user-images.githubusercontent.com/11562881/39406054-2f308de6-4bce-11e8-91fb-bbb35e29fc10.png" alt="black box" />
 
 See: [#93](https://github.com/danilowoz/react-content-loader/issues/93) / [109](https://github.com/danilowoz/react-content-loader/issues/109)
+
+## Similar packages
+
+- React Native: [rn-placeholder](https://github.com/mfrachet/rn-placeholder), [react-native-svg-animated-linear-gradient](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
+- [Preact](https://github.com/bonitasoft/preact-content-loader);
+- Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
+- Angular: [ngx-content-loading](https://github.com/Gbuomprisco/ngx-content-loading), [ngx-content-loader](https://github.com/NetanelBasal/ngx-content-loader).
+
+----
+
+## Development
+
+Fork the repo then clone it
+
+```
+$ git clone git@github.com:YourUsername/react-content-loader.git && cd react-content-loader
+```
+
+`$ npm i`: Install the dependencies;
+
+`$ npm run build`: Build to production;
+
+`$ npm run dev`: Run the docz to see your changes;
+
+`$ npm run test`: Run all tests: type checking, unit tests on web and native;
+
+`$ yarn test:watch`: Watch unit tests;
+
+`$ yarn tsc`: Typescript checking;
+
+`$ yarn tsc:watch`: Typescript checking with watching;
+
+### Commit messages
+
+Commit messages should follow the [commit message convention](https://conventionalcommits.org/) so, changelogs could be generated automatically by that. Commit messages are validated automatically upon commit. If you aren't familiar with the commit message convention, you can use yarn commit (or `npm run commit`) instead of git commit, which provides an interactive CLI for generating proper commit messages.
 
 ## License
 
