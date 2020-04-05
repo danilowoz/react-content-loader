@@ -1,7 +1,4 @@
 <p align="center">
-  <a href="https://www.react-europe.org/"><img alt="react-europe-badge" src="https://img.shields.io/badge/join%20us%20at-ReactEurope-blue"/></a>
-</p>
-<p align="center">
   <img width="350" alt="react-content-loader" src="https://user-images.githubusercontent.com/4838076/34419335-5669c3f8-ebea-11e7-9668-c47b7846970b.png"/>
 </p>
 <p align="center">
@@ -25,9 +22,9 @@ SVG-Powered component to easily create placeholder loadings (like Facebo
   - [Native](#native)
 - [Options](#options)
 - [Examples](#examples)
+- [Troubleshooting](#troubleshooting)
 - [Similar packages](#similarpackages)
 - [Development](#development)
-- [Known Issues](#knownissues)
 
 ## Getting Started
 
@@ -138,7 +135,7 @@ Use viewBox props to set a custom viewBox value, for more information about how 
 
 #### **`gradientRatio?: number`** - _Web only_
 
-Defaults to `1.2`. Width of the animated gradient as a fraction of the viewbox width.
+Defaults to `1.2`. Width of the animated gradient as a fraction of the view box width.
 
 #### **`rtl?: boolean`**
 
@@ -154,11 +151,11 @@ Defaults to `#eee` which is used as the foreground of animation.
 
 #### **`backgroundOpacity?: number`** - _Web only_
 
-Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+Defaults to `1`. Background opacity (0 = transparent, 1 = opaque) used to solve an issue in [Safari](#safari--ios)
 
 #### **`foregroundOpacity?: number`** - _Web only_
 
-Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#safari--ios)
+Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used to solve an issue in [Safari](#safari--ios)
 
 #### **`style?: React.CSSProperties`**
 
@@ -244,9 +241,51 @@ const MyLoader = () => (
 )
 ```
 
----
-
 ![Custom](https://user-images.githubusercontent.com/4838076/36352947-b87019a8-149e-11e8-99ba-c71c2bcf8733.gif)
+
+## Troubleshooting
+
+#### Server-side rendering (SSR) - Match snapshot
+
+As the main component generates random values to match the id of the SVG element with background style, it can encounter unexpected errors and unmatching warning on render, once the random value of id will be generated twice, in case of SSR: server and client; or in case of snapshot test: on the first match and re-running the test.
+
+To fix it, set the prop [`uniqueKey`](https://github.com/danilowoz/react-content-loader#uniquekey-string---web-only), then the id will not be random anymore:
+
+```jsx
+import { Facebook } from 'react-content-loader'
+
+const MyFacebookLoader = () => <Facebook uniqueKey="my-random-valye" />
+```
+
+
+#### **Alpha is not working: Safari / iOS**
+
+When using `rgba` as a `backgroundColor` or `foregroundColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using a `rgba` value for `backgroundColor`/`foregroundColor`, use the `rgb` equivalent and move the alpha channel value to the `backgroundOpacity`/`foregroundOpacity` props.
+
+```jsx
+{/* Opaque color in Safari and iOS */}
+<ContentLoader
+  backgroundColor="rgba(0,0,0,0.06)"
+  foregroundColor="rgba(0,0,0,0.12)">
+
+
+{/_ Semi-transparent color in Safari and iOS _/}
+<ContentLoader
+    backgroundColor="rgb(0,0,0)"
+    foregroundColor="rgb(0,0,0)"
+    backgroundOpacity={0.06}
+    foregroundOpacity={0.12}>
+
+
+```
+
+#### **Black box in Safari / iOS (again)**
+
+Using the base tag on a page that contains SVG elements fails to render and it looks like a black box. Just remove the **base-href** tag from the `<head />` and issue solved.
+
+<img width="350" src="https://user-images.githubusercontent.com/11562881/39406054-2f308de6-4bce-11e8-91fb-bbb35e29fc10.png" alt="black box" />
+
+See: [#93](https://github.com/danilowoz/react-content-loader/issues/93) / [109](https://github.com/danilowoz/react-content-loader/issues/109)
 
 ## Similar packages
 
@@ -254,6 +293,8 @@ const MyLoader = () => (
 - [Preact](https://github.com/bonitasoft/preact-content-loader);
 - Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
 - Angular: [ngx-content-loading](https://github.com/Gbuomprisco/ngx-content-loading), [ngx-content-loader](https://github.com/NetanelBasal/ngx-content-loader).
+
+----
 
 ## Development
 
@@ -284,34 +325,3 @@ Commit messages should follow the [commit message convention](https://con
 ## License
 
 [MIT](https://github.com/danilowoz/react-content-loader/blob/master/LICENSE)
-
-## Known Issues
-
-##### **Alpha is not working: Safari / iOS**
-
-When using `rgba` as a `backgroundColor` or `foregroundColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using an `rgba` value for `backgroundColor`/`foregroundColor`, use the `rgb` equivalent and move the alpha channel value to the `backgroundOpacity`/`foregroundOpacity` props.
-
-```jsx
-{/* Opaque color in Safari and iOS */}
-<ContentLoader
-  backgroundColor="rgba(0,0,0,0.06)"
-  foregroundColor="rgba(0,0,0,0.12)">
-
-
-{/_ Semi-transparent color in Safari and iOS _/}
-<ContentLoader
-    backgroundColor="rgb(0,0,0)"
-    foregroundColor="rgb(0,0,0)"
-    backgroundOpacity={0.06}
-    foregroundOpacity={0.12}>
-
-
-```
-
-##### **Black box in Safari / iOS (again)**
-
-Using base tag on a page that contains SVG elements fails to render and it looks like a black box. Just remove the **base-href** tag from the `<head />` and issue solved.
-
-![](https://user-images.githubusercontent.com/11562881/39406054-2f308de6-4bce-11e8-91fb-bbb35e29fc10.png)
-
-See: [#93](https://github.com/danilowoz/react-content-loader/issues/93) / [109](https://github.com/danilowoz/react-content-loader/issues/109)
