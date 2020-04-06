@@ -52,12 +52,6 @@ class NativeSvg extends Component<IContentLoaderProps> {
     }
   }
 
-  componentWillUnmount = () => {
-    if (this.props.animate) {
-      this.animatedValue.removeAllListeners()
-    }
-  }
-
   render() {
     const {
       children,

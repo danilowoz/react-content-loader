@@ -62,8 +62,8 @@ exports[`FacebookStyle renders correctly 1`] = `
     </ClipPath>
     <LinearGradient
       id="FacebookStyle-diff"
-      x1="-100%"
-      x2="100%"
+      x1="-33.33333333333334%"
+      x2="66.66666666666666%"
       y1={0}
       y2={0}
     >
@@ -72,11 +72,11 @@ exports[`FacebookStyle renders correctly 1`] = `
         stopColor="#f5f6f7"
       />
       <Stop
-        offset={0}
+        offset={0.5}
         stopColor="#eee"
       />
       <Stop
-        offset={0}
+        offset={1}
         stopColor="#f5f6f7"
       />
     </LinearGradient>
