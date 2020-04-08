@@ -10,9 +10,10 @@ import Svg, {
 
 import uid from '../shared/uid'
 import { IContentLoaderProps } from './'
-import offsetValueBound from './offsetValueBound'
 
-class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
+const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient)
+
+class NativeSvg extends Component<IContentLoaderProps> {
   static defaultProps = {
     animate: true,
     backgroundColor: '#f5f6f7',
@@ -21,8 +22,6 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
     speed: 1.2,
     style: {},
   }
-
-  state = { offset: -1 }
 
   animatedValue = new Animated.Value(0)
 
@@ -50,18 +49,6 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
   componentDidMount = () => {
     if (this.props.animate) {
       this.setAnimation()
-
-      this.animatedValue.addListener(({ value }) => {
-        this.setState({
-          offset: value,
-        })
-      })
-    }
-  }
-
-  componentWillUnmount = () => {
-    if (this.props.animate) {
-      this.animatedValue.removeAllListeners()
     }
   }
 
@@ -75,9 +62,17 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
       ...props
     } = this.props
 
-    const offset1 = offsetValueBound(this.state.offset - 1)
-    const offset2 = offsetValueBound(this.state.offset)
-    const offset3 = offsetValueBound(this.state.offset + 1)
+    const x1Animation = this.animatedValue.interpolate({
+      extrapolate: 'clamp',
+      inputRange: [-1, 2],
+      outputRange: ['-100%', '100%'],
+    })
+
+    const x2Animation = this.animatedValue.interpolate({
+      extrapolate: 'clamp',
+      inputRange: [-1, 2],
+      outputRange: ['0%', '200%'],
+    })
 
     const rtlStyle: object = rtl ? { transform: [{ rotateY: '180deg' }] } : {}
     const svgStyle = Object.assign(Object.assign({}, style), rtlStyle)
@@ -101,17 +96,17 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
         <Defs>
           <ClipPath id={this.idGradient}>{children}</ClipPath>
 
-          <LinearGradient
+          <AnimatedLinearGradient
             id={this.idClip}
-            x1={'-100%'}
+            x1={x1Animation}
+            x2={x2Animation}
             y1={0}
-            x2={'100%'}
             y2={0}
           >
-            <Stop offset={offset1} stopColor={backgroundColor} />
-            <Stop offset={offset2} stopColor={foregroundColor} />
-            <Stop offset={offset3} stopColor={backgroundColor} />
-          </LinearGradient>
+            <Stop offset={0} stopColor={backgroundColor} />
+            <Stop offset={0.5} stopColor={foregroundColor} />
+            <Stop offset={1} stopColor={backgroundColor} />
+          </AnimatedLinearGradient>
         </Defs>
       </Svg>
     )
