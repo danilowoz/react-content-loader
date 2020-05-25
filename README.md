@@ -287,6 +287,14 @@ Using the base tag on a page that contains SVG elements fails to ren
 
 See: [#93](https://github.com/danilowoz/react-content-loader/issues/93) / [109](https://github.com/danilowoz/react-content-loader/issues/109)
 
+#### Browser supports SVG-Animate
+
+Old browser doesn't support animation in SVG, and if your project must support IE for examples, here's a couple of ways to make sure that browser supports SVG Animate:
+
+- `window.SVGAnimateElement`
+- `document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#SVG-Animation", "1.1")`
+- Or even use https://modernizr.com/
+
 ## Similar packages
 
 - React Native: [rn-placeholder](https://github.com/mfrachet/rn-placeholder), [react-native-svg-animated-linear-gradient](https://github.com/virusvn/react-native-svg-animated-linear-gradient);
