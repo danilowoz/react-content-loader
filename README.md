@@ -245,6 +245,23 @@ const MyLoader = () => (
 
 ## Troubleshooting
 
+#### Responsive - Mobile version
+
+In order to avoid unexpected behavior, the package doesn't have opinioned settings. So if it needs to be responsive, have in mind that the output of package is a regular SVG, so it just needs the same attributes to become a regular SVG responsive, which means:
+
+```jsx
+import { Code } from 'react-content-loader'
+
+const MyCodeLoader = () => (
+ <Code 
+   width={100} 
+   height={100} 
+   viewBox="0 0 100 100" 
+   style={{ width: "100%" }}
+ />
+)
+```
+
 #### Server-side rendering (SSR) - Match snapshot
 
 As the main component generates random values to match the id of the SVG element with background style, it can encounter unexpected errors and unmatching warning on render, once the random value of id will be generated twice, in case of SSR: server and client; or in case of snapshot test: on the first match and re-running the test.
