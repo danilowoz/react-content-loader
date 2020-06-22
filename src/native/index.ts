@@ -17,5 +17,5 @@ export { default as Code } from './presets/CodeStyle'
 export { default as List } from './presets/ListStyle'
 export { default as BulletList } from './presets/BulletListStyle'
 
-export { Circle, Rect } from './ContentLoader'
+export { Circle, Rect, Path } from './ContentLoader'
 export default ContentLoader
