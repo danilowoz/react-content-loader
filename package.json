@@ -129,5 +129,8 @@
       "path": "./native/react-content-loader.native.es.js",
       "maxSize": "3 kB"
     }
-  ]
+  ],
+  "engines": {
+    "node": ">=10"
+  }
 }
