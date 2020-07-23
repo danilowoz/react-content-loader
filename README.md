@@ -11,7 +11,7 @@ SVG-Powered component to easily create placeholder loadings (like Facebo
 
 - :gear: **Customizable:** Feel free to change the colors, speed, sizes and even **RTL**;
 - :ok_hand: **Plug and play:** with many presets to use, see the [examples](http://danilowoz.com/create-content-loader/#gallery);
-- :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.github.io/create-content-loader/) to create your own custom loaders easily;
+- :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.com/create-content-loader) to create your own custom loaders easily;
 - 📱 **React Native support**: same API, as same powerful features;
 - ⚛️ **Really lightweight:** less than **2kB** and **0 dependencies** for web version;
 
@@ -61,7 +61,7 @@ const MyLoader = () => <ContentLoader />
 const MyFacebookLoader = () => <Facebook />
 ```
 
-**2. Custom mode, see the [online tool](https://danilowoz.github.io/create-react-content-loader/)**
+**2. Custom mode, see the [online tool](https://danilowoz.com/create-content-loader)**
 
 ```jsx
 const MyLoader = () => (
@@ -222,7 +222,7 @@ const MyBulletListLoader = () => <BulletList />
 ### Custom Style
 
 For the custom mode, use the
-[online tool](https://danilowoz.github.io/create-react-content-loader/).
+[online tool](https://danilowoz.com/create-content-loader).
 
 ```jsx
 const MyLoader = () => (
