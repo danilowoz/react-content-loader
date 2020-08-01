@@ -108,22 +108,22 @@ const MyLoader = () => (
 
 ## Options
 
-| Prop                                      | Default                | Description                                                                                                                                                                                                                                                                               |
-| ----------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `animate?: boolean`                       | `true`                 | Opt-out of animations with `false`                                                                                                                                                                                                                                                        |
-| `title?: string` - _Web only_             | `Loading interface...` | It's used to describe what element it is. Use ''(empty string) to remove.                                                                                                                                                                                                                 |
-| `baseUrl?: string` - _Web only_           | empty string           | Required if you're using `<base url="/" />` document `<head/>`. This prop is common used as: `<ContentLoader baseUrl={window.location.pathname} />` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93). |
-| `speed?: number`                          | `1.2`                  | Animation speed in seconds.                                                                                                                                                                                                                                                               |
-| `interval?: number` - _Web only_          | `0.25`                 | Interval of time between runs of the animation, as a fraction of the animation speed.                                                                                                                                                                                                     |
-| `viewBox?: string`                        |                        | Use viewBox props to set a custom viewBox value, for more information about how to use it, read the article [How to Scale SVG](https://css-tricks.com/scale-svg/).                                                                                                                        |
-| `gradientRatio?: number` - _Web only_     | `1.2`                  | Width of the animated gradient as a fraction of the view box width.                                                                                                                                                                                                                       |
-| `rtl?: boolean`                           | `false`                | Content right-to-left.                                                                                                                                                                                                                                                                    |
-| `backgroundColor?: string`                | `#f5f6f7`              | used as background of animation.                                                                                                                                                                                                                                                          |
-| `foregroundColor?: string`                | `#eee`                 | used as the foreground of animation.                                                                                                                                                                                                                                                      |
-| `backgroundOpacity?: number` - _Web only_ | `1`                    |  Background opacity (0 = transparent, 1 = opaque) used to solve an issue in [Safari](#safari--ios)                                                                                                                                                                                        |
-| `foregroundOpacity?: number` - _Web only_ | `1`                    | Animation opacity (0 = transparent, 1 = opaque) used to solve an issue in [Safari](#safari--ios)                                                                                                                                                                                          |
-| `style?: React.CSSProperties`             | `{}`                   |                                                                                                                                                                                                                                                                                           |
-| `uniqueKey?: string` - _Web only_         | random unique id       | Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).                                                                                                                                   |
+| <div style="width:250px">Prop name and type</div>             | Environment                | Description                                                                                                                                                                                                                                                                                         |
+| ------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`animate?: boolean`** <br/> Defaults to `true`              | React DOM<br/>React Native | Opt-out of animations with `false`                                                                                                                                                                                                                                                                  |
+| **`title?: string`** <br/> Defaults to `Loading interface...` | React DOM only             | It's used to describe what element it is. <br />Use `''` (empty string) to remove.                                                                                                                                                                                                                  |
+| **`baseUrl?: string`**<br /> Defaults to an empty string      | React DOM only             | Required if you're using `<base url="/" />` document `<head/>`. <br/>This prop is common used as: <br/>`<ContentLoader baseUrl={window.location.pathname} />` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93). |
+| **`speed?: number`** <br /> Defaults to `1.2`                 | React DOM<br/>React Native | Animation speed in seconds.                                                                                                                                                                                                                                                                         |
+| **`interval?: number`** <br /> Defaults to `0.25`             | React DOM only             | Interval of time between runs of the animation, <br/>as a fraction of the animation speed.                                                                                                                                                                                                          |
+| **`viewBox?: string`** <br /> Defaults to `undefined`         | React DOM<br/>React Native | Use viewBox props to set a custom viewBox value, <br/>for more information about how to use it, <br/>read the article [How to Scale SVG](https://css-tricks.com/scale-svg/).                                                                                                                        |
+| **`gradientRatio?: number`** <br /> Defaults to `1.2`         | React DOM only             | Width of the animated gradient as a fraction of the view box width.                                                                                                                                                                                                                                 |
+| **`rtl?: boolean`** <br /> Defaults to `false`                | React DOM<br/>React Native | Content right-to-left.                                                                                                                                                                                                                                                                              |
+| **`backgroundColor?: string`** <br /> Defaults to `#f5f6f7`   | React DOM<br/>React Native | Used as background of animation.                                                                                                                                                                                                                                                                    |
+| **`foregroundColor?: string`** <br /> Defaults to `#eee`      | React DOM<br/>React Native | Used as the foreground of animation.                                                                                                                                                                                                                                                                |
+| **`backgroundOpacity?: number`** <br /> Defaults to `1`       | React DOM only             | Background opacity (0 = transparent, 1 = opaque)<br/>used to solve an issue in [Safari](#safari--ios)                                                                                                                                                                                               |
+| **`foregroundOpacity?: number`** <br /> Defaults to `1`       | React DOM only             | Animation opacity (0 = transparent, 1 = opaque)<br/>used to solve an issue in [Safari](#safari--ios)                                                                                                                                                                                                |
+| **`style?: React.CSSProperties`** <br /> Defaults to `{}`     | React DOM only             |                                                                                                                                                                                                                                                                                                     |
+| **`uniqueKey?: string`** <br /> Defaults to random unique id  | React DOM only             | Use the same value of prop key, <br/>that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).                                                                                                                                        |
 
 See all options [live](https://danilowoz.com/react-content-loader/)
 
@@ -213,12 +213,12 @@ In order to avoid unexpected behavior, the package doesn't have opinioned settin
 import { Code } from 'react-content-loader'
 
 const MyCodeLoader = () => (
- <Code 
-   width={100} 
-   height={100} 
-   viewBox="0 0 100 100" 
-   style={{ width: "100%" }}
- />
+  <Code
+    width={100}
+    height={100}
+    viewBox="0 0 100 100"
+    style={{ width: '100%' }}
+  />
 )
 ```
 
@@ -233,7 +233,6 @@ import { Facebook } from 'react-content-loader'
 
 const MyFacebookLoader = () => <Facebook uniqueKey="my-random-valye" />
 ```
-
 
 #### **Alpha is not working: Safari / iOS**
 
@@ -279,7 +278,7 @@ Old browser doesn't support animation in SVG ([compatibility list](https://caniu
 - Vue.js: [vue-content-loading](https://github.com/LucasLeandro1204/vue-content-loading), [vue-content-loader](https://github.com/egoist/vue-content-loader);
 - Angular: [ngx-content-loading](https://github.com/Gbuomprisco/ngx-content-loading), [ngx-content-loader](https://github.com/NetanelBasal/ngx-content-loader).
 
-----
+---
 
 ## Development
 
