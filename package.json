@@ -75,7 +75,7 @@
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
     "bundlesize": "0.18.0",
-    "commitizen": "^4.1.2",
+    "commitizen": "^4.2.1",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "6.8.0",
     "eslint-plugin-jest": "23.1.1",
