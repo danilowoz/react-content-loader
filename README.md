@@ -5,8 +5,6 @@
   <img width="400" alt="Example's react-content-loader" src="https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif" />
 </p>
 
-<img src="https://static.scarf.sh/a.png?x-pxid=5347e4c2-02d0-4d78-8346-cdb3cd181241" />
-
 SVG-Powered component to easily create placeholder loadings (like Facebook's cards loading).
 
 ## Features
