@@ -55,7 +55,7 @@
     "@babel/preset-react": "7.7.4",
     "@babel/register": "7.7.7",
     "@babel/runtime": "7.7.7",
-    "@commitlint/cli": "8.2.0",
+    "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "8.2.0",
     "@significa/eslint-config": "0.0.9",
     "@significa/prettier-config": "0.0.9",
@@ -97,7 +97,7 @@
     "rollup-plugin-typescript2": "0.25.3",
     "rollup-plugin-uglify": "6.0.4",
     "semantic-release": "15.14.0",
-    "ts-jest": "24.2.0",
+    "ts-jest": "^26.4.0",
     "typescript": "3.7.4"
   },
   "peerDependencies": {
