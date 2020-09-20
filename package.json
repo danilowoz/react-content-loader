@@ -34,7 +34,7 @@
     "dev": "start-storybook -p 6006",
     "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
     "deploy:docs": "storybook-to-ghpages",
-    "test": "npm run test:tsc && npm run test:unit && npm run build",
+    "test": "npm run test:tsc && npm run test:unit",
     "test:unit": "npm run test:unit:web && npm run test:unit:native",
     "test:unit:web": "jest -c jest.web.config.js",
     "test:unit:native": "jest -c jest.native.config.js",
