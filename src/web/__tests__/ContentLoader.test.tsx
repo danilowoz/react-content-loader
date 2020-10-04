@@ -36,13 +36,9 @@ describe('ContentLoader', () => {
       <ContentLoader
         animate={false}
         backgroundColor="#000"
-        backgroundOpacity={0.06}
-        baseUrl="/mypage"
-        foregroundColor="#fff"
-        foregroundOpacity={0.12}
         gradientRatio={0.5}
         height={200}
-        interval={0.5}
+        delay={0.5}
         preserveAspectRatio="xMaxYMax meet"
         rtl
         speed={10}
@@ -124,24 +120,6 @@ describe('ContentLoader', () => {
       expect(propsFromFullfield.foregroundColor).toBe('#fff')
     })
 
-    it("`backgroundOpacity` is a number and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.backgroundOpacity).toBe('number')
-      expect(propsFromEmpty.backgroundOpacity).toBe(1)
-      // custom props
-      expect(typeof propsFromFullfield.backgroundOpacity).toBe('number')
-      expect(propsFromFullfield.backgroundOpacity).toBe(0.06)
-    })
-
-    it("`foregroundOpacity` is a number and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.foregroundOpacity).toBe('number')
-      expect(propsFromEmpty.foregroundOpacity).toBe(1)
-      // custom props
-      expect(typeof propsFromFullfield.foregroundOpacity).toBe('number')
-      expect(propsFromFullfield.foregroundOpacity).toBe(0.12)
-    })
-
     it("`preserveAspectRatio` is a string and it's used", () => {
       // custom props
       expect(typeof propsFromFullfield.preserveAspectRatio).toBe('string')
@@ -171,15 +149,6 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.title).toBe('string')
       expect(propsFromFullfield.title).toBe('My custom loading title')
-    })
-
-    it("`baseUrl` is a string and it's used", () => {
-      // defaultProps
-      expect(typeof propsFromEmpty.baseUrl).toBe('string')
-      expect(propsFromEmpty.baseUrl).toBe('')
-      // custom props
-      expect(typeof propsFromFullfield.baseUrl).toBe('string')
-      expect(propsFromFullfield.baseUrl).toBe('/mypage')
     })
 
     it("`uniqueKey` is a string and it's used", () => {

@@ -6,14 +6,11 @@ import { IContentLoaderProps } from './'
 const SVG: React.FC<IContentLoaderProps> = ({
   animate,
   backgroundColor,
-  backgroundOpacity,
-  baseUrl,
   children,
   foregroundColor,
-  foregroundOpacity,
   gradientRatio,
   uniqueKey,
-  interval,
+  delay,
   rtl,
   speed,
   style,
@@ -21,100 +18,82 @@ const SVG: React.FC<IContentLoaderProps> = ({
   ...props
 }) => {
   const fixedId = uniqueKey || uid()
-  const idClip = `${fixedId}-diff`
-  const idGradient = `${fixedId}-animated-diff`
+  const idMask = `${fixedId}-mask`
+  const idElement = `${fixedId}-rcl`
   const idAria = `${fixedId}-aria`
-
+  const idAnimation = `anim-${fixedId}`
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
-  const keyTimes = `0; ${interval}; 1`
-  const dur = `${speed}s`
+
+  const linearGradient = [3, 2, 1, 2, 3].map((value, index, arr) => {
+    const isMiddle = arr.length / index > index - 1
+    const offSet = Math.pow(gradientRatio, value)
+    const position = 50 + offSet * (isMiddle ? -1 : 1)
+    const clamp = Math.min(Math.max(position, 0), 100)
+
+    // Color
+    const center = [3, 4].includes(index + 1)
+    const color = center ? foregroundColor : backgroundColor
+
+    return `${color} ${clamp}%`
+  })
+
+  const animationDelay = (speed * 100) / (delay + speed)
 
   return (
-    <svg
-      aria-labelledby={idAria}
-      role="img"
-      style={{ ...style, ...rtlStyle }}
-      {...props}
-    >
-      {title ? <title id={idAria}>{title}</title> : null}
-      <rect
-        role="presentation"
-        x="0"
-        y="0"
-        width="100%"
-        height="100%"
-        clipPath={`url(${baseUrl}#${idClip})`}
-        style={{ fill: `url(${baseUrl}#${idGradient})` }}
+    <>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<style>
+[data-rcl="${idElement}"] {
+  background: linear-gradient(90deg, ${linearGradient});
+  background-size: 400%;
+  ${animate && `animation:  ${idAnimation} ${delay + speed}s linear infinite`};
+}
+${animate &&
+  `@keyframes ${idAnimation} {
+    0% { background-position: 100% 0% }
+    ${animationDelay > 0 && `${animationDelay}% { background-position: 0% 0% }`}
+    100% { background-position: 0% 0% }
+}`}
+</style>`,
+        }}
       />
+      <svg
+        aria-labelledby={idAria}
+        role="img"
+        style={{ ...style, ...rtlStyle }}
+        data-rcl={idElement}
+        {...props}
+      >
+        {title && <title id={idAria}>{title}</title>}
+        <rect
+          role="presentation"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          fill="white"
+          mask={`url(#${idMask})`}
+        />
 
-      <defs role="presentation">
-        <clipPath id={idClip}>{children}</clipPath>
-
-        <linearGradient id={idGradient}>
-          <stop
-            offset="0%"
-            stopColor={backgroundColor}
-            stopOpacity={backgroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`${-gradientRatio}; ${-gradientRatio}; 1`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-              />
-            )}
-          </stop>
-
-          <stop
-            offset="50%"
-            stopColor={foregroundColor}
-            stopOpacity={foregroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`${-gradientRatio / 2}; ${-gradientRatio / 2}; ${1 +
-                  gradientRatio / 2}`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-              />
-            )}
-          </stop>
-
-          <stop
-            offset="100%"
-            stopColor={backgroundColor}
-            stopOpacity={backgroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`0; 0; ${1 + gradientRatio}`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-              />
-            )}
-          </stop>
-        </linearGradient>
-      </defs>
-    </svg>
+        <defs>
+          <mask id={idMask}>
+            {/* <rect x="0" y="0" width="100%" height="100%" fill="white" /> */}
+            {children}
+          </mask>
+        </defs>
+      </svg>
+    </>
   )
 }
 
 SVG.defaultProps = {
   animate: true,
   backgroundColor: '#f5f6f7',
-  backgroundOpacity: 1,
-  baseUrl: '',
   foregroundColor: '#eee',
-  foregroundOpacity: 1,
   gradientRatio: 2,
   id: null,
-  interval: 0.25,
+  delay: 1,
   rtl: false,
   speed: 1.2,
   style: {},

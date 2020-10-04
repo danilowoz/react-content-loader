@@ -86,67 +86,6 @@ foregroundColor.story = {
 }
 
 /**
- * Background opacity
- */
-export const backgroundOpacity = () => {
-  return (
-    <>
-      <SyntaxCode>{'<ContentLoader backgroundOpacity="#333" />'}</SyntaxCode>
-      <ContentLoader backgroundOpacity={0.06} />
-    </>
-  )
-}
-
-backgroundOpacity.story = {
-  parameters: {
-    notes: `## \`backgroundOpacity?: number\`
-
-    Defaults to \`1\`. Background opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#bugfix-in-safari)`,
-  },
-}
-
-/**
- * Foreground opacity
- */
-export const foregroundOpacity = () => {
-  return (
-    <>
-      <SyntaxCode>{'<ContentLoader foregroundOpacity={0.06} />'}</SyntaxCode>
-      <ContentLoader foregroundOpacity={0.06} />
-    </>
-  )
-}
-
-foregroundOpacity.story = {
-  parameters: {
-    notes: `## \`foregroundOpacity?: number\`
-
-    Defaults to \`1\`. Animation opacity (0 = transparent, 1 = opaque) used to solve a issue in [Safari](#bugfix-in-safari)`,
-  },
-}
-
-/**
- * Base URL
- */
-export const baseURL = () => {
-  return (
-    <>
-      <SyntaxCode>{'<ContentLoader baseUrl="" />'}</SyntaxCode>
-      <ContentLoader baseUrl="" />
-    </>
-  )
-}
-
-baseURL.story = {
-  parameters: {
-    notes: `## \`baseUrl?: string\`
-
-    Required if you're using \`<base url="/" />\` in the \`<head/>\`. Defaults to an empty string. This prop is common used as: \`<ContentLoader baseUrl={window.location.pathname} />\` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93).
-    `,
-  },
-}
-
-/**
  * Children
  */
 export const children = () => {
@@ -180,23 +119,37 @@ export const gradientRatio = () => {
   return (
     <>
       <SyntaxCode>{`<ContentLoader
-  gradientRatio={0.2}
+  gradientRatio={1.5}
   backgroundColor={'#333'}
   foregroundColor={'#999'}
 />`}</SyntaxCode>
       <ContentLoader
-        gradientRatio={0.2}
+        speed={6}
+        gradientRatio={1.5}
         backgroundColor={'#333'}
         foregroundColor={'#999'}
       />
 
       <SyntaxCode>{`<ContentLoader
-  gradientRatio={4}
+  gradientRatio={2}
   backgroundColor={'#333'}
   foregroundColor={'#999'}
 />`}</SyntaxCode>
       <ContentLoader
-        gradientRatio={4}
+        speed={6}
+        gradientRatio={2}
+        backgroundColor={'#333'}
+        foregroundColor={'#999'}
+      />
+
+      <SyntaxCode>{`<ContentLoader
+  gradientRatio={6}
+  backgroundColor={'#333'}
+  foregroundColor={'#999'}
+/>`}</SyntaxCode>
+      <ContentLoader
+        speed={6}
+        gradientRatio={6}
         backgroundColor={'#333'}
         foregroundColor={'#999'}
       />
@@ -235,22 +188,31 @@ speed.story = {
 }
 
 /**
- * Interval
+ * Delay
  */
-export const interval = () => {
+export const delay = () => {
   return (
     <>
-      <SyntaxCode>{`<ContentLoader interval={0.8} />`}</SyntaxCode>
-      <ContentLoader interval={0.8} />
+      <SyntaxCode>{`<ContentLoader delay={0} />`}</SyntaxCode>
+      <ContentLoader delay={0} />
+
+      <SyntaxCode>{`<ContentLoader delay={0.8} />`}</SyntaxCode>
+      <ContentLoader delay={0.8} />
+
+      <SyntaxCode>{`<ContentLoader delay={1} />`}</SyntaxCode>
+      <ContentLoader delay={1} />
+
+      <SyntaxCode>{`<ContentLoader delay={2} />`}</SyntaxCode>
+      <ContentLoader delay={2} />
     </>
   )
 }
 
-interval.story = {
+delay.story = {
   parameters: {
-    notes: `## \`interval?: number\`
+    notes: `## \`delay?: number\`
 
-    Defaults to \`0.25\`. Interval of time between runs of the animation, as a fraction of the animation speed.`,
+    Defaults to \`0.25\`. delay of time between runs of the animation, as a fraction of the animation speed.`,
   },
 }
 
