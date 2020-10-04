@@ -41,23 +41,6 @@ const SVG: React.FC<IContentLoaderProps> = ({
 
   return (
     <>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `<style>
-[data-rcl="${idElement}"] {
-  background: linear-gradient(90deg, ${linearGradient});
-  background-size: 400%;
-  ${animate && `animation:  ${idAnimation} ${delay + speed}s linear infinite`};
-}
-${animate &&
-  `@keyframes ${idAnimation} {
-    0% { background-position: 100% 0% }
-    ${animationDelay > 0 && `${animationDelay}% { background-position: 0% 0% }`}
-    100% { background-position: 0% 0% }
-}`}
-</style>`,
-        }}
-      />
       <svg
         aria-labelledby={idAria}
         role="img"
@@ -66,6 +49,7 @@ ${animate &&
         {...props}
       >
         {title && <title id={idAria}>{title}</title>}
+
         <rect
           role="presentation"
           x="0"
@@ -83,6 +67,23 @@ ${animate &&
           </mask>
         </defs>
       </svg>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<style>
+[data-rcl="${idElement}"] {
+  background: linear-gradient(90deg, ${linearGradient});
+  background-size: 400%;
+  ${animate && `animation:  ${idAnimation} ${delay + speed}s linear infinite`};
+}
+${animate &&
+  `@keyframes ${idAnimation} {
+    0% { background-position: 100% 0% }
+    ${animationDelay > 0 && `${animationDelay}% { background-position: 0% 0% }`}
+    100% { background-position: 0% 0% }
+}`}
+</style>`,
+        }}
+      ></div>
     </>
   )
 }

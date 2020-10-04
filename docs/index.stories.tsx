@@ -261,10 +261,32 @@ uniqueKey.story = {
  */
 export const responsive = () => {
   return (
-    <div style={{ width: 200, border: '1px solid #eee' }}>
-      <SyntaxCode>{"<ContentLoader style={{ width: '100%' }} />'"}</SyntaxCode>
-      <ContentLoader />
-    </div>
+    <>
+      <div style={{ width: 200, border: '1px solid #eee' }}>
+        <SyntaxCode>
+          {"<ContentLoader style={{ width: '100%', height: 'auto' }} />'"}
+        </SyntaxCode>
+        <ContentLoader style={{ width: '100%', height: 'auto' }} />
+      </div>
+
+      <div style={{ width: 200, border: '1px solid #eee' }}>
+        <ContentLoader
+          height={465}
+          width={600}
+          viewBox="0 0 600 465"
+          style={{ width: '100%', height: 'auto' }}
+        >
+          <rect x="0" y="402" rx="8" ry="8" width="172" height="18" />
+          <rect x="0" y="448" rx="8" ry="8" width="123" height="13" />
+          <rect x="430" y="410" rx="8" ry="8" width="123" height="13" />
+          <rect x="0" y="378" rx="0" ry="0" width="559" height="2" />
+        </ContentLoader>
+      </div>
+
+      <div style={{ width: 400, height: 400, border: '1px solid #eee' }}>
+        <Code style={{ width: '100%', height: '100%' }} />
+      </div>
+    </>
   )
 }
 
