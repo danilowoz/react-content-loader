@@ -78,7 +78,7 @@ ${animate &&
 
         <defs>
           <mask id={idMask}>
-            {/* <rect x="0" y="0" width="100%" height="100%" fill="white" /> */}
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
             {children}
           </mask>
         </defs>
