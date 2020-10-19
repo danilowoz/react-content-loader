@@ -62,8 +62,8 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
     </ClipPath>
     <LinearGradient
       id="snapshots-diff"
-      x1="-33.33333333333334%"
-      x2="66.66666666666666%"
+      x1="-100%"
+      x2="0%"
       y1={0}
       y2={0}
     >
@@ -146,8 +146,8 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
     </ClipPath>
     <LinearGradient
       id="snapshots-diff"
-      x1="-33.33333333333334%"
-      x2="66.66666666666666%"
+      x1="-100%"
+      x2="0%"
       y1={0}
       y2={0}
     >
@@ -230,8 +230,8 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
     </ClipPath>
     <LinearGradient
       id="snapshots-diff"
-      x1="-33.33333333333334%"
-      x2="66.66666666666666%"
+      x1="-100%"
+      x2="0%"
       y1={0}
       y2={0}
     >
@@ -314,8 +314,8 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
     </ClipPath>
     <LinearGradient
       id="snapshots-diff"
-      x1="-33.33333333333334%"
-      x2="66.66666666666666%"
+      x1="-100%"
+      x2="0%"
       y1={0}
       y2={0}
     >
