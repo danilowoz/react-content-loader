@@ -23,7 +23,7 @@ class NativeSvg extends Component<IContentLoaderProps> {
     style: {},
   }
 
-  animatedValue = new Animated.Value(0)
+  animatedValue = new Animated.Value(-1)
 
   fixedId = this.props.uniqueKey || uid()
 
