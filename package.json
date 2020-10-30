@@ -101,7 +101,7 @@
     "typescript": "3.7.4"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": ">=16.0.0"
   },
   "husky": {
     "hooks": {
