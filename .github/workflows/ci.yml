@@ -48,3 +48,7 @@ jobs:
         env:
           BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE }}
         run: npm run build
+
+      # Upload coverage reports to Codecov
+      - name: Upload coverage to Codecov
+        run: bash <(curl -s https://codecov.io/bash)
