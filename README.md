@@ -6,6 +6,7 @@
 </p>
 
 SVG-Powered component to easily create placeholder loadings (like Facebook's cards loading).
+[![codecov](https://codecov.io/gh/danilowoz/react-content-loader/branch/master/graph/badge.svg)](https://codecov.io/gh/danilowoz/react-content-loader)
 
 ## Features
 
@@ -74,7 +75,7 @@ const MyLoader = () => (
 )
 ```
 
-**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)  
+**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)
 Or try the components editable demo hands-on and install it from [bit.dev](https://bit.dev/danilowoz/react-content-loader)
 
 ## Native
