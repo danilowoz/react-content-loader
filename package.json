@@ -96,7 +96,7 @@
     "rollup-plugin-replace": "2.2.0",
     "rollup-plugin-typescript2": "0.25.3",
     "rollup-plugin-uglify": "6.0.4",
-    "semantic-release": "15.14.0",
+    "semantic-release": "17.2.3",
     "ts-jest": "^26.4.0",
     "typescript": "3.7.4"
   },
