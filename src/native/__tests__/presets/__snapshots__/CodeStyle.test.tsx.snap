@@ -3,6 +3,7 @@
 exports[`CodeStyle renders correctly 1`] = `
 <Svg
   height={84}
+  interval={0.25}
   style={Object {}}
   viewBox="0 0 340 84"
   width={340}

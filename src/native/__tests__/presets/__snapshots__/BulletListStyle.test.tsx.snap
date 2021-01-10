@@ -3,6 +3,7 @@
 exports[`BulletListStyle renders correctly 1`] = `
 <Svg
   height={125}
+  interval={0.25}
   style={Object {}}
   viewBox="0 0 245 125"
   width={245}

@@ -3,6 +3,7 @@
 exports[`ListStyle renders correctly 1`] = `
 <Svg
   height={110}
+  interval={0.25}
   style={Object {}}
   viewBox="0 0 400 110"
   width={400}
