@@ -3,6 +3,7 @@
 exports[`FacebookStyle renders correctly 1`] = `
 <Svg
   height={124}
+  interval={0.25}
   style={Object {}}
   viewBox="0 0 476 124"
   width={476}

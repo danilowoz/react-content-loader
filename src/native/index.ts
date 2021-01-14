@@ -8,6 +8,7 @@ export interface IContentLoaderProps extends SvgProps {
   foregroundColor?: string
   rtl?: boolean
   speed?: number
+  interval?: number
   uniqueKey?: string
 }
 

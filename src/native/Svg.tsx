@@ -20,6 +20,7 @@ class NativeSvg extends Component<IContentLoaderProps> {
     foregroundColor: '#eee',
     rtl: false,
     speed: 1.2,
+    interval: 0.25,
     style: {},
   }
 
@@ -32,13 +33,15 @@ class NativeSvg extends Component<IContentLoaderProps> {
   idGradient = `${this.fixedId}-animated-diff`
 
   setAnimation = () => {
-    // Turn in seconds to keep compatible with web one
-    const durInSeconds = this.props.speed * 1000
+    // props.speed is in seconds as it is compatible with web
+    // convert to milliseconds
+    const durMs = this.props.speed * 1000
+    const delay = durMs * this.props.interval
 
     Animated.timing(this.animatedValue, {
       toValue: 2,
-      delay: durInSeconds,
-      duration: durInSeconds,
+      delay: delay,
+      duration: durMs,
       useNativeDriver: true,
     }).start(() => {
       this.animatedValue.setValue(-1)

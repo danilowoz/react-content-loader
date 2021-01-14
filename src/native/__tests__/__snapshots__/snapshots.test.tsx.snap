@@ -3,6 +3,7 @@
 exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 <Svg
   height={124}
+  interval={0.25}
   style={Object {}}
   viewBox="0 0 476 124"
   width={476}
@@ -87,6 +88,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
 <Svg
   height={124}
+  interval={0.25}
   style={Object {}}
   viewBox="0 0 100 100"
   width={476}
@@ -171,6 +173,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
 exports[`ContentLoader snapshots renders correctly with viewBox defined and sizes defined too 1`] = `
 <Svg
   height={100}
+  interval={0.25}
   style={Object {}}
   viewBox="0 0 100 100"
   width={100}
@@ -255,6 +258,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
 exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
 <Svg
   height={124}
+  interval={0.25}
   style={Object {}}
   viewBox=""
   width={476}
