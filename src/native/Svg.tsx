@@ -46,7 +46,7 @@ class NativeSvg extends Component<IContentLoaderProps> {
     }).start(() => {
       if (this.props.animate) {
         this.animatedValue.setValue(-1)
-        this.setAnimation()  
+        this.setAnimation()
       }
     })
   }
@@ -56,10 +56,10 @@ class NativeSvg extends Component<IContentLoaderProps> {
       this.setAnimation()
     }
   }
-  
+
   componentDidUpdate(prevProps: IContentLoaderProps) {
     if (!prevProps.animate && this.props.animate) {
-      this.setAnimation() 
+      this.setAnimation()
     }
   }
 
