@@ -44,13 +44,21 @@ class NativeSvg extends Component<IContentLoaderProps> {
       duration: durMs,
       useNativeDriver: true,
     }).start(() => {
-      this.animatedValue.setValue(-1)
-      this.setAnimation()
+      if (this.props.animate) {
+        this.animatedValue.setValue(-1)
+        this.setAnimation()
+      }
     })
   }
 
   componentDidMount = () => {
     if (this.props.animate) {
+      this.setAnimation()
+    }
+  }
+
+  componentDidUpdate(prevProps: IContentLoaderProps) {
+    if (!prevProps.animate && this.props.animate) {
       this.setAnimation()
     }
   }
