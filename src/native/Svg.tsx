@@ -32,6 +32,8 @@ class NativeSvg extends Component<IContentLoaderProps> {
 
   idGradient = `${this.fixedId}-animated-diff`
 
+  unmounted = false
+
   setAnimation = () => {
     // props.speed is in seconds as it is compatible with web
     // convert to milliseconds
@@ -44,7 +46,7 @@ class NativeSvg extends Component<IContentLoaderProps> {
       duration: durMs,
       useNativeDriver: true,
     }).start(() => {
-      if (this.props.animate) {
+      if (!this.unmounted && this.props.animate) {
         this.animatedValue.setValue(-1)
         this.setAnimation()
       }
@@ -61,6 +63,10 @@ class NativeSvg extends Component<IContentLoaderProps> {
     if (!prevProps.animate && this.props.animate) {
       this.setAnimation()
     }
+  }
+
+  componentWillUnmount() {
+    this.unmounted = true
   }
 
   render() {
