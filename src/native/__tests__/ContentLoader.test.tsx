@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Animated } from 'react-native'
 import * as renderer from 'react-test-renderer'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 
@@ -119,6 +120,32 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullField.rtl).toBe('boolean')
       expect(propsFromFullField.rtl).toBe(true)
+    })
+  })
+
+  describe('when using SVG', () => {
+    describe('cleanup', () => {
+      afterAll(() => {
+        jest.useRealTimers()
+      })
+
+      it('cleans up animations when unmounted', () => {
+        jest.useFakeTimers()
+        const animationSpy = jest.spyOn(Animated, 'timing')
+
+        const mockSpeed = 10
+        const { unmount } = renderer.create(
+          <ContentLoader animate={true} height={200} speed={mockSpeed}>
+            <Rect />
+          </ContentLoader>
+        )
+
+        jest.runTimersToTime(mockSpeed)
+        unmount()
+        jest.runTimersToTime(mockSpeed)
+
+        expect(animationSpy).toHaveBeenCalledTimes(1)
+      })
     })
   })
 })
