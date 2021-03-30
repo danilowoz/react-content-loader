@@ -74,7 +74,7 @@ const MyLoader = () => (
 )
 ```
 
-**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)  
+**Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)
 Or try the components editable demo hands-on and install it from [bit.dev](https://bit.dev/danilowoz/react-content-loader)
 
 ## Native
@@ -231,7 +231,7 @@ To fix it, set the prop [`uniqueKey`](https://github.com/danilowoz/react-content
 ```jsx
 import { Facebook } from 'react-content-loader'
 
-const MyFacebookLoader = () => <Facebook uniqueKey="my-random-valye" />
+const MyFacebookLoader = () => <Facebook uniqueKey="my-random-value" />
 ```
 
 #### **Alpha is not working: Safari / iOS**
