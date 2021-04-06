@@ -26,9 +26,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
     x="0"
     y="0"
   />
-  <defs
-    role="presentation"
-  >
+  <defs>
     <clipPath
       id="snapshots-diff"
     >
@@ -146,9 +144,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
     x="0"
     y="0"
   />
-  <defs
-    role="presentation"
-  >
+  <defs>
     <clipPath
       id="snapshots-diff"
     >
@@ -268,9 +264,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
     x="0"
     y="0"
   />
-  <defs
-    role="presentation"
-  >
+  <defs>
     <clipPath
       id="snapshots-diff"
     >
@@ -388,9 +382,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
     x="0"
     y="0"
   />
-  <defs
-    role="presentation"
-  >
+  <defs>
     <clipPath
       id="snapshots-diff"
     >

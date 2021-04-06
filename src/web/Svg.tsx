@@ -47,7 +47,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
         style={{ fill: `url(${baseUrl}#${idGradient})` }}
       />
 
-      <defs role="presentation">
+      <defs>
         <clipPath id={idClip}>{children}</clipPath>
 
         <linearGradient id={idGradient}>
