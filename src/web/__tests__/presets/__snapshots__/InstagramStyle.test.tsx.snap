@@ -26,9 +26,7 @@ exports[`InstagramStyle renders correctly 1`] = `
     x="0"
     y="0"
   />
-  <defs
-    role="presentation"
-  >
+  <defs>
     <clipPath
       id="InstagramStyle-diff"
     >
