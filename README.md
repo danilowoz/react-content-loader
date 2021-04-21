@@ -9,7 +9,7 @@ SVG-Powered component to easily create placeholder loadings (like Facebo
 
 ## Features
 
-- :gear: **Customizable:** Feel free to change the colors, speed, sizes and even **RTL**;
+- :gear: **Customizable:** Feel free to change the colors, speed, sizes, and even **RTL**;
 - :ok_hand: **Plug and play:** with many presets to use, see the [examples](http://danilowoz.com/create-content-loader/#gallery);
 - :pencil2: **DIY:** use the [create-content-loader](https://danilowoz.com/create-content-loader) to create your own custom loaders easily;
 - 📱 **React Native support**: same API, as same powerful features;
@@ -207,7 +207,7 @@ const MyLoader = () => (
 
 #### Responsive - Mobile version
 
-In order to avoid unexpected behavior, the package doesn't have opinioned settings. So if it needs to be responsive, have in mind that the output of package is a regular SVG, so it just needs the same attributes to become a regular SVG responsive, which means:
+In order to avoid unexpected behavior, the package doesn't have opinioned settings. So if it needs to be responsive, have in mind that the output of the package is a regular SVG, so it just needs the same attributes to become a regular SVG responsive, which means:
 
 ```jsx
 import { Code } from 'react-content-loader'
@@ -257,7 +257,7 @@ When using `rgba` as a `backgroundColor` or `foregroundColor` value, [S
 
 #### **Black box in Safari / iOS (again)**
 
-Using the base tag on a page that contains SVG elements fails to render and it looks like a black box. Just remove the **base-href** tag from the `<head />` and issue solved.
+Using the base tag on a page that contains SVG elements fails to render and it looks like a black box. Just remove the **base-href** tag from the `<head />` and the issue has been solved.
 
 <img width="350" src="https://user-images.githubusercontent.com/11562881/39406054-2f308de6-4bce-11e8-91fb-bbb35e29fc10.png" alt="black box" />
 
@@ -265,7 +265,7 @@ See: [#93](https://github.com/danilowoz/react-content-loader/issues/93) / [10
 
 #### Browser supports SVG-Animate
 
-Old browser doesn't support animation in SVG ([compatibility list](https://caniuse.com/#search=SVGAnimateElement)), and if your project must support IE for examples, here's a couple of ways to make sure that browser supports SVG Animate:
+Old browsers don't support animation in SVG ([compatibility list](https://caniuse.com/#search=SVGAnimateElement)), and if your project must support IE, for examples, here's a couple of ways to make sure that browser supports SVG Animate:
 
 - `window.SVGAnimateElement`
 - `document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#SVG-Animation", "1.1")`
@@ -282,7 +282,7 @@ Old browser doesn't support animation in SVG ([compatibility list](https://caniu
 
 ## Development
 
-Fork the repo then clone it
+Fork the repo and then clone it
 
 ```
 $ git clone git@github.com:YourUsername/react-content-loader.git && cd react-content-loader
@@ -292,15 +292,24 @@ $ git clone git@github.com:YourUsername/react-content-loader.git && cd rea
 
 `$ npm run build`: Build to production;
 
-`$ npm run dev`: Run the docz to see your changes;
+`$ npm run dev`: Run the Storybook to see your changes;
+
+`$ npm run deploy:docs`: Deploy Storybook to the Github pages;
 
 `$ npm run test`: Run all tests: type checking, unit tests on web and native;
 
-`$ yarn test:watch`: Watch unit tests;
+`$ npm run test:watch`: Watch unit tests;
 
-`$ yarn tsc`: Typescript checking;
+### React Native
 
-`$ yarn tsc:watch`: Typescript checking with watching;
+As React Native doesn't support symbolic links (to link the dependency to another folder) and as there is no playground to check your contributions (like storybook), this is recommended strategy to run the project locally:
+
+1. Create a new React Native from scratch, either Metro or create-react-native-app;
+2. Install the dependency to your root project:
+   `yarn add react-content-loader react-native-svg`
+3. Open the project just created and clone this repository there;
+4. Create your loading component and point the `react-content-loader` to the project just cloned, like:
+   `import ContentLoader, { Rect, Circle } from './react-content-loader/native'`
 
 ### Commit messages
 
