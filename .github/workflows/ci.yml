@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: ['10', '12', '14']
-    name: "[v${{ matrix.node-version }}] lint and test"
+    name: '[v${{ matrix.node-version }}] lint and test'
 
     steps:
       - name: Checkout code
@@ -23,7 +23,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      # Check if cache exists, based on the hash of the lockfile
       - name: Cache node_modules
         id: cache-node_modules
         uses: actions/cache@v2
@@ -35,7 +34,6 @@ jobs:
             ${{ runner.os }}-node-
             ${{ runner.os }}-
 
-      # If there is no cache available, we run npm installation in CI mode
       - name: Install dependencies
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
@@ -46,7 +44,6 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      # Build and check if it builds ok.
       - name: Build
         env:
           BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE }}
