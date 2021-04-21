@@ -16,3 +16,4 @@ settings.json
 *.code-workspace
 yarn.lock
 yarn-error.log
+docs-build

@@ -294,8 +294,6 @@ $ git clone git@github.com:YourUsername/react-content-loader.git && cd rea
 
 `$ npm run dev`: Run the Storybook to see your changes;
 
-`$ npm run deploy:docs`: Deploy Storybook to the Github pages;
-
 `$ npm run test`: Run all tests: type checking, unit tests on web and native;
 
 `$ npm run test:watch`: Watch unit tests;

@@ -33,7 +33,7 @@
   "scripts": {
     "dev": "start-storybook -p 6006",
     "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
-    "deploy:docs": "storybook-to-ghpages",
+    "build:docs": "build-storybook -o docs-build",
     "test": "npm run test:tsc && npm run test:unit",
     "test:unit": "npm run test:unit:web && npm run test:unit:native",
     "test:unit:web": "jest -c jest.web.config.js",

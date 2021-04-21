@@ -79,7 +79,7 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     needs: prepare
-    name: Publish documentation
+    name: Documentation
 
     steps:
       - name: Checkout code
@@ -103,5 +103,14 @@ jobs:
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Build
-        run: npm run deploy:docs
+      - name: Build storybook
+        run: npm run build:docs
+
+     - name: Deploy 
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: docs
+          FOLDER: docs-build
+          CLEAN: true
+          TARGET_FOLDER: docs
