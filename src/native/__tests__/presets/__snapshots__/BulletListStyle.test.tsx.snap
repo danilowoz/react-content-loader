@@ -75,6 +75,7 @@ exports[`BulletListStyle renders correctly 1`] = `
     </ClipPath>
     <LinearGradient
       id="BulletListStyle-diff"
+      style={Object {}}
       x1="-100%"
       x2="0%"
       y1={0}

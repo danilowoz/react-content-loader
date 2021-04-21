@@ -6,9 +6,7 @@ module.exports = {
   preset: 'react-native',
   collectCoverage: true,
   coverageDirectory: './coverage/native',
-  transformIgnorePatterns: [
-    '/node_modules/(?!react-native|react-clone-referenced-element|react-navigation)',
-  ],
+  transformIgnorePatterns: ['/node_modules/(?!@react-native|react-native)'],
   transform: {
     ...tsjPreset.transform,
     '^.+\\.js$': require.resolve('react-native/jest/preprocessor.js'),
