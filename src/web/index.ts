@@ -22,5 +22,6 @@ export { default as Instagram } from './presets/InstagramStyle'
 export { default as Code } from './presets/CodeStyle'
 export { default as List } from './presets/ListStyle'
 export { default as BulletList } from './presets/BulletListStyle'
+export { Creator } from './Creator'
 
 export default ContentLoader
