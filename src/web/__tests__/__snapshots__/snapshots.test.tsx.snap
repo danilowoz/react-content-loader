@@ -72,6 +72,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform={null}
       id="snapshots-animated-diff"
     >
       <stop
@@ -190,6 +191,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform={null}
       id="snapshots-animated-diff"
     >
       <stop
@@ -310,6 +312,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
       />
     </clipPath>
     <linearGradient
+      gradientTransform={null}
       id="snapshots-animated-diff"
     >
       <stop
@@ -428,6 +431,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform={null}
       id="snapshots-animated-diff"
     >
       <stop

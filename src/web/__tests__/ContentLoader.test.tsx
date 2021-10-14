@@ -41,6 +41,7 @@ describe('ContentLoader', () => {
         foregroundColor="#fff"
         foregroundOpacity={0.12}
         gradientRatio={0.5}
+        gradientDirection="top-bottom"
         height={200}
         interval={0.5}
         preserveAspectRatio="xMaxYMax meet"
@@ -95,6 +96,15 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.gradientRatio).toBe('number')
       expect(propsFromFullfield.gradientRatio).toBe(0.5)
+    })
+
+    it("`gradientDirection` is a string and it's used", () => {
+      // defaultProps
+      expect(typeof propsFromEmpty.gradientDirection).toBe('string')
+      expect(propsFromEmpty.gradientDirection).toBe('left-right')
+      // custom props
+      expect(typeof propsFromFullfield.gradientDirection).toBe('string')
+      expect(propsFromFullfield.gradientDirection).toBe('top-bottom')
     })
 
     it("`animate` is a boolean and it's used", () => {

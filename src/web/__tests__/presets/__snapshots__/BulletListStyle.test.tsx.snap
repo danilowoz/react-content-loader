@@ -84,6 +84,7 @@ exports[`BulletListStyle renders correctly 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform={null}
       id="BulletListStyle-animated-diff"
     >
       <stop

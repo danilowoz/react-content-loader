@@ -61,6 +61,7 @@ exports[`InstagramStyle renders correctly 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform={null}
       id="InstagramStyle-animated-diff"
     >
       <stop
