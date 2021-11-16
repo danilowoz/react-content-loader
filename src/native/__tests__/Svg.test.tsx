@@ -2,7 +2,7 @@ import * as React from 'react'
 import Svg, { ClipPath, LinearGradient, Stop } from 'react-native-svg'
 import * as renderer from 'react-test-renderer'
 
-import ContentLoader from '..'
+import ContentLoader, { Rect } from '..'
 
 interface IPredicateArgs {
   type: any
@@ -75,6 +75,33 @@ describe('Svg', () => {
       const { linearGradient, rectClipPath } = partsOfComponent
 
       expect(rectClipPath.props.fill).toBe(`url(#${linearGradient.props.id})`)
+    })
+  })
+
+  describe('beforeMask', () => {
+    it('beforeMask is used', () => {
+      const wrapperWithBeforeMask = renderer.create(
+        <ContentLoader beforeMask={<Rect x="123" />} />
+      ).root
+
+      const beforeMask = wrapperWithBeforeMask.findByProps({
+        x: '123',
+      })
+
+      expect(beforeMask.props.x).toBe('123')
+    })
+
+    it('beforeMask should be a JSX Element', () => {
+      const wrapperWithBeforeMask = renderer.create(
+        // @ts-ignore
+        <ContentLoader beforeMask={() => <Rect x="123" />} />
+      ).root
+
+      expect(() => {
+        wrapperWithBeforeMask.findByProps({
+          x: '123',
+        })
+      }).toThrow('No instances found with props: {"x":"123"}')
     })
   })
 })

@@ -10,6 +10,7 @@ export interface IContentLoaderProps extends SvgProps {
   speed?: number
   interval?: number
   uniqueKey?: string
+  beforeMask?: JSX.Element
 }
 
 export { default as Facebook } from './presets/FacebookStyle'

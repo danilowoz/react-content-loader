@@ -118,6 +118,168 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 </svg>
 `;
 
+exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
+<svg
+  aria-labelledby="snapshots-aria"
+  id={null}
+  role="img"
+  style={Object {}}
+>
+  <title
+    id="snapshots-aria"
+  >
+    Loading...
+  </title>
+  <rect
+    role="outline1"
+  />
+  <rect
+    role="outline2"
+  />
+  <rect
+    clipPath="url(#snapshots-diff)"
+    height="100%"
+    role="presentation"
+    style={
+      Object {
+        "fill": "url(#snapshots-animated-diff)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="snapshots-diff"
+    >
+      <rect />
+    </clipPath>
+    <linearGradient
+      id="snapshots-animated-diff"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f5f6f7"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="1.2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-2; -2; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#eee"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="1.2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-1; -1; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f5f6f7"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="1.2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="0; 0; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
+<svg
+  aria-labelledby="snapshots-aria"
+  id={null}
+  role="img"
+  style={Object {}}
+>
+  <title
+    id="snapshots-aria"
+  >
+    Loading...
+  </title>
+  <rect
+    clipPath="url(#snapshots-diff)"
+    height="100%"
+    role="presentation"
+    style={
+      Object {
+        "fill": "url(#snapshots-animated-diff)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="snapshots-diff"
+    >
+      <rect />
+    </clipPath>
+    <linearGradient
+      id="snapshots-animated-diff"
+    >
+      <stop
+        offset="0%"
+        stopColor="#f5f6f7"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="1.2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-2; -2; 1"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#eee"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="1.2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="-1; -1; 2"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#f5f6f7"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="offset"
+          dur="1.2s"
+          keyTimes="0; 0.25; 1"
+          repeatCount="indefinite"
+          values="0; 0; 3"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
 exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
 <svg
   aria-labelledby="snapshots-aria"

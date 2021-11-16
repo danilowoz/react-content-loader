@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, isValidElement } from 'react'
 import { Animated } from 'react-native'
 import Svg, {
   ClipPath,
@@ -22,6 +22,7 @@ class NativeSvg extends Component<IContentLoaderProps> {
     speed: 1.2,
     interval: 0.25,
     style: {},
+    beforeMask: null,
   }
 
   animatedValue = new Animated.Value(-1)
@@ -76,6 +77,7 @@ class NativeSvg extends Component<IContentLoaderProps> {
       foregroundColor,
       rtl,
       style,
+      beforeMask,
       ...props
     } = this.props
 
@@ -101,6 +103,8 @@ class NativeSvg extends Component<IContentLoaderProps> {
 
     return (
       <Svg style={svgStyle} {...props}>
+        {beforeMask && isValidElement(beforeMask) ? beforeMask : null}
+
         <Rect
           x="0"
           y="0"

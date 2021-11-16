@@ -86,6 +86,100 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 </Svg>
 `;
 
+exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
+<Svg
+  interval={0.25}
+  style={Object {}}
+>
+  <Rect
+    x="123"
+  />
+  <Rect
+    x="456"
+  />
+  <Rect
+    clipPath="url(#snapshots-animated-diff)"
+    fill="url(#snapshots-diff)"
+    height="100%"
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="snapshots-animated-diff"
+    >
+      <Rect />
+    </ClipPath>
+    <LinearGradient
+      id="snapshots-diff"
+      style={Object {}}
+      x1="-100%"
+      x2="0%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+      <Stop
+        offset={0.5}
+        stopColor="#eee"
+      />
+      <Stop
+        offset={1}
+        stopColor="#f5f6f7"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;
+
+exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
+<Svg
+  interval={0.25}
+  style={Object {}}
+>
+  <Rect
+    clipPath="url(#snapshots-animated-diff)"
+    fill="url(#snapshots-diff)"
+    height="100%"
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="snapshots-animated-diff"
+    >
+      <Rect />
+    </ClipPath>
+    <LinearGradient
+      id="snapshots-diff"
+      style={Object {}}
+      x1="-100%"
+      x2="0%"
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+      <Stop
+        offset={0.5}
+        stopColor="#eee"
+      />
+      <Stop
+        offset={1}
+        stopColor="#f5f6f7"
+      />
+    </LinearGradient>
+  </Defs>
+</Svg>
+`;
+
 exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
 <Svg
   height={124}

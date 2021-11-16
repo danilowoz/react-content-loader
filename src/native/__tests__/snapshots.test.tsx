@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 
-import ContentLoader from '../ContentLoader'
+import ContentLoader, { Rect } from '../ContentLoader'
 
 describe('ContentLoader snapshots', () => {
   test('renders correctly the basic version', () => {
@@ -46,6 +46,36 @@ describe('ContentLoader snapshots', () => {
       />
     )
     const tree = wrapper.toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('renders correctly with beforeMask', () => {
+    let wrapper = renderer.create(
+      <ContentLoader
+        uniqueKey="snapshots"
+        beforeMask={
+          <>
+            <Rect x="123" />
+            <Rect x="456" />
+          </>
+        }
+      >
+        <Rect />
+      </ContentLoader>
+    )
+    let tree = wrapper.toJSON()
+
+    expect(tree).toMatchSnapshot()
+
+    // with wrong type
+    wrapper = renderer.create(
+      // @ts-ignore
+      <ContentLoader uniqueKey="snapshots" beforeMask={() => <Rect />}>
+        <Rect />
+      </ContentLoader>
+    )
+    tree = wrapper.toJSON()
 
     expect(tree).toMatchSnapshot()
   })

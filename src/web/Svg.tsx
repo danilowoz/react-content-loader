@@ -18,6 +18,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   speed,
   style,
   title,
+  beforeMask,
   ...props
 }) => {
   const fixedId = uniqueKey || uid()
@@ -37,6 +38,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
       {...props}
     >
       {title ? <title id={idAria}>{title}</title> : null}
+      {beforeMask && React.isValidElement(beforeMask) ? beforeMask : null}
       <rect
         role="presentation"
         x="0"
@@ -119,6 +121,7 @@ SVG.defaultProps = {
   speed: 1.2,
   style: {},
   title: 'Loading...',
+  beforeMask: null,
 }
 
 export default SVG
