@@ -3,6 +3,8 @@ import * as renderer from 'react-test-renderer'
 
 import ContentLoader, { Rect } from '../ContentLoader'
 
+jest.useFakeTimers()
+
 describe('ContentLoader snapshots', () => {
   test('renders correctly the basic version', () => {
     const wrapper = renderer.create(

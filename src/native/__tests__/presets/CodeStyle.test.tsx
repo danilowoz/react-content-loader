@@ -5,6 +5,8 @@ import * as renderer from 'react-test-renderer'
 
 import CodeStyle from '../../presets/CodeStyle'
 
+jest.useFakeTimers()
+
 describe('CodeStyle', () => {
   const wrapper = renderer.create(
     <CodeStyle uniqueKey="CodeStyle" animate={false} speed={20} />

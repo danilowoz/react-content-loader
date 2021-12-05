@@ -5,6 +5,8 @@ import * as renderer from 'react-test-renderer'
 
 import InstagramStyle from '../../presets/InstagramStyle'
 
+jest.useFakeTimers()
+
 describe('InstagramStyle', () => {
   const wrapper = renderer.create(
     <InstagramStyle uniqueKey="InstagramStyle" animate={false} speed={20} />

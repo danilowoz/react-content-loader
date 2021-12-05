@@ -5,6 +5,8 @@ import * as renderer from 'react-test-renderer'
 
 import ListStyle from '../../presets/ListStyle'
 
+jest.useFakeTimers()
+
 describe('ListStyle', () => {
   const wrapper = renderer.create(
     <ListStyle uniqueKey="ListStyle" animate={false} speed={20} />

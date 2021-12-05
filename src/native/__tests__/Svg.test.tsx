@@ -9,6 +9,8 @@ interface IPredicateArgs {
   props: any
 }
 
+jest.useFakeTimers()
+
 describe('Svg', () => {
   const wrapper = renderer.create(<ContentLoader animate={false} />).root
   const predicateRectClipPath = ({ type, props }: IPredicateArgs) =>

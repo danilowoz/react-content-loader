@@ -5,6 +5,8 @@ import * as renderer from 'react-test-renderer'
 
 import FacebookStyle from '../../presets/FacebookStyle'
 
+jest.useFakeTimers()
+
 describe('FacebookStyle', () => {
   const wrapper = renderer.create(
     <FacebookStyle uniqueKey="FacebookStyle" animate={false} speed={20} />

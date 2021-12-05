@@ -5,6 +5,8 @@ import * as ShallowRenderer from 'react-test-renderer/shallow'
 
 import ContentLoader, { Circle, Rect } from '../ContentLoader'
 
+jest.useFakeTimers()
+
 describe('ContentLoader', () => {
   describe('when type is custom', () => {
     const customWrapper = renderer.create(
