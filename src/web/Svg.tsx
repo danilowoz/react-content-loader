@@ -12,6 +12,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   foregroundColor,
   foregroundOpacity,
   gradientRatio,
+  gradientDirection,
   uniqueKey,
   interval,
   rtl,
@@ -28,6 +29,8 @@ const SVG: React.FC<IContentLoaderProps> = ({
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
   const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`
+  const gradientTransform =
+    gradientDirection === 'top-bottom' ? 'rotate(90)' : undefined
 
   return (
     <svg
@@ -50,7 +53,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
       <defs>
         <clipPath id={idClip}>{children}</clipPath>
 
-        <linearGradient id={idGradient}>
+        <linearGradient id={idGradient} gradientTransform={gradientTransform}>
           <stop
             offset="0%"
             stopColor={backgroundColor}
@@ -113,6 +116,7 @@ SVG.defaultProps = {
   foregroundColor: '#eee',
   foregroundOpacity: 1,
   gradientRatio: 2,
+  gradientDirection: 'left-right',
   id: null,
   interval: 0.25,
   rtl: false,

@@ -213,6 +213,29 @@ gradientRatio.story = {
 }
 
 /**
+ * Gradient Direction
+ */
+export const gradientDirection = () => {
+  return (
+    <>
+      <SyntaxCode>{`<BulletList gradientDirection="left-right" />`}</SyntaxCode>
+      <BulletList gradientDirection="left-right" />
+
+      <SyntaxCode>{`<BulletList gradientDirection="top-bottom" />`}</SyntaxCode>
+      <BulletList gradientDirection="top-bottom" />
+    </>
+  )
+}
+
+gradientDirection.story = {
+  parameters: {
+    notes: `## \`gradientDirection?: 'left-right' | 'top-bottom' \`
+
+    Defaults to \`left-right\`. Direction in which the gradient is animated. Useful to implement top-down animations`,
+  },
+}
+
+/**
  * Speed
  */
 export const speed = () => {
