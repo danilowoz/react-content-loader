@@ -44,6 +44,7 @@ describe('ContentLoader', () => {
         speed={10}
         style={{ marginBottom: '10px' }}
         width={200}
+        beforeMask={<Rect />}
       >
         <Rect />
       </ContentLoader>
@@ -120,6 +121,15 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullField.rtl).toBe('boolean')
       expect(propsFromFullField.rtl).toBe(true)
+    })
+
+    it("`beforeMask` is a JSX Element and it's used", () => {
+      // defaultProps
+      expect(typeof propsFromEmpty.beforeMask).toBe('object')
+      expect(propsFromEmpty.beforeMask).toBe(null)
+      // custom props
+      expect(typeof propsFromFullField.beforeMask).toBe('object')
+      expect(propsFromFullField.beforeMask).toEqual(<Rect />)
     })
   })
 

@@ -152,4 +152,31 @@ describe('Svg', () => {
       expect(title.props.children.length).not.toBe(0)
     })
   })
+
+  describe('beforeMask', () => {
+    it('beforeMask is used', () => {
+      const wrapperWithBeforeMask = renderer.create(
+        <Svg beforeMask={<rect role="beforeMask" />} />
+      ).root
+
+      const beforeMask = wrapperWithBeforeMask.findByProps({
+        role: 'beforeMask',
+      })
+
+      expect(beforeMask.props.role).toBe('beforeMask')
+    })
+
+    it('beforeMask should be a JSX Element', () => {
+      const wrapperWithBeforeMask = renderer.create(
+        // @ts-ignore
+        <Svg beforeMask={() => <rect role="beforeMask" />} />
+      ).root
+
+      expect(() => {
+        wrapperWithBeforeMask.findByProps({
+          role: 'beforeMask',
+        })
+      }).toThrow('No instances found with props: {"role":"beforeMask"}')
+    })
+  })
 })

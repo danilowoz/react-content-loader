@@ -426,3 +426,45 @@ export const contentLoaderVsSVG = () => {
     </>
   )
 }
+
+/**
+ * beforeMask
+ */
+export const BeforeMask = () => {
+  return (
+    <>
+      <SyntaxCode>
+        {`<ContentLoader
+  viewBox="0 0 308 88"
+  beforeMask={
+    <rect width="306" height="86" y="1" x="1" stroke="#dee0e3" strokeWidth="1" fill="#fff" />
+  }
+>
+  <rect x="12" y="13" rx="4" ry="4" width="20" height="20"></rect>
+  <rect x="40" y="16" rx="4" ry="4" width="80" height="14"></rect>
+  <rect x="12" y="41" rx="4" ry="4" width="270" height="12"></rect>
+  <rect x="12" y="61" rx="4" ry="4" width="270" height="12"></rect>
+</ContentLoader>`}
+      </SyntaxCode>
+      <ContentLoader
+        viewBox="0 0 300 88"
+        beforeMask={
+          <rect
+            width="298"
+            height="86"
+            y="1"
+            x="1"
+            stroke="#dee0e3"
+            strokeWidth="1"
+            fill="#fff"
+          />
+        }
+      >
+        <rect x="12" y="13" rx="4" ry="4" width="20" height="20"></rect>
+        <rect x="40" y="16" rx="4" ry="4" width="80" height="14"></rect>
+        <rect x="12" y="41" rx="4" ry="4" width="270" height="12"></rect>
+        <rect x="12" y="61" rx="4" ry="4" width="270" height="12"></rect>
+      </ContentLoader>
+    </>
+  )
+}

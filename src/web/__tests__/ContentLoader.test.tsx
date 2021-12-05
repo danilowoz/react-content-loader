@@ -51,6 +51,7 @@ describe('ContentLoader', () => {
         title="My custom loading title"
         uniqueKey="my-id"
         width={200}
+        beforeMask={<rect />}
       >
         <rect />
       </ContentLoader>
@@ -199,6 +200,15 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.uniqueKey).toBe('string')
       expect(propsFromFullfield.uniqueKey).toBe('my-id')
+    })
+
+    it("`beforeMask` is a JSX Element and it's used", () => {
+      // defaultProps
+      expect(typeof propsFromEmpty.beforeMask).toBe('object')
+      expect(propsFromEmpty.beforeMask).toBe(null)
+      // custom props
+      expect(typeof propsFromFullfield.beforeMask).toBe('object')
+      expect(propsFromFullfield.beforeMask).toEqual(<rect />)
     })
   })
 })

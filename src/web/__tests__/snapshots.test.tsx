@@ -42,4 +42,34 @@ describe('ContentLoader snapshots', () => {
 
     expect(tree).toMatchSnapshot()
   })
+
+  test('renders correctly with beforeMask', () => {
+    let wrapper = renderer.create(
+      <ContentLoader
+        uniqueKey="snapshots"
+        beforeMask={
+          <>
+            <rect role="outline1" />
+            <rect role="outline2" />
+          </>
+        }
+      >
+        <rect />
+      </ContentLoader>
+    )
+    let tree = wrapper.toJSON()
+
+    expect(tree).toMatchSnapshot()
+
+    // with wrong type
+    wrapper = renderer.create(
+      // @ts-ignore
+      <ContentLoader uniqueKey="snapshots" beforeMask={() => <rect />}>
+        <rect />
+      </ContentLoader>
+    )
+    tree = wrapper.toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
 })
