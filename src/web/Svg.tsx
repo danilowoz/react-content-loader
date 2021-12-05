@@ -30,7 +30,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`
   const gradientTransform =
-    gradientDirection === 'top-bottom' ? 'rotate(90)' : null
+    gradientDirection === 'top-bottom' ? 'rotate(90)' : undefined
 
   return (
     <svg

@@ -80,7 +80,6 @@ exports[`ListStyle renders correctly 1`] = `
       />
     </clipPath>
     <linearGradient
-      gradientTransform={null}
       id="ListStyle-animated-diff"
     >
       <stop
