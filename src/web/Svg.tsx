@@ -5,6 +5,7 @@ import { IContentLoaderProps } from './'
 
 const SVG: React.FC<IContentLoaderProps> = ({
   animate,
+  animateBegin,
   backgroundColor,
   backgroundOpacity,
   baseUrl,
@@ -68,6 +69,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
                 keyTimes={keyTimes}
                 dur={dur}
                 repeatCount="indefinite"
+                begin={animateBegin}
               />
             )}
           </stop>
@@ -85,6 +87,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
                 keyTimes={keyTimes}
                 dur={dur}
                 repeatCount="indefinite"
+                begin={animateBegin}
               />
             )}
           </stop>
@@ -101,6 +104,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
                 keyTimes={keyTimes}
                 dur={dur}
                 repeatCount="indefinite"
+                begin={animateBegin}
               />
             )}
           </stop>

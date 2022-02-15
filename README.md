@@ -126,6 +126,7 @@ const MyLoader = () => (
 | **`style?: React.CSSProperties`** <br /> Defaults to `{}`        | React DOM only             |                                                                                                                                                                                                                                                                                                     |
 | **`uniqueKey?: string`** <br /> Defaults to random unique id     | React DOM only             | Use the same value of prop key, <br/>that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).                                                                                                                                        |
 | **`beforeMask?: JSX.Element`** <br /> Defaults to null           | React DOM<br/>React Native | Define custom shapes before content, <br/>see more [here](https://github.com/danilowoz/react-content-loader/issues/266).                                                                                                                                                                            |
+| **`animateBegin?: string`** <br /> Defaults to `undefined`              | React DOM only             | Delay before the animation begins, identical to the [SVG animate element begin attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/begin)
 
 See all options [live](https://danilowoz.com/react-content-loader/)
 
