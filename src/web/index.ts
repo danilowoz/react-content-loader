@@ -4,6 +4,7 @@ import ContentLoader from './ContentLoader'
 
 export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   animate?: boolean
+  animateBegin?: string
   backgroundColor?: string
   backgroundOpacity?: number
   baseUrl?: string
