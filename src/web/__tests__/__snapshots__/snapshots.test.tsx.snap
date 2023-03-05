@@ -3,7 +3,6 @@
 exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
-  id={null}
   role="img"
   style={Object {}}
   viewBox="0 0 476 124"
@@ -121,7 +120,6 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
-  id={null}
   role="img"
   style={Object {}}
 >
@@ -205,7 +203,6 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
 exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
 <svg
   aria-labelledby="snapshots-aria"
-  id={null}
   role="img"
   style={Object {}}
 >
@@ -283,7 +280,6 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
 exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
-  id={null}
   role="img"
   style={Object {}}
   viewBox="0 0 100 100"
@@ -402,7 +398,6 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
 <svg
   aria-labelledby="snapshots-aria"
   height={100}
-  id={null}
   role="img"
   style={Object {}}
   viewBox="0 0 100 100"
@@ -521,7 +516,6 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
 exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
-  id={null}
   role="img"
   style={Object {}}
   viewBox=""
