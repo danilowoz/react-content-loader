@@ -3,7 +3,6 @@
 exports[`BulletListStyle renders correctly 1`] = `
 <svg
   aria-labelledby="BulletListStyle-aria"
-  id={null}
   role="img"
   style={Object {}}
   viewBox="0 0 245 125"

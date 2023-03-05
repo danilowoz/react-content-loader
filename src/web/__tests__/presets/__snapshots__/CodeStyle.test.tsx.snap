@@ -3,7 +3,6 @@
 exports[`CodeStyle renders correctly 1`] = `
 <svg
   aria-labelledby="CodeStyle-aria"
-  id={null}
   role="img"
   style={Object {}}
   viewBox="0 0 340 84"

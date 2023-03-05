@@ -4,23 +4,23 @@ import uid from '../shared/uid'
 import { IContentLoaderProps } from './'
 
 const SVG: React.FC<IContentLoaderProps> = ({
-  animate,
+  animate = true,
   animateBegin,
-  backgroundColor,
-  backgroundOpacity,
-  baseUrl,
+  backgroundColor = '#f5f6f7',
+  backgroundOpacity = 1,
+  baseUrl = '',
   children,
-  foregroundColor,
-  foregroundOpacity,
-  gradientRatio,
-  gradientDirection,
+  foregroundColor = '#eee',
+  foregroundOpacity = 1,
+  gradientRatio = 2,
+  gradientDirection = 'left-right',
   uniqueKey,
-  interval,
-  rtl,
-  speed,
-  style,
-  title,
-  beforeMask,
+  interval = 0.25,
+  rtl = false,
+  speed = 1.2,
+  style = {},
+  title = 'Loading...',
+  beforeMask = null,
   ...props
 }) => {
   const fixedId = uniqueKey || uid()
@@ -112,24 +112,6 @@ const SVG: React.FC<IContentLoaderProps> = ({
       </defs>
     </svg>
   )
-}
-
-SVG.defaultProps = {
-  animate: true,
-  backgroundColor: '#f5f6f7',
-  backgroundOpacity: 1,
-  baseUrl: '',
-  foregroundColor: '#eee',
-  foregroundOpacity: 1,
-  gradientRatio: 2,
-  gradientDirection: 'left-right',
-  id: null,
-  interval: 0.25,
-  rtl: false,
-  speed: 1.2,
-  style: {},
-  title: 'Loading...',
-  beforeMask: null,
 }
 
 export default SVG
