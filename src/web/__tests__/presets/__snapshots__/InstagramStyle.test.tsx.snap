@@ -10,7 +10,7 @@ exports[`InstagramStyle renders correctly 1`] = `
   <title
     id="InstagramStyle-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#InstagramStyle-diff)"

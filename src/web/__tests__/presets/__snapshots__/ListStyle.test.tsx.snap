@@ -10,7 +10,7 @@ exports[`ListStyle renders correctly 1`] = `
   <title
     id="ListStyle-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#ListStyle-diff)"

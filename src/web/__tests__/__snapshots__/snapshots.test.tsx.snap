@@ -10,7 +10,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
   <title
     id="snapshots-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#snapshots-diff)"
@@ -126,7 +126,7 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
   <title
     id="snapshots-aria"
   >
-    Loading...
+    
   </title>
   <rect
     role="outline1"
@@ -209,7 +209,7 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
   <title
     id="snapshots-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#snapshots-diff)"
@@ -287,7 +287,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
   <title
     id="snapshots-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#snapshots-diff)"
@@ -406,7 +406,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
   <title
     id="snapshots-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#snapshots-diff)"
@@ -523,7 +523,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
   <title
     id="snapshots-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#snapshots-diff)"

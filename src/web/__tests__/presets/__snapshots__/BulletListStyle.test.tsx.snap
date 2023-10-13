@@ -10,7 +10,7 @@ exports[`BulletListStyle renders correctly 1`] = `
   <title
     id="BulletListStyle-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#BulletListStyle-diff)"

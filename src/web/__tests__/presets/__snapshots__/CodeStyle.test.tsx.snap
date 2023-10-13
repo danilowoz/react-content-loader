@@ -10,7 +10,7 @@ exports[`CodeStyle renders correctly 1`] = `
   <title
     id="CodeStyle-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#CodeStyle-diff)"

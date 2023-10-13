@@ -10,7 +10,7 @@ exports[`FacebookStyle renders correctly 1`] = `
   <title
     id="FacebookStyle-aria"
   >
-    Loading...
+    
   </title>
   <rect
     clipPath="url(#FacebookStyle-diff)"
