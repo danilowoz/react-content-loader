@@ -19,7 +19,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   rtl = false,
   speed = 1.2,
   style = {},
-  title = 'Loading...',
+  title = '',
   beforeMask = null,
   ...props
 }) => {
