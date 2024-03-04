@@ -1,7 +1,7 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { IContentLoaderProps } from "..";
-import ContentLoader, { Circle, Rect } from "../ContentLoader";
+import { IContentLoaderProps } from '..'
+import ContentLoader, { Circle, Rect } from '../ContentLoader'
 
 const ReactContentLoaderFacebook: React.FC<IContentLoaderProps> = props => (
   <ContentLoader viewBox="0 0 476 124" width={476} height={124} {...props}>
@@ -12,6 +12,6 @@ const ReactContentLoaderFacebook: React.FC<IContentLoaderProps> = props => (
     <Rect x="0" y="88" width="178" height="6" rx="3" />
     <Circle cx="20" cy="20" r="20" />
   </ContentLoader>
-);
+)
 
-export default ReactContentLoaderFacebook;
+export default ReactContentLoaderFacebook

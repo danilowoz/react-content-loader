@@ -1,43 +1,43 @@
-import * as React from "react";
-import * as renderer from "react-test-renderer";
+import * as React from 'react'
+import * as renderer from 'react-test-renderer'
 
-import ContentLoader, { Rect } from "../ContentLoader";
+import ContentLoader, { Rect } from '../ContentLoader'
 
-jest.useFakeTimers();
+jest.useFakeTimers()
 
-describe("ContentLoader snapshots", () => {
-  test("renders correctly the basic version", () => {
+describe('ContentLoader snapshots', () => {
+  test('renders correctly the basic version', () => {
     const wrapper = renderer.create(
       <ContentLoader animate={false} uniqueKey="snapshots" />
-    );
-    const tree = wrapper.toJSON();
+    )
+    const tree = wrapper.toJSON()
 
-    expect(tree).toMatchSnapshot();
-  });
+    expect(tree).toMatchSnapshot()
+  })
 
-  test("renders correctly with viewBox empty", () => {
+  test('renders correctly with viewBox empty', () => {
     const wrapper = renderer.create(
       <ContentLoader animate={false} uniqueKey="snapshots" viewBox="" />
-    );
-    const tree = wrapper.toJSON();
+    )
+    const tree = wrapper.toJSON()
 
-    expect(tree).toMatchSnapshot();
-  });
+    expect(tree).toMatchSnapshot()
+  })
 
-  test("renders correctly with viewBox defined", () => {
+  test('renders correctly with viewBox defined', () => {
     const wrapper = renderer.create(
       <ContentLoader
         animate={false}
         uniqueKey="snapshots"
         viewBox="0 0 100 100"
       />
-    );
-    const tree = wrapper.toJSON();
+    )
+    const tree = wrapper.toJSON()
 
-    expect(tree).toMatchSnapshot();
-  });
+    expect(tree).toMatchSnapshot()
+  })
 
-  test("renders correctly with viewBox defined and sizes defined too", () => {
+  test('renders correctly with viewBox defined and sizes defined too', () => {
     const wrapper = renderer.create(
       <ContentLoader
         animate={false}
@@ -46,13 +46,13 @@ describe("ContentLoader snapshots", () => {
         height={100}
         viewBox="0 0 100 100"
       />
-    );
-    const tree = wrapper.toJSON();
+    )
+    const tree = wrapper.toJSON()
 
-    expect(tree).toMatchSnapshot();
-  });
+    expect(tree).toMatchSnapshot()
+  })
 
-  test("renders correctly with beforeMask", () => {
+  test('renders correctly with beforeMask', () => {
     let wrapper = renderer.create(
       <ContentLoader
         uniqueKey="snapshots"
@@ -65,10 +65,10 @@ describe("ContentLoader snapshots", () => {
       >
         <Rect />
       </ContentLoader>
-    );
-    let tree = wrapper.toJSON();
+    )
+    let tree = wrapper.toJSON()
 
-    expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot()
 
     // with wrong type
     wrapper = renderer.create(
@@ -76,9 +76,9 @@ describe("ContentLoader snapshots", () => {
       <ContentLoader uniqueKey="snapshots" beforeMask={() => <Rect />}>
         <Rect />
       </ContentLoader>
-    );
-    tree = wrapper.toJSON();
+    )
+    tree = wrapper.toJSON()
 
-    expect(tree).toMatchSnapshot();
-  });
-});
+    expect(tree).toMatchSnapshot()
+  })
+})

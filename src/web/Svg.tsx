@@ -1,38 +1,38 @@
-import * as React from "react";
+import * as React from 'react'
 
-import uid from "../shared/uid";
-import { IContentLoaderProps } from "./";
+import uid from '../shared/uid'
+import { IContentLoaderProps } from './'
 
 const SVG: React.FC<IContentLoaderProps> = ({
   animate = true,
   animateBegin,
-  backgroundColor = "#f5f6f7",
+  backgroundColor = '#f5f6f7',
   backgroundOpacity = 1,
-  baseUrl = "",
+  baseUrl = '',
   children,
-  foregroundColor = "#eee",
+  foregroundColor = '#eee',
   foregroundOpacity = 1,
   gradientRatio = 2,
-  gradientDirection = "left-right",
+  gradientDirection = 'left-right',
   uniqueKey,
   interval = 0.25,
   rtl = false,
   speed = 1.2,
   style = {},
-  title = "Loading...",
+  title = 'Loading...',
   beforeMask = null,
   ...props
 }) => {
-  const fixedId = uniqueKey || uid();
-  const idClip = `${fixedId}-diff`;
-  const idGradient = `${fixedId}-animated-diff`;
-  const idAria = `${fixedId}-aria`;
+  const fixedId = uniqueKey || uid()
+  const idClip = `${fixedId}-diff`
+  const idGradient = `${fixedId}-animated-diff`
+  const idAria = `${fixedId}-aria`
 
-  const rtlStyle = rtl ? { transform: "scaleX(-1)" } : null;
-  const keyTimes = `0; ${interval}; 1`;
-  const dur = `${speed}s`;
+  const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
+  const keyTimes = `0; ${interval}; 1`
+  const dur = `${speed}s`
   const gradientTransform =
-    gradientDirection === "top-bottom" ? "rotate(90)" : undefined;
+    gradientDirection === 'top-bottom' ? 'rotate(90)' : undefined
 
   return (
     <svg
@@ -111,7 +111,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
         </linearGradient>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default SVG;
+export default SVG

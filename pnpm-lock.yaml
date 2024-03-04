@@ -22,6 +22,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: 8.2.0
     version: 8.2.0
+  '@significa/prettier-config':
+    specifier: 0.0.9
+    version: 0.0.9
   '@types/jest':
     specifier: 24.0.24
     version: 24.0.24
@@ -3132,6 +3135,12 @@ packages:
 
   /@sideway/pinpoint@2.0.0:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
+    dev: true
+
+  /@significa/prettier-config@0.0.9:
+    resolution: {integrity: sha512-tBM0EopHtAeAFW4f4dKFDHeFN/TKQwxmimOWRKHqBJC/AbVhFxE1uSFMRUMqMHhBCPQ/UX7o1UMWTcRTzvgzhA==}
+    dependencies:
+      prettier: 1.19.1
     dev: true
 
   /@storybook/builder-manager@7.6.17:
