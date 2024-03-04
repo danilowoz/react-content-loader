@@ -1,7 +1,7 @@
-import * as React from 'react'
+import * as React from "react";
 
-import { IContentLoaderProps } from '..'
-import ContentLoader from '../ContentLoader'
+import { IContentLoaderProps } from "..";
+import ContentLoader from "../ContentLoader";
 
 const ReactContentLoaderBulletList: React.FC<IContentLoaderProps> = props => (
   <ContentLoader viewBox="0 0 245 125" {...props}>
@@ -14,6 +14,6 @@ const ReactContentLoaderBulletList: React.FC<IContentLoaderProps> = props => (
     <circle cx="10" cy="110" r="8" />
     <rect x="25" y="105" rx="5" ry="5" width="220" height="10" />
   </ContentLoader>
-)
+);
 
-export default ReactContentLoaderBulletList
+export default ReactContentLoaderBulletList;
