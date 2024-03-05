@@ -61,53 +61,29 @@ const SVG: React.FC<IContentLoaderProps> = ({
             offset="0%"
             stopColor={backgroundColor}
             stopOpacity={backgroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`${-gradientRatio}; ${-gradientRatio}; 1`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-                begin={animateBegin}
-              />
-            )}
-          </stop>
+          />
 
           <stop
             offset="50%"
             stopColor={foregroundColor}
             stopOpacity={foregroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`${-gradientRatio / 2}; ${-gradientRatio / 2}; ${1 +
-                  gradientRatio / 2}`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-                begin={animateBegin}
-              />
-            )}
-          </stop>
+          />
 
           <stop
             offset="100%"
             stopColor={backgroundColor}
             stopOpacity={backgroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`0; 0; ${1 + gradientRatio}`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-                begin={animateBegin}
-              />
-            )}
-          </stop>
+          />
+
+          {animate && (
+            <animateTransform
+              attributeName="gradientTransform"
+              type="translate"
+              values={`${gradientRatio * -1} 0; 0 0; ${gradientRatio} 0`}
+              dur={dur}
+              repeatCount="indefinite"
+            />
+          )}
         </linearGradient>
       </defs>
     </svg>
