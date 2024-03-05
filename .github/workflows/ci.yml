@@ -9,19 +9,16 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ['10', '12', '14']
-    name: '[v${{ matrix.node-version }}] lint and test'
+    name: lint and test'
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 
         uses: actions/setup-node@v2-beta
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20
 
       - name: Cache node_modules
         id: cache-node_modules
