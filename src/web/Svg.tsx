@@ -29,10 +29,17 @@ const SVG: React.FC<IContentLoaderProps> = ({
   const idAria = `${fixedId}-aria`
 
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
-  const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`
+
+  // @deprecated
+  const keyTimes = `0; ${interval}; 1`
+
+  // @deprecated
   const gradientTransform =
     gradientDirection === 'top-bottom' ? 'rotate(90)' : undefined
+
+  const from = `${gradientRatio * -1} 0`
+  const to = `${gradientRatio} 0`
 
   return (
     <svg
@@ -56,7 +63,10 @@ const SVG: React.FC<IContentLoaderProps> = ({
       <defs>
         <clipPath id={idClip}>{children}</clipPath>
 
-        <linearGradient id={idGradient} gradientTransform={gradientTransform}>
+        <linearGradient
+          id={idGradient}
+          gradientTransform={`translate(${from})`}
+        >
           <stop
             offset="0%"
             stopColor={backgroundColor}
@@ -79,7 +89,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
             <animateTransform
               attributeName="gradientTransform"
               type="translate"
-              values={`${gradientRatio * -1} 0; 0 0; ${gradientRatio} 0`}
+              values={`${from}; 0 0; ${to}`}
               dur={dur}
               repeatCount="indefinite"
             />

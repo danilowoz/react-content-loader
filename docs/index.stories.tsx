@@ -29,7 +29,7 @@ export const animate = () => {
   return (
     <>
       <SyntaxCode>{'<ContentLoader  />'}</SyntaxCode>
-      <ContentLoader />
+      <ContentLoader backgroundColor="red" />
 
       <SyntaxCode>{'<ContentLoader animate={false} />'}</SyntaxCode>
       <ContentLoader animate={false} />
