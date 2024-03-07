@@ -13,32 +13,25 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Use Node.js 
-        uses: actions/setup-node@v2-beta
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
         with:
           node-version: 20
-
-      - name: Cache node_modules
-        id: cache-node_modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{matrix.node-version}}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{matrix.node-version}}-
-            ${{ runner.os }}-node-
-            ${{ runner.os }}-
+          cache: 'pnpm'
 
       - name: Install dependencies
-        if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: npm ci --force
+        run: pnpm i 
 
       - name: Run tests
-        run: npm run test
+        run: pnpm run test
 
       - name: Build
         env:
           BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE }}
-        run: npm run build
+        run: pnpm run build
