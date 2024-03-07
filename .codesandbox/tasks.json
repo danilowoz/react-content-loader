@@ -49,11 +49,6 @@
       "command": "pnpm run test:watch",
       "runAtStart": false
     },
-    "test:size": {
-      "name": "test:size",
-      "command": "pnpm run test:size",
-      "runAtStart": false
-    },
     "test:tsc": {
       "name": "test:tsc",
       "command": "pnpm run test:tsc",

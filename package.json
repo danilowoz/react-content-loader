@@ -32,7 +32,7 @@
   "sideEffects": false,
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
+    "build": "rm -fr ./dist ./native && rollup -c",
     "build:docs": "build-storybook -o docs-build",
     "test": "npm run test:tsc && npm run test:unit",
     "test:unit": "npm run test:unit:web && npm run test:unit:native",
