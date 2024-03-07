@@ -53,8 +53,6 @@ jobs:
         run: pnpm i 
 
       - name: Build
-        env:
-          BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE }}
         run: pnpm run build
 
       - name: Release

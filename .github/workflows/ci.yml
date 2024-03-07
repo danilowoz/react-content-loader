@@ -32,6 +32,4 @@ jobs:
         run: pnpm run test
 
       - name: Build
-        env:
-          BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE }}
         run: pnpm run build
