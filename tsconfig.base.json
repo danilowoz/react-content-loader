@@ -5,7 +5,7 @@
     "declarationMap": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "lib": ["es6"],
+    "lib": ["es6", "dom"],
     "noEmit": true,
     "noImplicitAny": false,
     "resolveJsonModule": true,

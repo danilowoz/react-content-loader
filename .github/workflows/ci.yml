@@ -9,7 +9,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    name: lint and test'
+    name: Lint, typecheck and test
 
     steps:
       - name: Checkout code

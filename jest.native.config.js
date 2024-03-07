@@ -12,10 +12,4 @@ module.exports = {
     '^.+\\.js$': require.resolve('react-native/jest/preprocessor.js'),
   },
   testRegex: '/src/native/__tests__/.*(\\.|/)(test|spec)\\.[jt]sx?$',
-  globals: {
-    'ts-jest': {
-      babelConfig: false,
-      tsConfig: 'tsconfig.test.json',
-    },
-  },
 }

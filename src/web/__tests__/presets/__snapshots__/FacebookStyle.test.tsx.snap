@@ -4,7 +4,7 @@ exports[`FacebookStyle renders correctly 1`] = `
 <svg
   aria-labelledby="FacebookStyle-aria"
   role="img"
-  style={Object {}}
+  style={{}}
   viewBox="0 0 476 124"
 >
   <title
@@ -17,7 +17,7 @@ exports[`FacebookStyle renders correctly 1`] = `
     height="100%"
     role="presentation"
     style={
-      Object {
+      {
         "fill": "url(#FacebookStyle-animated-diff)",
       }
     }
@@ -71,47 +71,31 @@ exports[`FacebookStyle renders correctly 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform="translate(-2 0)"
       id="FacebookStyle-animated-diff"
     >
       <stop
         offset="0%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="20s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-2; -2; 1"
-        />
-      </stop>
+      />
       <stop
         offset="50%"
         stopColor="#eee"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="20s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-1; -1; 2"
-        />
-      </stop>
+      />
       <stop
         offset="100%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="20s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="0; 0; 3"
-        />
-      </stop>
+      />
+      <animateTransform
+        attributeName="gradientTransform"
+        dur="20s"
+        repeatCount="indefinite"
+        type="translate"
+        values="-2 0; 0 0; 2 0"
+      />
     </linearGradient>
   </defs>
 </svg>
