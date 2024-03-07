@@ -62,6 +62,7 @@
     "@types/react-test-renderer": "18.0.7",
     "@typescript-eslint/eslint-plugin": "2.13.0",
     "awesome-typescript-loader": "5.2.1",
+    "bundlesize": "^0.18.1",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "3.0.2",
     "husky": "3.1.0",
@@ -83,6 +84,7 @@
     "semantic-release": "^17.4.2",
     "storybook": "^7.6.17",
     "ts-jest": "^29.1.2",
+    "tslib": "^2.6.2",
     "typescript": "5.4.2"
   },
   "peerDependencies": {
