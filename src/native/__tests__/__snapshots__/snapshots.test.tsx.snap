@@ -4,7 +4,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 <Svg
   height={124}
   interval={0.25}
-  style={Object {}}
+  style={{}}
   viewBox="0 0 476 124"
   width={476}
 >
@@ -62,8 +62,9 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
       />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="snapshots-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}
@@ -89,7 +90,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
 <Svg
   interval={0.25}
-  style={Object {}}
+  style={{}}
 >
   <Rect
     x="123"
@@ -112,8 +113,9 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
       <Rect />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="snapshots-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}
@@ -139,7 +141,7 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
 exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
 <Svg
   interval={0.25}
-  style={Object {}}
+  style={{}}
 >
   <Rect
     clipPath="url(#snapshots-animated-diff)"
@@ -156,8 +158,9 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
       <Rect />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="snapshots-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}
@@ -184,7 +187,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
 <Svg
   height={124}
   interval={0.25}
-  style={Object {}}
+  style={{}}
   viewBox="0 0 100 100"
   width={476}
 >
@@ -242,8 +245,9 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
       />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="snapshots-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}
@@ -270,7 +274,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
 <Svg
   height={100}
   interval={0.25}
-  style={Object {}}
+  style={{}}
   viewBox="0 0 100 100"
   width={100}
 >
@@ -328,8 +332,9 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
       />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="snapshots-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}
@@ -356,7 +361,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
 <Svg
   height={124}
   interval={0.25}
-  style={Object {}}
+  style={{}}
   viewBox=""
   width={476}
 >
@@ -414,8 +419,9 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
       />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="snapshots-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}

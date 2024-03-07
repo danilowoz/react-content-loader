@@ -4,7 +4,7 @@ exports[`ListStyle renders correctly 1`] = `
 <Svg
   height={110}
   interval={0.25}
-  style={Object {}}
+  style={{}}
   viewBox="0 0 400 110"
   width={400}
 >
@@ -70,8 +70,9 @@ exports[`ListStyle renders correctly 1`] = `
       />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="ListStyle-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}

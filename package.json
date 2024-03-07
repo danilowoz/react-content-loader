@@ -46,16 +46,10 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "release": "semantic-release"
   },
-  "dependencies": {
-    "ts-jest": "^29.1.2"
-  },
   "devDependencies": {
-    "@babel/core": "7.7.7",
-    "@babel/polyfill": "7.7.0",
-    "@babel/preset-env": "7.7.7",
-    "@babel/preset-react": "7.7.4",
-    "@babel/register": "7.7.7",
-    "@babel/runtime": "7.7.7",
+    "@babel/plugin-transform-private-methods": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "8.2.0",
     "@significa/prettier-config": "0.0.9",
@@ -65,7 +59,6 @@
     "@types/jest": "24.0.24",
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",
-    "@types/react-native": "0.60.26",
     "@types/react-test-renderer": "18.0.7",
     "@typescript-eslint/eslint-plugin": "2.13.0",
     "awesome-typescript-loader": "5.2.1",
@@ -74,12 +67,12 @@
     "husky": "3.1.0",
     "jest": "29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "metro-react-native-babel-preset": "0.57.0",
+    "metro-react-native-babel-preset": "^0.77.0",
     "prettier": "1.19.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "^0.64.1",
-    "react-native-svg": "9.13.6",
+    "react-native": "^0.73.3",
+    "react-native-svg": "15.1.0",
     "react-syntax-highlighter": "^12.2.1",
     "react-test-renderer": "18.2.0",
     "rollup": "1.27.14",
@@ -89,6 +82,7 @@
     "rollup-plugin-uglify": "6.0.4",
     "semantic-release": "^17.4.2",
     "storybook": "^7.6.17",
+    "ts-jest": "^29.1.2",
     "typescript": "5.4.2"
   },
   "peerDependencies": {
