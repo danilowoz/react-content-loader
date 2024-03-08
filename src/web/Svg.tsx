@@ -13,7 +13,6 @@ const SVG: React.FC<IContentLoaderProps> = ({
   foregroundColor = '#eee',
   foregroundOpacity = 1,
   gradientRatio = 2,
-  gradientDirection = 'left-right',
   uniqueKey,
   rtl = false,
   speed = 1.2,
@@ -29,11 +28,6 @@ const SVG: React.FC<IContentLoaderProps> = ({
 
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
   const dur = `${speed}s`
-
-
-  // @deprecated
-  const gradientTransform =
-    gradientDirection === 'top-bottom' ? 'rotate(90)' : undefined
 
   const from = `${gradientRatio * -1} 0`
   const to = `${gradientRatio} 0`
