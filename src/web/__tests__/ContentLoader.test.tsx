@@ -43,7 +43,6 @@ describe('ContentLoader', () => {
         gradientRatio={0.5}
         gradientDirection="top-bottom"
         height={200}
-        interval={0.5}
         preserveAspectRatio="xMaxYMax meet"
         rtl
         speed={10}
@@ -64,12 +63,6 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.speed).toBe('number')
       expect(propsFromFullfield.speed).toBe(10)
-    })
-
-    it("`interval` is a number and it's used", () => {
-      // custom props
-      expect(typeof propsFromFullfield.interval).toBe('number')
-      expect(propsFromFullfield.interval).toBe(0.5)
     })
 
     it("`height` is a number and it's used", () => {

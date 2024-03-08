@@ -15,7 +15,6 @@ const SVG: React.FC<IContentLoaderProps> = ({
   gradientRatio = 2,
   gradientDirection = 'left-right',
   uniqueKey,
-  interval = 0.25,
   rtl = false,
   speed = 1.2,
   style = {},
@@ -31,8 +30,6 @@ const SVG: React.FC<IContentLoaderProps> = ({
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
   const dur = `${speed}s`
 
-  // @deprecated
-  const keyTimes = `0; ${interval}; 1`
 
   // @deprecated
   const gradientTransform =

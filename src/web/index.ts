@@ -12,7 +12,6 @@ export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   foregroundOpacity?: number
   gradientRatio?: number
   gradientDirection?: 'left-right' | 'top-bottom'
-  interval?: number
   rtl?: boolean
   speed?: number
   title?: string

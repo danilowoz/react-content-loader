@@ -258,26 +258,6 @@ speed.story = {
 }
 
 /**
- * Interval
- */
-export const interval = () => {
-  return (
-    <>
-      <SyntaxCode>{`<ContentLoader interval={0.8} />`}</SyntaxCode>
-      <ContentLoader interval={0.8} />
-    </>
-  )
-}
-
-interval.story = {
-  parameters: {
-    notes: `## \`interval?: number\`
-
-    Defaults to \`0.25\`. Interval of time between runs of the animation, as a fraction of the animation speed.`,
-  },
-}
-
-/**
  * RTL
  */
 export const RTL = () => {
