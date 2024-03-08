@@ -64,15 +64,6 @@ describe('Svg', () => {
 
       expect(stopsIntoLinearGradient.length).toBe(3)
     })
-
-    it('has one `animate` inside each `stop`', () => {
-      const { allStops } = partsOfComponent
-
-      allStops.forEach(stop => {
-        const animate = stop.findAllByType('animate')
-        expect(animate.length).toBe(1)
-      })
-    })
   })
 
   describe('unique key', () => {

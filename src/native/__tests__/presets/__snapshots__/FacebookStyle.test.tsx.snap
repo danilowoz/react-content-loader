@@ -4,7 +4,7 @@ exports[`FacebookStyle renders correctly 1`] = `
 <Svg
   height={124}
   interval={0.25}
-  style={Object {}}
+  style={{}}
   viewBox="0 0 476 124"
   width={476}
 >
@@ -62,8 +62,9 @@ exports[`FacebookStyle renders correctly 1`] = `
       />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="FacebookStyle-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}

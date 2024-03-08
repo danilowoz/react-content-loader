@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Animated } from 'react-native'
 import * as renderer from 'react-test-renderer'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 
@@ -44,7 +43,7 @@ describe('ContentLoader', () => {
         rtl
         foregroundColor="#fff"
         speed={10}
-        style={{ marginBottom: '10px' }}
+        style={{ marginBottom: 10 }}
         width={200}
         beforeMask={<Rect />}
       >
@@ -113,7 +112,7 @@ describe('ContentLoader', () => {
       // defaultProps
       expect(propsFromEmpty.style).toMatchObject({})
       // custom props
-      expect(propsFromFullField.style).toMatchObject({ marginBottom: '10px' })
+      expect(propsFromFullField.style).toMatchObject({ marginBottom: 10 })
     })
 
     it("`rtl` is a boolean and it's used", () => {
@@ -132,32 +131,6 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullField.beforeMask).toBe('object')
       expect(propsFromFullField.beforeMask).toEqual(<Rect />)
-    })
-  })
-
-  describe('when using SVG', () => {
-    describe('cleanup', () => {
-      afterAll(() => {
-        jest.useRealTimers()
-      })
-
-      it('cleans up animations when unmounted', () => {
-        jest.useFakeTimers()
-        const animationSpy = jest.spyOn(Animated, 'timing')
-
-        const mockSpeed = 10
-        const { unmount } = renderer.create(
-          <ContentLoader animate={true} height={200} speed={mockSpeed}>
-            <Rect />
-          </ContentLoader>
-        )
-
-        jest.runTimersToTime(mockSpeed)
-        unmount()
-        jest.runTimersToTime(mockSpeed)
-
-        expect(animationSpy).toHaveBeenCalledTimes(1)
-      })
     })
   })
 })

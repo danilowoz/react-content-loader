@@ -41,9 +41,7 @@ describe('ContentLoader', () => {
         foregroundColor="#fff"
         foregroundOpacity={0.12}
         gradientRatio={0.5}
-        gradientDirection="top-bottom"
         height={200}
-        interval={0.5}
         preserveAspectRatio="xMaxYMax meet"
         rtl
         speed={10}
@@ -52,7 +50,6 @@ describe('ContentLoader', () => {
         uniqueKey="my-id"
         width={200}
         beforeMask={<rect />}
-        animateBegin="5s"
       >
         <rect />
       </ContentLoader>
@@ -64,12 +61,6 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.speed).toBe('number')
       expect(propsFromFullfield.speed).toBe(10)
-    })
-
-    it("`interval` is a number and it's used", () => {
-      // custom props
-      expect(typeof propsFromFullfield.interval).toBe('number')
-      expect(propsFromFullfield.interval).toBe(0.5)
     })
 
     it("`height` is a number and it's used", () => {
@@ -88,12 +79,6 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.gradientRatio).toBe('number')
       expect(propsFromFullfield.gradientRatio).toBe(0.5)
-    })
-
-    it("`gradientDirection` is a string and it's used", () => {
-      // custom props
-      expect(typeof propsFromFullfield.gradientDirection).toBe('string')
-      expect(propsFromFullfield.gradientDirection).toBe('top-bottom')
     })
 
     it("`animate` is a boolean and it's used", () => {
@@ -165,12 +150,6 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.beforeMask).toBe('object')
       expect(propsFromFullfield.beforeMask).toEqual(<rect />)
-    })
-
-    it("`animateBegin` is a string and it's used", () => {
-      // custom props
-      expect(typeof propsFromFullfield.animateBegin).toBe('string')
-      expect(propsFromFullfield.animateBegin).toEqual('5s')
     })
   })
 })

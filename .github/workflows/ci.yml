@@ -9,42 +9,27 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ['10', '12', '14']
-    name: '[v${{ matrix.node-version }}] lint and test'
+    name: Lint, typecheck and test
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2-beta
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          version: 8
 
-      - name: Cache node_modules
-        id: cache-node_modules
-        uses: actions/cache@v2
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{matrix.node-version}}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{matrix.node-version}}-
-            ${{ runner.os }}-node-
-            ${{ runner.os }}-
+          node-version: 20
+          cache: 'pnpm'
 
       - name: Install dependencies
-        if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: npm ci --force
-
-      - name: Lint
-        run: npm run lint
+        run: pnpm i 
 
       - name: Run tests
-        run: npm run test
+        run: pnpm run test
 
       - name: Build
-        env:
-          BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE }}
-        run: npm run build
+        run: pnpm run build

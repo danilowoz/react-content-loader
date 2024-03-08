@@ -4,7 +4,7 @@ exports[`CodeStyle renders correctly 1`] = `
 <Svg
   height={84}
   interval={0.25}
-  style={Object {}}
+  style={{}}
   viewBox="0 0 340 84"
   width={340}
 >
@@ -78,8 +78,9 @@ exports[`CodeStyle renders correctly 1`] = `
       />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="CodeStyle-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}

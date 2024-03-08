@@ -29,7 +29,7 @@ export const animate = () => {
   return (
     <>
       <SyntaxCode>{'<ContentLoader  />'}</SyntaxCode>
-      <ContentLoader />
+      <ContentLoader backgroundColor="red" />
 
       <SyntaxCode>{'<ContentLoader animate={false} />'}</SyntaxCode>
       <ContentLoader animate={false} />
@@ -258,26 +258,6 @@ speed.story = {
 }
 
 /**
- * Interval
- */
-export const interval = () => {
-  return (
-    <>
-      <SyntaxCode>{`<ContentLoader interval={0.8} />`}</SyntaxCode>
-      <ContentLoader interval={0.8} />
-    </>
-  )
-}
-
-interval.story = {
-  parameters: {
-    notes: `## \`interval?: number\`
-
-    Defaults to \`0.25\`. Interval of time between runs of the animation, as a fraction of the animation speed.`,
-  },
-}
-
-/**
  * RTL
  */
 export const RTL = () => {
@@ -467,24 +447,4 @@ export const BeforeMask = () => {
       </ContentLoader>
     </>
   )
-}
-
-/**
- * Animation begin delay
- */
-export const animateBegin = () => {
-  return (
-    <>
-      <SyntaxCode>{' <ContentLoader animateBegin="5s" />'}</SyntaxCode>
-      <ContentLoader animateBegin="5s" />
-    </>
-  )
-}
-
-animateBegin.story = {
-  parameters: {
-    notes: `##\`animateBegin?: string\` 
-    
-    Defaults to \`0s\`. This attribute accepts the same values as the SVG animate element's [\`begin\` attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/begin).`,
-  },
 }

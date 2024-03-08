@@ -1,0 +1,78 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "pnpm install"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "dev": {
+      "name": "dev",
+      "command": "pnpm run dev",
+      "runAtStart": true
+    },
+    "build": {
+      "name": "build",
+      "command": "pnpm run build",
+      "runAtStart": false
+    },
+    "build:docs": {
+      "name": "build:docs",
+      "command": "pnpm run build:docs",
+      "runAtStart": false
+    },
+    "test": {
+      "name": "test",
+      "command": "pnpm run test",
+      "runAtStart": false
+    },
+    "test:unit": {
+      "name": "test:unit",
+      "command": "pnpm run test:unit",
+      "runAtStart": false
+    },
+    "test:unit:web": {
+      "name": "test:unit:web",
+      "command": "pnpm run test:unit:web",
+      "runAtStart": false
+    },
+    "test:unit:native": {
+      "name": "test:unit:native",
+      "command": "pnpm run test:unit:native",
+      "runAtStart": false
+    },
+    "test:watch": {
+      "name": "test:watch",
+      "command": "pnpm run test:watch",
+      "runAtStart": false
+    },
+    "test:tsc": {
+      "name": "test:tsc",
+      "command": "pnpm run test:tsc",
+      "runAtStart": false
+    },
+    "test:tsc:watch": {
+      "name": "test:tsc:watch",
+      "command": "pnpm run test:tsc:watch",
+      "runAtStart": false
+    },
+    "commit": {
+      "name": "commit",
+      "command": "pnpm run commit",
+      "runAtStart": false
+    },
+    "format": {
+      "name": "format",
+      "command": "pnpm run format",
+      "runAtStart": false
+    },
+    "release": {
+      "name": "release",
+      "command": "pnpm run release",
+      "runAtStart": false
+    }
+  }
+}

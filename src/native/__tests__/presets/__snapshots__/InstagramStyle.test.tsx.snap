@@ -4,7 +4,7 @@ exports[`InstagramStyle renders correctly 1`] = `
 <Svg
   height={460}
   interval={0.25}
-  style={Object {}}
+  style={{}}
   viewBox="0 0 400 460"
   width={400}
 >
@@ -51,8 +51,9 @@ exports[`InstagramStyle renders correctly 1`] = `
       />
     </ClipPath>
     <LinearGradient
+      collapsable={false}
       id="InstagramStyle-diff"
-      style={Object {}}
+      style={{}}
       x1="-100%"
       x2="0%"
       y1={0}

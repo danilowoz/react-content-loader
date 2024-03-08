@@ -4,7 +4,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
   role="img"
-  style={Object {}}
+  style={{}}
   viewBox="0 0 476 124"
 >
   <title
@@ -17,7 +17,7 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
     height="100%"
     role="presentation"
     style={
-      Object {
+      {
         "fill": "url(#snapshots-animated-diff)",
       }
     }
@@ -71,47 +71,31 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform="translate(-2 0)"
       id="snapshots-animated-diff"
     >
       <stop
         offset="0%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-2; -2; 1"
-        />
-      </stop>
+      />
       <stop
         offset="50%"
         stopColor="#eee"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-1; -1; 2"
-        />
-      </stop>
+      />
       <stop
         offset="100%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="0; 0; 3"
-        />
-      </stop>
+      />
+      <animateTransform
+        attributeName="gradientTransform"
+        dur="1.2s"
+        repeatCount="indefinite"
+        type="translate"
+        values="-2 0; 0 0; 2 0"
+      />
     </linearGradient>
   </defs>
 </svg>
@@ -121,7 +105,7 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
   role="img"
-  style={Object {}}
+  style={{}}
 >
   <title
     id="snapshots-aria"
@@ -139,7 +123,7 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
     height="100%"
     role="presentation"
     style={
-      Object {
+      {
         "fill": "url(#snapshots-animated-diff)",
       }
     }
@@ -154,47 +138,31 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
       <rect />
     </clipPath>
     <linearGradient
+      gradientTransform="translate(-2 0)"
       id="snapshots-animated-diff"
     >
       <stop
         offset="0%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-2; -2; 1"
-        />
-      </stop>
+      />
       <stop
         offset="50%"
         stopColor="#eee"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-1; -1; 2"
-        />
-      </stop>
+      />
       <stop
         offset="100%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="0; 0; 3"
-        />
-      </stop>
+      />
+      <animateTransform
+        attributeName="gradientTransform"
+        dur="1.2s"
+        repeatCount="indefinite"
+        type="translate"
+        values="-2 0; 0 0; 2 0"
+      />
     </linearGradient>
   </defs>
 </svg>
@@ -204,7 +172,7 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
 <svg
   aria-labelledby="snapshots-aria"
   role="img"
-  style={Object {}}
+  style={{}}
 >
   <title
     id="snapshots-aria"
@@ -216,7 +184,7 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
     height="100%"
     role="presentation"
     style={
-      Object {
+      {
         "fill": "url(#snapshots-animated-diff)",
       }
     }
@@ -231,47 +199,31 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
       <rect />
     </clipPath>
     <linearGradient
+      gradientTransform="translate(-2 0)"
       id="snapshots-animated-diff"
     >
       <stop
         offset="0%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-2; -2; 1"
-        />
-      </stop>
+      />
       <stop
         offset="50%"
         stopColor="#eee"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-1; -1; 2"
-        />
-      </stop>
+      />
       <stop
         offset="100%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="0; 0; 3"
-        />
-      </stop>
+      />
+      <animateTransform
+        attributeName="gradientTransform"
+        dur="1.2s"
+        repeatCount="indefinite"
+        type="translate"
+        values="-2 0; 0 0; 2 0"
+      />
     </linearGradient>
   </defs>
 </svg>
@@ -281,7 +233,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
   role="img"
-  style={Object {}}
+  style={{}}
   viewBox="0 0 100 100"
 >
   <title
@@ -294,7 +246,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
     height="100%"
     role="presentation"
     style={
-      Object {
+      {
         "fill": "url(#snapshots-animated-diff)",
       }
     }
@@ -348,47 +300,31 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform="translate(-2 0)"
       id="snapshots-animated-diff"
     >
       <stop
         offset="0%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-2; -2; 1"
-        />
-      </stop>
+      />
       <stop
         offset="50%"
         stopColor="#eee"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-1; -1; 2"
-        />
-      </stop>
+      />
       <stop
         offset="100%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="0; 0; 3"
-        />
-      </stop>
+      />
+      <animateTransform
+        attributeName="gradientTransform"
+        dur="1.2s"
+        repeatCount="indefinite"
+        type="translate"
+        values="-2 0; 0 0; 2 0"
+      />
     </linearGradient>
   </defs>
 </svg>
@@ -399,7 +335,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
   aria-labelledby="snapshots-aria"
   height={100}
   role="img"
-  style={Object {}}
+  style={{}}
   viewBox="0 0 100 100"
   width={100}
 >
@@ -413,7 +349,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
     height="100%"
     role="presentation"
     style={
-      Object {
+      {
         "fill": "url(#snapshots-animated-diff)",
       }
     }
@@ -467,47 +403,31 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
       />
     </clipPath>
     <linearGradient
+      gradientTransform="translate(-2 0)"
       id="snapshots-animated-diff"
     >
       <stop
         offset="0%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-2; -2; 1"
-        />
-      </stop>
+      />
       <stop
         offset="50%"
         stopColor="#eee"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-1; -1; 2"
-        />
-      </stop>
+      />
       <stop
         offset="100%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="0; 0; 3"
-        />
-      </stop>
+      />
+      <animateTransform
+        attributeName="gradientTransform"
+        dur="1.2s"
+        repeatCount="indefinite"
+        type="translate"
+        values="-2 0; 0 0; 2 0"
+      />
     </linearGradient>
   </defs>
 </svg>
@@ -517,7 +437,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
 <svg
   aria-labelledby="snapshots-aria"
   role="img"
-  style={Object {}}
+  style={{}}
   viewBox=""
 >
   <title
@@ -530,7 +450,7 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
     height="100%"
     role="presentation"
     style={
-      Object {
+      {
         "fill": "url(#snapshots-animated-diff)",
       }
     }
@@ -584,47 +504,31 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
       />
     </clipPath>
     <linearGradient
+      gradientTransform="translate(-2 0)"
       id="snapshots-animated-diff"
     >
       <stop
         offset="0%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-2; -2; 1"
-        />
-      </stop>
+      />
       <stop
         offset="50%"
         stopColor="#eee"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-1; -1; 2"
-        />
-      </stop>
+      />
       <stop
         offset="100%"
         stopColor="#f5f6f7"
         stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="0; 0; 3"
-        />
-      </stop>
+      />
+      <animateTransform
+        attributeName="gradientTransform"
+        dur="1.2s"
+        repeatCount="indefinite"
+        type="translate"
+        values="-2 0; 0 0; 2 0"
+      />
     </linearGradient>
   </defs>
 </svg>

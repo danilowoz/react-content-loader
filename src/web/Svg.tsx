@@ -5,7 +5,6 @@ import { IContentLoaderProps } from './'
 
 const SVG: React.FC<IContentLoaderProps> = ({
   animate = true,
-  animateBegin,
   backgroundColor = '#f5f6f7',
   backgroundOpacity = 1,
   baseUrl = '',
@@ -13,9 +12,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   foregroundColor = '#eee',
   foregroundOpacity = 1,
   gradientRatio = 2,
-  gradientDirection = 'left-right',
   uniqueKey,
-  interval = 0.25,
   rtl = false,
   speed = 1.2,
   style = {},
@@ -29,10 +26,10 @@ const SVG: React.FC<IContentLoaderProps> = ({
   const idAria = `${fixedId}-aria`
 
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
-  const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`
-  const gradientTransform =
-    gradientDirection === 'top-bottom' ? 'rotate(90)' : undefined
+
+  const from = `${gradientRatio * -1} 0`
+  const to = `${gradientRatio} 0`
 
   return (
     <svg
@@ -56,58 +53,37 @@ const SVG: React.FC<IContentLoaderProps> = ({
       <defs>
         <clipPath id={idClip}>{children}</clipPath>
 
-        <linearGradient id={idGradient} gradientTransform={gradientTransform}>
+        <linearGradient
+          id={idGradient}
+          gradientTransform={`translate(${from})`}
+        >
           <stop
             offset="0%"
             stopColor={backgroundColor}
             stopOpacity={backgroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`${-gradientRatio}; ${-gradientRatio}; 1`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-                begin={animateBegin}
-              />
-            )}
-          </stop>
+          />
 
           <stop
             offset="50%"
             stopColor={foregroundColor}
             stopOpacity={foregroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`${-gradientRatio / 2}; ${-gradientRatio / 2}; ${1 +
-                  gradientRatio / 2}`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-                begin={animateBegin}
-              />
-            )}
-          </stop>
+          />
 
           <stop
             offset="100%"
             stopColor={backgroundColor}
             stopOpacity={backgroundOpacity}
-          >
-            {animate && (
-              <animate
-                attributeName="offset"
-                values={`0; 0; ${1 + gradientRatio}`}
-                keyTimes={keyTimes}
-                dur={dur}
-                repeatCount="indefinite"
-                begin={animateBegin}
-              />
-            )}
-          </stop>
+          />
+
+          {animate && (
+            <animateTransform
+              attributeName="gradientTransform"
+              type="translate"
+              values={`${from}; 0 0; ${to}`}
+              dur={dur}
+              repeatCount="indefinite"
+            />
+          )}
         </linearGradient>
       </defs>
     </svg>
