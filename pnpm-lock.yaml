@@ -14,6 +14,9 @@ devDependencies:
   '@babel/preset-typescript':
     specifier: ^7.23.3
     version: 7.23.3(@babel/core@7.24.0)
+  '@babel/runtime':
+    specifier: ^7.24.0
+    version: 7.24.0
   '@commitlint/cli':
     specifier: ^11.0.0
     version: 11.0.0
@@ -1575,12 +1578,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
-    dev: true
-
-  /@babel/runtime@7.7.7:
-    resolution: {integrity: sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==}
-    dependencies:
-      regenerator-runtime: 0.13.11
     dev: true
 
   /@babel/template@7.24.0:
@@ -10376,7 +10373,7 @@ packages:
     peerDependencies:
       react: '>= 0.14.0'
     dependencies:
-      '@babel/runtime': 7.7.7
+      '@babel/runtime': 7.24.0
       highlight.js: 9.15.10
       lowlight: 1.12.1
       prismjs: 1.29.0
