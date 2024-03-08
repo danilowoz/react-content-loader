@@ -5,7 +5,6 @@ import { IContentLoaderProps } from './'
 
 const SVG: React.FC<IContentLoaderProps> = ({
   animate = true,
-  animateBegin,
   backgroundColor = '#f5f6f7',
   backgroundOpacity = 1,
   baseUrl = '',

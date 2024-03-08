@@ -50,7 +50,6 @@ describe('ContentLoader', () => {
         uniqueKey="my-id"
         width={200}
         beforeMask={<rect />}
-        animateBegin="5s"
       >
         <rect />
       </ContentLoader>
@@ -151,12 +150,6 @@ describe('ContentLoader', () => {
       // custom props
       expect(typeof propsFromFullfield.beforeMask).toBe('object')
       expect(propsFromFullfield.beforeMask).toEqual(<rect />)
-    })
-
-    it("`animateBegin` is a string and it's used", () => {
-      // custom props
-      expect(typeof propsFromFullfield.animateBegin).toBe('string')
-      expect(propsFromFullfield.animateBegin).toEqual('5s')
     })
   })
 })
