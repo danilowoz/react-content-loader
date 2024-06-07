@@ -12,6 +12,20 @@
   "module": "dist/react-content-loader.es.js",
   "jsnext:main": "dist/react-content-loader.es.js",
   "types": "dist/web/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/web/index.d.ts",
+      "require": "dist/react-content-loader.cjs.js",
+      "import": "dist/react-content-loader.es.js",
+      "default": "dist/react-content-loader.cjs.js"
+    },
+    "./native": {
+      "types": "./native/native/index.d.ts",
+      "require": "./native/react-content-loader.native.cjs.js",
+      "import": "./native/react-content-loader.native.es.js",
+      "default": "./native/react-content-loader.native.cjs.js"
+    }
+  },
   "bugs": {
     "url": "https://github.com/danilowoz/react-content-loader/issues"
   },
