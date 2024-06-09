@@ -14,8 +14,8 @@
   "types": "dist/web/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/web/index.d.ts",
       "require": "dist/react-content-loader.cjs.js",
+      "types": "./dist/web/index.d.ts",
       "import": "dist/react-content-loader.es.js",
       "default": "dist/react-content-loader.cjs.js"
     },
