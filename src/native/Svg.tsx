@@ -17,7 +17,9 @@ class NativeSvg extends Component<IContentLoaderProps> {
   static defaultProps = {
     animate: true,
     backgroundColor: '#f5f6f7',
+    backgroundOpacity: 1,
     foregroundColor: '#eee',
+    foregroundOpacity: 1,
     rtl: false,
     speed: 1.2,
     interval: 0.25,
@@ -74,7 +76,9 @@ class NativeSvg extends Component<IContentLoaderProps> {
     const {
       children,
       backgroundColor,
+      backgroundOpacity,
       foregroundColor,
+      foregroundOpacity,
       rtl,
       style,
       beforeMask,
@@ -124,9 +128,9 @@ class NativeSvg extends Component<IContentLoaderProps> {
             y1={0}
             y2={0}
           >
-            <Stop offset={0} stopColor={backgroundColor} />
-            <Stop offset={0.5} stopColor={foregroundColor} />
-            <Stop offset={1} stopColor={backgroundColor} />
+            <Stop offset={0} stopColor={backgroundColor} stopOpacity={backgroundOpacity} />
+            <Stop offset={0.5} stopColor={foregroundColor} stopOpacity={foregroundOpacity} />
+            <Stop offset={1} stopColor={backgroundColor} stopOpacity={backgroundOpacity} />
           </AnimatedLinearGradient>
         </Defs>
       </Svg>

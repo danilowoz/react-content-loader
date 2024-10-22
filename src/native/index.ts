@@ -5,7 +5,9 @@ import ContentLoader from './ContentLoader'
 export interface IContentLoaderProps extends SvgProps {
   animate?: boolean
   backgroundColor?: string
+  backgroundOpacity?: number
   foregroundColor?: string
+  foregroundOpacity?: number
   rtl?: boolean
   speed?: number
   interval?: number
