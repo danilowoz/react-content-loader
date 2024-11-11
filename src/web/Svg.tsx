@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import uid from '../shared/uid'
 import { IContentLoaderProps } from './'
 
 const SVG: React.FC<IContentLoaderProps> = ({
@@ -20,7 +19,8 @@ const SVG: React.FC<IContentLoaderProps> = ({
   beforeMask = null,
   ...props
 }) => {
-  const fixedId = uniqueKey || uid()
+  let fixedId = React.useId()
+  if (uniqueKey) fixedId = uniqueKey
   const idClip = `${fixedId}-diff`
   const idGradient = `${fixedId}-animated-diff`
   const idAria = `${fixedId}-aria`
