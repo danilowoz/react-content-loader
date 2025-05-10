@@ -76,7 +76,6 @@
     "@types/react-dom": "18.2.21",
     "@types/react-test-renderer": "18.0.7",
     "@typescript-eslint/eslint-plugin": "2.13.0",
-    "awesome-typescript-loader": "5.2.1",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "3.0.2",
     "husky": "3.1.0",
@@ -99,7 +98,8 @@
     "storybook": "^7.6.17",
     "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
-    "typescript": "5.4.2"
+    "typescript": "5.4.2",
+    "vite": "^5.4.19"
   },
   "peerDependencies": {
     "react": ">=16.0.0"

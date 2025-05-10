@@ -128,9 +128,21 @@ class NativeSvg extends Component<IContentLoaderProps> {
             y1={0}
             y2={0}
           >
-            <Stop offset={0} stopColor={backgroundColor} stopOpacity={backgroundOpacity} />
-            <Stop offset={0.5} stopColor={foregroundColor} stopOpacity={foregroundOpacity} />
-            <Stop offset={1} stopColor={backgroundColor} stopOpacity={backgroundOpacity} />
+            <Stop
+              offset={0}
+              stopColor={backgroundColor}
+              stopOpacity={backgroundOpacity}
+            />
+            <Stop
+              offset={0.5}
+              stopColor={foregroundColor}
+              stopOpacity={foregroundOpacity}
+            />
+            <Stop
+              offset={1}
+              stopColor={backgroundColor}
+              stopOpacity={backgroundOpacity}
+            />
           </AnimatedLinearGradient>
         </Defs>
       </Svg>
