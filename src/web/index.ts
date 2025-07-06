@@ -1,4 +1,4 @@
-import { SVGAttributes } from 'react'
+import { SVGAttributes, ReactElement } from 'react'
 
 import ContentLoader from './ContentLoader'
 
@@ -14,7 +14,7 @@ export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   speed?: number
   title?: string
   uniqueKey?: string
-  beforeMask?: JSX.Element
+  beforeMask?: ReactElement
 }
 
 export { default as Facebook } from './presets/FacebookStyle'
