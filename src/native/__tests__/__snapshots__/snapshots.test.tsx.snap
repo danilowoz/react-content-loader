@@ -73,14 +73,17 @@ exports[`ContentLoader snapshots renders correctly the basic version 1`] = `
       <Stop
         offset={0}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
       <Stop
         offset={0.5}
         stopColor="#eee"
+        stopOpacity={1}
       />
       <Stop
         offset={1}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
     </LinearGradient>
   </Defs>
@@ -124,14 +127,17 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 1`] = `
       <Stop
         offset={0}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
       <Stop
         offset={0.5}
         stopColor="#eee"
+        stopOpacity={1}
       />
       <Stop
         offset={1}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
     </LinearGradient>
   </Defs>
@@ -169,14 +175,17 @@ exports[`ContentLoader snapshots renders correctly with beforeMask 2`] = `
       <Stop
         offset={0}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
       <Stop
         offset={0.5}
         stopColor="#eee"
+        stopOpacity={1}
       />
       <Stop
         offset={1}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
     </LinearGradient>
   </Defs>
@@ -256,14 +265,17 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined 1`] = `
       <Stop
         offset={0}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
       <Stop
         offset={0.5}
         stopColor="#eee"
+        stopOpacity={1}
       />
       <Stop
         offset={1}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
     </LinearGradient>
   </Defs>
@@ -343,14 +355,17 @@ exports[`ContentLoader snapshots renders correctly with viewBox defined and size
       <Stop
         offset={0}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
       <Stop
         offset={0.5}
         stopColor="#eee"
+        stopOpacity={1}
       />
       <Stop
         offset={1}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
     </LinearGradient>
   </Defs>
@@ -430,14 +445,17 @@ exports[`ContentLoader snapshots renders correctly with viewBox empty 1`] = `
       <Stop
         offset={0}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
       <Stop
         offset={0.5}
         stopColor="#eee"
+        stopOpacity={1}
       />
       <Stop
         offset={1}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
     </LinearGradient>
   </Defs>
