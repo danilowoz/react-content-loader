@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import { IContentLoaderProps } from '..'
 import ContentLoader, { Circle, Rect } from '../ContentLoader'
 
