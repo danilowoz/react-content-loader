@@ -81,14 +81,17 @@ exports[`ListStyle renders correctly 1`] = `
       <Stop
         offset={0}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
       <Stop
         offset={0.5}
         stopColor="#eee"
+        stopOpacity={1}
       />
       <Stop
         offset={1}
         stopColor="#f5f6f7"
+        stopOpacity={1}
       />
     </LinearGradient>
   </Defs>
