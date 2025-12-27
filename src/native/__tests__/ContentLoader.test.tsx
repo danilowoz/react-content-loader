@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
+import { Rect as SvgRect } from 'react-native-svg'
 
 import ContentLoader, { Circle, Rect } from '../ContentLoader'
 
@@ -18,9 +19,11 @@ describe('ContentLoader', () => {
 
     it('should render custom element', () => {
       const rect = customWrapper.findAllByType(Rect)
+      const svgRect = customWrapper.findAllByType(SvgRect)
       const circle = customWrapper.findAllByType(Circle)
 
-      expect(rect.length).toBe(3)
+      expect(rect.length).toBe(2)
+      expect(svgRect.length).toBe(3)
       expect(circle.length).toBe(1)
     })
   })
