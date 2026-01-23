@@ -74,6 +74,29 @@ const MyLoader = () => (
 )
 ```
 
+**Per-rect color overrides**
+
+```jsx
+import ContentLoader, { Rect } from 'react-content-loader'
+
+const MyLoader = () => (
+  <ContentLoader viewBox="0 0 380 70">
+    <Rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+    <Rect
+      x="80"
+      y="17"
+      rx="4"
+      ry="4"
+      width="300"
+      height="13"
+      foregroundColor="#ddd"
+      backgroundColor="#f3f4f5"
+    />
+    <Rect x="80" y="40" rx="3" ry="3" width="250" height="10" />
+  </ContentLoader>
+)
+```
+
 **Still not clear?** Take a look at this working example at [codesandbox.io](https://codesandbox.io/s/moojk887z9)
 Or try the components editable demo hands-on and install it from [bit.dev](https://bit.dev/danilowoz/react-content-loader)
 

@@ -4,12 +4,13 @@ import Svg, {
   ClipPath,
   Defs,
   LinearGradient,
-  Rect,
+  Rect as SvgRect,
   Stop,
 } from 'react-native-svg'
 
 import uid from '../shared/uid'
 import { IContentLoaderProps } from './'
+import Rect, { IRectProps } from './Rect'
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient)
 
@@ -85,6 +86,36 @@ class NativeSvg extends Component<IContentLoaderProps> {
       ...props
     } = this.props
 
+    const clipChildren: React.ReactNode[] = []
+    const overrideRects: Array<{
+      element: React.ReactElement<IRectProps>
+      foregroundColor: string
+      backgroundColor: string
+      idClip: string
+      idGradient: string
+    }> = []
+
+    React.Children.forEach(children, child => {
+      if (
+        isValidElement(child) &&
+        child.type === Rect &&
+        (child.props.foregroundColor != null ||
+          child.props.backgroundColor != null)
+      ) {
+        const index = overrideRects.length
+        overrideRects.push({
+          element: child,
+          foregroundColor: child.props.foregroundColor ?? foregroundColor,
+          backgroundColor: child.props.backgroundColor ?? backgroundColor,
+          idClip: `${this.fixedId}-diff-override-${index}`,
+          idGradient: `${this.fixedId}-animated-diff-override-${index}`,
+        })
+        return
+      }
+
+      clipChildren.push(child)
+    })
+
     const x1Animation = this.animatedValue.interpolate({
       extrapolate: 'clamp',
       inputRange: [-1, 2],
@@ -109,7 +140,7 @@ class NativeSvg extends Component<IContentLoaderProps> {
       <Svg style={svgStyle} {...props}>
         {beforeMask && isValidElement(beforeMask) ? beforeMask : null}
 
-        <Rect
+        <SvgRect
           x="0"
           y="0"
           width="100%"
@@ -118,8 +149,26 @@ class NativeSvg extends Component<IContentLoaderProps> {
           clipPath={`url(#${this.idGradient})`}
         />
 
+        {overrideRects.map(override => (
+          <SvgRect
+            key={override.idClip}
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            fill={`url(#${override.idClip})`}
+            clipPath={`url(#${override.idGradient})`}
+          />
+        ))}
+
         <Defs>
-          <ClipPath id={this.idGradient}>{children}</ClipPath>
+          <ClipPath id={this.idGradient}>{clipChildren}</ClipPath>
+
+          {overrideRects.map(override => (
+            <ClipPath id={override.idGradient} key={override.idGradient}>
+              {override.element}
+            </ClipPath>
+          ))}
 
           <AnimatedLinearGradient
             id={this.idClip}
@@ -132,6 +181,33 @@ class NativeSvg extends Component<IContentLoaderProps> {
             <Stop offset={0.5} stopColor={foregroundColor} stopOpacity={foregroundOpacity} />
             <Stop offset={1} stopColor={backgroundColor} stopOpacity={backgroundOpacity} />
           </AnimatedLinearGradient>
+
+          {overrideRects.map(override => (
+            <AnimatedLinearGradient
+              id={override.idClip}
+              key={override.idClip}
+              x1={x1Animation}
+              x2={x2Animation}
+              y1={0}
+              y2={0}
+            >
+              <Stop
+                offset={0}
+                stopColor={override.backgroundColor}
+                stopOpacity={backgroundOpacity}
+              />
+              <Stop
+                offset={0.5}
+                stopColor={override.foregroundColor}
+                stopOpacity={foregroundOpacity}
+              />
+              <Stop
+                offset={1}
+                stopColor={override.backgroundColor}
+                stopOpacity={backgroundOpacity}
+              />
+            </AnimatedLinearGradient>
+          ))}
         </Defs>
       </Svg>
     )

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 
-import Svg from '..'
+import Svg, { Rect } from '..'
 
 interface PredicateArgs {
   type: any
@@ -168,6 +168,62 @@ describe('Svg', () => {
           role: 'beforeMask',
         })
       }).toThrow('No instances found with props: {"role":"beforeMask"}')
+    })
+  })
+
+  describe('rect color overrides', () => {
+    it('uses default colors when no overrides are provided', () => {
+      const wrapperWithDefaults = renderer.create(
+        <Svg foregroundColor="#111" backgroundColor="#222">
+          <Rect x="0" y="0" width="10" height="10" />
+        </Svg>
+      ).root
+
+      const linearGradient = wrapperWithDefaults.findByType('linearGradient')
+      const stops = linearGradient.findAllByType('stop')
+
+      expect(stops[0].props.stopColor).toBe('#222')
+      expect(stops[1].props.stopColor).toBe('#111')
+      expect(stops[2].props.stopColor).toBe('#222')
+    })
+
+    it('allows a rect to override colors without affecting others', () => {
+      const wrapperWithOverrides = renderer.create(
+        <Svg foregroundColor="#111" backgroundColor="#222">
+          <Rect
+            x="0"
+            y="0"
+            width="10"
+            height="10"
+            foregroundColor="#333"
+            backgroundColor="#444"
+          />
+          <Rect x="20" y="0" width="10" height="10" />
+        </Svg>
+      ).root
+
+      const allLinearGradient =
+        wrapperWithOverrides.findAllByType('linearGradient')
+      const overrideGradient = allLinearGradient.find(gradient =>
+        gradient.props.id.includes('override')
+      )
+      const defaultGradient = allLinearGradient.find(
+        gradient => !gradient.props.id.includes('override')
+      )
+
+      expect(allLinearGradient.length).toBe(2)
+      expect(overrideGradient).toBeTruthy()
+      expect(defaultGradient).toBeTruthy()
+
+      const defaultStops = defaultGradient!.findAllByType('stop')
+      const overrideStops = overrideGradient!.findAllByType('stop')
+
+      expect(defaultStops[0].props.stopColor).toBe('#222')
+      expect(defaultStops[1].props.stopColor).toBe('#111')
+      expect(defaultStops[2].props.stopColor).toBe('#222')
+      expect(overrideStops[0].props.stopColor).toBe('#444')
+      expect(overrideStops[1].props.stopColor).toBe('#333')
+      expect(overrideStops[2].props.stopColor).toBe('#444')
     })
   })
 })

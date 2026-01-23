@@ -1,6 +1,7 @@
 import { SVGAttributes, ReactElement } from 'react'
 
 import ContentLoader from './ContentLoader'
+import Rect from './Rect'
 
 export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   animate?: boolean
@@ -22,5 +23,7 @@ export { default as Instagram } from './presets/InstagramStyle'
 export { default as Code } from './presets/CodeStyle'
 export { default as List } from './presets/ListStyle'
 export { default as BulletList } from './presets/BulletListStyle'
+export { Rect }
+export type { IRectProps } from './Rect'
 
 export default ContentLoader
