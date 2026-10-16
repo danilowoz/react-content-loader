@@ -112,17 +112,17 @@ const MyLoader = () => (
 | ---------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`animate?: boolean`** <br/> Defaults to `true`                 | React DOM<br/>React Native | Opt-out of animations with `false`                                                                                                                                                                                                                                                                  |
 | **`title?: string`** <br/> Defaults to `Loading...`              | React DOM only             | It's used to describe what element it is. <br />Use `''` (empty string) to remove.                                                                                                                                                                                                                  |
-| **`baseUrl?: string`**<br /> Defaults to an empty string         | React DOM only             | Required if you're using `<base url="/" />` document `<head/>`. <br/>This prop is common used as: <br/>`<ContentLoader baseUrl={window.location.pathname} />` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93). |
+| **`baseUrl?: string`**<br /> Defaults to an empty string         | React DOM only             | Required if you're using `<base href="/" />` document `<head/>`. <br/>This prop is common used as: <br/>`<ContentLoader baseUrl={window.location.pathname} />` which will fill the SVG attribute with the relative path. Related [#93](https://github.com/danilowoz/react-content-loader/issues/93). |
 | **`speed?: number`** <br /> Defaults to `1.2`                    | React DOM<br/>React Native | Animation speed in seconds.                                                                                                                                                                                                                                                                         |
 | **`viewBox?: string`** <br /> Defaults to `undefined`            | React DOM<br/>React Native | Use viewBox props to set a custom viewBox value, <br/>for more information about how to use it, <br/>read the article [How to Scale SVG](https://css-tricks.com/scale-svg/).                                                                                                                        |
-| **`gradientRatio?: number`** <br /> Defaults to `1.2`            | React DOM only             | Width of the animated gradient as a fraction of the view box width.                                                                                                                                                                                                                                 |
+| **`gradientRatio?: number`** <br /> Defaults to `2`            | React DOM only             | Width of the animated gradient as a fraction of the view box width.                                                                                                                                                                                                                                 |
 | **`rtl?: boolean`** <br /> Defaults to `false`                   | React DOM<br/>React Native | Content right-to-left.                                                                                                                                                                                                                                                                              |
 | **`backgroundColor?: string`** <br /> Defaults to `#f5f6f7`      | React DOM<br/>React Native | Used as background of animation.                                                                                                                                                                                                                                                                    |
 | **`foregroundColor?: string`** <br /> Defaults to `#eee`         | React DOM<br/>React Native | Used as the foreground of animation.                                                                                                                                                                                                                                                                |
 | **`backgroundOpacity?: number`** <br /> Defaults to `1`          | React DOM<br/>React Native | Background opacity (0 = transparent, 1 = opaque)<br/>used to solve an issue in [Safari](#safari--ios)                                                                                                                                                                                               |
 | **`foregroundOpacity?: number`** <br /> Defaults to `1`          | React DOM<br/>React Native | Animation opacity (0 = transparent, 1 = opaque)<br/>used to solve an issue in [Safari](#safari--ios)                                                                                                                                                                                                |
 | **`style?: React.CSSProperties`** <br /> Defaults to `{}`        | React DOM only             |                                                                                                                                                                                                                                                                                                     |
-| **`uniqueKey?: string`** <br /> Defaults to random unique id     | React DOM only             | Use the same value of prop key, <br/>that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).                                                                                                                                        |
+| **`uniqueKey?: string`** <br /> Defaults to a React.useId-generated id     | React DOM only             | Override the generated SVG ids with a value unique to each loader. Useful for stable snapshot tests; see [SSR and snapshots](#server-side-rendering-ssr---match-snapshot).                                                                                                                                        |
 | **`beforeMask?: JSX.Element`** <br /> Defaults to null           | React DOM<br/>React Native | Define custom shapes before content, <br/>see more [here](https://github.com/danilowoz/react-content-loader/issues/266).                                                                                                                                                                            |
 
 See all options [live](https://danilowoz.com/react-content-loader/)
@@ -224,9 +224,9 @@ const MyCodeLoader = () => (
 
 #### Server-side rendering (SSR) - Match snapshot
 
-As the main component generates random values to match the id of the SVG element with background style, it can encounter unexpected errors and unmatching warning on render, once the random value of id will be generated twice, in case of SSR: server and client; or in case of snapshot test: on the first match and re-running the test.
+The web component uses `React.useId` to connect each SVG's clip path, gradient and title. These ids match between the server and client when the rendered component tree is the same.
 
-To fix it, set the prop [`uniqueKey`](https://github.com/danilowoz/react-content-loader#uniquekey-string---web-only), then the id will not be random anymore:
+For stable ids in snapshot tests, you can override the generated id with `uniqueKey`. Give each loader a distinct value, and use the same value on the server and client:
 
 ```jsx
 import { Facebook } from 'react-content-loader'
@@ -239,20 +239,21 @@ const MyFacebookLoader = () => <Facebook uniqueKey="my-random-value" />
 When using `rgba` as a `backgroundColor` or `foregroundColor` value, [Safari does not respect the alpha channel](https://github.com/w3c/svgwg/issues/180), meaning that the color will be opaque. To prevent this, instead of using a `rgba` value for `backgroundColor`/`foregroundColor`, use the `rgb` equivalent and move the alpha channel value to the `backgroundOpacity`/`foregroundOpacity` props.
 
 ```jsx
-{/* Opaque color in Safari and iOS */}
-<ContentLoader
-  backgroundColor="rgba(0,0,0,0.06)"
-  foregroundColor="rgba(0,0,0,0.12)">
+<>
+  {/* Opaque color in Safari and iOS */}
+  <ContentLoader
+    backgroundColor="rgba(0,0,0,0.06)"
+    foregroundColor="rgba(0,0,0,0.12)"
+  />
 
-
-{/_ Semi-transparent color in Safari and iOS _/}
-<ContentLoader
-    backgroundColor="rgb(0,0,0)"
-    foregroundColor="rgb(0,0,0)"
-    backgroundOpacity={0.06}
-    foregroundOpacity={0.12}>
-
-
+  {/* Semi-transparent color in Safari and iOS */}
+  <ContentLoader
+    backgroundColor="rgb(0,0,0)"
+    foregroundColor="rgb(0,0,0)"
+    backgroundOpacity={0.06}
+    foregroundOpacity={0.12}
+  />
+</>
 ```
 
 #### **Black box in Safari / iOS (again)**
